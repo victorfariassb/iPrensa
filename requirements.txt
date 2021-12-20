@@ -1,0 +1,10 @@
+requests
+csv
+re
+pandas
+glob
+datetime
+bs4
+selenium
+webdriver_manager.chrome
+selenium.webdriver.chrome.options
