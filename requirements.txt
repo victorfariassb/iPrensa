@@ -1,6 +1,5 @@
 requests
 pandas
-glob
 datetime
 bs4
 selenium
