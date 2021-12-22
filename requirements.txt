@@ -1,6 +1,4 @@
 requests
-csv
-re
 pandas
 glob
 datetime
