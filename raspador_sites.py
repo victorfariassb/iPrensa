@@ -45,9 +45,7 @@ def coleta_info():
     now = datetime.now()
     agora = now.strftime("%d/%m/%Y %H:%M:%S") # colocar a data da raspagem no arquivo
     
-    options = Options()
-    options.headless = True # isso serve para usar o Selenium sem abrir a janela do navegador
-    with webdriver.Chrome(ChromeDriverManager().install(), options=options) as driver:
+    with browser as driver:
         driver.get("https://www.globo.com/")
         source = driver.find_element_by_tag_name('html')
         html = source.get_attribute('innerHTML')
