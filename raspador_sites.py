@@ -37,7 +37,7 @@ def pega_localizacao(link):
     else: return action
     
 
-def coleta_info():
+def coleta_globo():
     globo = {}
     num = 0
     
@@ -58,13 +58,8 @@ def coleta_info():
         link = dado.get('href')
         globo[f'materia {num}'] = [agora, editoria, posicao, titulo, link]
 
-df = pd.DataFrame({key: pd.Series(value) for key, value in globo.items()}).T
-df.to_csv(f'globo_{now.strftime("%d_%m_%Y_%Hh%Mm")}.csv', encoding='utf-8', index=True)
-    
-coleta_info()
-
-
-# In[ ]:
+    df_globo = pd.DataFrame({key: pd.Series(value) for key, value in globo.items()}).T
+    return df_globo
 
 
 def coleta_uol():
@@ -91,8 +86,6 @@ def coleta_uol():
                     tit = re.sub(r"\n+\s+", ': ', tit)
                     titulo = tit
                     uol[f'materia {num}'] = [agora, classe, titulo, link]
-    df = pd.DataFrame({key: pd.Series(value) for key, value in uol.items()}).T
-    df.to_csv(f'uol_{now.strftime("%d_%m_%Y_%Hh%Mm")}.csv', encoding='utf-8', index=True)
-
-coleta_uol()
+    df_uol = pd.DataFrame({key: pd.Series(value) for key, value in uol.items()}).T
+    return df_uol
 
