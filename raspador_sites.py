@@ -11,16 +11,16 @@ from datetime import datetime
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
+from webdriver_manager.chrome import ChromeDriverManager
 
 # In[ ]:
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--headless')
 chrome_options.binary_location = GOOGLE_CHROME_PATH
-browser = webdriver.Chrome(execution_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
-
+browser = webdriver.Chrome(chrome_options=chrome_options, executable_path=ChromeDriverManager().install())
 
 
 # Função recursiva para coletar editoria de matérias
@@ -45,22 +45,21 @@ def coleta_info():
     now = datetime.now()
     agora = now.strftime("%d/%m/%Y %H:%M:%S") # colocar a data da raspagem no arquivo
     
-    with browser as driver:
-        driver.get("https://www.globo.com/")
-        source = driver.find_element_by_tag_name('html')
-        html = source.get_attribute('innerHTML')
-        soup = bs(html, 'html.parser')
-        for dado in soup.find_all('a', class_="post__link"):
-            num += 1
-            editoria = pega_editoria(dado)
-            titulo = dado.get('title')
-            titulo = re.sub(r"\n+", '', titulo)
-            posicao = pega_localizacao(dado)
-            link = dado.get('href')
-            globo[f'materia {num}'] = [agora, editoria, posicao, titulo, link]
-    
-    df = pd.DataFrame({key: pd.Series(value) for key, value in globo.items()}).T
-    df.to_csv(f'globo_{now.strftime("%d_%m_%Y_%Hh%Mm")}.csv', encoding='utf-8', index=True)
+    driver.get("https://www.globo.com/")
+    source = driver.find_element_by_tag_name('html')
+    html = source.get_attribute('innerHTML')
+    soup = bs(html, 'html.parser')
+    for dado in soup.find_all('a', class_="post__link"):
+        num += 1
+        editoria = pega_editoria(dado)
+        titulo = dado.get('title')
+        titulo = re.sub(r"\n+", '', titulo)
+        posicao = pega_localizacao(dado)
+        link = dado.get('href')
+        globo[f'materia {num}'] = [agora, editoria, posicao, titulo, link]
+
+df = pd.DataFrame({key: pd.Series(value) for key, value in globo.items()}).T
+df.to_csv(f'globo_{now.strftime("%d_%m_%Y_%Hh%Mm")}.csv', encoding='utf-8', index=True)
     
 coleta_info()
 
