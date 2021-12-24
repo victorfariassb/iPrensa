@@ -3,7 +3,7 @@
 
 # In[ ]:
 
-
+import os
 import requests
 import re
 import pandas as pd
@@ -19,7 +19,7 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--headless')
-chrome_options.binary_location = GOOGLE_CHROME_PATH
+chrome_options.binary_location = os.environ["GOOGLE_CHROME_PATH"]
 browser = webdriver.Chrome(chrome_options=chrome_options, executable_path=ChromeDriverManager().install())
 
 
