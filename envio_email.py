@@ -1,6 +1,9 @@
 import base64
-from datetime import datetime
+from base64 import b64encode
+from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition, ContentId
+
+from raspador_sites import coleta_globo, coleta_uol
 
 def send_mail(dataframe, dataframe2):
     now = datetime.now()
@@ -16,16 +19,16 @@ def send_mail(dataframe, dataframe2):
         subject='test',
         html_content=html_content)
   
-    base64_csv = b64encode(dataframe.to_csv(index=False).encode()).decode()
-    base64_2_csv = b64encode(dataframe.to_csv(index=False).encode()).decode()
+    base64_csv = b64encode(dataframe.to_csv(index=False, encoding='utf-8').encode()).decode()
+    base64_2_csv = b64encode(dataframe.to_csv(index=False, encoding='utf-8').encode()).decode()
 
     anexo = Attachment(FileContent(base64_csv),
-                                    FileName(f'{dataframe}.csv'),
+                                    FileName(f'{dataframe};{now.strftime("%d_%m_%Y_%Hh%Mm")}.csv'),
                                     FileType('text/csv'),
                                     Disposition('attachment'),
                                     ContentId('dataframe'))
     anexo2 = Attachment(FileContent(base64_2_csv),
-                                    FileName(f'{dataframe2}.csv'),
+                                    FileName(f'{dataframe2}{now.strftime("%d_%m_%Y_%Hh%Mm")}.csv'),
                                     FileType('text/csv'),
                                     Disposition('attachment'),
                                     ContentId('dataframe'))
@@ -41,4 +44,7 @@ def send_mail(dataframe, dataframe2):
     
     return None
 
-send_mail(df, df2)
+uol = coleta_uol()
+globo = coleta_globo()
+
+send_mail(globo, uol)
