@@ -18,8 +18,8 @@ def send_mail(dataframe, dataframe2):
     # Defining Email_Format.
     message = Mail(
         from_email='victorfariassb@gmail.com',
-        to_emails=['victorfariass@hotmail.com'],
-        subject='test',
+        to_emails=['juliafbarbosa1@gmail.com'],
+        subject='radar da imprensa',
         html_content=html_content)
   
     base64_csv = b64encode(dataframe.to_csv(index=False, encoding='utf-8').encode()).decode()
