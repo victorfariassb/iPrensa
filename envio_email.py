@@ -1,5 +1,7 @@
 import base64
+import os
 from base64 import b64encode
+
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition, ContentId
 
@@ -37,7 +39,7 @@ def send_mail(dataframe, dataframe2):
 
     
     try:
-        sg = SendGridAPIClient(SENDGRID_API_KEY)
+        sg = SendGridAPIClient(os.environ['SENDGRID_API_KEY'))
         response = sg.send(message)
     except Exception as e:
         return e
