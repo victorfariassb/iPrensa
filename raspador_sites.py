@@ -45,8 +45,8 @@ def coleta_globo():
     now = datetime.now()
     agora = now.strftime("%d/%m/%Y %H:%M:%S") # colocar a data da raspagem no arquivo
     
-    driver.get("https://www.globo.com/")
-    source = driver.find_element_by_tag_name('html')
+    browser.get("https://www.globo.com/")
+    source = browser.find_element_by_tag_name('html')
     html = source.get_attribute('innerHTML')
     soup = bs(html, 'html.parser')
     for dado in soup.find_all('a', class_="post__link"):
