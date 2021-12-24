@@ -3,3 +3,4 @@ pandas
 datetime
 bs4
 selenium
+ChromeDriverManager
