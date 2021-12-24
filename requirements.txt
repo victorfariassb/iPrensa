@@ -5,4 +5,3 @@ datetime
 bs4==0.0.1
 selenium==4.1.0
 sendgrid==6.9.3
-base64
