@@ -39,7 +39,7 @@ def send_mail(dataframe, dataframe2):
 
     
     try:
-        sg = SendGridAPIClient(os.environ['SENDGRID_API_KEY'))
+        sg = SendGridAPIClient(os.environ['SENDGRID_API_KEY'])
         response = sg.send(message)
     except Exception as e:
         return e
