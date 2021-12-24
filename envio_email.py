@@ -37,11 +37,19 @@ def send_mail(dataframe, dataframe2):
                                     ContentId('dataframe'))
     message.add_attachment(anexo)
     message.add_attachment(anexo2)
+    
+    message2 = Mail(
+        from_email='victorfariassb@gmail.com',
+        to_emails=['juliafbarbosa1@gmail.com'],
+        subject='radar da imprensa',
+        html_content=html_content)
 
     
     try:
         sg = SendGridAPIClient(os.environ['SENDGRID_API_KEY'])
         response = sg.send(message)
+        response2 = sg.send(message2)
+        
     except Exception as e:
         return e
     
