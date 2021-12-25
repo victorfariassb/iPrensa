@@ -18,7 +18,7 @@ def send_mail(dataframe, dataframe2):
     # Defining Email_Format.
     message = Mail(
         from_email='victorfariassb@gmail.com',
-        to_emails=['juliafbarbosa1@gmail.com'],
+        to_emails=['victorfariass@hotmail.com'],
         subject='radar da imprensa',
         html_content=html_content)
   
