@@ -23,15 +23,15 @@ def send_mail(dataframe, dataframe2):
         html_content=html_content)
   
     base64_csv = b64encode(dataframe.to_csv(index=False, encoding='utf-8').encode()).decode()
-    base64_2_csv = b64encode(dataframe.to_csv(index=False, encoding='utf-8').encode()).decode()
+    base64_2_csv = b64encode(dataframe2.to_csv(index=False, encoding='utf-8').encode()).decode()
 
     anexo = Attachment(FileContent(base64_csv),
-                                    FileName(f'{dataframe}_{now.strftime("%d_%m_%Y_%Hh%Mm")}.csv'),
+                                    FileName(f'globo_{now.strftime("%d_%m_%Y_%Hh%Mm")}.csv'),
                                     FileType('text/csv'),
                                     Disposition('attachment'),
                                     ContentId('dataframe'))
     anexo2 = Attachment(FileContent(base64_2_csv),
-                                    FileName(f'{dataframe2}_{now.strftime("%d_%m_%Y_%Hh%Mm")}.csv'),
+                                    FileName(f'uol_{now.strftime("%d_%m_%Y_%Hh%Mm")}.csv'),
                                     FileType('text/csv'),
                                     Disposition('attachment'),
                                     ContentId('dataframe'))
