@@ -39,7 +39,7 @@ def coleta_globo():
     globo = {}
     num = 0
     
-        agora = datetime.datetime.now(pytz.timezone('Brazil/East')).strftime("%d/%m/%Y %H:%M:%S") # colocar a data da raspagem no arquivo
+    agora = datetime.datetime.now(pytz.timezone('Brazil/East')).strftime("%d/%m/%Y %H:%M:%S") # colocar a data da raspagem no arquivo
     
     browser.get("https://www.globo.com/")
     source = browser.find_element_by_tag_name('html')
