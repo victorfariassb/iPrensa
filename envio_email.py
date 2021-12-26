@@ -1,16 +1,16 @@
 import base64
+import datetime
+import pytz
 import os
 from base64 import b64encode
-from datetime import datetime
-
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition, ContentId
 
 from raspador_sites import coleta_globo, coleta_uol
 
 def send_mail(dataframe, dataframe2):
-    now = datetime.now()
-    agora = now.strftime("%d/%m/%Y %H:%M:%S")
+    agora = datetime.datetime.now(pytz.timezone('Brazil/East')).strftime("%d/%m/%Y %H:%M:%S")
+
 
     # Defining Email Body and Notificaion type.    
     html_content=f'<b>Radar da Imprensa.</b><br> Seguem os dados de {agora}'
