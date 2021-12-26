@@ -9,6 +9,7 @@ from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileT
 from raspador_sites import coleta_globo, coleta_uol
 
 def send_mail(dataframe, dataframe2):
+    now = datetime.now()
     agora = datetime.datetime.now(pytz.timezone('Brazil/East')).strftime("%d/%m/%Y %H:%M:%S")
 
 
