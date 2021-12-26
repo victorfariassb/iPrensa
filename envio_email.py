@@ -22,8 +22,8 @@ def send_mail(dataframe, dataframe2):
         subject='radar da imprensa',
         html_content=html_content)
   
-    base64_csv = b64encode(dataframe.to_csv(index=False, encoding='latin-1').encode()).decode()
-    base64_2_csv = b64encode(dataframe2.to_csv(index=False, encoding='latin-1').encode()).decode()
+    base64_csv = b64encode(dataframe.to_csv(index=True, encoding='latin-1').encode()).decode()
+    base64_2_csv = b64encode(dataframe2.to_csv(index=True, encoding='latin-1').encode()).decode()
 
     anexo = Attachment(FileContent(base64_csv),
                                     FileName(f'globo_{now.strftime("%d_%m_%Y_%Hh%Mm")}.csv'),
