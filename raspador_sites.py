@@ -61,8 +61,6 @@ def coleta_globo():
 def coleta_uol():
     uol = {}
     num = 0
-    
-    now = datetime.now()
     agora = datetime.datetime.now(pytz.timezone('Brazil/East')).strftime("%d/%m/%Y %H:%M:%S")
     
     resposta = requests.get("https://www.uol.com.br/")
