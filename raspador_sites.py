@@ -2,12 +2,12 @@
 # coding: utf-8
 
 # In[ ]:
-import datetime
 import pytz
 import os
 import requests
 import re
 import pandas as pd
+from datetime import datetime
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -40,7 +40,8 @@ def coleta_globo():
     globo = {}
     num = 0
     
-    agora = datetime.datetime.now(pytz.timezone('Brazil/East')).strftime("%d/%m/%Y %H:%M:%S") # colocar a data da raspagem no arquivo
+    now = datetime.now(pytz.timezone('Brazil/East'))
+    agora = now.strftime("%d/%m/%Y %H:%M:%S")
     
     browser.get("https://www.globo.com/")
     source = browser.find_element_by_tag_name('html')
@@ -62,7 +63,9 @@ def coleta_globo():
 def coleta_uol():
     uol = {}
     num = 0
-    agora = datetime.datetime.now(pytz.timezone('Brazil/East')).strftime("%d/%m/%Y %H:%M:%S")
+    
+    now = datetime.now(pytz.timezone('Brazil/East'))
+    agora = now.strftime("%d/%m/%Y %H:%M:%S")
     
     resposta = requests.get("https://www.uol.com.br/")
     html = resposta.text
