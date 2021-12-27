@@ -2,6 +2,7 @@ import base64
 import datetime
 import pytz
 import os
+from datetime import datetime
 from base64 import b64encode
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition, ContentId
