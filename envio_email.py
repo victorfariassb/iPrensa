@@ -1,5 +1,4 @@
 import base64
-import datetime
 import pytz
 import os
 from datetime import datetime
@@ -11,7 +10,7 @@ from raspador_sites import coleta_globo, coleta_uol
 
 def send_mail(dataframe, dataframe2):
     now = datetime.now(pytz.timezone('Brazil/East'))
-    agora = datetime.datetime.now(pytz.timezone('Brazil/East')).strftime("%d/%m/%Y %H:%M:%S")
+    agora = now.strftime("%d/%m/%Y %H:%M:%S")
 
 
     # Defining Email Body and Notificaion type.    
