@@ -2,11 +2,15 @@
 # coding: utf-8
 
 # In[ ]:
+import base64
+import gspread
+import json
+import pandas as pd
 import pytz
 import os
 import requests
 import re
-import pandas as pd
+import time
 from datetime import datetime
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
@@ -21,6 +25,14 @@ chrome_options.add_argument('--no-sandbox')
 chrome_options.binary_location = os.environ["GOOGLE_CHROME_PATH"]
 browser = webdriver.Chrome(chrome_options=chrome_options, executable_path=ChromeDriverManager().install())
 
+spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
+conteudo_codificado =  os.environ['GOOGLE_SHEETS_CREDENTIALS']
+conteudo = base64.b64decode(conteudo_codificado)
+credentials = json.loads(conteudo)
+
+service_account = gspread.service_account_from_dict(credentials) # autenticação
+spreadsheet = service_account.open_by_key(spreadsheet_id) #abrir arquivo
+worksheet = spreadsheet.worksheet('globo') # escolhe aba
 
 # Função recursiva para coletar editoria de matérias
 def pega_editoria(link):
@@ -48,17 +60,22 @@ def coleta_globo():
     html = source.get_attribute('innerHTML')
     soup = bs(html, 'html.parser')
     for dado in soup.find_all('a', class_="post__link"):
+        time.sleep(2)
         num += 1
         editoria = pega_editoria(dado)
         titulo = dado.get('title')
         titulo = re.sub(r"\n+", '', titulo)
         posicao = pega_localizacao(dado)
         link = dado.get('href')
+        worksheet.append_row([f"materia {num}", agora, editoria, titulo, posicao, link])
         globo[f'materia {num}'] = [agora, editoria, posicao, titulo, link]
 
     df_globo = pd.DataFrame({key: pd.Series(value) for key, value in globo.items()}).T
     return df_globo
 
+coleta_globo()
+
+worksheet = spreadsheet.worksheet('uol') # escolhe aba
 
 def coleta_uol():
     uol = {}
@@ -76,6 +93,7 @@ def coleta_uol():
             if 'class="hyperlink showcase' not in str(texto): # gambiarra
                 if 'class="hyperlink blackBar' not in str(texto): # gambiarra
                     next
+                    time.sleep(2)
                     num += 1 
                     classe = texto.get('class')[1]
                     link = texto.get('href')
@@ -83,7 +101,9 @@ def coleta_uol():
                     tit = tit.strip()
                     tit = re.sub(r"\n+\s+", ': ', tit)
                     titulo = tit
+                    worksheet.append_row([f'materia {num}', agora, classe, link, titulo])
                     uol[f'materia {num}'] = [agora, classe, titulo, link]
     df_uol = pd.DataFrame({key: pd.Series(value) for key, value in uol.items()}).T
     return df_uol
 
+coleta_uol()
