@@ -1,5 +1,4 @@
 Flask==2.0.2
-time
 gspread==5.1.1
 outh2client==4.1.3
 requests==2.26.0
