@@ -80,6 +80,8 @@ worksheet = spreadsheet.worksheet('uol') # escolhe aba
 def coleta_uol():
     uol = {}
     num = 0
+    classes_drop = ['headerDesktop__logo__hyperlink', 'linkExternal', 'followVideo__link', 'cardVideo__content__titleBrand__link',
+                    'headerCard__link', 'headerSection__link', 'headlineAd__link']
     
     now = datetime.now(pytz.timezone('Brazil/East'))
     agora = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -93,16 +95,19 @@ def coleta_uol():
             if 'class="hyperlink showcase' not in str(texto): # gambiarra
                 if 'class="hyperlink blackBar' not in str(texto): # gambiarra
                     next
-                    time.sleep(2)
-                    num += 1 
+                    time.sleep(2) 
                     classe = texto.get('class')[1]
-                    link = texto.get('href')
-                    tit = texto.text
-                    tit = tit.strip()
-                    tit = re.sub(r"\n+\s+", ': ', tit)
-                    titulo = tit
-                    worksheet.append_row([f'materia {num}', agora, classe, link, titulo])
-                    uol[f'materia {num}'] = [agora, classe, titulo, link]
+                    if classe in classes_drop:
+                        next
+                    else:
+                        num += 1
+                        link = texto.get('href')
+                        tit = texto.text
+                        tit = tit.strip()
+                        tit = re.sub(r"\n+\s+", ': ', tit)
+                        titulo = tit
+                        worksheet.append_row([f'materia {num}', agora, classe, link, titulo])
+                        uol[f'materia {num}'] = [agora, classe, titulo, link]
     df_uol = pd.DataFrame({key: pd.Series(value) for key, value in uol.items()}).T
     return df_uol
 
