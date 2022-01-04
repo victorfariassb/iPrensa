@@ -108,7 +108,7 @@ def coleta_uol():
                         tit = tit.strip()
                         tit = re.sub(r"\n+\s+", ': ', tit)
                         titulo = tit
-                        worksheet.append_row([f'materia {num}', dia, hora classe, link, titulo])
+                        worksheet.append_row([f'materia {num}', dia, hora, classe, link, titulo])
                         uol[f'materia {num}'] = [dia, hora, classe, titulo, link]
     df_uol = pd.DataFrame({key: pd.Series(value) for key, value in uol.items()}).T
     return df_uol
