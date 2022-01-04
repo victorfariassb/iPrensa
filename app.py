@@ -4,4 +4,5 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return render_template("home.html")
+    arquivo = open("templates/home.html")
+    return arquivo.read()
