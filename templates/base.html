@@ -5,19 +5,21 @@
   </head>
   <body>
     <center>
-    <font face="Verdana">
+      <font face="Cambria">
       <font color="#4B0082">
         <h1>
           {% block cabecalho %}{% endblock %}
         </h1>
       </font>
-      <h3>
+      </font><br/>
+      <h2>
+        <font face="Swiss">
         {% block conteudo %}{% endblock %}
         <p>
           {% block paragrafo %}{% endblock %}
         </p>
+        </font><br/>
       </h3>
-    </font><br/>
     </center>
   </body>
 </html>
