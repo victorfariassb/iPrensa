@@ -53,8 +53,7 @@ def coleta_globo():
     num = 0
     
     now = datetime.now(pytz.timezone('Brazil/East'))
-    dia = now.strftime("%d/%m/%Y")
-    hora = now.strftime("%H:%M:%S")
+    dia = now.strftime("%d/%m/%Y %H:%M:%S")
     
     browser.get("https://www.globo.com/")
     source = browser.find_element_by_tag_name('html')
@@ -68,8 +67,8 @@ def coleta_globo():
         titulo = re.sub(r"\n+", '', titulo)
         posicao = pega_localizacao(dado)
         link = dado.get('href')
-        worksheet.append_row([f"materia {num}", dia, hora, editoria, titulo, posicao, link])
-        globo[f'materia {num}'] = [dia, hora, editoria, posicao, titulo, link]
+        worksheet.append_row([f"materia {num}", dia, editoria, titulo, posicao, link])
+        globo[f'materia {num}'] = [dia, editoria, posicao, titulo, link]
 
     df_globo = pd.DataFrame({key: pd.Series(value) for key, value in globo.items()}).T
     return df_globo
@@ -85,9 +84,8 @@ def coleta_uol():
                     'headerCard__link', 'headerSection__link', 'headlineAd__link']
     
     now = datetime.now(pytz.timezone('Brazil/East'))
-    dia = now.strftime("%d/%m/%Y")
-    hora = now.strftime("%H:%M:%S")    
-    
+    dia = now.strftime("%d/%m/%Y %H:%M:%S")
+   
     resposta = requests.get("https://www.uol.com.br/")
     html = resposta.text
     soup = bs(html, 'html.parser')
@@ -108,8 +106,8 @@ def coleta_uol():
                         tit = tit.strip()
                         tit = re.sub(r"\n+\s+", ': ', tit)
                         titulo = tit
-                        worksheet.append_row([f'materia {num}', dia, hora, classe, link, titulo])
-                        uol[f'materia {num}'] = [dia, hora, classe, titulo, link]
+                        worksheet.append_row([f'materia {num}', dia, classe, link, titulo])
+                        uol[f'materia {num}'] = [dia, classe, titulo, link]
     df_uol = pd.DataFrame({key: pd.Series(value) for key, value in uol.items()}).T
     return df_uol
 
