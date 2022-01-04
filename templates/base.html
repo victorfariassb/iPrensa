@@ -4,14 +4,15 @@
     <title>{% block titulo %}{% endblock %}</title>
   </head>
   <body>
-    <font color="#4B0082">
-      <font face="Verdana">
+    <font face="Verdana">
+      <font color="#4B0082">
       <h1>
       {% block cabecalho %}{% endblock %}
       </h1>
-     </font><br/>
+      </font>
       <h3>
     {% block conteudo %}{% endblock %}
       </h3>
+    </font><br/>
   </body>
 </html>
