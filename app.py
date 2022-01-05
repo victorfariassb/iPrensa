@@ -1,4 +1,6 @@
 import gspread
+import base64
+import os
 import json
 import pandas as pd
 import datetime
