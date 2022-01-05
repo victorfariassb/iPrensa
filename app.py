@@ -84,6 +84,3 @@ def dados_candidatos():
         semana_moro_globo=semana_moro_globo, mes_moro_globo=mes_moro_globo, ano_moro_globo=ano_moro_globo,
         semana_ciro_globo=semana_ciro_globo, mes_ciro_globo=mes_ciro_globo, ano_ciro_globo=ano_ciro_globo,
         semana_doria_globo=semana_doria_globo, mes_doria_globo=mes_doria_globo, ano_doria_globo=ano_doria_globo)
-
-
-)
