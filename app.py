@@ -1,8 +1,28 @@
+import gspread
+import base64
+import os
+import json
+import pandas as pd
+
 from flask import Flask, render_template
 
 from conta_candidatos import contagem_candidatos
 
 app = Flask(__name__)
+
+spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
+conteudo_codificado =  os.environ['GOOGLE_SHEETS_CREDENTIALS']
+conteudo = base64.b64decode(conteudo_codificado)
+credentials = json.loads(conteudo)
+
+service_account = gspread.service_account_from_dict(credentials)
+spreadsheet = service_account.open_by_key(spreadsheet_id) 
+
+worksheet = spreadsheet.worksheet('uol')
+uol = pd.DataFrame(worksheet.get_all_records())
+
+worksheet2 = spreadsheet.worksheet('globo')
+globo = pd.DataFrame(worksheet2.get_all_records())
 
 @app.route("/")
 def dados_candidatos():
