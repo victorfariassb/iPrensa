@@ -20,8 +20,8 @@ spreadsheet = service_account.open_by_key(spreadsheet_id)
 worksheet = spreadsheet.worksheet('uol')
 uol = pd.DataFrame(worksheet.get_all_records())
 
-worksheet = spreadsheet.worksheet('globo')
-globo = pd.DataFrame(worksheet.get_all_records())
+worksheet2 = spreadsheet.worksheet('globo')
+globo = pd.DataFrame(worksheet2.get_all_records())
 
 
 def contagem_candidatos(termo, dataframe):
