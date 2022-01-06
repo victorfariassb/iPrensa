@@ -25,9 +25,15 @@ uol = pd.DataFrame(worksheet.get_all_records())
 worksheet2 = spreadsheet.worksheet('globo')
 globo = pd.DataFrame(worksheet2.get_all_records())
 
+palavras_uol = conta_palavras(uol)
+p1=palavras_uol[0] 
+p2=palavras_uol[1]
+p3=palavras_uol[2]
+p4=palavras_uol[3]
+p5=palavras_uol[4]
+
 @app.route("/")
 def dados_candidatos():
-    palavras_uol = conta_palavras(uol), p1=palavras_uol[0], p2=palavras_uol[1], p3=palavras_uol[2], p4=palavras_uol[3], 
     semana_bolso, mes_bolso, ano_bolso = contagem_candidatos('Bolsonaro', uol)
     semana_lula, mes_lula, ano_lula = contagem_candidatos('Lula', uol)
     semana_moro, mes_moro, ano_moro = contagem_candidatos('Moro', uol)
