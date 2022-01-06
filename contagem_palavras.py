@@ -18,6 +18,8 @@ def conta_palavras(arquivo):
 
     #Word tokenizer breaks text paragraph into words.
     tokenized_word = word_tokenize(text)
+    
+    nltk.download('stopwords')
 
     stop_words = set(stopwords.words("portuguese"))
     for x in ['seção','@','#',',', '!', ':', 'vídeo', 'confira', 'durante', '.', 'a', 'sobre', 'diz', 'após', 'veja', 'ser', 'faz', 'ex',
