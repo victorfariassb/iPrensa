@@ -15,8 +15,7 @@ def contagem_candidatos(termo, dataframe):
 
     df_semana = dataframe[dataframe['data'] >= semana]
 
-    termo_semana = df_semana[['link']][df_semana['titulo'].str.contains(f'{termo}')]
-    termo_semana = termo_semana.drop_duplicates().reset_index(drop=True)
+    termo_semana = df_semana[['link']][df_semana['titulo'].str.contains(f'{termo}')].drop_duplicates().reset_index(drop=True)
     termo_semana = len(termo_semana)
 
     # Mes
@@ -25,8 +24,7 @@ def contagem_candidatos(termo, dataframe):
 
     df_mes = dataframe[dataframe['data'] >= mes]
 
-    termo_mes = df_mes[['link']][df_mes['titulo'].str.contains(f'{termo}')]
-    termo_mes = termo_mes.drop_duplicates().reset_index(drop=True)
+    termo_mes = df_mes[['link']][df_mes['titulo'].str.contains(f'{termo}')].drop_duplicates().reset_index(drop=True)
     termo_mes = len(termo_mes)
 
     # Ano
@@ -34,8 +32,7 @@ def contagem_candidatos(termo, dataframe):
 
     df_ano = dataframe[dataframe['data'] >= ano]
 
-    termo_ano = df_ano[['link']][df_ano['titulo'].str.contains(f'{termo}')]
-    termo_ano = termo_ano.drop_duplicates().reset_index(drop=True)
+    termo_ano = df_ano[['link']][df_ano['titulo'].str.contains(f'{termo}')].drop_duplicates().reset_index(drop=True)
     termo_ano = len(termo_ano)
 
     return termo_semana, termo_mes, termo_ano
