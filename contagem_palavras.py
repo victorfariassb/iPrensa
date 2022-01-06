@@ -9,14 +9,14 @@ def conta_palavras(arquivo):
     text = ''
     for index, row in arquivo.iterrows():
         text = text + row['titulo'].lower() + ' '
+    
+    nltk.download('punkt')  
 
     #Sentence tokenizer breaks text paragraph into sentences.
     tokenized_text = sent_tokenize(text)
 
     #Word tokenizer breaks text paragraph into words.
     tokenized_word = word_tokenize(text)
-    
-    nltk.download('punkt')
 
     stop_words = set(stopwords.words("portuguese"))
     for x in ['seção','@','#',',', '!', ':', 'vídeo', 'confira', 'durante', '.', 'a', 'sobre', 'diz', 'após', 'veja', 'ser', 'faz', 'ex',
