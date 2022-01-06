@@ -7,6 +7,7 @@ import pandas as pd
 from flask import Flask, render_template
 
 from conta_candidatos import contagem_candidatos
+from contagem_palavras import conta_palavras
 
 app = Flask(__name__)
 
