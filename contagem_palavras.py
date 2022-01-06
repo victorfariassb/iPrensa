@@ -40,4 +40,4 @@ def conta_palavras(arquivo):
             filtered_sent2.append(w)
     
     fdist = FreqDist(filtered_sent2)
-    return fdist.tabulate(5)
+    return fdist.most_common(5)
