@@ -70,7 +70,7 @@ def dados_candidatos():
         semana_moro=semana_moro, mes_moro=mes_moro, ano_moro=ano_moro,
         semana_ciro=semana_ciro, mes_ciro=mes_ciro, ano_ciro=ano_ciro,
         semana_doria=semana_doria, mes_doria=mes_doria, ano_doria=ano_doria,
-        w1=w1, w2=w2, w3=w3, w4=w4, w5=w5, g1=g1, g2=g2, g3=g3, g4=g4, g5=g5, p1=p1, p2=p2, p3=p3, p4=p4, p5=p5, u1=u1,u2=u2,u3=u3,u4=u4, u5=u5,
+        w1=w1, w2=w2, w3=w3, w4=w4, w5=w5, g1=g1, g2=g2, g3=g3, g4=g4, g5=g5, p1=p1, p2=p2, p3=p3, p4=p4, p5=p5, u1=u1, u2=u2, u3=u3, u4=u4, u5=u5,
         semana_bolso_globo=semana_bolso_globo, mes_bolso_globo=mes_bolso_globo, ano_bolso_globo=ano_bolso_globo,
         semana_lula_globo=semana_lula_globo, mes_lula_globo=mes_lula_globo, ano_lula_globo=ano_lula_globo,
         semana_moro_globo=semana_moro_globo, mes_moro_globo=mes_moro_globo, ano_moro_globo=ano_moro_globo,
