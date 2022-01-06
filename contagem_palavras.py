@@ -22,7 +22,7 @@ def conta_palavras(arquivo):
     nltk.download('stopwords')
 
     stop_words = set(stopwords.words("portuguese"))
-    for x in ['seção','@','#',',', '!', ':', 'vídeo', 'novo', '2021', 'confira', 'durante', '.', 'a', 'sobre', 'diz', 'após', 'veja', 'ser', 'faz', 'ex',
+    for x in ['seção','@','#',',', '!', ':', 'vídeo', 'quer', 'uol', 'vai', 'pode', 'novo', '2021', 'confira', 'durante', '.', 'a', 'sobre', 'diz', 'após', 'veja', 'ser', 'faz', 'ex',
               'r', '1', '4', '9', '2', '3', '5', '6', '7', '8', 'anos', 'ano', '2022', 'dia']:
         stop_words.add(x)
 
