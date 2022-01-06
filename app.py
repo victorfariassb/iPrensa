@@ -27,7 +27,7 @@ globo = pd.DataFrame(worksheet2.get_all_records())
 
 @app.route("/")
 def dados_candidatos():
-    palavras_uol = conta_palavras(uol)
+    palavras_uol = conta_palavras(uol), p1=palavras_uol[0], p2=palavras_uol[1], p3=palavras_uol[2], p4=palavras_uol[3], p5=palavras_uol[4],
     semana_bolso, mes_bolso, ano_bolso = contagem_candidatos('Bolsonaro', uol)
     semana_lula, mes_lula, ano_lula = contagem_candidatos('Lula', uol)
     semana_moro, mes_moro, ano_moro = contagem_candidatos('Moro', uol)
@@ -44,7 +44,7 @@ def dados_candidatos():
         semana_moro=semana_moro, mes_moro=mes_moro, ano_moro=ano_moro,
         semana_ciro=semana_ciro, mes_ciro=mes_ciro, ano_ciro=ano_ciro,
         semana_doria=semana_doria, mes_doria=mes_doria, ano_doria=ano_doria,
-        palavras_uol=palavras_uol,
+        p1=p1, p2=p2, p3=p3, p4=p4, p5=p5,
         semana_bolso_globo=semana_bolso_globo, mes_bolso_globo=mes_bolso_globo, ano_bolso_globo=ano_bolso_globo,
         semana_lula_globo=semana_lula_globo, mes_lula_globo=mes_lula_globo, ano_lula_globo=ano_lula_globo,
         semana_moro_globo=semana_moro_globo, mes_moro_globo=mes_moro_globo, ano_moro_globo=ano_moro_globo,
