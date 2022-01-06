@@ -9,3 +9,4 @@ bs4==0.0.1
 selenium==4.1.0
 webdriver-manager
 gunicorn
+nltk
