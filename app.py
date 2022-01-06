@@ -43,7 +43,7 @@ def dados_candidatos():
         semana_moro=semana_moro, mes_moro=mes_moro, ano_moro=ano_moro,
         semana_ciro=semana_ciro, mes_ciro=mes_ciro, ano_ciro=ano_ciro,
         semana_doria=semana_doria, mes_doria=mes_doria, ano_doria=ano_doria,
-        palavras_uol=palavras_uol
+        palavras_uol=palavras_uol,
         semana_bolso_globo=semana_bolso_globo, mes_bolso_globo=mes_bolso_globo, ano_bolso_globo=ano_bolso_globo,
         semana_lula_globo=semana_lula_globo, mes_lula_globo=mes_lula_globo, ano_lula_globo=ano_lula_globo,
         semana_moro_globo=semana_moro_globo, mes_moro_globo=mes_moro_globo, ano_moro_globo=ano_moro_globo,
