@@ -1,4 +1,5 @@
 import gspread
+import time
 import base64
 import os
 import json
@@ -72,7 +73,7 @@ g9=palavras_globo[8][1]
 g10=palavras_globo[9][1] 
 
 contagem_globo = spreadsheet.worksheet('contagem_globo')
-
+time.sleep(10)
 gb1 = contagem_globo.acell('B2').value
 gb2 = contagem_globo.acell('C2').value
 gb3 = contagem_globo.acell('D2').value
@@ -94,7 +95,7 @@ gd2 = contagem_globo.acell('C6').value
 gd3 = contagem_globo.acell('D6').value
 
 contagem_uol = spreadsheet.worksheet('contagem_uol')
-
+time.sleep(10)
 ub1 = contagem_uol.acell('B2').value
 ub2 = contagem_uol.acell('C2').value
 ub3 = contagem_uol.acell('D2').value
