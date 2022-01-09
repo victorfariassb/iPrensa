@@ -71,8 +71,7 @@ g8=palavras_globo[7][1]
 g9=palavras_globo[8][1] 
 g10=palavras_globo[9][1] 
 
-worksheet3 = spreadsheet.worksheet('contagem_globo')
-contagem_globo = pd.DataFrame(worksheet3.get_all_records())
+contagem_globo = spreadsheet.worksheet('contagem_globo')
 
 gb1 = contagem_globo.acell('B2').value
 gb2 = contagem_globo.acell('C2').value
@@ -94,8 +93,7 @@ gd1 = contagem_globo.acell('B6').value
 gd2 = contagem_globo.acell('C6').value
 gd3 = contagem_globo.acell('D6').value
 
-worksheet4 = spreadsheet.worksheet('contagem_uol')
-contagem_uol = pd.DataFrame(worksheet4.get_all_records())
+contagem_uol = spreadsheet.worksheet('contagem_uol')
 
 ub1 = contagem_uol.acell('B2').value
 ub2 = contagem_uol.acell('C2').value
