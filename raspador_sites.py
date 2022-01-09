@@ -17,6 +17,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
+from conta_candidato import contagem_candidatos
+
 # In[ ]:
 
 chrome_options = webdriver.ChromeOptions()
@@ -32,7 +34,7 @@ credentials = json.loads(conteudo)
 
 service_account = gspread.service_account_from_dict(credentials) # autenticação
 spreadsheet = service_account.open_by_key(spreadsheet_id) #abrir arquivo
-worksheet = spreadsheet.worksheet('globo') # escolhe aba
+globo = spreadsheet.worksheet('globo') # escolhe aba
 
 # Função recursiva para coletar editoria de matérias
 def pega_editoria(link):
@@ -67,15 +69,17 @@ def coleta_globo():
         titulo = re.sub(r"\n+", '', titulo)
         posicao = pega_localizacao(dado)
         link = dado.get('href')
-        worksheet.append_row([f"materia {num}", dia, editoria, titulo, posicao, link])
+        globo.append_row([f"materia {num}", dia, editoria, titulo, posicao, link])
         globo[f'materia {num}'] = [dia, editoria, posicao, titulo, link]
 
     df_globo = pd.DataFrame({key: pd.Series(value) for key, value in globo.items()}).T
     return df_globo
 
 coleta_globo()
+contagem_candidatos(globo, 'contagem_globo')
 
-worksheet = spreadsheet.worksheet('uol') # escolhe aba
+
+uol = spreadsheet.worksheet('uol') # escolhe aba
 
 def coleta_uol():
     uol = {}
@@ -106,9 +110,11 @@ def coleta_uol():
                         tit = tit.strip()
                         tit = re.sub(r"\n+\s+", ': ', tit)
                         titulo = tit
-                        worksheet.append_row([f'materia {num}', dia, classe, link, titulo])
+                        uol.append_row([f'materia {num}', dia, classe, link, titulo])
                         uol[f'materia {num}'] = [dia, classe, titulo, link]
     df_uol = pd.DataFrame({key: pd.Series(value) for key, value in uol.items()}).T
     return df_uol
 
 coleta_uol()
+contagem_candidatos(uol, 'contagem_uol')
+
