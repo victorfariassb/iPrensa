@@ -75,50 +75,50 @@ semana_globo = contagem_globo.col_values(2)
 mes_globo = contagem_globo.col_values(3)
 ano_globo = contagem_globo.col_values(4)
 
-gb1 = semana_globo[0]
-gb2 = mes_globo[0]
-gb3 = ano_globo[0]
+gb1 = semana_globo[1]
+gb2 = mes_globo[1]
+gb3 = ano_globo[1]
 
-gl1 = semana_globo[1]
-gl2 = mes_globo[1]
-gl3 = ano_globo[1]
+gl1 = semana_globo[2]
+gl2 = mes_globo[2]
+gl3 = ano_globo[2]
 
-gm1 = semana_globo[2]
-gm2 = mes_globo[2]
-gm3 = ano_globo[2]
+gm1 = semana_globo[3]
+gm2 = mes_globo[3]
+gm3 = ano_globo[3]
 
-gc1 = semana_globo[3]
-gc2 = mes_globo[3]
-gc3 = ano_globo[3]
+gc1 = semana_globo[4]
+gc2 = mes_globo[4]
+gc3 = ano_globo[4]
 
-gd1 = semana_globo[4]
-gd2 = mes_globo[4]
-gd3 = ano_globo[4]
+gd1 = semana_globo[5]
+gd2 = mes_globo[5]
+gd3 = ano_globo[5]
 
 contagem_uol = spreadsheet.worksheet('contagem_uol')
 semana_uol = contagem_uol.col_values(2)
 mes_uol = contagem_uol.col_values(3)
 ano_uol = contagem_uol.col_values(4)
 
-ub1 = semana_uol[0]
-ub2 = mes_uol[0]
-ub3 = ano_uol[0]
+ub1 = semana_uol[1]
+ub2 = mes_uol[1]
+ub3 = ano_uol[1]
 
-ul1 = semana_uol[1]
-ul2 = mes_uol[1]
-ul3 = ano_uol[1]
+ul1 = semana_uol[2]
+ul2 = mes_uol[2]
+ul3 = ano_uol[2]
 
-um1 = semana_uol[2]
-um2 = mes_uol[2]
-um3 = ano_uol[2]
+um1 = semana_uol[3]
+um2 = mes_uol[3]
+um3 = ano_uol[3]
 
-uc1 = semana_uol[3]
-uc2 = mes_uol[3]
-uc3 = ano_uol[3]
+uc1 = semana_uol[4]
+uc2 = mes_uol[4]
+uc3 = ano_uol[4]
 
-ud1 = semana_uol[4]
-ud2 = mes_uol[4]
-ud3 = ano_uol[4]
+ud1 = semana_uol[5]
+ud2 = mes_uol[5]
+ud3 = ano_uol[5]
 
 
 @app.route("/")
