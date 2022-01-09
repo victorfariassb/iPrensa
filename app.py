@@ -1,5 +1,4 @@
 import gspread
-import time
 import base64
 import os
 import json
@@ -7,7 +6,6 @@ import pandas as pd
 
 from flask import Flask, render_template
 
-from conta_candidatos import contagem_candidatos
 from contagem_palavras import conta_palavras
 
 app = Flask(__name__)
@@ -73,48 +71,54 @@ g9=palavras_globo[8][1]
 g10=palavras_globo[9][1] 
 
 contagem_globo = spreadsheet.worksheet('contagem_globo')
-time.sleep(10)
-gb1 = contagem_globo.acell('B2').value
-gb2 = contagem_globo.acell('C2').value
-gb3 = contagem_globo.acell('D2').value
+semana_globo = contagem_globo.col_values(2)
+mes_globo = contagem_globo.col_values(3)
+ano_globo = contagem_globo.col_values(4)
 
-gl1 = contagem_globo.acell('B3').value
-gl2 = contagem_globo.acell('C3').value
-gl3 = contagem_globo.acell('D3').value
+gb1 = semana_globo[0]
+gb2 = mes_globo[0]
+gb3 = ano_globo[0]
 
-gm1 = contagem_globo.acell('B4').value
-gm2 = contagem_globo.acell('C4').value
-gm3 = contagem_globo.acell('D4').value
+gl1 = semana_globo[1]
+gl2 = mes_globo[1]
+gl3 = ano_globo[1]
 
-gc1 = contagem_globo.acell('B5').value
-gc2 = contagem_globo.acell('C5').value
-gc3 = contagem_globo.acell('D5').value
+gm1 = semana_globo[2]
+gm2 = mes_globo[2]
+gm3 = ano_globo[2]
 
-gd1 = contagem_globo.acell('B6').value
-gd2 = contagem_globo.acell('C6').value
-gd3 = contagem_globo.acell('D6').value
+gc1 = semana_globo[3]
+gc2 = mes_globo[3]
+gc3 = ano_globo[3]
+
+gd1 = semana_globo[4]
+gd2 = mes_globo[4]
+gd3 = ano_globo[4]
 
 contagem_uol = spreadsheet.worksheet('contagem_uol')
-time.sleep(10)
-ub1 = contagem_uol.acell('B2').value
-ub2 = contagem_uol.acell('C2').value
-ub3 = contagem_uol.acell('D2').value
+semana_uol = contagem_uol.col_values(2)
+mes_uol = contagem_uol.col_values(3)
+ano_uol = contagem_uol.col_values(4)
 
-ul1 = contagem_uol.acell('B3').value
-ul2 = contagem_uol.acell('C3').value
-ul3 = contagem_uol.acell('D3').value
+ub1 = semana_uol[0]
+ub2 = mes_uol[0]
+ub3 = ano_uol[0]
 
-um1 = contagem_uol.acell('B4').value
-um2 = contagem_uol.acell('C4').value
-um3 = contagem_uol.acell('D4').value
+ul1 = semana_uol[1]
+ul2 = mes_uol[1]
+ul3 = ano_uol[1]
 
-uc1 = contagem_uol.acell('B5').value
-uc2 = contagem_uol.acell('C5').value
-uc3 = contagem_uol.acell('D5').value
+um1 = semana_uol[2]
+um2 = mes_uol[2]
+um3 = ano_uol[2]
 
-ud1 = contagem_uol.acell('B6').value
-ud2 = contagem_uol.acell('C6').value
-ud3 = contagem_uol.acell('D6').value
+uc1 = semana_uol[3]
+uc2 = mes_uol[3]
+uc3 = ano_uol[3]
+
+ud1 = semana_uol[4]
+ud2 = mes_uol[4]
+ud3 = ano_uol[4]
 
 
 @app.route("/")
