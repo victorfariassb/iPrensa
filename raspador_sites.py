@@ -76,6 +76,7 @@ def coleta_globo():
     return df_globo
 
 coleta_globo()
+
 contagem_candidatos(globo, 'contagem_globo')
 
 
@@ -116,5 +117,6 @@ def coleta_uol():
     return df_uol
 
 coleta_uol()
+
 contagem_candidatos(uol, 'contagem_uol')
 
