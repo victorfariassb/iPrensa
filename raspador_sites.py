@@ -36,6 +36,8 @@ service_account = gspread.service_account_from_dict(credentials) # autenticaçã
 spreadsheet = service_account.open_by_key(spreadsheet_id) #abrir arquivo
 
 globo_sheet = spreadsheet.worksheet('globo') # escolhe aba
+globo_df = globo_sheet.get_all_records()
+globo_df = pd.DataFrame(globo_df)
 
 # Função recursiva para coletar editoria de matérias
 def pega_editoria(link):
@@ -78,10 +80,12 @@ def coleta_globo():
 
 coleta_globo()
 
-contagem_candidatos(globo_sheet)
+contagem_candidatos(globo_df)
 
 
 uol_sheet = spreadsheet.worksheet('uol') # escolhe aba
+uol_df = uol_sheet.get_all_records()
+uol_df = pd.DataFrame(uol_df)
 
 def coleta_uol():
     uol = {}
@@ -119,7 +123,7 @@ def coleta_uol():
 
 coleta_uol()
 
-contagem_candidatos(uol_sheet)
+contagem_candidatos(uol_df)
 
 jp_sheet = spreadsheet.worksheet('jp') # escolhe aba
 
