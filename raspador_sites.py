@@ -77,7 +77,7 @@ def coleta_globo():
 
 coleta_globo()
 
-contagem_candidatos(globo, 'contagem_globo')
+contagem_candidatos(globo)
 
 
 uol = spreadsheet.worksheet('uol') # escolhe aba
@@ -118,7 +118,7 @@ def coleta_uol():
 
 coleta_uol()
 
-contagem_candidatos(uol, 'contagem_uol')
+contagem_candidatos(uol)
 
 jp = spreadsheet.worksheet('jp') # escolhe aba
 
