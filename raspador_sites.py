@@ -140,7 +140,7 @@ def coleta_jp():
             tipo = 'manchete'
             link = pega_link(manchete)
             editoria = editoria.text
-            jovem_pam.append_row([dia, editoria, titulo, tipo, link])
+            jp.append_row([dia, editoria, titulo, tipo, link])
             jovem_pan[f'materia {num}'] = [agora, editoria, tipo, titulo, link]
 
     for manchete_inferior in soup.find_all('h3', class_='title'):
@@ -151,7 +151,7 @@ def coleta_jp():
             tipo = 'manchete_inferior'
             link = pega_link(manchete_inferior)
             editoria = editoria.text
-            jovem_pam.append_row([dia, editoria, titulo, tipo, link])
+            jp.append_row([dia, editoria, titulo, tipo, link])
             jovem_pan[f'materia {num}'] = [agora, editoria, tipo, titulo, link]
 
 
@@ -165,7 +165,7 @@ def coleta_jp():
             editoria = None
         tipo = 'noticias'
         link = pega_link(dado)
-        jovem_pam.append_row([dia, editoria, titulo, tipo, link])
+        jp.append_row([dia, editoria, titulo, tipo, link])
         jovem_pan[f'materia {num}'] = [dia, editoria, tipo, titulo, link]
    
 coleta_jp()
