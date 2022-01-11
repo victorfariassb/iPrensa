@@ -70,33 +70,6 @@ g8=palavras_globo[7][1]
 g9=palavras_globo[8][1] 
 g10=palavras_globo[9][1] 
 
-worksheet3 = spreadsheet.worksheet('jp')
-jp = pd.DataFrame(worksheet3.get_all_records())
-
-palavras_jp = conta_palavras(jp)
-jp1 = palavras_jp[0][0]
-jp2 = palavras_jp[1][0]
-jp3 = palavras_jp[2][0]
-jp4 = palavras_jp[3][0]
-jp5 = palavras_jp[4][0]
-jp6 = palavras_jp[5][0]
-jp7 = palavras_jp[6][0]
-jp8 = palavras_jp[7][0]
-jp9 = palavras_jp[8][0]
-jp10 = palavras_jp[9][0]
-
-jp_1 = palavras_jp[0][1]
-jp_2 = palavras_jp[1][1]
-jp_3 = palavras_jp[2][1]
-jp_4 = palavras_jp[3][1]
-jp_5 = palavras_jp[4][1]
-jp_6 = palavras_jp[5][1]
-jp_7 = palavras_jp[6][1]
-jp_8 = palavras_jp[7][1]
-jp_9 = palavras_jp[8][1]
-jp_10 = palavras_jp[9][1]
-
-
 contagem_globo = spreadsheet.worksheet('contagem_globo')
 semana_globo = contagem_globo.col_values(2)
 mes_globo = contagem_globo.col_values(3)
