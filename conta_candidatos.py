@@ -4,7 +4,7 @@ import datetime
 import numpy as np
 
 
-def contagem_candidatos(dataframe):
+def contagem_candidatos(dataframe, pagina):
     linha = 2
     coluna = 2
 
