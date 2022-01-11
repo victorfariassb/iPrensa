@@ -4,11 +4,11 @@ import datetime
 import numpy as np
 
 
-def contagem_candidatos(pagina):
+def contagem_candidatos(base, contagem):
     linha = 2
     coluna = 2
     
-    dataframe = pagina.get_all_records()
+    dataframe = base.get_all_records()
     dataframe = pd.DataFrame(dataframe)   
 
     presidenciaveis = ['Bolsonaro', 'Lula', 'Moro', 'Ciro', 'Doria', 'Pacheco', 'Tebet', 'Vieira']
@@ -44,9 +44,10 @@ def contagem_candidatos(pagina):
 
         termo_ano = df_ano[['link']][df_ano['titulo'].str.contains(f'{presidenciavel}')].drop_duplicates().reset_index(drop=True)
         termo_ano = len(termo_ano)
-
-        pagina.update_cell(linha, coluna, termo_semana)
-        pagina.update_cell(linha, coluna + 1, termo_mes)
-        pagina.update_cell(linha, coluna + 2, termo_ano)
+        
+        
+        contagem.update_cell(linha, coluna, termo_semana)
+        contagem.update_cell(linha, coluna + 1, termo_mes)
+        contagem.update_cell(linha, coluna + 2, termo_ano)
         linha += 1
 
