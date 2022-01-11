@@ -34,7 +34,8 @@ credentials = json.loads(conteudo)
 
 service_account = gspread.service_account_from_dict(credentials) # autenticação
 spreadsheet = service_account.open_by_key(spreadsheet_id) #abrir arquivo
-globo = spreadsheet.worksheet('globo') # escolhe aba
+
+globo_sheet = spreadsheet.worksheet('globo') # escolhe aba
 
 # Função recursiva para coletar editoria de matérias
 def pega_editoria(link):
@@ -69,7 +70,7 @@ def coleta_globo():
         titulo = re.sub(r"\n+", '', titulo)
         posicao = pega_localizacao(dado)
         link = dado.get('href')
-        globo.append_row([f"materia {num}", dia, editoria, titulo, posicao, link])
+        globo_sheet.append_row([f"materia {num}", dia, editoria, titulo, posicao, link])
         globo[f'materia {num}'] = [dia, editoria, posicao, titulo, link]
 
     df_globo = pd.DataFrame({key: pd.Series(value) for key, value in globo.items()}).T
@@ -80,7 +81,7 @@ coleta_globo()
 contagem_candidatos(globo)
 
 
-uol = spreadsheet.worksheet('uol') # escolhe aba
+uol_sheet = spreadsheet.worksheet('uol') # escolhe aba
 
 def coleta_uol():
     uol = {}
@@ -111,7 +112,7 @@ def coleta_uol():
                         tit = tit.strip()
                         tit = re.sub(r"\n+\s+", ': ', tit)
                         titulo = tit
-                        uol.append_row([f'materia {num}', dia, classe, link, titulo])
+                        uol_sheet.append_row([f'materia {num}', dia, classe, link, titulo])
                         uol[f'materia {num}'] = [dia, classe, titulo, link]
     df_uol = pd.DataFrame({key: pd.Series(value) for key, value in uol.items()}).T
     return df_uol
@@ -120,7 +121,7 @@ coleta_uol()
 
 contagem_candidatos(uol)
 
-jp = spreadsheet.worksheet('jp') # escolhe aba
+jp_sheet = spreadsheet.worksheet('jp') # escolhe aba
 
 def coleta_jp():
     jovem_pan = {}
@@ -140,7 +141,7 @@ def coleta_jp():
             tipo = 'manchete'
             link = pega_link(manchete)
             editoria = editoria.text
-            jp.append_row([dia, editoria, titulo, tipo, link])
+            jp_sheet.append_row([dia, editoria, titulo, tipo, link])
             jovem_pan[f'materia {num}'] = [agora, editoria, tipo, titulo, link]
 
     for manchete_inferior in soup.find_all('h3', class_='title'):
@@ -151,7 +152,7 @@ def coleta_jp():
             tipo = 'manchete_inferior'
             link = pega_link(manchete_inferior)
             editoria = editoria.text
-            jp.append_row([dia, editoria, titulo, tipo, link])
+            jp_sheet.append_row([dia, editoria, titulo, tipo, link])
             jovem_pan[f'materia {num}'] = [agora, editoria, tipo, titulo, link]
 
 
@@ -165,7 +166,7 @@ def coleta_jp():
             editoria = None
         tipo = 'noticias'
         link = pega_link(dado)
-        jp.append_row([dia, editoria, titulo, tipo, link])
+        jp_sheet.append_row([dia, editoria, titulo, tipo, link])
         jovem_pan[f'materia {num}'] = [dia, editoria, tipo, titulo, link]
    
 coleta_jp()
