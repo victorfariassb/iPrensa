@@ -120,3 +120,53 @@ coleta_uol()
 
 contagem_candidatos(uol, 'contagem_uol')
 
+jp = spreadsheet.worksheet('jp') # escolhe aba
+
+def coleta_jp():
+    jovem_pan = {}
+    num = 0
+
+    now = datetime.now(pytz.timezone('Brazil/East'))
+    dia = now.strftime("%d/%m/%Y %H:%M:%S")
+
+    resposta = requests.get("https://jovempan.com.br/")
+    html = resposta.text
+    soup = bs(html, 'html.parser')
+    for manchete in soup.find_all('h2', class_='title'):
+        editoria = manchete.parent.parent.find('h6', class_='category')
+        if editoria is not None:
+            num += 1
+            titulo = manchete.text
+            tipo = 'manchete'
+            link = pega_link(manchete)
+            editoria = editoria.text
+            jovem_pam.append_row([dia, editoria, titulo, tipo, link])
+            jovem_pan[f'materia {num}'] = [agora, editoria, tipo, titulo, link]
+
+    for manchete_inferior in soup.find_all('h3', class_='title'):
+        editoria = manchete_inferior.parent.parent.find('h6', class_='category')
+        if editoria is not None:
+            num += 1
+            titulo = manchete_inferior.text
+            tipo = 'manchete_inferior'
+            link = pega_link(manchete_inferior)
+            editoria = editoria.text
+            jovem_pam.append_row([dia, editoria, titulo, tipo, link])
+            jovem_pan[f'materia {num}'] = [agora, editoria, tipo, titulo, link]
+
+
+    for dado in soup.find_all('p', class_='title'):
+        num += 1
+        titulo = dado.text
+        editoria = dado.parent.find('h6', class_='category')
+        if editoria is not None:
+            editoria = editoria.text
+        else:
+            editoria = None
+        tipo = 'noticias'
+        link = pega_link(dado)
+        jovem_pam.append_row([dia, editoria, titulo, tipo, link])
+        jovem_pan[f'materia {num}'] = [dia, editoria, tipo, titulo, link]
+   
+coleta_jp()
+
