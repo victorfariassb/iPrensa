@@ -53,7 +53,6 @@ def pega_localizacao(link):
     
 
 def coleta_globo():
-    globo = {}
     num = 0
     
     now = datetime.now(pytz.timezone('Brazil/East'))
@@ -72,9 +71,6 @@ def coleta_globo():
         posicao = pega_localizacao(dado)
         link = dado.get('href')
         globo_sheet.append_row([f"materia {num}", dia, editoria, titulo, posicao, link])
-        globo[f'materia {num}'] = [dia, editoria, posicao, titulo, link]
-
-    df_globo = pd.DataFrame({key: pd.Series(value) for key, value in globo.items()}).T
     return df_globo
 
 coleta_globo()
@@ -86,7 +82,6 @@ uol_sheet = spreadsheet.worksheet('uol') # escolhe aba
 contagem_uol = spreadsheet.worksheet('contagem_uol')
 
 def coleta_uol():
-    uol = {}
     num = 0
     classes_drop = ['headerDesktop__logo__hyperlink', 'linkExternal', 'followVideo__link', 'cardVideo__content__titleBrand__link',
                     'headerCard__link', 'headerSection__link', 'headlineAd__link']
@@ -115,18 +110,17 @@ def coleta_uol():
                         tit = re.sub(r"\n+\s+", ': ', tit)
                         titulo = tit
                         uol_sheet.append_row([f'materia {num}', dia, classe, link, titulo])
-                        uol[f'materia {num}'] = [dia, classe, titulo, link]
-    df_uol = pd.DataFrame({key: pd.Series(value) for key, value in uol.items()}).T
     return df_uol
 
 coleta_uol()
 
 contagem_candidatos(uol_sheet, contagem_uol)
 
-jp_sheet = spreadsheet.worksheet('jp') # escolhe aba
+jp_sheet = spreadsheet.worksheet('joven_pan') 
+contagem_jp = spreadsheet.worksheet('contagem_jp')
+
 
 def coleta_jp():
-    jovem_pan = {}
     num = 0
 
     now = datetime.now(pytz.timezone('Brazil/East'))
@@ -144,7 +138,6 @@ def coleta_jp():
             link = pega_link(manchete)
             editoria = editoria.text
             jp_sheet.append_row([dia, editoria, titulo, tipo, link])
-            jovem_pan[f'materia {num}'] = [dia, editoria, tipo, titulo, link]
 
     for manchete_inferior in soup.find_all('h3', class_='title'):
         editoria = manchete_inferior.parent.parent.find('h6', class_='category')
@@ -155,8 +148,6 @@ def coleta_jp():
             link = pega_link(manchete_inferior)
             editoria = editoria.text
             jp_sheet.append_row([dia, editoria, titulo, tipo, link])
-            jovem_pan[f'materia {num}'] = [dia, editoria, tipo, titulo, link]
-
 
     for dado in soup.find_all('p', class_='title'):
         num += 1
@@ -169,7 +160,9 @@ def coleta_jp():
         tipo = 'noticias'
         link = pega_link(dado)
         jp_sheet.append_row([dia, editoria, titulo, tipo, link])
-        jovem_pan[f'materia {num}'] = [dia, editoria, tipo, titulo, link]
+        
    
 coleta_jp()
+
+contagem_candidatos(jp_sheet, contagem_jp)
 
