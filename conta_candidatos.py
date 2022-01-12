@@ -8,8 +8,7 @@ def contagem_candidatos(base, contagem):
     linha = 2
     coluna = 2
     
-    dataframe = base.get_all_records()
-    dataframe = pd.DataFrame(dataframe)   
+    dataframe = pd.DataFrame(base.get_all_records())   
 
     presidenciaveis = ['Bolsonaro', 'Lula', 'Moro', 'Ciro', 'Doria', 'Pacheco', 'Tebet', 'Vieira']
     for presidenciavel in presidenciaveis:
@@ -22,6 +21,9 @@ def contagem_candidatos(base, contagem):
         dataframe['titulo'] = dataframe['titulo'].str.replace('Carlos Bolsonaro', 'Carlos B.')
         dataframe['titulo'] = dataframe['titulo'].str.replace('Flávio Bolsonaro', 'Flávio B.')
         dataframe['titulo'] = dataframe['titulo'].str.replace('Eduardo Bolsonaro', 'Eduardo B.')
+        dataframe['titulo'] = dataframe['titulo'].str.replace('Vinícius Rodrigues Vieira', 'Vinícius Rodrigues V.')
+        dataframe['titulo'] = dataframe['titulo'].str.replace('Paulo Vieira', 'Paulo V.')
+        dataframe['titulo'] = dataframe['titulo'].str.replace('Susana Vieira', 'Susana V.')
 
         df_semana = dataframe[dataframe['data'] >= semana]
 
