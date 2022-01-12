@@ -111,6 +111,7 @@ def coleta_uol():
                         titulo = tit
                         uol_sheet.append_row([f'materia {num}', dia, classe, link, titulo])
 
+                        
 coleta_uol()
 
 contagem_candidatos(uol_sheet, contagem_uol)
@@ -118,6 +119,12 @@ contagem_candidatos(uol_sheet, contagem_uol)
 jp_sheet = spreadsheet.worksheet('jovem_pan') 
 contagem_jp = spreadsheet.worksheet('contagem_jp')
 
+def pega_link(link):
+    action = link.attrs.get('href')
+    if not action and link.parent:
+        return pega_link(link.parent)
+    else:
+        return action
 
 def coleta_jp():
     num = 0
