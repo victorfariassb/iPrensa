@@ -21,11 +21,11 @@ from conta_candidatos import contagem_candidatos
 
 # In[ ]:
 
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('--disable-gpu')
-chrome_options.add_argument('--no-sandbox')
-chrome_options.binary_location = os.environ["GOOGLE_CHROME_PATH"]
-browser = webdriver.Chrome(chrome_options=chrome_options, executable_path=ChromeDriverManager().install())
+options = webdriver.ChromeOptions()
+options.add_argument('--disable-gpu')
+options.add_argument('--no-sandbox')
+options.binary_location = os.environ["GOOGLE_CHROME_PATH"]
+browser = webdriver.Chrome(options=options, executable_path=ChromeDriverManager().install())
 
 spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
 conteudo_codificado =  os.environ['GOOGLE_SHEETS_CREDENTIALS']
