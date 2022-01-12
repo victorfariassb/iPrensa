@@ -8,291 +8,290 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-      <center>
-        <font face="Cambria">
-          <font color="#FF8C00">
-            <h1>Radar da Imprensa</h1>
-          </font>
-          <br/>
-        </center>
-        <div>
-          <center>
-            <font face="Calibri"><font size=4>
-              <p>Seja bem-vindo! Este é um <a href='https://github.com/victorfariassb/radar_imprensa'>projeto</a> criado por <a href="https://twitter.com/__victorfarias">Victor Farias</a> para acompanhar os principais portais de notícia do Brasil e ver como alguns temas estão sendo noticiados</p>
-              <p>Os dados, do <b>Uol e da Globo.com</b>, são coletados hora a hora, das 8h às 22h, e estão disponíveis <a href="https://docs.google.com/spreadsheets/d/1UY2MkXq41EBEU5AXxGDE2oVrd8rQgPcc28xWi7oHVOU/edit?usp=sharing"><b>aqui.</b></a></p>
-              <p>O programa foi desenvolvido no <b>Master de Jornalismo de Dados, Automação e Data Storytelling do Insper <a href="https://www.insper.edu.br/pos-graduacao/master-em-jornalismo-de-dados-automacao-e-data-storytelling/">(MJDA)</b></a><br/></p>
+        <center>
+          <font face="Cambria">
+            <font color="#FF8C00">
+              <h1>Radar da Imprensa</h1>
             </font>
             <br/>
           </center>
+          <div>
+            <center>
+              <font face="Calibri"><font size=4>
+                <p>Seja bem-vindo! Este é um <a href='https://github.com/victorfariassb/radar_imprensa'>projeto</a> criado por <a href="https://twitter.com/__victorfarias">Victor Farias</a> para acompanhar os principais portais de notícia do Brasil e ver como alguns temas estão sendo noticiados</p>
+                <p>Os dados, do <b>Uol e da Globo.com</b>, são coletados hora a hora, das 8h às 22h, e estão disponíveis <a href="https://docs.google.com/spreadsheets/d/1UY2MkXq41EBEU5AXxGDE2oVrd8rQgPcc28xWi7oHVOU/edit?usp=sharing"><b>aqui.</b></a></p>
+                <p>O programa foi desenvolvido no <b>Master de Jornalismo de Dados, Automação e Data Storytelling do Insper <a href="https://www.insper.edu.br/pos-graduacao/master-em-jornalismo-de-dados-automacao-e-data-storytelling/">(MJDA)</b></a><br/></p>
+              </font>
+              <br/>
+            </center>
+          </div>
+          <div>
+            <center>
+              <font face="Calibri">
+                <h4>Termos mais mencionados na Globo, no Uol e na Jovem Pan</h4>
+                <p>Neste caso, são considerados títulos repetidos, de modo a ver qual palavra apareceu por mais tempo nas páginas dos sites. A coleta é feita por palavra em caixa baixa, ou seja, 'São Paulo' e 'Paulo Guedes' somarão 2 'paulo', 1 'são' e 1 'guedes'.</p>
+              </font>
+            </center>
+          </div>
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Posição</th>
+                <th scope="col">Globo</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Uol</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Jovem Pan</th>
+                <th scope="col">Quantidade</th>
+              </tr>
+            </thead>
+            <thead>
+              <tr>
+                <th scope="row">1º</th>
+                <td>{{ w1 }}</td>
+                <td>{{ g1 }}</td>
+                <td>{{ p1 }}</td>
+                <td>{{ u1 }}</td>
+                <td>{{ jp1 }}</td>
+                <td>{{ jp_1 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">2º</th>
+                <td>{{ w2 }}</td>
+                <td>{{ g2 }}</td>
+                <td>{{ p2 }}</td>
+                <td>{{ u2 }}</td>
+                <td>{{ jp2 }}</td>
+                <td>{{ jp_2 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">3º</th>
+                <td>{{ w3 }}</td>
+                <td>{{ g3 }}</td>
+                <td>{{ p3 }}</td>
+                <td>{{ u3 }}</td>
+                <td>{{ jp3 }}</td>
+                <td>{{ jp_3 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">4º</th>
+                <td>{{ w4 }}</td>
+                <td>{{ g4 }}</td>
+                <td>{{ p4 }}</td>
+                <td>{{ u4 }}</td>
+                <td>{{ jp4 }}</td>
+                <td>{{ jp_4 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">5º</th>
+                <td>{{ w5 }}</td>
+                <td>{{ g5 }}</td>
+                <td>{{ p5 }}</td>
+                <td>{{ u5 }}</td>
+                <td>{{ jp5 }}</td>
+                <td>{{ jp_5 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">6º</th>
+                <td>{{ w6 }}</td>
+                <td>{{ g6 }}</td>
+                <td>{{ p6 }}</td>
+                <td>{{ u6 }}</td>
+                <td>{{ jp6 }}</td>
+                <td>{{ jp_6 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">7º</th>
+                <td>{{ w7 }}</td>
+                <td>{{ g7 }}</td>
+                <td>{{ p7 }}</td>
+                <td>{{ u7 }}</td>
+                <td>{{ jp7 }}</td>
+                <td>{{ jp_7 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">8º</th>
+                <td>{{ w8 }}</td>
+                <td>{{ g8 }}</td>
+                <td>{{ p8 }}</td>
+                <td>{{ u8 }}</td>
+                <td>{{ jp8 }}</td>
+                <td>{{ jp_8 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">9º</th>
+                <td>{{ w9 }}</td>
+                <td>{{ g9 }}</td>
+                <td>{{ p9 }}</td>
+                <td>{{ u9 }}</td>
+                <td>{{ jp9 }}</td>
+                <td>{{ jp_9 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">10º</th>
+                <td>{{ w10 }}</td>
+                <td>{{ g10 }}</td>
+                <td>{{ p10 }}</td>
+                <td>{{ u10 }}</td>
+                <td>{{ jp10 }}</td>
+                <td>{{ jp_10 }}</td>
+              </tr>
+              <br>
+            </thead>
+          </table>
+          <div>
+            <center>
+              <font face="Calibri">
+                <h4>Número de menções aos pré-candidatos no Uol</h4>
+                <p>Neste caso, não são consideraos títulos repetidos, somente o número de matérias que mencionam o candidato</p>
+              </font>
+            </center>
+          </div>
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Candidato</th>
+                <th scope="col">Semana</th>
+                <th scope="col">Mês</th>
+                <th scope="col">2022</th>
+              </tr>
+            </thead>
+            <thead>
+              <tr>
+                <th scope="row">Bolsonaro</th>
+                <td>{{ semana_bolso }}</td>
+                <td>{{ mes_bolso }}</td>
+                <td>{{ ano_bolso }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Lula</th>
+                <td>{{ semana_lula }}</td>
+                <td>{{ mes_lula }}</td>
+                <td>{{ ano_lula }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Moro</th>
+                <td>{{ semana_moro }}</td>
+                <td>{{ mes_moro }}</td>
+                <td>{{ ano_moro }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Ciro</th>
+                <td>{{ semana_ciro }}</td>
+                <td>{{ mes_ciro }}</td>
+                <td>{{ ano_ciro }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Doria</th>
+                <td>{{ semana_doria }}</td>
+                <td>{{ mes_doria }}</td>
+                <td>{{ ano_doria }}</td>
+              </tr>
+              <br/>
+            </thead>
+          </table>
+          <div>
+            <center>
+              <font face="Calibri">
+                <h4>Número de menções aos pré-candidatos na Globo.com</h4>
+                <p>Neste caso, não são consideraos títulos repetidos, somente o número de matérias que mencionam o candidato</p>
+              </font>
+            </center>
+          </div>
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Candidato</th>
+                <th scope="col">Semana</th>
+                <th scope="col">Mês</th>
+                <th scope="col">2022</th>
+              </tr>
+            </thead>
+            <thead>
+              <tr>
+                <th scope="row">Bolsonaro</th>
+                <td>{{ semana_bolso_globo }}</td>
+                <td>{{ mes_bolso_globo }}</td>
+                <td>{{ ano_bolso_globo }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Lula</th>
+                <td>{{ semana_lula_globo }}</td>
+                <td>{{ mes_lula_globo }}</td>
+                <td>{{ ano_lula_globo }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Moro</th>
+                <td>{{ semana_moro_globo }}</td>
+                <td>{{ mes_moro_globo }}</td>
+                <td>{{ ano_moro_globo }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Ciro</th>
+                <td>{{ semana_ciro_globo }}</td>
+                <td>{{ mes_ciro_globo }}</td>
+                <td>{{ ano_ciro_globo }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Doria</th>
+                <td>{{ semana_doria_globo }}</td>
+                <td>{{ mes_doria_globo }}</td>
+                <td>{{ ano_doria_globo }}</td>
+              </tr>
+            </thead>
+          </table>
+          <div>
+            <center>
+              <font face="Calibri">
+                <h4>Número de menções aos pré-candidatos na Jovem Pan</h4>
+                <p>Neste caso, não são consideraos títulos repetidos, somente o número de matérias que mencionam o candidato</p>
+              </font>
+            </center>
+          </div>
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Candidato</th>
+                <th scope="col">Semana</th>
+                <th scope="col">Mês</th>
+                <th scope="col">2022</th>
+              </tr>
+            </thead>
+            <thead>
+              <tr>
+                <th scope="row">Bolsonaro</th>
+                <td>{{ semana_bolso_jp }}</td>
+                <td>{{ mes_bolso_jp }}</td>
+                <td>{{ ano_bolso_jp }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Lula</th>
+                <td>{{ semana_lula_jp }}</td>
+                <td>{{ mes_lula_jp }}</td>
+                <td>{{ ano_lula_jp }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Moro</th>
+                <td>{{ semana_moro_jp }}</td>
+                <td>{{ mes_moro_jp }}</td>
+                <td>{{ ano_moro_jp }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Ciro</th>
+                <td>{{ semana_ciro_jp }}</td>
+                <td>{{ mes_ciro_jp }}</td>
+                <td>{{ ano_ciro_jp }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Doria</th>
+                <td>{{ semana_doria_jp }}</td>
+                <td>{{ mes_doria_jp }}</td>
+                <td>{{ ano_doria_jp }}</td>
+              </tr>
+            </thead>
+          </table>
         </div>
-        <div>
-          <center>
-            <font face="Calibri">
-              <h4>Termos mais mencionados na Globo, no Uol e na Jovem Pan</h4>
-              <p>Neste caso, são considerados títulos repetidos, de modo a ver qual palavra apareceu por mais tempo nas páginas dos sites. A coleta é feita por palavra em caixa baixa, ou seja, 'São Paulo' e 'Paulo Guedes' somarão 2 'paulo', 1 'são' e 1 'guedes'.</p>
-            </font>
-          </center>
-        </div>
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">Posição</th>
-              <th scope="col">Globo</th>
-              <th scope="col">Quantidade</th>
-              <th scope="col">Uol</th>
-              <th scope="col">Quantidade</th>
-              <th scope="col">Jovem Pan</th>
-              <th scope="col">Quantidade</th>
-            </tr>
-          </thead>
-          <thead>
-            <tr>
-              <th scope="row">1º</th>
-              <td>{{ w1 }}</td>
-              <td>{{ g1 }}</td>
-              <td>{{ p1 }}</td>
-              <td>{{ u1 }}</td>
-              <td>{{ jp1 }}</td>
-              <td>{{ jp_1 }}</td>
-            </tr>
-            <tr>
-              <th scope="row">2º</th>
-              <td>{{ w2 }}</td>
-              <td>{{ g2 }}</td>
-              <td>{{ p2 }}</td>
-              <td>{{ u2 }}</td>
-              <td>{{ jp2 }}</td>
-              <td>{{ jp_2 }}</td>
-            </tr>
-            <tr>
-              <th scope="row">3º</th>
-              <td>{{ w3 }}</td>
-              <td>{{ g3 }}</td>
-              <td>{{ p3 }}</td>
-              <td>{{ u3 }}</td>
-              <td>{{ jp3 }}</td>
-              <td>{{ jp_3 }}</td>
-            </tr>
-            <tr>
-              <th scope="row">4º</th>
-              <td>{{ w4 }}</td>
-              <td>{{ g4 }}</td>
-              <td>{{ p4 }}</td>
-              <td>{{ u4 }}</td>
-              <td>{{ jp4 }}</td>
-              <td>{{ jp_4 }}</td>
-            </tr>
-            <tr>
-              <th scope="row">5º</th>
-              <td>{{ w5 }}</td>
-              <td>{{ g5 }}</td>
-              <td>{{ p5 }}</td>
-              <td>{{ u5 }}</td>
-              <td>{{ jp5 }}</td>
-              <td>{{ jp_5 }}</td>
-            </tr>
-            <tr>
-              <th scope="row">6º</th>
-              <td>{{ w6 }}</td>
-              <td>{{ g6 }}</td>
-              <td>{{ p6 }}</td>
-              <td>{{ u6 }}</td>
-              <td>{{ jp6 }}</td>
-              <td>{{ jp_6 }}</td>
-            </tr>
-            <tr>
-              <th scope="row">7º</th>
-              <td>{{ w7 }}</td>
-              <td>{{ g7 }}</td>
-              <td>{{ p7 }}</td>
-              <td>{{ u7 }}</td>
-              <td>{{ jp7 }}</td>
-              <td>{{ jp_7 }}</td>
-            </tr>
-            <tr>
-              <th scope="row">8º</th>
-              <td>{{ w8 }}</td>
-              <td>{{ g8 }}</td>
-              <td>{{ p8 }}</td>
-              <td>{{ u8 }}</td>
-              <td>{{ jp8 }}</td>
-              <td>{{ jp_8 }}</td>
-            </tr>
-            <tr>
-              <th scope="row">9º</th>
-              <td>{{ w9 }}</td>
-              <td>{{ g9 }}</td>
-              <td>{{ p9 }}</td>
-              <td>{{ u9 }}</td>
-              <td>{{ jp9 }}</td>
-              <td>{{ jp_9 }}</td>
-            </tr>
-            <tr>
-              <th scope="row">10º</th>
-              <td>{{ w10 }}</td>
-              <td>{{ g10 }}</td>
-              <td>{{ p10 }}</td>
-              <td>{{ u10 }}</td>
-              <td>{{ jp10 }}</td>
-              <td>{{ jp_10 }}</td>
-            </tr>
-            <br>
-          </thead>
-        </table>
-        <div>
-          <center>
-            <font face="Calibri">
-              <h4>Número de menções aos pré-candidatos no Uol</h4>
-              <p>Neste caso, não são consideraos títulos repetidos, somente o número de matérias que mencionam o candidato</p>
-            </font>
-          </center>
-        </div>
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">Candidato</th>
-              <th scope="col">Semana</th>
-              <th scope="col">Mês</th>
-              <th scope="col">2022</th>
-            </tr>
-          </thead>
-          <thead>
-            <tr>
-              <th scope="row">Bolsonaro</th>
-              <td>{{ semana_bolso }}</td>
-              <td>{{ mes_bolso }}</td>
-              <td>{{ ano_bolso }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Lula</th>
-              <td>{{ semana_lula }}</td>
-              <td>{{ mes_lula }}</td>
-              <td>{{ ano_lula }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Moro</th>
-              <td>{{ semana_moro }}</td>
-              <td>{{ mes_moro }}</td>
-              <td>{{ ano_moro }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Ciro</th>
-              <td>{{ semana_ciro }}</td>
-              <td>{{ mes_ciro }}</td>
-              <td>{{ ano_ciro }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Doria</th>
-              <td>{{ semana_doria }}</td>
-              <td>{{ mes_doria }}</td>
-              <td>{{ ano_doria }}</td>
-            </tr>
-            <br/>
-          </thead>
-        </table>
-        <div>
-          <center>
-            <font face="Calibri">
-              <h4>Número de menções aos pré-candidatos na Globo.com</h4>
-              <p>Neste caso, não são consideraos títulos repetidos, somente o número de matérias que mencionam o candidato</p>
-            </font>
-          </center>
-        </div>
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">Candidato</th>
-              <th scope="col">Semana</th>
-              <th scope="col">Mês</th>
-              <th scope="col">2022</th>
-            </tr>
-          </thead>
-          <thead>
-            <tr>
-              <th scope="row">Bolsonaro</th>
-              <td>{{ semana_bolso_globo }}</td>
-              <td>{{ mes_bolso_globo }}</td>
-              <td>{{ ano_bolso_globo }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Lula</th>
-              <td>{{ semana_lula_globo }}</td>
-              <td>{{ mes_lula_globo }}</td>
-              <td>{{ ano_lula_globo }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Moro</th>
-              <td>{{ semana_moro_globo }}</td>
-              <td>{{ mes_moro_globo }}</td>
-              <td>{{ ano_moro_globo }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Ciro</th>
-              <td>{{ semana_ciro_globo }}</td>
-              <td>{{ mes_ciro_globo }}</td>
-              <td>{{ ano_ciro_globo }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Doria</th>
-              <td>{{ semana_doria_globo }}</td>
-              <td>{{ mes_doria_globo }}</td>
-              <td>{{ ano_doria_globo }}</td>
-            </tr>
-          </thead>
-        </table>
-        <div>
-          <center>
-            <font face="Calibri">
-              <h4>Número de menções aos pré-candidatos na Jovem Pan</h4>
-              <p>Neste caso, não são consideraos títulos repetidos, somente o número de matérias que mencionam o candidato</p>
-            </font>
-          </center>
-        </div>
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">Candidato</th>
-              <th scope="col">Semana</th>
-              <th scope="col">Mês</th>
-              <th scope="col">2022</th>
-            </tr>
-          </thead>
-          <thead>
-            <tr>
-              <th scope="row">Bolsonaro</th>
-              <td>{{ semana_bolso_jp }}</td>
-              <td>{{ mes_bolso_jp }}</td>
-              <td>{{ ano_bolso_jp }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Lula</th>
-              <td>{{ semana_lula_jp }}</td>
-              <td>{{ mes_lula_jp }}</td>
-              <td>{{ ano_lula_jp }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Moro</th>
-              <td>{{ semana_moro_jp }}</td>
-              <td>{{ mes_moro_jp }}</td>
-              <td>{{ ano_moro_jp }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Ciro</th>
-              <td>{{ semana_ciro_jp }}</td>
-              <td>{{ mes_ciro_jp }}</td>
-              <td>{{ ano_ciro_jp }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Doria</th>
-              <td>{{ semana_doria_jp }}</td>
-              <td>{{ mes_doria_jp }}</td>
-              <td>{{ ano_doria_jp }}</td>
-            </tr>
-          </thead>
-        </table>
-        </div>
-       </div>
       </div>
-      </body>
-    </html>
-  
+    </div>
+  </body>
+  </html>
