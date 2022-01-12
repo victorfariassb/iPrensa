@@ -159,10 +159,10 @@ def coleta_jp():
     for dado in soup.find_all('p', class_='title'):
         time.sleep(2)
         num += 1
-        titulo = dado.text
+        titulo = dado.text.strip()
         editoria = dado.parent.find('h6', class_='category')
         if editoria is not None:
-            editoria = editoria.text
+            editoria = editoria.text.strip()
         else:
             editoria = None
         tipo = 'noticias'
