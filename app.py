@@ -189,7 +189,7 @@ def dados_candidatos():
         semana_lula_globo=gl1, mes_lula_globo=gl2, ano_lula_globo=gl3,
         semana_moro_globo=gm1, mes_moro_globo=gm2, ano_moro_globo=gm3,
         semana_ciro_globo=gc1, mes_ciro_globo=gc2, ano_ciro_globo=gc3,
-        semana_doria_globo=gd1, mes_doria_globo=gd2, ano_doria_globo=gd3
+        semana_doria_globo=gd1, mes_doria_globo=gd2, ano_doria_globo=gd3,
         semana_bolso_jp=jpb1, mes_bolso_jp=jpb2, ano_bolso_jp=jpb3,
         semana_lula_jp=jpl1, mes_lula_jp=jpl2, ano_lula_jp=jpl3,
         semana_moro_jp=jpm1, mes_moro_jp=jpm2, ano_moro_jp=jpm3,
