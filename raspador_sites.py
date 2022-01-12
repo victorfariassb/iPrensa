@@ -71,8 +71,8 @@ def coleta_globo():
         posicao = pega_localizacao(dado)
         link = dado.get('href')
         globo_sheet.append_row([f"materia {num}", dia, editoria, titulo, posicao, link])
-    return df_globo
-
+    
+    
 coleta_globo()
 
 contagem_candidatos(globo_sheet, contagem_globo)
@@ -110,7 +110,6 @@ def coleta_uol():
                         tit = re.sub(r"\n+\s+", ': ', tit)
                         titulo = tit
                         uol_sheet.append_row([f'materia {num}', dia, classe, link, titulo])
-    return df_uol
 
 coleta_uol()
 
