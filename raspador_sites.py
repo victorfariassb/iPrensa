@@ -115,7 +115,7 @@ coleta_uol()
 
 contagem_candidatos(uol_sheet, contagem_uol)
 
-jp_sheet = spreadsheet.worksheet('joven_pan') 
+jp_sheet = spreadsheet.worksheet('jovem_pan') 
 contagem_jp = spreadsheet.worksheet('contagem_jp')
 
 
