@@ -180,7 +180,7 @@ def dados_candidatos():
         g1=g1, g2=g2, g3=g3, g4=g4, g5=g5, g6=g6, g7=g7, g8=g8, g9=g9, g10=g10,
         p1=p1, p2=p2, p3=p3, p4=p4, p5=p5, p6=p6, p7=p7, p8=p8, p9=p9, p10=p10,
         u1=u1, u2=u2, u3=u3, u4=u4, u5=u5, u6=u6, u7=u7, u8=u8, u9=u9, u10=u10,
-        jp1=jp1, jp2=jp2, jp3=jp3, jp4=jp4, jp5=jp5, jp6=jp6, jp7=jp7, jp8=jp8, jp19=jp9, jp10=jp10,
+        jp1=jp1, jp2=jp2, jp3=jp3, jp4=jp4, jp5=jp5, jp6=jp6, jp7=jp7, jp8=jp8, jp9=jp9, jp10=jp10,
         jp_1=jp_1, jp_2=jp_2, jp_3=jp_3, jp_4=jp_4, jp_5=jp_5, jp_6=jp_6, jp_7=jp_7, jp_8=jp_8, jp_9=jp_9, jp_10=jp_10,
         semana_bolso=ub1, mes_bolso=ub2, ano_bolso=ub3,
         semana_lula=ul1, mes_lula=ul2, ano_lula=ul3,
