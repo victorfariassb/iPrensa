@@ -70,6 +70,32 @@ g8=palavras_globo[7][1]
 g9=palavras_globo[8][1] 
 g10=palavras_globo[9][1] 
 
+worksheet3 = spreadsheet.worksheet('jovem_pan')
+jp = pd.DataFrame(worksheet3.get_all_records())
+
+palavras_jp = conta_palavras(jp)
+jp1 = palavras_jp[0][0]
+jp2 = palavras_jp[1][0]
+jp3 = palavras_jp[2][0]
+jp4 = palavras_jp[3][0]
+jp5 = palavras_jp[4][0]
+jp6 = palavras_jp[5][0]
+jp7 = palavras_jp[6][0]
+jp8 = palavras_jp[7][0]
+jp9 = palavras_jp[8][0]
+jp10 = palavras_jp[9][0]
+
+jp_1 = palavras_jp[0][1]
+jp_2 = palavras_jp[1][1]
+jp_3 = palavras_jp[2][1]
+jp_4 = palavras_jp[3][1]
+jp_5 = palavras_jp[4][1]
+jp_6 = palavras_jp[5][1]
+jp_7 = palavras_jp[6][1]
+jp_8 = palavras_jp[7][1]
+jp_9 = palavras_jp[8][1]
+jp_10 = palavras_jp[9][1]
+
 contagem_globo = spreadsheet.worksheet('contagem_globo')
 semana_globo = contagem_globo.col_values(2)
 mes_globo = contagem_globo.col_values(3)
@@ -120,6 +146,31 @@ ud1 = semana_uol[5]
 ud2 = mes_uol[5]
 ud3 = ano_uol[5]
 
+contagem_jp = spreadsheet.worksheet('contagem_jp')
+semana_jp = contagem_jp.col_values(2)
+mes_jp = contagem_jp.col_values(3)
+ano_jp = contagem_jp.col_values(4)
+
+jpb1 = semana_jp[1]
+jpb2 = mes_jp[1]
+jpb3 = ano_jp[1]
+
+jpl1 = semana_jp[2]
+jpl2 = mes_jp[2]
+jpl3 = ano_jp[2]
+
+jpm1 = semana_jp[3]
+jpm2 = mes_jp[3]
+jpm3 = ano_jp[3]
+
+jpc1 = semana_jp[4]
+jpc2 = mes_jp[4]
+jpc3 = ano_jp[4]
+
+jpd1 = semana_jp[5]
+jpd2 = mes_jp[5]
+jpd3 = ano_jp[5]
+
 
 @app.route("/")
 def dados_candidatos():
@@ -138,4 +189,9 @@ def dados_candidatos():
         semana_lula_globo=gl1, mes_lula_globo=gl2, ano_lula_globo=gl3,
         semana_moro_globo=gm1, mes_moro_globo=gm2, ano_moro_globo=gm3,
         semana_ciro_globo=gc1, mes_ciro_globo=gc2, ano_ciro_globo=gc3,
-        semana_doria_globo=gd1, mes_doria_globo=gd2, ano_doria_globo=gd3)
+        semana_doria_globo=gd1, mes_doria_globo=gd2, ano_doria_globo=gd3
+        semana_bolso_jp=jpb1, mes_bolso_jp=jpb2, ano_bolso_jp=jpb3,
+        semana_lula_jp=jpl1, mes_lula_jp=jpl2, ano_lula_jp=jpl3,
+        semana_moro_jp=jpm1, mes_moro_jp=jpm2, ano_moro_jp=jpm3,
+        semana_ciro_jp=jpc1, mes_ciro_jp=jpc2, ano_ciro_jp=jpc3,
+        semana_doria_jp=jpd1, mes_doria_jp=jpd2, ano_doria_jp=jpd3)
