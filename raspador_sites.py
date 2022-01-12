@@ -137,7 +137,7 @@ def coleta_jp():
     soup = bs(html, 'html.parser')
     for manchete in soup.find_all('h2', class_='title'):
         editoria = manchete.parent.parent.find('h6', class_='category')
-        if editoria is not None:
+        if editoria:
             num += 1
             titulo = manchete.text
             tipo = 'manchete'
@@ -147,7 +147,7 @@ def coleta_jp():
 
     for manchete_inferior in soup.find_all('h3', class_='title'):
         editoria = manchete_inferior.parent.parent.find('h6', class_='category')
-        if editoria is not None:
+        if editoria:
             time.sleep(2)
             num += 1
             titulo = manchete_inferior.text
@@ -157,17 +157,18 @@ def coleta_jp():
             jp_sheet.append_row([dia, editoria, titulo, tipo, link])
 
     for dado in soup.find_all('p', class_='title'):
-        time.sleep(2)
-        num += 1
         titulo = dado.text.strip()
-        editoria = dado.parent.find('h6', class_='category')
-        if editoria is not None:
-            editoria = editoria.text.strip()
-        else:
-            editoria = None
-        tipo = 'noticias'
-        link = pega_link(dado)
-        jp_sheet.append_row([dia, editoria, titulo, tipo, link])
+        if titulo:
+            time.sleep(2)
+            num += 1    
+            editoria = dado.parent.find('h6', class_='category')
+            if editoria is not None:
+                editoria = editoria.text.strip()
+            else:
+                editoria = None
+            tipo = 'noticias'
+            link = pega_link(dado)
+            jp_sheet.append_row([dia, editoria, titulo, tipo, link])
         
    
 coleta_jp()
