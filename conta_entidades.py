@@ -1,10 +1,11 @@
 import spacy
 import spacy.attrs
+import pt_core_news_sm
 
 from collections import Counter, OrderedDict
 
-spacy.download('pt')
-nlp = spacy.load('pt')
+
+nlp = pt_core_news_sm.load()
 
 def conta_entidade(df):
   text = ''
