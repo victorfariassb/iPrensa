@@ -10,5 +10,5 @@ pytz==2021.3
 requests==2.26.0
 selenium==4.1.0
 spacy>=3.0.0,<4.0.0
-https://github.com/explosion/spacy-models/releases/download/pt_core_news_sm-3.2.0/pt_core_news_sm-3.2.0.tar.gz
+https://github.com/explosion/spacy-models/releases/download/pt_core_news_sm-3.2.0/pt_core_news_sm-3.2.0.tar.gz#egg=pt_core_news_sm
 webdriver-manager
