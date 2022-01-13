@@ -1,5 +1,4 @@
 bs4==0.0.1
-collections
 datetime
 Flask==2.0.2
 gspread==5.1.1
