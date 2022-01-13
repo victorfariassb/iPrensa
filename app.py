@@ -7,6 +7,7 @@ import pandas as pd
 from flask import Flask, render_template
 
 from contagem_palavras import conta_palavras
+from conta_entidades import conta_entidade
 
 app = Flask(__name__)
 
@@ -47,7 +48,7 @@ u10=palavras_uol[9][1]
 worksheet2 = spreadsheet.worksheet('globo')
 globo = pd.DataFrame(worksheet2.get_all_records())
 
-palavras_globo = conta_palavras(globo)
+palavras_globo = conta_entidade(globo)
 w1=palavras_globo[0][0] 
 w2=palavras_globo[1][0]
 w3=palavras_globo[2][0]
