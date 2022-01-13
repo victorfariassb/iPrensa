@@ -6,6 +6,7 @@ from collections import Counter, OrderedDict
 
 
 nlp = pt_core_news_sm.load()
+nlp.max_length = 200000000
 
 def conta_entidade(df):
   text = ''
