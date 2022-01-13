@@ -3,7 +3,7 @@ import spacy.attrs
 
 from collections import Counter, OrderedDict
 
-!python -m spacy download pt
+spacy.download('pt')
 nlp = spacy.load('pt')
 
 def conta_entidade(df):
