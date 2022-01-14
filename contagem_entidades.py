@@ -18,7 +18,7 @@ spreadsheet = service_account.open_by_key(spreadsheet_id)
 
 uol = spreadsheet.worksheet('uol')
 globo = spreadsheet.worksheet('globo')
-jp = spreadsheet.worksheet('jp')
+jp = spreadsheet.worksheet('jovem_pan')
 entidades = spreadsheet.worksheet('entidades')
 
 sites = [uol, globo, jp]
