@@ -9,11 +9,11 @@ from nltk import FreqDist
 
 def conta_palavras(base, contagem):
     linha = 0
-    if base =='globo_sheet':
+    if str(base) =='globo_sheet':
         linha =+ 2
-    elif base =='uol_sheet':
+    elif str(base) =='uol_sheet':
         linha =+ 3
-    elif base == 'jp_sheet':
+    elif str(base) == 'jp_sheet':
         linha =+ 4
     else:
         linha =+ 5
