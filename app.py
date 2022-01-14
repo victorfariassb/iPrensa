@@ -7,6 +7,7 @@ import pandas as pd
 from flask import Flask, render_template
 
 from contagem_palavras import conta_palavras
+from raspador_sites import ultima_atualizacao
 
 app = Flask(__name__)
 
@@ -171,11 +172,14 @@ jpd1 = semana_jp[5]
 jpd2 = mes_jp[5]
 jpd3 = ano_jp[5]
 
+hora = ultima_atualizacao()
+
 
 @app.route("/")
 def dados_candidatos():
     return render_template(
         "home.html",
+        hora=hora,
         w1=w1, w2=w2, w3=w3, w4=w4, w5=w5, w6=w6, w7=w7, w8=w8, w9=w9, w10=w10,
         g1=g1, g2=g2, g3=g3, g4=g4, g5=g5, g6=g6, g7=g7, g8=g8, g9=g9, g10=g10,
         p1=p1, p2=p2, p3=p3, p4=p4, p5=p5, p6=p6, p7=p7, p8=p8, p9=p9, p10=p10,
