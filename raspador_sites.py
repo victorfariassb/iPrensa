@@ -172,10 +172,3 @@ def coleta_jp():
 coleta_jp()
 
 contagem_candidatos(jp_sheet, contagem_jp)
-
-def ultima_atualizacao():
-    now = datetime.now(pytz.timezone('Brazil/East'))
-    dia = now.strftime("%d/%m/%Y %H:%M:%S")
-    return dia
-
-ultima_atualizacao()
