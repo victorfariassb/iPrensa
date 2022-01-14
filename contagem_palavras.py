@@ -6,19 +6,21 @@ from nltk.tokenize import RegexpTokenizer
 from nltk import FreqDist
 
 def conta_palavras(base, contagem):
-    if base == 'globo':
+    if base == 'globo_sheet':
         linha = 2
-    elif base == 'uol':
+    elif base == 'uol_sheet':
         linha = 3
-    elif base == 'jp':
+    elif base == 'jp_sheet':
         linha == 4
     coluna = 1
+    
+    dataframe = pd.DataFrame(base.get_all_records()) 
     
     nltk.download('punkt') 
     
     #String text pega todos os títulos do arquivo
     text = ''
-    for index, row in base.iterrows():
+    for index, row in dataframe.iterrows():
         text = text + row['titulo'].lower() + ' ' 
 
     #Sentence tokenizer breaks text paragraph into sentences.
