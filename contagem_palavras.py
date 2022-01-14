@@ -10,7 +10,7 @@ from nltk import FreqDist
 def conta_palavras(base, contagem):
     linha = 0
     if 'globo' in str(base):
-        linha =+ 1
+        linha =+ 2
     elif 'uol' in str(base):
         linha =+ 1
     elif 'jp' in str(base):
