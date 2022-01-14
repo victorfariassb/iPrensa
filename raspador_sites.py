@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
 import base64
 import gspread
 import json
@@ -18,8 +17,6 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
 from contagem_candidatos import contagem_candidatos
-
-# In[ ]:
 
 options = webdriver.ChromeOptions()
 options.add_argument('--disable-gpu')
@@ -176,3 +173,9 @@ coleta_jp()
 
 contagem_candidatos(jp_sheet, contagem_jp)
 
+def ultima_atualizacao():
+    now = datetime.now(pytz.timezone('Brazil/East'))
+    dia = now.strftime("%d/%m/%Y %H:%M:%S")
+    return dia
+
+ultima_atualizacao()
