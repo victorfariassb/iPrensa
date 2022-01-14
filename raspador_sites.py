@@ -17,7 +17,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
-from conta_candidatos import contagem_candidatos
+from contagem_candidatos import contagem_candidatos
 
 # In[ ]:
 
