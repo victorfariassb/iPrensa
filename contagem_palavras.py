@@ -1,5 +1,3 @@
-import gspread
-
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
@@ -8,7 +6,12 @@ from nltk.tokenize import RegexpTokenizer
 from nltk import FreqDist
 
 def conta_palavras(base, contagem):
-    linha = 2
+    if base == 'globo':
+        linha = 2
+    elif base == 'uol':
+        linha = 3
+    elif base == 'jp':
+        linha == 4
     coluna = 1
     
     nltk.download('punkt') 
