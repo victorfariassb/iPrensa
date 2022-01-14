@@ -24,7 +24,7 @@ entidades = spreadsheet.worksheet('entidades')
 sites = [uol, globo, jp]
 
 nlp = pt_core_news_sm.load()
-nlp.max_length = 200000000
+nlp.max_length = 2000000
 
 def conta_entidade(df):
   for site in sites:
