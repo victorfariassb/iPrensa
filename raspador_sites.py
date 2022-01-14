@@ -17,6 +17,7 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
 from contagem_candidatos import contagem_candidatos
+from contagem_palavras import conta_palavras
 
 options = webdriver.ChromeOptions()
 options.add_argument('--disable-gpu')
@@ -74,6 +75,8 @@ coleta_globo()
 
 contagem_candidatos(globo_sheet, contagem_globo)
 
+conta_palavras(globo_sheet, mais_faladas)
+
 
 uol_sheet = spreadsheet.worksheet('uol') # escolhe aba
 contagem_uol = spreadsheet.worksheet('contagem_uol')
@@ -112,6 +115,8 @@ def coleta_uol():
 coleta_uol()
 
 contagem_candidatos(uol_sheet, contagem_uol)
+
+conta_palavras(uol_sheet, mais_faladas)
 
 jp_sheet = spreadsheet.worksheet('jovem_pan') 
 contagem_jp = spreadsheet.worksheet('contagem_jp')
@@ -172,3 +177,6 @@ def coleta_jp():
 coleta_jp()
 
 contagem_candidatos(jp_sheet, contagem_jp)
+
+conta_palavras(jp_sheet, mais_faladas)
+
