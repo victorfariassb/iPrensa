@@ -168,7 +168,8 @@ def coleta_jp():
                 editoria = None
             tipo = 'noticias'
             link = pega_link(dado)
-            jp_sheet.append_row([dia, editoria, titulo, tipo, link])
+            if 'curso' not in str(link):
+                jp_sheet.append_row([dia, editoria, titulo, tipo, link])
         
    
 coleta_jp()
