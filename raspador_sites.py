@@ -75,9 +75,6 @@ coleta_globo()
 
 contagem_candidatos(globo_sheet, contagem_globo)
 
-conta_palavras(globo_sheet, mais_faladas)
-
-
 uol_sheet = spreadsheet.worksheet('uol') # escolhe aba
 contagem_uol = spreadsheet.worksheet('contagem_uol')
 
@@ -115,8 +112,6 @@ def coleta_uol():
 coleta_uol()
 
 contagem_candidatos(uol_sheet, contagem_uol)
-
-conta_palavras(uol_sheet, mais_faladas)
 
 jp_sheet = spreadsheet.worksheet('jovem_pan') 
 contagem_jp = spreadsheet.worksheet('contagem_jp')
@@ -178,5 +173,13 @@ coleta_jp()
 
 contagem_candidatos(jp_sheet, contagem_jp)
 
+# Mais faladas
+
+mais_faladas = spreadsheet.worksheet('mais_faladas')
+
+conta_palavras(globo_sheet, mais_faladas)
+
 conta_palavras(jp_sheet, mais_faladas)
+
+conta_palavras(uol_sheet, mais_faladas)
 
