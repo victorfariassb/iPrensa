@@ -179,6 +179,7 @@ jp19 = jp[19]
 
 # Coleta hora
 jp = spreadsheet.worksheet('jovem_pan')
+jp = pd.DataFrame(jp.get_all_records())
 hora =jp['data'].iloc[-1]
 hora = str(hora)
 
