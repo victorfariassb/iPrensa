@@ -6,12 +6,12 @@ from nltk.tokenize import RegexpTokenizer
 from nltk import FreqDist
 
 def conta_palavras(arquivo):
+    nltk.download('punkt') 
+    
     #String text pega todos os títulos do arquivo
     text = ''
     for index, row in arquivo.iterrows():
-        text = text + row['titulo'].lower() + ' '
-    
-    nltk.download('punkt')  
+        text = text + row['titulo'].lower() + ' ' 
 
     #Sentence tokenizer breaks text paragraph into sentences.
     tokenized_text = sent_tokenize(text)
