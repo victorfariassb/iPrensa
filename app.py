@@ -176,6 +176,9 @@ globo19 = globo[19]
 uol19 = uol[19]
 jp19 = jp[19]
 
+
+# Coleta hora
+jp = spreadsheet.worksheet('jovem_pan')
 hora =jp['data'].iloc[-1]
 hora = str(hora)
 
