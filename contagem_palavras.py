@@ -12,11 +12,11 @@ def conta_palavras(base, contagem):
     if 'globo' in str(base):
         linha =+ 2
     elif 'uol' in str(base):
-        linha =+ 1
+        linha =+ 3
     elif 'jp' in str(base):
-        linha =+ 1
+        linha =+ 4
     else:
-        linha =+ 1
+        linha =+ 5
     coluna = 2
     
     dataframe = pd.DataFrame(base.get_all_records()) 
