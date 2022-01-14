@@ -6,8 +6,6 @@ import pandas as pd
 
 from flask import Flask, render_template
 
-from contagem_palavras import conta_palavras
-
 app = Flask(__name__)
 
 spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
@@ -17,84 +15,6 @@ credentials = json.loads(conteudo)
 
 service_account = gspread.service_account_from_dict(credentials)
 spreadsheet = service_account.open_by_key(spreadsheet_id) 
-
-worksheet = spreadsheet.worksheet('uol')
-uol = pd.DataFrame(worksheet.get_all_records())
-
-palavras_uol = conta_palavras(uol)
-p1=palavras_uol[0][0] 
-p2=palavras_uol[1][0]
-p3=palavras_uol[2][0]
-p4=palavras_uol[3][0]
-p5=palavras_uol[4][0]
-p6=palavras_uol[5][0]
-p7=palavras_uol[6][0]
-p8=palavras_uol[7][0]
-p9=palavras_uol[8][0]
-p10=palavras_uol[9][0]
-
-u1=palavras_uol[0][1] 
-u2=palavras_uol[1][1]
-u3=palavras_uol[2][1]
-u4=palavras_uol[3][1]
-u5=palavras_uol[4][1]
-u6=palavras_uol[5][1] 
-u7=palavras_uol[6][1] 
-u8=palavras_uol[7][1] 
-u9=palavras_uol[8][1] 
-u10=palavras_uol[9][1] 
-
-worksheet2 = spreadsheet.worksheet('globo')
-globo = pd.DataFrame(worksheet2.get_all_records())
-
-palavras_globo = conta_palavras(globo)
-w1=palavras_globo[0][0] 
-w2=palavras_globo[1][0]
-w3=palavras_globo[2][0]
-w4=palavras_globo[3][0]
-w5=palavras_globo[4][0]
-w6=palavras_globo[5][0] 
-w7=palavras_globo[6][0]
-w8=palavras_globo[7][0]
-w9=palavras_globo[8][0]
-w10=palavras_globo[9][0]
-
-g1=palavras_globo[0][1] 
-g2=palavras_globo[1][1]
-g3=palavras_globo[2][1]
-g4=palavras_globo[3][1]
-g5=palavras_globo[4][1]
-g6=palavras_globo[5][1] 
-g7=palavras_globo[6][1] 
-g8=palavras_globo[7][1] 
-g9=palavras_globo[8][1] 
-g10=palavras_globo[9][1] 
-
-worksheet3 = spreadsheet.worksheet('jovem_pan')
-jp = pd.DataFrame(worksheet3.get_all_records())
-
-palavras_jp = conta_palavras(jp)
-jp1 = palavras_jp[0][0]
-jp2 = palavras_jp[1][0]
-jp3 = palavras_jp[2][0]
-jp4 = palavras_jp[3][0]
-jp5 = palavras_jp[4][0]
-jp6 = palavras_jp[5][0]
-jp7 = palavras_jp[6][0]
-jp8 = palavras_jp[7][0]
-jp9 = palavras_jp[8][0]
-jp10 = palavras_jp[9][0]
-
-jp_1 = palavras_jp[0][1]
-jp_2 = palavras_jp[1][1]
-jp_3 = palavras_jp[2][1]
-jp_4 = palavras_jp[3][1]
-jp_5 = palavras_jp[4][1]
-jp_6 = palavras_jp[5][1]
-jp_7 = palavras_jp[6][1]
-jp_8 = palavras_jp[7][1]
-jp_9 = palavras_jp[8][1]
-jp_10 = palavras_jp[9][1]
 
 contagem_globo = spreadsheet.worksheet('contagem_globo')
 semana_globo = contagem_globo.col_values(2)
@@ -171,6 +91,91 @@ jpd1 = semana_jp[5]
 jpd2 = mes_jp[5]
 jpd3 = ano_jp[5]
 
+contagem_palavras = spreadsheet.worksheet('mais_faladas')
+globo = contagem_palavras.row_values(2)
+uol = contagem_palavras.row_values(3)
+jp = contagem_palavras.row_values(4)
+
+globo1 = globo[1]
+uol1 = uol[1]
+jp1 = jp[1]
+
+globo2 = globo[2]
+uol2 = uol[2]
+jp2 = jp[2]
+
+globo3 = globo[3]
+uol3 = uol[3]
+jp3 = jp[3]
+
+globo4 = globo[4]
+uol4 = uol[4]
+jp4 = jp[4]
+
+globo5 = globo[5]
+uol5 = uol[5]
+jp5 = jp[5]
+
+globo6 = globo[6]
+uol6 = uol[6]
+jp6 = jp[6]
+
+globo7 = globo[7]
+uol7 = uol[7]
+jp7 = jp[7]
+
+globo8 = globo[8]
+uol8 = uol[8]
+jp8 = jp[8]
+
+globo9 = globo[9]
+uol9 = uol[9]
+jp9 = jp[9]
+
+globo10 = globo[10]
+uol10 = uol[10]
+jp10 = jp[10]
+
+globo11 = globo[11]
+uol11 = uol[11]
+jp11 = jp[11]
+
+globo12 = globo[12]
+uol12 = uol[12]
+jp12 = jp[12]
+
+globo13 = globo[13]
+uol13 = uol[13]
+jp13 = jp[13]
+
+globo14 = globo[14]
+uol14 = uol[14]
+jp14 = jp[14]
+
+globo15 = globo[15]
+uol15 = uol[15]
+jp15 = jp[15]
+
+globo16 = globo[16]
+uol16 = uol[16]
+jp16 = jp[16]
+
+globo17 = globo[17]
+uol17 = uol[17]
+jp17 = jp[17]
+
+globo18 = globo[18]
+uol18 = uol[18]
+jp18 = jp[18]
+
+globo19 = globo[19]
+uol19 = uol[19]
+jp19 = jp[19]
+
+globo20 = globo[20]
+uol20 = uol[20]
+jp20 = jp[20]
+
 hora =jp['data'].iloc[-1]
 hora = str(hora)
 
@@ -179,12 +184,12 @@ def dados_candidatos():
     return render_template(
         "home.html",
         hora=hora,
-        w1=w1, w2=w2, w3=w3, w4=w4, w5=w5, w6=w6, w7=w7, w8=w8, w9=w9, w10=w10,
-        g1=g1, g2=g2, g3=g3, g4=g4, g5=g5, g6=g6, g7=g7, g8=g8, g9=g9, g10=g10,
-        p1=p1, p2=p2, p3=p3, p4=p4, p5=p5, p6=p6, p7=p7, p8=p8, p9=p9, p10=p10,
-        u1=u1, u2=u2, u3=u3, u4=u4, u5=u5, u6=u6, u7=u7, u8=u8, u9=u9, u10=u10,
-        jp1=jp1, jp2=jp2, jp3=jp3, jp4=jp4, jp5=jp5, jp6=jp6, jp7=jp7, jp8=jp8, jp9=jp9, jp10=jp10,
-        jp_1=jp_1, jp_2=jp_2, jp_3=jp_3, jp_4=jp_4, jp_5=jp_5, jp_6=jp_6, jp_7=jp_7, jp_8=jp_8, jp_9=jp_9, jp_10=jp_10,
+        w1=globo2, w2=globo4, w3=globo6, w4=globo8, w5=globo10, w6=globo12, w7=globo14, w8=globo16, w9=globo18, w10=globo20,
+        g1=globo1, g2=globo3, g3=globo5, g4=globo7, g5=globo9, g6=globo11, g7=globo13, g8=globo15, g9=globo17, g10=globo19,
+        p1=uol2, p2=uol4, p3=uol6, p4=uol8, p5=uol10, p6=uol12, p7=uol14, p8=uol16, p9=uol18, p10=uol20,
+        u1=uol1, u2=uol3, u3=uol5, u4=uol7, u5=uol9, u6=uol11, u7=uol13, u8=uol15, u9=uol17, u10=uol19,
+        jp1=jp2, jp2=jp4, jp3=jp6, jp4=jp8, jp5=jp10, jp6=jp12, jp7=jp14, jp8=jp16, jp9=jp18, jp10=jp20,
+        jp_1=jp1, jp_2=jp3, jp_3=jp5, jp_4=jp7, jp_5=jp9, jp_6=jp11, jp_7=jp13, jp_8=jp15, jp_9=jp17, jp_10=jp19,
         semana_bolso=ub1, mes_bolso=ub2, ano_bolso=ub3,
         semana_lula=ul1, mes_lula=ul2, ano_lula=ul3,
         semana_moro=um1, mes_moro=um2, ano_moro=um3,
