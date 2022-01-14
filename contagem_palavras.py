@@ -8,12 +8,14 @@ from nltk.tokenize import RegexpTokenizer
 from nltk import FreqDist
 
 def conta_palavras(base, contagem):
-    if base == 'globo_sheet':
+    if 'globo' in str(base):
         linha = 2
-    elif base == 'uol_sheet':
+    elif 'uol' in str(base):
         linha = 3
-    elif base == 'jp_sheet':
-        linha == 4
+    elif 'jp' in str(base):
+        linha = 4
+    else:
+        linha = 5
     coluna = 1
     
     dataframe = pd.DataFrame(base.get_all_records()) 
