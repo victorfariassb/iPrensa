@@ -96,10 +96,6 @@ globo = contagem_palavras.row_values(2)
 uol = contagem_palavras.row_values(3)
 jp = contagem_palavras.row_values(4)
 
-globo0 = globo[0]
-uol0 = uol[0]
-jp0 = jp[0]
-
 globo1 = globo[1]
 uol1 = uol[1]
 jp1 = jp[1]
@@ -176,6 +172,9 @@ globo19 = globo[19]
 uol19 = uol[19]
 jp19 = jp[19]
 
+globo20 = globo[20]
+uol20 = uol[20]
+jp20 = jp[20]
 
 # Coleta hora
 jp = spreadsheet.worksheet('jovem_pan')
@@ -188,11 +187,11 @@ def dados_candidatos():
     return render_template(
         "home.html",
         hora=hora,
-        w1=globo0, w2=globo2, w3=globo4, w4=globo6, w5=globo8, w6=globo10, w7=globo12, w8=globo14, w9=globo16, w10=globo18,
+        w1=globo2, w2=globo4, w3=globo6, w4=globo8, w5=globo10, w6=globo12, w7=globo14, w8=globo16, w9=globo18, w10=globo20,
         g1=globo1, g2=globo3, g3=globo5, g4=globo7, g5=globo9, g6=globo11, g7=globo13, g8=globo15, g9=globo17, g10=globo19,
-        p1=uol0, p2=uol2, p3=uol4, p4=uol6, p5=uol8, p6=uol10, p7=uol12, p8=uol14, p9=uol16, p10=uol18,
+        p1=uol2, p2=uol4, p3=uol6, p4=uol8, p5=uol10, p6=uol12, p7=uol14, p8=uol16, p9=uol18, p10=uol20,
         u1=uol1, u2=uol3, u3=uol5, u4=uol7, u5=uol9, u6=uol11, u7=uol13, u8=uol15, u9=uol17, u10=uol19,
-        jp1=jp0, jp2=jp2, jp3=jp4, jp4=jp6, jp5=jp8, jp6=jp10, jp7=jp12, jp8=jp14, jp9=jp16, jp10=jp18,
+        jp1=jp2, jp2=jp4, jp3=jp6, jp4=jp8, jp5=jp10, jp6=jp12, jp7=jp14, jp8=jp16, jp9=jp18, jp10=jp20,
         jp_1=jp1, jp_2=jp3, jp_3=jp5, jp_4=jp7, jp_5=jp9, jp_6=jp11, jp_7=jp13, jp_8=jp15, jp_9=jp17, jp_10=jp19,
         semana_bolso=ub1, mes_bolso=ub2, ano_bolso=ub3,
         semana_lula=ul1, mes_lula=ul2, ano_lula=ul3,
