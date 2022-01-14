@@ -21,26 +21,27 @@ globo = spreadsheet.worksheet('globo')
 jp = spreadsheet.worksheet('jovem_pan')
 entidades = spreadsheet.worksheet('entidades')
 
-sites = [uol, globo, jp]
-
 nlp = pt_core_news_sm.load()
 nlp.max_length = 2000000
 
 def conta_entidade(df):
-  for site in sites:
-    df = pd.DataFrame(site.get_all_records())   
-    text = ''
-    for index, row in df.iterrows():
-      text = text + row['titulo'] + ' '
-        
-      doc = nlp(text)
+  df = pd.DataFrame(site.get_all_records())   
+  text = ''
+  for index, row in df.iterrows():
+    text = text + row['titulo'] + ' '
 
-    palavras = {}
+    doc = nlp(text)
 
-    labels = [x.text for x in doc.ents]
-    dicionario = Counter(labels)
+  palavras = {}
 
-    palavras = OrderedDict(sorted(dicionario.items(), key = lambda kv : kv[1], reverse=True))
-    palavras = palavras.items()
-    palavras = list(palavras)[:10]
-    entidades.append_row([str(site), palavras])
+  labels = [x.text for x in doc.ents]
+  dicionario = Counter(labels)
+
+  palavras = OrderedDict(sorted(dicionario.items(), key = lambda kv : kv[1], reverse=True))
+  palavras = palavras.items()
+  palavras = list(palavras)[:10]
+  entidades.append_row([str(site), palavras])
+  
+  conta_entidade(uol)
+  conta_entidade(globo)
+  conta_entidade(jp)
