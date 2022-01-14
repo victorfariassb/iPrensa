@@ -7,7 +7,6 @@ import pandas as pd
 from flask import Flask, render_template
 
 from contagem_palavras import conta_palavras
-from raspador_sites import ultima_atualizacao
 
 app = Flask(__name__)
 
@@ -172,8 +171,8 @@ jpd1 = semana_jp[5]
 jpd2 = mes_jp[5]
 jpd3 = ano_jp[5]
 
-hora = ultima_atualizacao()
 
+hora = jp['data'].iloc[-1]
 
 @app.route("/")
 def dados_candidatos():
