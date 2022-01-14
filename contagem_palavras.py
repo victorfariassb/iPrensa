@@ -10,13 +10,13 @@ from nltk import FreqDist
 def conta_palavras(base, contagem):
     linha = 0
     if 'globo' in str(base):
-        linha =+ 2
+        linha =+ 1
     elif 'uol' in str(base):
-        linha =+ 3
+        linha =+ 1
     elif 'jp' in str(base):
-        linha =+ 4
+        linha =+ 1
     else:
-        linha =+ 5
+        linha =+ 1
     coluna = 1
     
     dataframe = pd.DataFrame(base.get_all_records()) 
@@ -56,23 +56,23 @@ def conta_palavras(base, contagem):
     
     fdist = FreqDist(filtered_sent2).most_common(10)
     time.sleep(20)
-    contagem.update_cell(linha, coluna, fdist[0][0])
-    contagem.update_cell(linha, coluna + 1, fdist[0][1])
-    contagem.update_cell(linha, coluna + 2, fdist[1][0])
-    contagem.update_cell(linha, coluna + 3, fdist[1][1])
-    contagem.update_cell(linha, coluna + 4, fdist[2][0])
-    contagem.update_cell(linha, coluna + 5, fdist[2][1])
-    contagem.update_cell(linha, coluna + 6, fdist[3][0])
-    contagem.update_cell(linha, coluna + 7, fdist[3][1])
-    contagem.update_cell(linha, coluna + 8, fdist[4][0])
-    contagem.update_cell(linha, coluna + 9, fdist[4][1])
-    contagem.update_cell(linha, coluna + 10, fdist[5][0])
-    contagem.update_cell(linha, coluna + 11, fdist[5][1])
-    contagem.update_cell(linha, coluna + 12, fdist[6][0])
-    contagem.update_cell(linha, coluna + 13, fdist[6][1])
-    contagem.update_cell(linha, coluna + 14, fdist[7][0])
-    contagem.update_cell(linha, coluna + 15, fdist[7][1])
-    contagem.update_cell(linha, coluna + 16, fdist[8][0])
-    contagem.update_cell(linha, coluna + 17, fdist[8][1])
-    contagem.update_cell(linha, coluna + 18, fdist[9][0])
-    contagem.update_cell(linha, coluna + 19, fdist[9][1])
+    contagem.update_cell(linha, coluna, fdist[1][0])
+    contagem.update_cell(linha, coluna + 1, fdist[1][1])
+    contagem.update_cell(linha, coluna + 2, fdist[2][0])
+    contagem.update_cell(linha, coluna + 3, fdist[2][1])
+    contagem.update_cell(linha, coluna + 4, fdist[3][0])
+    contagem.update_cell(linha, coluna + 5, fdist[3][1])
+    contagem.update_cell(linha, coluna + 6, fdist[4][0])
+    contagem.update_cell(linha, coluna + 7, fdist[4][1])
+    contagem.update_cell(linha, coluna + 8, fdist[5][0])
+    contagem.update_cell(linha, coluna + 9, fdist[5][1])
+    contagem.update_cell(linha, coluna + 10, fdist[6][0])
+    contagem.update_cell(linha, coluna + 11, fdist[6][1])
+    contagem.update_cell(linha, coluna + 12, fdist[7][0])
+    contagem.update_cell(linha, coluna + 13, fdist[7][1])
+    contagem.update_cell(linha, coluna + 14, fdist[8][0])
+    contagem.update_cell(linha, coluna + 15, fdist[8][1])
+    contagem.update_cell(linha, coluna + 16, fdist[9][0])
+    contagem.update_cell(linha, coluna + 17, fdist[9][1])
+    contagem.update_cell(linha, coluna + 18, fdist[10][0])
+    contagem.update_cell(linha, coluna + 19, fdist[10][1])
