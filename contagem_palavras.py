@@ -55,7 +55,7 @@ def conta_palavras(base, contagem):
             filtered_sent2.append(w)
     
     fdist = FreqDist(filtered_sent2).most_common(10)
-    time.sleep(20)
+    time.sleep(25)
     contagem.update_cell(linha, coluna, fdist[0][0])
     contagem.update_cell(linha, coluna + 1, fdist[0][1])
     contagem.update_cell(linha + 1, coluna, fdist[1][0])
