@@ -179,7 +179,8 @@ mais_faladas = spreadsheet.worksheet('mais_faladas')
 
 conta_palavras(globo_sheet, mais_faladas)
 
+conta_palavras(uol_sheet, mais_faladas)
+
 conta_palavras(jp_sheet, mais_faladas)
 
-conta_palavras(uol_sheet, mais_faladas)
 
