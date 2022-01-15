@@ -12,13 +12,13 @@ def conta_palavras(base, contagem):
     chave = dataframe['link'][1]
     
     if 'globo' in chave:
-        coluna == 2
+        coluna = 2
     elif "uol" in chave:
-        coluna == 3
+        coluna = 3
     elif "jovempan" in chave:
-        coluna == 4
+        coluna = 4
     else:
-        coluna == 5
+        coluna = 5
     linha = 2
     
     nltk.download('punkt') 
