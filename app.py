@@ -97,7 +97,7 @@ globoq = contagem_palavras.col_values(2)
 uol = contagem_palavras.col_values(3)
 uolq = contagem_palavras.col_values(4)
 jp = contagem_palavras.col_values(5)
-jpq = contagem_palavras.col_values(5)
+jpq = contagem_palavras.col_values(6)
 
 
 globo1 = globo[1]
