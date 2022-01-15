@@ -158,7 +158,7 @@ jpq8 = jpq[8]
 
 globo9 = globo[9]
 globoq9 = globoq[9]
-uolq19= uolq[9]
+uolq9= uolq[9]
 uol9 = uol[9]
 jp9 = jp[9]
 jpq9 = jpq[9]
