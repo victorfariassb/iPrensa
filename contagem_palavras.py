@@ -9,12 +9,13 @@ from nltk import FreqDist
 
 def conta_palavras(base, contagem):
     dataframe = pd.DataFrame(base.get_all_records()) 
+    chave = dataframe['link'][1]
     
-    if dataframe[dataframe['link'][1].str.contains("globo")]:
+    if 'globo' in chave:
         coluna == 2
-    elif dataframe[dataframe['link'][1].str.contains("uol")]:
+    elif "uol" in chave:
         coluna == 3
-    elif dataframe[dataframe['link'][1].str.contains("jovempan")]:
+    elif "jovempan" in chave:
         coluna == 4
     else:
         coluna == 5
