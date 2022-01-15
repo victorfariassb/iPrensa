@@ -8,17 +8,17 @@ from nltk.tokenize import RegexpTokenizer
 from nltk import FreqDist
 
 def conta_palavras(base, contagem):
-    if str(base) =='globo_sheet':
+    dataframe = pd.DataFrame(base.get_all_records()) 
+    
+    if dataframe[dataframe['link'][1].str.contains("globo")]:
         coluna == 2
-    elif str(base) =='uol_sheet':
+    elif dataframe[dataframe['link'][1].str.contains("uol")]:
         coluna == 3
-    elif str(base) == 'jp_sheet':
+    elif dataframe[dataframe['link'][1].str.contains("jovempan")]:
         coluna == 4
     else:
         coluna == 5
     linha = 2
-    
-    dataframe = pd.DataFrame(base.get_all_records()) 
     
     nltk.download('punkt') 
     
@@ -37,7 +37,7 @@ def conta_palavras(base, contagem):
 
     stop_words = set(stopwords.words("portuguese"))
     for x in ['seção','@','#',',', '!', ':', 'vídeo', 'quer', 'uol', 'vai', 'carros', 'pode', 'novo', 'afirma', '2021', 'confira', 'durante', '.', 'a', 'sobre', 'diz', 'após', 'veja', 'ser', 'faz', 'ex',
-              'r', '1', '4', '9', '2', '3', '5', '6', '7', '8', 'anos', 'ano', '2022', 'dia', 'contra', 'virada', 'melhores', 'mil', '19', 'fotos', 'foto', 'fazer', 'pede', 'momento', 'mostra']:
+              'r', '1', '4', '9', '2', '3', '5', '6', '7', '8', 'anos', 'ano', '2022', 'dia', 'contra', 'virada', 'melhores', 'mil', '19', 'fotos', 'foto', 'fazer', 'pede', 'momento', 'mostra', 'pede', 'momento']:
         stop_words.add(x)
 
     tokenized_sent = tokenized_word
