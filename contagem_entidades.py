@@ -6,6 +6,9 @@ import base64
 import os
 import json
 import pandas as pd
+import datetime
+import numpy as np
+
 
 spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
 conteudo_codificado =  os.environ['GOOGLE_SHEETS_CREDENTIALS']
@@ -21,9 +24,18 @@ entidades = spreadsheet.worksheet('entidades')
 nlp = pt_core_news_sm.load()
 
 def conta_entidade(df, entidades):
+  hoje = datetime.datetime.now()
+  semana = hoje - datetime.timedelta(days=7, hours=3)
+  semana = np.datetime64(semana)
+      
   df = pd.DataFrame(df.get_all_records())
-  df = df['titulo']
-  text = ' '.join(df)
+  df['data'] = pd.to_datetime(df['data'])
+  
+  df_semana = df[df['data'] >= semana]
+  
+  df_semana = df_semana['titulo']
+  
+  text = ' '.join(df_semana)
 
   doc = nlp(text)
 
