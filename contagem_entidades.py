@@ -5,7 +5,7 @@ import gspread
 import base64
 import os
 import json
-import pandas as 
+import pandas as pd
 
 spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
 conteudo_codificado =  os.environ['GOOGLE_SHEETS_CREDENTIALS']
