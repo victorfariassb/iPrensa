@@ -43,6 +43,6 @@ def conta_entidade(df, entidades):
   dicionario = Counter(labels)
 
   palavras = [palavra for palavra, contagem in dicionátio.most_common(10)]
-  entidades.append_row([str(site), palavras])
+  entidades.append_row([palavras])
  
 conta_entidade(df, entidades)
