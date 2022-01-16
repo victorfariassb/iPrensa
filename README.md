@@ -48,5 +48,5 @@ OBS: Neste caso, como queremos saber a quantidade de matéria produzida sobre o 
 14/01/2022
 
 ## Autoria
-Victor Farias, com orientação de Eduardo Cuducos, Bernardo Vianna, Paula Cristina dos Santos e Álvaro Justen. 
+Victor Farias, com orientação de Eduardo Cuducos, Bernardo Vianna, Paula Cristina dos Santos e Álvaro Justen, no âmbito do Master em Jornalismo de Dados do Insper. 
 Contato victorfariassb@gmail.com
