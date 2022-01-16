@@ -25,7 +25,7 @@ nlp = pt_core_news_sm.load()
 
 def conta_entidade(df, entidades):
   hoje = datetime.datetime.now()
-  semana = hoje - datetime.timedelta(days=7, hours=3)
+  semana = hoje - datetime.timedelta(days=1, hours=3)
   semana = np.datetime64(semana)
       
   df = pd.DataFrame(df.get_all_records())
