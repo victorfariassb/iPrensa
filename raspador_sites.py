@@ -190,11 +190,11 @@ def coleta_folha():
   soup = bs(html, 'html.parser')
   for texto in soup.find_all('h2'):
         link = texto.parent.get('href')
-    if link:
-        time.sleep(2)
-        titulo = texto.text.strip()
-        classe = texto.get('class')
-        folha_sheet.append_row([dia, titulo, classe, link])
+        if link:
+            time.sleep(2)
+            titulo = texto.text.strip()
+            classe = texto.get('class')
+            folha_sheet.append_row([dia, titulo, classe, link])
   
   top5 = soup.find('ol', class_='c-most-read__list')
   for item in top5.find_all('a'):
