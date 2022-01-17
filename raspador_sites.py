@@ -188,16 +188,17 @@ def coleta_folha():
   source = driver.find_element_by_tag_name('html')
   html = source.get_attribute('innerHTML')
   soup = bs(html, 'html.parser')
-  time.sleep(2)
   for texto in soup.find_all('h2'):
-    link = texto.parent.get('href')
+        link = texto.parent.get('href')
     if link:
-      titulo = texto.text.strip()
-      classe = texto.get('class')
-      folha_sheet.append_row([dia, titulo, classe, link])
+        time.sleep(2)
+        titulo = texto.text.strip()
+        classe = texto.get('class')
+        folha_sheet.append_row([dia, titulo, classe, link])
   
   top5 = soup.find('ol', class_='c-most-read__list')
   for item in top5.find_all('a'):
+    time.sleep(1)
     titulo = item.text.strip()
     link = item.get('href')
     titulo = re.sub(r"\n+\s+", ': ', titulo)
