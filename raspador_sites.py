@@ -174,18 +174,18 @@ def coleta_folha():
   now = datetime.now(pytz.timezone('Brazil/East'))
   dia = now.strftime("%d/%m/%Y %H:%M:%S")
 
-  driver.get("https://www.folha.uol.com.br/")
-  last_height = driver.execute_script("return document.body.scrollHeight")
+  browser.get("https://www.folha.uol.com.br/")
+  last_height = browser.execute_script("return document.body.scrollHeight")
 
   while True:
-      driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+      browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
       time.sleep(20)
-      new_height = driver.execute_script("return document.body.scrollHeight")
+      new_height = browser.execute_script("return document.body.scrollHeight")
       if new_height == last_height:
           break
       last_height = new_height
 
-  source = driver.find_element_by_tag_name('html')
+  source = browser.find_element_by_tag_name('html')
   html = source.get_attribute('innerHTML')
   soup = bs(html, 'html.parser')
   for texto in soup.find_all('h2'):
