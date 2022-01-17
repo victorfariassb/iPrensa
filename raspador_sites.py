@@ -194,7 +194,8 @@ def coleta_folha():
             time.sleep(2)
             titulo = texto.text.strip()
             classe = texto.get('class')
-            folha_sheet.append_row([dia, titulo, classe, link])
+            if classe:
+                folha_sheet.append_row([dia, titulo, classe, link])
   
   top5 = soup.find('ol', class_='c-most-read__list')
   for item in top5.find_all('a'):
