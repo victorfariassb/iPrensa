@@ -17,6 +17,8 @@ def conta_palavras(base, contagem):
         coluna = 3
     elif "jovempan" in chave:
         coluna = 5
+    elif 'folha' in chave:
+        coluna = 6
     else:
         coluna = 7
     linha = 2
