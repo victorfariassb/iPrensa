@@ -33,8 +33,9 @@ credentials = json.loads(conteudo)
 service_account = gspread.service_account_from_dict(credentials) # autenticação
 spreadsheet = service_account.open_by_key(spreadsheet_id) #abrir arquivo
 
+
+# Raspagem de dados
 globo_sheet = spreadsheet.worksheet('globo') # escolhe aba
-contagem_globo = spreadsheet.worksheet('contagem_globo')
 
 # Função recursiva para coletar editoria de matérias
 def pega_editoria(link):
@@ -73,10 +74,8 @@ def coleta_globo():
     
 coleta_globo()
 
-contagem_candidatos(globo_sheet, contagem_globo)
 
 uol_sheet = spreadsheet.worksheet('uol') # escolhe aba
-contagem_uol = spreadsheet.worksheet('contagem_uol')
 
 def coleta_uol():
     num = 0
@@ -111,10 +110,7 @@ def coleta_uol():
                         
 coleta_uol()
 
-contagem_candidatos(uol_sheet, contagem_uol)
-
 jp_sheet = spreadsheet.worksheet('jovem_pan') 
-contagem_jp = spreadsheet.worksheet('contagem_jp')
 
 def pega_link(link):
     action = link.attrs.get('href')
@@ -171,7 +167,57 @@ def coleta_jp():
    
 coleta_jp()
 
+
+folha_sheet = spreadsheet.worksheet('folha') # escolhe aba
+
+def coleta_folha():
+  now = datetime.now(pytz.timezone('Brazil/East'))
+  dia = now.strftime("%d/%m/%Y %H:%M:%S")
+
+  driver.get("https://www.folha.uol.com.br/")
+  last_height = driver.execute_script("return document.body.scrollHeight")
+
+  while True:
+      driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+      time.sleep(20)
+      new_height = driver.execute_script("return document.body.scrollHeight")
+      if new_height == last_height:
+          break
+      last_height = new_height
+
+  source = driver.find_element_by_tag_name('html')
+  html = source.get_attribute('innerHTML')
+  soup = bs(html, 'html.parser')
+  time.sleep(2)
+  for texto in soup.find_all('h2'):
+    link = texto.parent.get('href')
+    if link:
+      titulo = texto.text.strip()
+      classe = texto.get('class')
+      folha_sheet.append_row([dia, titulo, classe, link])
+  
+  top5 = soup.find('ol', class_='c-most-read__list')
+  for item in top5.find_all('a'):
+    titulo = item.text.strip()
+    link = item.get('href')
+    titulo = re.sub(r"\n+\s+", ': ', titulo)
+    classe = 'mais lidas'
+    folha_sheet.append_row([dia, titulo, classe, link])
+
+coleta_folha()
+
+# Contagem de candidatos
+contagem_globo = spreadsheet.worksheet('contagem_globo')
+contagem_candidatos(globo_sheet, contagem_globo)
+
+contagem_uol = spreadsheet.worksheet('contagem_uol')
+contagem_candidatos(uol_sheet, contagem_uol)
+
+contagem_jp = spreadsheet.worksheet('contagem_jp')
 contagem_candidatos(jp_sheet, contagem_jp)
+
+contagem_folha = spreadsheet.worksheet('contagem_folha')
+contagem_candidatos(folha_sheet, contagem_folha)
 
 # Mais faladas
 
@@ -183,4 +229,4 @@ conta_palavras(uol_sheet, mais_faladas)
 
 conta_palavras(jp_sheet, mais_faladas)
 
-
+conta_palavras(folha_sheet, mais_faladas)
