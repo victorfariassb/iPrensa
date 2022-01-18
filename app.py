@@ -92,9 +92,9 @@ jpd2 = mes_jp[5]
 jpd3 = ano_jp[5]
 
 contagem_folha = spreadsheet.worksheet('contagem_folha')
-semana_folha = contagem_jp.col_values(2)
-mes_folha = contagem_jp.col_values(3)
-ano_folha = contagem_jp.col_values(4)
+semana_folha = contagem_folha.col_values(2)
+mes_folha = contagem_folha.col_values(3)
+ano_folha = contagem_folha.col_values(4)
 
 folhab1 = semana_folha[1]
 folhab2 = mes_folha[1]
