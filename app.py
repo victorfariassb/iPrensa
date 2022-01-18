@@ -232,6 +232,7 @@ jpq10 = jpq[10]
 def termos_populares():
     return render_template(
         'termos_populares.html',
+        hora=hora,
         g1=globoq1, g2=globoq2, g3=globoq3, g4=globoq4, g5=globoq5, g6=globoq6, g7=globoq7, g8=globoq8, g9=globoq9, g10=globoq10,
         w1=globo1, w2=globo2, w3=globo3, w4=globo4, w5=globo5, w6=globo6, w7=globo7, w8=globo8, w9=globo9, w10=globo10,
         u1=uolq1, u2=uolq2, u3=uolq3, u4=uolq4, u5=uolq5, u6=uolq6, u7=uolq7, u8=uolq8, u9=uolq9, u10=uolq10,
