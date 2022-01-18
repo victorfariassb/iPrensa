@@ -39,6 +39,9 @@ mais_faladas = spreadsheet.worksheet('mais_faladas')
 oglobo_sheet = spreadsheet.worksheet('oglobo') # escolhe aba
 
 def coleta_oglobo():
+  now = datetime.now(pytz.timezone('Brazil/East'))
+  dia = now.strftime("%d/%m/%Y %H:%M:%S")
+    
   browser.get("https://oglobo.globo.com/")
   last_height = browser.execute_script("return document.body.scrollHeight")
 
@@ -67,6 +70,6 @@ def coleta_oglobo():
       if 'block-header--title' not in classe:
         time.sleep(2)
         link = item.get('href')
-        oglobo_sheet.append_row([ titulo, classe, link])
+        oglobo_sheet.append_row([dia, titulo, classe, link])
         
 coleta_oglobo()
