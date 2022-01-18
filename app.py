@@ -91,6 +91,31 @@ jpd1 = semana_jp[5]
 jpd2 = mes_jp[5]
 jpd3 = ano_jp[5]
 
+contagem_folha = spreadsheet.worksheet('contagem_folha')
+semana_folha = contagem_jp.col_values(2)
+mes_folha = contagem_jp.col_values(3)
+ano_folha = contagem_jp.col_values(4)
+
+folhab1 = semana_folha[1]
+folhab2 = mes_folha[1]
+folhab3 = ano_folha[1]
+
+folhal1 = semana_folha[2]
+folhal2 = mes_folha[2]
+folhal3 = ano_folha[2]
+
+folham1 = semana_folha[3]
+folham2 = mes_folha[3]
+folham3 = ano_folha[3]
+
+folhac1 = semana_folha[4]
+folhac2 = mes_folha[4]
+folhac3 = ano_folha[4]
+
+folhad1 = semana_folha[5]
+folhad2 = mes_folha[5]
+folhad3 = ano_folha[5]
+
 contagem_palavras = spreadsheet.worksheet('mais_faladas')
 globo = contagem_palavras.col_values(1)
 globoq = contagem_palavras.col_values(2)
@@ -171,9 +196,9 @@ jp10 = jp[10]
 jpq10 = jpq[10]
 
 # Coleta hora
-jp = spreadsheet.worksheet('jovem_pan')
-jp = pd.DataFrame(jp.get_all_records())
-hora =jp['data'].iloc[-1]
+oglobo = spreadsheet.worksheet('oglobo)
+oglobo = pd.DataFrame(oglobo.get_all_records())
+hora =oglobo['data'].iloc[-1]
 hora = str(hora)
 
 @app.route("/")
@@ -201,4 +226,9 @@ def dados_candidatos():
         semana_lula_jp=jpl1, mes_lula_jp=jpl2, ano_lula_jp=jpl3,
         semana_moro_jp=jpm1, mes_moro_jp=jpm2, ano_moro_jp=jpm3,
         semana_ciro_jp=jpc1, mes_ciro_jp=jpc2, ano_ciro_jp=jpc3,
-        semana_doria_jp=jpd1, mes_doria_jp=jpd2, ano_doria_jp=jpd3)
+        semana_doria_jp=jpd1, mes_doria_jp=jpd2, ano_doria_jp=jpd3,
+        semana_bolso_folha=folhab1, mes_bolso_jp=folhab2, ano_bolso_jp=folhab3,
+        semana_lula_folha=folhal1, mes_lula_folha=folhal2, ano_lula_folha=folhal3,
+        semana_moro_folha=folham1, mes_moro_folha=folham2, ano_moro_folha=folham3,
+        semana_ciro_folha=folhac1, mes_ciro_folha=folhac2, ano_ciro_folha=folhac3,
+        semana_doria_folha=folhad1, mes_doria_folha=folhad2, ano_doria_folha=folhad3)
