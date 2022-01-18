@@ -50,7 +50,7 @@ def coleta_oglobo():
           break
       last_height = new_height
 
-  source = driver.find_element_by_tag_name('html')
+  source = browser.find_element_by_tag_name('html')
   html = source.get_attribute('innerHTML')
   soup = bs(html, 'html.parser')
 
