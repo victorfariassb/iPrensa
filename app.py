@@ -16,6 +16,85 @@ credentials = json.loads(conteudo)
 service_account = gspread.service_account_from_dict(credentials)
 spreadsheet = service_account.open_by_key(spreadsheet_id) 
 
+
+contagem_palavras = spreadsheet.worksheet('mais_faladas')
+globo = contagem_palavras.col_values(1)
+globoq = contagem_palavras.col_values(2)
+uol = contagem_palavras.col_values(3)
+uolq = contagem_palavras.col_values(4)
+jp = contagem_palavras.col_values(5)
+jpq = contagem_palavras.col_values(6)
+
+globo1 = globo[1]
+globoq1 = globoq[1]
+uol1 = uol[1]
+uolq1 = uolq[1]
+jp1 = jp[1]
+jpq1 = jpq[1]
+
+globo2 = globo[2]
+globoq2 = globoq[2]
+uolq2 = uolq[2]
+uol2 = uol[2]
+jp2 = jp[2]
+jpq2 = jpq[2]
+
+globo3 = globo[3]
+globoq3 = globoq[3]
+uolq3 = uolq[3]
+uol3 = uol[3]
+jp3 = jp[3]
+jpq3 = jpq[3]
+
+globo4 = globo[4]
+globoq4 = globoq[4]
+uolq4 = uolq[4]
+uol4 = uol[4]
+jp4 = jp[4]
+jpq4 = jpq[4]
+
+globo5 = globo[5]
+globoq5 = globoq[5]
+uolq5 = uolq[5]
+uol5 = uol[5]
+jp5 = jp[5]
+jpq5 = jpq[5]
+
+globo6 = globo[6]
+globoq6 = globoq[6]
+uolq6 = uolq[6]
+uol6 = uol[6]
+jp6 = jp[6]
+jpq6 = jpq[6]
+
+globo7 = globo[7]
+globoq7 = globoq[7]
+uolq7 = uolq[7]
+uol7 = uol[7]
+jp7 = jp[7]
+jpq7 = jpq[7]
+
+globo8 = globo[8]
+globoq8 = globoq[8]
+uolq8 = uolq[8]
+uol8 = uol[8]
+jp8 = jp[8]
+jpq8 = jpq[8]
+
+globo9 = globo[9]
+globoq9 = globoq[9]
+uolq9= uolq[9]
+uol9 = uol[9]
+jp9 = jp[9]
+jpq9 = jpq[9]
+
+globo10 = globo[10]
+globoq10 = globoq[10]
+uolq10 = uolq[10]
+uol10 = uol[10]
+jp10 = jp[10]
+jpq10 = jpq[10]
+
 contagem_globo = spreadsheet.worksheet('contagem_globo')
 semana_globo = contagem_globo.col_values(2)
 mes_globo = contagem_globo.col_values(3)
@@ -127,6 +206,12 @@ def dados_jornais():
     return render_template(
         "home.html",
         hora=hora,
+        g1=globoq1, g2=globoq2, g3=globoq3, g4=globoq4, g5=globoq5, g6=globoq6, g7=globoq7, g8=globoq8, g9=globoq9, g10=globoq10,
+        w1=globo1, w2=globo2, w3=globo3, w4=globo4, w5=globo5, w6=globo6, w7=globo7, w8=globo8, w9=globo9, w10=globo10,
+        u1=uolq1, u2=uolq2, u3=uolq3, u4=uolq4, u5=uolq5, u6=uolq6, u7=uolq7, u8=uolq8, u9=uolq9, u10=uolq10,
+        p1=uol1, p2=uol2, p3=uol3, p4=uol4, p5=uol5, p6=uol6, p7=uol7, p8=uol8, p9=uol9, p10=uol10,
+        jp_1=jpq1, jp_2=jpq2, jp_3=jpq3, jp_4=jpq4, jp_5=jpq5, jp_6=jpq6, jp_7=jpq7, jp_8=jpq8, jp_9=jpq9, jp_10=jpq10,
+        jp1=jp1, jp2=jp2, jp3=jp3, jp4=jp4, jp5=jp5, jp6=jp6, jp7=jp7, jp8=jp8, jp9=jp9, jp10=jp10,
         semana_bolso=ub1, mes_bolso=ub2, ano_bolso=ub3,
         semana_lula=ul1, mes_lula=ul2, ano_lula=ul3,
         semana_moro=um1, mes_moro=um2, ano_moro=um3,
@@ -147,96 +232,3 @@ def dados_jornais():
         semana_moro_folha=folham1, mes_moro_folha=folham2, ano_moro_folha=folham3,
         semana_ciro_folha=folhac1, mes_ciro_folha=folhac2, ano_ciro_folha=folhac3,
         semana_doria_folha=folhad1, mes_doria_folha=folhad2, ano_doria_folha=folhad3)
-
-
-# Segunda página
-contagem_palavras = spreadsheet.worksheet('mais_faladas')
-globo = contagem_palavras.col_values(1)
-globoq = contagem_palavras.col_values(2)
-uol = contagem_palavras.col_values(3)
-uolq = contagem_palavras.col_values(4)
-jp = contagem_palavras.col_values(5)
-jpq = contagem_palavras.col_values(6)
-
-globo1 = globo[1]
-globoq1 = globoq[1]
-uol1 = uol[1]
-uolq1 = uolq[1]
-jp1 = jp[1]
-jpq1 = jpq[1]
-
-globo2 = globo[2]
-globoq2 = globoq[2]
-uolq2 = uolq[2]
-uol2 = uol[2]
-jp2 = jp[2]
-jpq2 = jpq[2]
-
-globo3 = globo[3]
-globoq3 = globoq[3]
-uolq3 = uolq[3]
-uol3 = uol[3]
-jp3 = jp[3]
-jpq3 = jpq[3]
-
-globo4 = globo[4]
-globoq4 = globoq[4]
-uolq4 = uolq[4]
-uol4 = uol[4]
-jp4 = jp[4]
-jpq4 = jpq[4]
-
-globo5 = globo[5]
-globoq5 = globoq[5]
-uolq5 = uolq[5]
-uol5 = uol[5]
-jp5 = jp[5]
-jpq5 = jpq[5]
-
-globo6 = globo[6]
-globoq6 = globoq[6]
-uolq6 = uolq[6]
-uol6 = uol[6]
-jp6 = jp[6]
-jpq6 = jpq[6]
-
-globo7 = globo[7]
-globoq7 = globoq[7]
-uolq7 = uolq[7]
-uol7 = uol[7]
-jp7 = jp[7]
-jpq7 = jpq[7]
-
-globo8 = globo[8]
-globoq8 = globoq[8]
-uolq8 = uolq[8]
-uol8 = uol[8]
-jp8 = jp[8]
-jpq8 = jpq[8]
-
-globo9 = globo[9]
-globoq9 = globoq[9]
-uolq9= uolq[9]
-uol9 = uol[9]
-jp9 = jp[9]
-jpq9 = jpq[9]
-
-globo10 = globo[10]
-globoq10 = globoq[10]
-uolq10 = uolq[10]
-uol10 = uol[10]
-jp10 = jp[10]
-jpq10 = jpq[10]
-
-@app.route("palavras_mais_faladas")
-def termos_populares():
-    return render_template(
-        'termos_populares.html',
-        hora=hora,
-        g1=globoq1, g2=globoq2, g3=globoq3, g4=globoq4, g5=globoq5, g6=globoq6, g7=globoq7, g8=globoq8, g9=globoq9, g10=globoq10,
-        w1=globo1, w2=globo2, w3=globo3, w4=globo4, w5=globo5, w6=globo6, w7=globo7, w8=globo8, w9=globo9, w10=globo10,
-        u1=uolq1, u2=uolq2, u3=uolq3, u4=uolq4, u5=uolq5, u6=uolq6, u7=uolq7, u8=uolq8, u9=uolq9, u10=uolq10,
-        p1=uol1, p2=uol2, p3=uol3, p4=uol4, p5=uol5, p6=uol6, p7=uol7, p8=uol8, p9=uol9, p10=uol10,
-        jp_1=jpq1, jp_2=jpq2, jp_3=jpq3, jp_4=jpq4, jp_5=jpq5, jp_6=jpq6, jp_7=jpq7, jp_8=jpq8, jp_9=jpq9, jp_10=jpq10,
-        jp1=jp1, jp2=jp2, jp3=jp3, jp4=jp4, jp5=jp5, jp6=jp6, jp7=jp7, jp8=jp8, jp9=jp9, jp10=jp10)
-
