@@ -34,59 +34,17 @@ uol_sheet = spreadsheet.worksheet('uol') # escolhe aba
 jp_sheet = spreadsheet.worksheet('jovem_pan') 
 mais_faladas = spreadsheet.worksheet('mais_faladas')
 
-folha_sheet = spreadsheet.worksheet('folha') # escolhe aba
-
-def coleta_folha():
-  now = datetime.now(pytz.timezone('Brazil/East'))
-  dia = now.strftime("%d/%m/%Y %H:%M:%S")
-
-  browser.get("https://www.folha.uol.com.br/")
-  last_height = browser.execute_script("return document.body.scrollHeight")
-
-  while True:
-      browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-      time.sleep(20)
-      new_height = browser.execute_script("return document.body.scrollHeight")
-      if new_height == last_height:
-          break
-      last_height = new_height
-
-  source = browser.find_element_by_tag_name('html')
-  html = source.get_attribute('innerHTML')
-  soup = bs(html, 'html.parser')
-  for texto in soup.find_all('h2'):
-        link = texto.parent.get('href')
-        if link:
-            titulo = texto.text.strip()
-            classe = texto.get('class')
-            classe = str(classe)
-            classe = re.sub("\['", '', classe)
-            classe = re.sub("\']", '', classe)      
-            if classe:
-              time.sleep(2)
-              folha_sheet.append_row([dia, titulo, classe, link])
-  
-  top5 = soup.find('ol', class_='c-most-read__list')
-  for item in top5.find_all('a'):
-    time.sleep(1)
-    titulo = item.text.strip()
-    link = item.get('href')
-    titulo = re.sub(r"\n+\s+", ': ', titulo)
-    classe = 'mais lidas'
-    folha_sheet.append_row([dia, titulo, classe, link])
-
-coleta_folha()
 
 oglobo_sheet = spreadsheet.worksheet('oglobo') # escolhe aba
 
 def coleta_oglobo():
-  driver.get("https://oglobo.globo.com/")
-  last_height = driver.execute_script("return document.body.scrollHeight")
+  browser.get("https://oglobo.globo.com/")
+  last_height = browser.execute_script("return document.body.scrollHeight")
 
   while True:
-      driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+      browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
       time.sleep(30)
-      new_height = driver.execute_script("return document.body.scrollHeight")
+      new_height = browser.execute_script("return document.body.scrollHeight")
       if new_height == last_height:
           break
       last_height = new_height
