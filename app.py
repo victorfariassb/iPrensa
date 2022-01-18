@@ -116,6 +116,40 @@ folhad1 = semana_folha[5]
 folhad2 = mes_folha[5]
 folhad3 = ano_folha[5]
 
+# Coleta hora
+oglobo = spreadsheet.worksheet('oglobo')
+oglobo = pd.DataFrame(oglobo.col_values(-1))
+hora =oglobo[1]
+hora = str(hora)
+
+@app.route("/")
+def dados_jornais():
+    return render_template(
+        "home.html",
+        hora=hora,
+        semana_bolso=ub1, mes_bolso=ub2, ano_bolso=ub3,
+        semana_lula=ul1, mes_lula=ul2, ano_lula=ul3,
+        semana_moro=um1, mes_moro=um2, ano_moro=um3,
+        semana_ciro=uc1, mes_ciro=uc2, ano_ciro=uc3,
+        semana_doria=ud1, mes_doria=ud2, ano_doria=ud3,
+        semana_bolso_globo=gb1, mes_bolso_globo=gb2, ano_bolso_globo=gb3,
+        semana_lula_globo=gl1, mes_lula_globo=gl2, ano_lula_globo=gl3,
+        semana_moro_globo=gm1, mes_moro_globo=gm2, ano_moro_globo=gm3,
+        semana_ciro_globo=gc1, mes_ciro_globo=gc2, ano_ciro_globo=gc3,
+        semana_doria_globo=gd1, mes_doria_globo=gd2, ano_doria_globo=gd3,
+        semana_bolso_jp=jpb1, mes_bolso_jp=jpb2, ano_bolso_jp=jpb3,
+        semana_lula_jp=jpl1, mes_lula_jp=jpl2, ano_lula_jp=jpl3,
+        semana_moro_jp=jpm1, mes_moro_jp=jpm2, ano_moro_jp=jpm3,
+        semana_ciro_jp=jpc1, mes_ciro_jp=jpc2, ano_ciro_jp=jpc3,
+        semana_doria_jp=jpd1, mes_doria_jp=jpd2, ano_doria_jp=jpd3,
+        semana_bolso_folha=folhab1, mes_bolso_folha=folhab2, ano_bolso_folha=folhab3,
+        semana_lula_folha=folhal1, mes_lula_folha=folhal2, ano_lula_folha=folhal3,
+        semana_moro_folha=folham1, mes_moro_folha=folham2, ano_moro_folha=folham3,
+        semana_ciro_folha=folhac1, mes_ciro_folha=folhac2, ano_ciro_folha=folhac3,
+        semana_doria_folha=folhad1, mes_doria_folha=folhad2, ano_doria_folha=folhad3)
+
+
+# Segunda página
 contagem_palavras = spreadsheet.worksheet('mais_faladas')
 globo = contagem_palavras.col_values(1)
 globoq = contagem_palavras.col_values(2)
@@ -123,7 +157,6 @@ uol = contagem_palavras.col_values(3)
 uolq = contagem_palavras.col_values(4)
 jp = contagem_palavras.col_values(5)
 jpq = contagem_palavras.col_values(6)
-
 
 globo1 = globo[1]
 globoq1 = globoq[1]
@@ -195,40 +228,14 @@ uol10 = uol[10]
 jp10 = jp[10]
 jpq10 = jpq[10]
 
-# Coleta hora
-oglobo = spreadsheet.worksheet('oglobo')
-oglobo = pd.DataFrame(oglobo.col_values(-1))
-hora =oglobo[1]
-hora = str(hora)
-
-@app.route("/")
-def dados_candidatos():
+@app.route("palavras_mais_faladas")
+def termos_populares():
     return render_template(
-        "home.html",
-        hora=hora,
+        'termos_populares.html',
         g1=globoq1, g2=globoq2, g3=globoq3, g4=globoq4, g5=globoq5, g6=globoq6, g7=globoq7, g8=globoq8, g9=globoq9, g10=globoq10,
         w1=globo1, w2=globo2, w3=globo3, w4=globo4, w5=globo5, w6=globo6, w7=globo7, w8=globo8, w9=globo9, w10=globo10,
         u1=uolq1, u2=uolq2, u3=uolq3, u4=uolq4, u5=uolq5, u6=uolq6, u7=uolq7, u8=uolq8, u9=uolq9, u10=uolq10,
         p1=uol1, p2=uol2, p3=uol3, p4=uol4, p5=uol5, p6=uol6, p7=uol7, p8=uol8, p9=uol9, p10=uol10,
         jp_1=jpq1, jp_2=jpq2, jp_3=jpq3, jp_4=jpq4, jp_5=jpq5, jp_6=jpq6, jp_7=jpq7, jp_8=jpq8, jp_9=jpq9, jp_10=jpq10,
-        jp1=jp1, jp2=jp2, jp3=jp3, jp4=jp4, jp5=jp5, jp6=jp6, jp7=jp7, jp8=jp8, jp9=jp9, jp10=jp10,
-        semana_bolso=ub1, mes_bolso=ub2, ano_bolso=ub3,
-        semana_lula=ul1, mes_lula=ul2, ano_lula=ul3,
-        semana_moro=um1, mes_moro=um2, ano_moro=um3,
-        semana_ciro=uc1, mes_ciro=uc2, ano_ciro=uc3,
-        semana_doria=ud1, mes_doria=ud2, ano_doria=ud3,
-        semana_bolso_globo=gb1, mes_bolso_globo=gb2, ano_bolso_globo=gb3,
-        semana_lula_globo=gl1, mes_lula_globo=gl2, ano_lula_globo=gl3,
-        semana_moro_globo=gm1, mes_moro_globo=gm2, ano_moro_globo=gm3,
-        semana_ciro_globo=gc1, mes_ciro_globo=gc2, ano_ciro_globo=gc3,
-        semana_doria_globo=gd1, mes_doria_globo=gd2, ano_doria_globo=gd3,
-        semana_bolso_jp=jpb1, mes_bolso_jp=jpb2, ano_bolso_jp=jpb3,
-        semana_lula_jp=jpl1, mes_lula_jp=jpl2, ano_lula_jp=jpl3,
-        semana_moro_jp=jpm1, mes_moro_jp=jpm2, ano_moro_jp=jpm3,
-        semana_ciro_jp=jpc1, mes_ciro_jp=jpc2, ano_ciro_jp=jpc3,
-        semana_doria_jp=jpd1, mes_doria_jp=jpd2, ano_doria_jp=jpd3,
-        semana_bolso_folha=folhab1, mes_bolso_folha=folhab2, ano_bolso_folha=folhab3,
-        semana_lula_folha=folhal1, mes_lula_folha=folhal2, ano_lula_folha=folhal3,
-        semana_moro_folha=folham1, mes_moro_folha=folham2, ano_moro_folha=folham3,
-        semana_ciro_folha=folhac1, mes_ciro_folha=folhac2, ano_ciro_folha=folhac3,
-        semana_doria_folha=folhad1, mes_doria_folha=folhad2, ano_doria_folha=folhad3)
+        jp1=jp1, jp2=jp2, jp3=jp3, jp4=jp4, jp5=jp5, jp6=jp6, jp7=jp7, jp8=jp8, jp9=jp9, jp10=jp10)
+
