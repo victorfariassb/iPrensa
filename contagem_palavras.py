@@ -19,8 +19,10 @@ def conta_palavras(base, contagem):
         coluna = 5
     elif 'folha' in chave:
         coluna = 6
-    else:
+    elif "oglobo" in chave:
         coluna = 7
+    else:
+        coluna = 8
     linha = 2
     
     nltk.download('punkt') 
