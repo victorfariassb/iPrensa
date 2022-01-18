@@ -35,17 +35,7 @@ globo_sheet = spreadsheet.worksheet('globo') # escolhe aba
 uol_sheet = spreadsheet.worksheet('uol') # escolhe aba
 jp_sheet = spreadsheet.worksheet('jovem_pan') 
 folha_sheet = spreadsheet.worksheet('folha') 
-
 oglobo_sheet = spreadsheet.worksheet('oglobo') # escolhe aba
-
-
-# Contagem de candidatos
-
-contagem_folha = spreadsheet.worksheet('contagem_folha')
-contagem_candidatos(folha_sheet, contagem_folha)
-
-contagem_oglobo = spreadsheet.worksheet('contagem_oglobo')
-contagem_candidatos(oglobo_sheet, contagem_oglobo)
 
 
 # Mais faladas
