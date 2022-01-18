@@ -215,6 +215,8 @@ coleta_folha()
 oglobo_sheet = spreadsheet.worksheet('oglobo') # escolhe aba
 
 def coleta_oglobo():
+  now = datetime.now(pytz.timezone('Brazil/East'))
+  dia = now.strftime("%d/%m/%Y %H:%M:%S")
   browser.get("https://oglobo.globo.com/")
   last_height = browser.execute_script("return document.body.scrollHeight")
 
