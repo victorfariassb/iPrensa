@@ -40,20 +40,12 @@ oglobo_sheet = spreadsheet.worksheet('oglobo') # escolhe aba
 
 
 # Contagem de candidatos
-contagem_globo = spreadsheet.worksheet('contagem_globo')
-contagem_candidatos(globo_sheet, contagem_globo)
-
-contagem_uol = spreadsheet.worksheet('contagem_uol')
-contagem_candidatos(uol_sheet, contagem_uol)
-
-contagem_jp = spreadsheet.worksheet('contagem_jp')
-contagem_candidatos(jp_sheet, contagem_jp)
 
 contagem_folha = spreadsheet.worksheet('contagem_folha')
 contagem_candidatos(folha_sheet, contagem_folha)
 
 contagem_oglobo = spreadsheet.worksheet('contagem_oglobo')
-contagem_candidatos(folha_sheet, contagem_oglobo)
+contagem_candidatos(oglobo_sheet, contagem_oglobo)
 
 
 # Mais faladas
@@ -68,4 +60,4 @@ conta_palavras(jp_sheet, mais_faladas)
 
 conta_palavras(folha_sheet, mais_faladas)
 
-conta_palavras(globo_sheet, mais_faladas)
+conta_palavras(oglobo_sheet, mais_faladas)
