@@ -13,6 +13,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
+from contagem_candidatos import contagem_candidatos
 from contagem_palavras import conta_palavras
 
 options = webdriver.ChromeOptions()
@@ -33,8 +34,7 @@ spreadsheet = service_account.open_by_key(spreadsheet_id) #abrir arquivo
 globo_sheet = spreadsheet.worksheet('globo') # escolhe aba
 uol_sheet = spreadsheet.worksheet('uol') # escolhe aba
 jp_sheet = spreadsheet.worksheet('jovem_pan') 
-mais_faladas = spreadsheet.worksheet('mais_faladas')
-
+folha_sheet = spreadsheet.worksheet('folha') 
 
 oglobo_sheet = spreadsheet.worksheet('oglobo') # escolhe aba
 
@@ -73,3 +73,35 @@ def coleta_oglobo():
         oglobo_sheet.append_row([dia, titulo, classe, link])
         
 coleta_oglobo()
+
+
+# Contagem de candidatos
+contagem_globo = spreadsheet.worksheet('contagem_globo')
+contagem_candidatos(globo_sheet, contagem_globo)
+
+contagem_uol = spreadsheet.worksheet('contagem_uol')
+contagem_candidatos(uol_sheet, contagem_uol)
+
+contagem_jp = spreadsheet.worksheet('contagem_jp')
+contagem_candidatos(jp_sheet, contagem_jp)
+
+contagem_folha = spreadsheet.worksheet('contagem_folha')
+contagem_candidatos(folha_sheet, contagem_folha)
+
+contagem_oglobo = spreadsheet.worksheet('contagem_oglobo')
+contagem_candidatos(folha_sheet, contagem_oglobo)
+
+
+# Mais faladas
+
+mais_faladas = spreadsheet.worksheet('mais_faladas')
+
+conta_palavras(globo_sheet, mais_faladas)
+
+conta_palavras(uol_sheet, mais_faladas)
+
+conta_palavras(jp_sheet, mais_faladas)
+
+conta_palavras(folha_sheet, mais_faladas)
+
+conta_palavras(globo_sheet, mais_faladas)
