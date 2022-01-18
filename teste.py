@@ -60,6 +60,9 @@ def coleta_folha():
             time.sleep(2)
             titulo = texto.text.strip()
             classe = texto.get('class')
+            classe = str(classe)
+            classe = re.sub("\['", '', classe)
+            classe = re.sub("\']", '', classe)      
             if classe:
                 folha_sheet.append_row([dia, titulo, classe, link])
   
