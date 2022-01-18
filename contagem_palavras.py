@@ -9,17 +9,17 @@ from nltk import FreqDist
 
 def conta_palavras(base, contagem):
     dataframe = pd.DataFrame(base.get_all_records()) 
-    chave = dataframe['link'][1]
+    chave = dataframe['classe'][1]
     
-    if '.globo' in chave:
+    if 'destaque-topo' in chave:
         coluna = 1
-    elif "uol" in chave:
+    elif "headlineBigPhoto__link" in chave:
         coluna = 3
-    elif "jovempan" in chave:
+    elif "manchete" in chave:
         coluna = 5
-    elif 'folha' in chave:
+    elif 'c-main-headline__title' in chave:
         coluna = 7
-    elif "oglobo" in chave:
+    elif "people-teasers__card--title" in chave:
         coluna = 9
     else:
         coluna = 10
@@ -42,7 +42,7 @@ def conta_palavras(base, contagem):
 
     stop_words = set(stopwords.words("portuguese"))
     for x in ['seção','@','#',',', '!', ':', 'vídeo', 'quer', 'uol', 'vai', 'carros', 'pode', 'novo', 'afirma', '2021', 'confira', 'durante', '.', 'a', 'sobre', 'diz', 'após', 'veja', 'ser', 'faz', 'ex', 'maior',
-              'r', '1', '4', '9', '2', '3', '5', '6', '7', '8', 'anos', 'ano', '2022', 'dia', 'contra', 'virada', 'melhores', 'mil', '19', 'fotos', 'foto', 'fazer', 'pede', 'momento', 'mostra', 'pede', 'momento']:
+              'r', '1', '4', '9', '2', '3', '5', '6', '7', '8', 'anos', 'ano', '2022', 'dia', 'contra', 'virada', 'melhores', 'mil', '19', 'fotos', 'foto', 'fazer', 'pede', 'momento', 'mostra', 'pede', 'momento', '0']:
         stop_words.add(x)
 
     tokenized_sent = tokenized_word
