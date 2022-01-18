@@ -196,7 +196,7 @@ jp10 = jp[10]
 jpq10 = jpq[10]
 
 # Coleta hora
-oglobo = spreadsheet.worksheet('oglobo)
+oglobo = spreadsheet.worksheet('oglobo')
 oglobo = pd.DataFrame(oglobo.get_all_records())
 hora =oglobo['data'].iloc[-1]
 hora = str(hora)
