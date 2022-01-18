@@ -38,42 +38,6 @@ folha_sheet = spreadsheet.worksheet('folha')
 
 oglobo_sheet = spreadsheet.worksheet('oglobo') # escolhe aba
 
-def coleta_oglobo():
-  now = datetime.now(pytz.timezone('Brazil/East'))
-  dia = now.strftime("%d/%m/%Y %H:%M:%S")
-    
-  browser.get("https://oglobo.globo.com/")
-  last_height = browser.execute_script("return document.body.scrollHeight")
-
-  while True:
-      browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-      time.sleep(50)
-      new_height = browser.execute_script("return document.body.scrollHeight")
-      if new_height == last_height:
-          break
-      last_height = new_height
-
-  source = browser.find_element_by_tag_name('html')
-  html = source.get_attribute('innerHTML')
-  soup = bs(html, 'html.parser')
-
-  for texto in soup.find_all('h1'):
-    item = texto.find("a", href=True)
-    if item == None:
-      next
-    else:
-      titulo = item.text.strip()
-      classe = item.parent.get('class')
-      classe = str(classe)
-      classe = re.sub("\['", '', classe)
-      classe = re.sub("\']", '', classe)
-      if 'block-header--title' not in classe:
-        time.sleep(2)
-        link = item.get('href')
-        oglobo_sheet.append_row([dia, titulo, classe, link])
-        
-coleta_oglobo()
-
 
 # Contagem de candidatos
 contagem_globo = spreadsheet.worksheet('contagem_globo')
