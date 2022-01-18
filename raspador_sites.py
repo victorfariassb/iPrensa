@@ -22,6 +22,7 @@ from contagem_palavras import conta_palavras
 options = webdriver.ChromeOptions()
 options.add_argument('--disable-gpu')
 options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
 options.binary_location = os.environ["GOOGLE_CHROME_PATH"]
 browser = webdriver.Chrome(options=options, executable_path=ChromeDriverManager().install())
 
@@ -214,18 +215,18 @@ coleta_folha()
 oglobo_sheet = spreadsheet.worksheet('oglobo') # escolhe aba
 
 def coleta_oglobo():
-  driver.get("https://oglobo.globo.com/")
-  last_height = driver.execute_script("return document.body.scrollHeight")
+  browser.get("https://oglobo.globo.com/")
+  last_height = browser.execute_script("return document.body.scrollHeight")
 
   while True:
-      driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+      browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
       time.sleep(30)
-      new_height = driver.execute_script("return document.body.scrollHeight")
+      new_height = browser.execute_script("return document.body.scrollHeight")
       if new_height == last_height:
           break
       last_height = new_height
 
-  source = driver.find_element_by_tag_name('html')
+  source = browser.find_element_by_tag_name('html')
   html = source.get_attribute('innerHTML')
   soup = bs(html, 'html.parser')
 
