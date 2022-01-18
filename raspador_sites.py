@@ -223,7 +223,7 @@ def coleta_oglobo():
 
   while True:
       browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-      time.sleep(30)
+      time.sleep(40)
       new_height = browser.execute_script("return document.body.scrollHeight")
       if new_height == last_height:
           break
