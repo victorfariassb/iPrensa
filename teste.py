@@ -64,6 +64,6 @@ def coleta_oglobo():
       if 'block-header--title' not in classe:
         time.sleep(2)
         link = item.get('href')
-        oglobo_sheet.append_row([[dia, titulo, classe, link]])
+        oglobo_sheet.append_row([ titulo, classe, link])
         
 coleta_oglobo()
