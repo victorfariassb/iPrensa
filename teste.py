@@ -61,6 +61,9 @@ def coleta_oglobo():
     else:
       titulo = item.text.strip()
       classe = item.parent.get('class')
+      classe = str(classe)
+      classe = re.sub("\['", '', classe)
+      classe = re.sub("\']", '', classe)
       if 'block-header--title' not in classe:
         time.sleep(2)
         link = item.get('href')
