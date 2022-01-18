@@ -19,7 +19,7 @@
             <center>
               <font face="Calibri"><font size=4>
                 <p>Seja bem-vindo! Este é um <a href='https://github.com/victorfariassb/radar_imprensa'>projeto</a> criado por <a href="https://twitter.com/__victorfarias">Victor Farias</a> para acompanhar os principais portais de notícia do Brasil e ver como alguns temas estão sendo noticiados.</p>
-                <p>Os dados, do Uol, da Globo e da Jovem Pan, são coletados a cada 2 horas, das 8h às 22h, e estão disponíveis <a href="https://docs.google.com/spreadsheets/d/1UY2MkXq41EBEU5AXxGDE2oVrd8rQgPcc28xWi7oHVOU/edit?usp=sharing"><b>aqui.</b></a></p>
+                <p>Os dados, do Uol, da Globo, da Jovem Pan e da Folha, são coletados a cada 2 horas, das 8h às 22h, e estão disponíveis <a href="https://docs.google.com/spreadsheets/d/1UY2MkXq41EBEU5AXxGDE2oVrd8rQgPcc28xWi7oHVOU/edit?usp=sharing"><b>aqui.</b></a></p>
                 <p>O programa foi desenvolvido no <b>Master de Jornalismo de Dados, Automação e Data Storytelling do Insper <a href="https://www.insper.edu.br/pos-graduacao/master-em-jornalismo-de-dados-automacao-e-data-storytelling/">(MJDA).</b></a><br/></p>
                 <p>Última atualização: <b>{{ hora }}</b></p>
               <br/>
@@ -285,6 +285,56 @@
                 <td>{{ semana_doria_jp }}</td>
                 <td>{{ mes_doria_jp }}</td>
                 <td>{{ ano_doria_jp }}</td>
+              </tr>
+            </thead>
+            </font>
+          </table>
+            <div>
+            <center>
+                <br/>
+                <h4>Número de menções aos pré-candidatos na Folha</h4>
+                <p>Neste caso, não são consideraos títulos repetidos, somente o número de matérias que mencionam o candidato.</p>
+            </center>
+          </div>
+          <table class="table table-striped  table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Candidato</th>
+                <th scope="col">Semana</th>
+                <th scope="col">Mês</th>
+                <th scope="col">2022</th>
+              </tr>
+            </thead>
+            <thead>
+              <tr>
+                <th scope="row">Bolsonaro</th>
+                <td>{{ semana_bolso_folha }}</td>
+                <td>{{ mes_bolso_folha }}</td>
+                <td>{{ ano_bolso_folha }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Lula</th>
+                <td>{{ semana_lula_folha }}</td>
+                <td>{{ mes_lula_folha }}</td>
+                <td>{{ ano_lula_folha }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Moro</th>
+                <td>{{ semana_moro_folha }}</td>
+                <td>{{ mes_moro_folha }}</td>
+                <td>{{ ano_moro_folha }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Ciro</th>
+                <td>{{ semana_ciro_folha }}</td>
+                <td>{{ mes_ciro_folha }}</td>
+                <td>{{ ano_ciro_folha }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Doria</th>
+                <td>{{ semana_doria_folha }}</td>
+                <td>{{ mes_doria_folha }}</td>
+                <td>{{ ano_doria_folha }}</td>
               </tr>
             </thead>
             </font>
