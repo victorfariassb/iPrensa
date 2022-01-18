@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>Radar da Imprensa</title>
+</head>
+<body>
+    <div class="row">
+      <div class="col-xs-1 col-lg-1"></div>
+      <div class="col-xs-10 col-lg-10">
+        <center>
+          <font face="Cambria">
+            <font color="#FF8C00">
+              <br/>
+              <h1>Radar da Imprensa</h1>
+            </font>
+          </center>
+          <div>
+            <center>
+              <font face="Calibri"><font size=4>
+               <a href="/">Página Inicial</a>
+                <p>Aqui você pode ver os termos mais populares em cada jornal.</p>
+                <p>Os dados são coletados a cada 2 horas, das 8h às 22h, e estão disponíveis <a href="https://docs.google.com/spreadsheets/d/1UY2MkXq41EBEU5AXxGDE2oVrd8rQgPcc28xWi7oHVOU/edit?usp=sharing"><b>aqui.</b></a></p>
+                <p>Última atualização: <b>{{ hora }}</b></p>
+              <br/>
+                </font>
+            </center>
+          </div>
+          <div>
+            <center>
+                <br/>
+                <font face="Calibri">
+                <h4>Termos mais mencionados na Globo, no Uol e na Jovem Pan</h4>
+                <p>Neste caso, são considerados títulos repetidos, de modo a ver qual palavra apareceu por mais tempo nas páginas dos sites. A coleta é feita por palavra em caixa baixa, ou seja, 'São Paulo' e 'Paulo Guedes' somarão 2 'paulo', 1 'são' e 1 'guedes'.</p>
+            </center>
+          </div>
+          <table class="table table-striped  table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Posição</th>
+                <th scope="col">Globo</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Uol</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Jovem Pan</th>
+                <th scope="col">Quantidade</th>
+              </tr>
+            </thead>
+            <thead>
+              <tr>
+                <th scope="row">1º</th>
+                <td>{{ w1 }}</td>
+                <td>{{ g1 }}</td>
+                <td>{{ p1 }}</td>
+                <td>{{ u1 }}</td>
+                <td>{{ jp1 }}</td>
+                <td>{{ jp_1 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">2º</th>
+                <td>{{ w2 }}</td>
+                <td>{{ g2 }}</td>
+                <td>{{ p2 }}</td>
+                <td>{{ u2 }}</td>
+                <td>{{ jp2 }}</td>
+                <td>{{ jp_2 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">3º</th>
+                <td>{{ w3 }}</td>
+                <td>{{ g3 }}</td>
+                <td>{{ p3 }}</td>
+                <td>{{ u3 }}</td>
+                <td>{{ jp3 }}</td>
+                <td>{{ jp_3 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">4º</th>
+                <td>{{ w4 }}</td>
+                <td>{{ g4 }}</td>
+                <td>{{ p4 }}</td>
+                <td>{{ u4 }}</td>
+                <td>{{ jp4 }}</td>
+                <td>{{ jp_4 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">5º</th>
+                <td>{{ w5 }}</td>
+                <td>{{ g5 }}</td>
+                <td>{{ p5 }}</td>
+                <td>{{ u5 }}</td>
+                <td>{{ jp5 }}</td>
+                <td>{{ jp_5 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">6º</th>
+                <td>{{ w6 }}</td>
+                <td>{{ g6 }}</td>
+                <td>{{ p6 }}</td>
+                <td>{{ u6 }}</td>
+                <td>{{ jp6 }}</td>
+                <td>{{ jp_6 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">7º</th>
+                <td>{{ w7 }}</td>
+                <td>{{ g7 }}</td>
+                <td>{{ p7 }}</td>
+                <td>{{ u7 }}</td>
+                <td>{{ jp7 }}</td>
+                <td>{{ jp_7 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">8º</th>
+                <td>{{ w8 }}</td>
+                <td>{{ g8 }}</td>
+                <td>{{ p8 }}</td>
+                <td>{{ u8 }}</td>
+                <td>{{ jp8 }}</td>
+                <td>{{ jp_8 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">9º</th>
+                <td>{{ w9 }}</td>
+                <td>{{ g9 }}</td>
+                <td>{{ p9 }}</td>
+                <td>{{ u9 }}</td>
+                <td>{{ jp9 }}</td>
+                <td>{{ jp_9 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">10º</th>
+                <td>{{ w10 }}</td>
+                <td>{{ g10 }}</td>
+                <td>{{ p10 }}</td>
+                <td>{{ u10 }}</td>
+                <td>{{ jp10 }}</td>
+                <td>{{ jp_10 }}</td>
+              </tr>
+            </thead>
+          </table>
+          </font>
+          </body>
+          </html>
