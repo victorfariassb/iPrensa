@@ -227,7 +227,7 @@ def dados_candidatos():
         semana_moro_jp=jpm1, mes_moro_jp=jpm2, ano_moro_jp=jpm3,
         semana_ciro_jp=jpc1, mes_ciro_jp=jpc2, ano_ciro_jp=jpc3,
         semana_doria_jp=jpd1, mes_doria_jp=jpd2, ano_doria_jp=jpd3,
-        semana_bolso_folha=folhab1, mes_bolso_jp=folhab2, ano_bolso_jp=folhab3,
+        semana_bolso_folha=folhab1, mes_bolso_folha=folhab2, ano_bolso_jp=folhab3,
         semana_lula_folha=folhal1, mes_lula_folha=folhal2, ano_lula_folha=folhal3,
         semana_moro_folha=folham1, mes_moro_folha=folham2, ano_moro_folha=folham3,
         semana_ciro_folha=folhac1, mes_ciro_folha=folhac2, ano_ciro_folha=folhac3,
