@@ -18,6 +18,7 @@ from contagem_palavras import conta_palavras
 options = webdriver.ChromeOptions()
 options.add_argument('--disable-gpu')
 options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
 options.binary_location = os.environ["GOOGLE_CHROME_PATH"]
 browser = webdriver.Chrome(options=options, executable_path=ChromeDriverManager().install())
 
