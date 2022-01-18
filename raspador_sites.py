@@ -264,7 +264,7 @@ contagem_folha = spreadsheet.worksheet('contagem_folha')
 contagem_candidatos(folha_sheet, contagem_folha)
 
 contagem_oglobo = spreadsheet.worksheet('contagem_oglobo')
-contagem_candidatos(folha_sheet, contagem_oglobo)
+contagem_candidatos(oglobo_sheet, contagem_oglobo)
 
 
 # Mais faladas
@@ -279,4 +279,4 @@ conta_palavras(jp_sheet, mais_faladas)
 
 conta_palavras(folha_sheet, mais_faladas)
 
-conta_palavras(globo_sheet, mais_faladas)
+conta_palavras(oglobo_sheet, mais_faladas)
