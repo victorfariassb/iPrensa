@@ -9,7 +9,7 @@ from nltk import FreqDist
 
 def conta_palavras(base, contagem):
     dataframe = pd.DataFrame(base.get_all_records()) 
-    chave = dataframe['classe'][1]
+    chave = dataframe['classe'][0]
     
     if 'destaque-topo' in chave:
         coluna = 1
