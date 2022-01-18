@@ -11,18 +11,18 @@ def conta_palavras(base, contagem):
     dataframe = pd.DataFrame(base.get_all_records()) 
     chave = dataframe['link'][1]
     
-    if 'globo' in chave:
+    if '.globo' in chave:
         coluna = 1
     elif "uol" in chave:
         coluna = 3
     elif "jovempan" in chave:
         coluna = 5
     elif 'folha' in chave:
-        coluna = 6
-    elif "oglobo" in chave:
         coluna = 7
+    elif "oglobo" in chave:
+        coluna = 9
     else:
-        coluna = 8
+        coluna = 10
     linha = 2
     
     nltk.download('punkt') 
