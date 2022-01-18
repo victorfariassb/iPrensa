@@ -2,7 +2,16 @@ import base64
 import gspread
 import json
 import pandas as pd
+import pytz
 import os
+import requests
+import re
+import time
+from datetime import datetime
+from bs4 import BeautifulSoup as bs
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 
 from contagem_palavras import conta_palavras
 
@@ -19,8 +28,74 @@ uol_sheet = spreadsheet.worksheet('uol') # escolhe aba
 jp_sheet = spreadsheet.worksheet('jovem_pan') 
 mais_faladas = spreadsheet.worksheet('mais_faladas')
 
-conta_palavras(globo_sheet, mais_faladas)
+folha_sheet = spreadsheet.worksheet('folha') # escolhe aba
 
-conta_palavras(uol_sheet, mais_faladas)
+def coleta_folha():
+  now = datetime.now(pytz.timezone('Brazil/East'))
+  dia = now.strftime("%d/%m/%Y %H:%M:%S")
 
-conta_palavras(jp_sheet, mais_faladas)
+  browser.get("https://www.folha.uol.com.br/")
+  last_height = browser.execute_script("return document.body.scrollHeight")
+
+  while True:
+      browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+      time.sleep(20)
+      new_height = browser.execute_script("return document.body.scrollHeight")
+      if new_height == last_height:
+          break
+      last_height = new_height
+
+  source = browser.find_element_by_tag_name('html')
+  html = source.get_attribute('innerHTML')
+  soup = bs(html, 'html.parser')
+  for texto in soup.find_all('h2'):
+        link = texto.parent.get('href')
+        if link:
+            time.sleep(2)
+            titulo = texto.text.strip()
+            classe = texto.get('class')
+            if classe:
+                folha_sheet.append_row([dia, titulo, classe, link])
+  
+  top5 = soup.find('ol', class_='c-most-read__list')
+  for item in top5.find_all('a'):
+    time.sleep(1)
+    titulo = item.text.strip()
+    link = item.get('href')
+    titulo = re.sub(r"\n+\s+", ': ', titulo)
+    classe = 'mais lidas'
+    folha_sheet.append_row([dia, titulo, classe, link])
+
+coleta_folha()
+
+oglobo_sheet = spreadsheet.worksheet('oglobo') # escolhe aba
+
+def coleta_oglobo():
+  driver.get("https://oglobo.globo.com/")
+  last_height = driver.execute_script("return document.body.scrollHeight")
+
+  while True:
+      driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+      time.sleep(30)
+      new_height = driver.execute_script("return document.body.scrollHeight")
+      if new_height == last_height:
+          break
+      last_height = new_height
+
+  source = driver.find_element_by_tag_name('html')
+  html = source.get_attribute('innerHTML')
+  soup = bs(html, 'html.parser')
+
+  for texto in soup.find_all('h1'):
+    item = texto.find("a", href=True)
+    if item == None:
+      next
+    else:
+      titulo = item.text.strip()
+      classe = item.parent.get('class')
+      if 'block-header--title' not in classe:
+        time.sleep(2)
+        link = item.get('href')
+        oglobo_sheet.append_row([[dia, titulo, classe, link]])
+        
+coleta_oglobo()
