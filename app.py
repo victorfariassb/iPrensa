@@ -78,7 +78,7 @@ uolq6 = uolq[6]
 uol6 = uol[6]
 jp6 = jp[6]
 jpq6 = jpq[6]
-folha6 folha[6]
+folha6 = folha[6]
 folhaq6 = folhaq[6]
 
 globo7 = globo[7]
