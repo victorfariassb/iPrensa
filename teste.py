@@ -20,11 +20,11 @@ credentials = json.loads(conteudo)
 service_account = gspread.service_account_from_dict(credentials) # autenticação
 spreadsheet = service_account.open_by_key(spreadsheet_id) #abrir arquivo
 
-globo_sheet = spreadsheet.worksheet('globo') # escolhe aba
-uol_sheet = spreadsheet.worksheet('uol') # escolhe aba
+globo_sheet = spreadsheet.worksheet('globo') 
+uol_sheet = spreadsheet.worksheet('uol') 
 jp_sheet = spreadsheet.worksheet('jovem_pan') 
 folha_sheet = spreadsheet.worksheet('folha') 
-oglobo_sheet = spreadsheet.worksheet('oglobo') # escolhe aba
+oglobo_sheet = spreadsheet.worksheet('oglobo') 
 
 
 # Mais faladas
