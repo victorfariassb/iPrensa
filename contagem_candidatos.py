@@ -5,10 +5,22 @@ import numpy as np
 import time
 
 def contagem_candidatos(base, contagem):
-    linha = 2
-    coluna = 2
-    time.sleep(20)
-    dataframe = pd.DataFrame(base.get_all_records())   
+    dataframe = pd.DataFrame(base.get_all_records())
+    chave = dataframe['classe'][0]
+    
+    if 'destaque-topo' in chave:
+        linha = 2
+    elif "headlineBigPhoto__link" in chave:
+        linha = 9
+    elif "manchete" in chave:
+        linha = 16
+    elif 'c-main-headline__title' in chave:
+        linha = 23
+    elif "people-teasers__card--title" in chave:
+        linha = 30
+    else:
+        linha = 37
+    coluna = 3
 
     presidenciaveis = ['Bolsonaro', 'Lula', 'Moro', 'Ciro', 'Doria', 'Pacheco', 'Tebet', 'Vieira']
     for presidenciavel in presidenciaveis:
