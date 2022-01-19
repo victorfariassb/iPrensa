@@ -25,7 +25,7 @@ uolq = contagem_palavras.col_values(4)
 jp = contagem_palavras.col_values(5)
 jpq = contagem_palavras.col_values(6)
 folha = contagem_palavras.col_values(7)
-folhaq = contagem_palavras.col_values(7)
+folhaq = contagem_palavras.col_values(8)
 
 globo1 = globo[1]
 globoq1 = globoq[1]
