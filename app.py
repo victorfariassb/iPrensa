@@ -33,7 +33,7 @@ uol1 = uol[1]
 uolq1 = uolq[1]
 jp1 = jp[1]
 jpq1 = jpq[1]
-f1 = folha[1]
+f1 = folhaq[1]
 fq1 = folhaq[1]
 
 globo2 = globo[2]
@@ -115,7 +115,7 @@ uol10 = uol[10]
 jp10 = jp[10]
 jpq10 = jpq[10]
 f10 = folha[10]
-fq10 = folha[10]
+fq10 = folhaq[10]
 
 contagem_globo = spreadsheet.worksheet('contagem_globo')
 semana_globo = contagem_globo.col_values(2)
