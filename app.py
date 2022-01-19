@@ -24,6 +24,8 @@ uol = contagem_palavras.col_values(3)
 uolq = contagem_palavras.col_values(4)
 jp = contagem_palavras.col_values(5)
 jpq = contagem_palavras.col_values(6)
+folha = contagem_palavras.col_values(7)
+folhaq = contagem_palavras.col_values(7)
 
 globo1 = globo[1]
 globoq1 = globoq[1]
@@ -31,6 +33,8 @@ uol1 = uol[1]
 uolq1 = uolq[1]
 jp1 = jp[1]
 jpq1 = jpq[1]
+folha1 = folha[1]
+folhaq1 = folhaq[1]
 
 globo2 = globo[2]
 globoq2 = globoq[2]
@@ -38,6 +42,8 @@ uolq2 = uolq[2]
 uol2 = uol[2]
 jp2 = jp[2]
 jpq2 = jpq[2]
+folha2 = folha[2]
+folhaq2 = folha[2]
 
 globo3 = globo[3]
 globoq3 = globoq[3]
@@ -45,6 +51,8 @@ uolq3 = uolq[3]
 uol3 = uol[3]
 jp3 = jp[3]
 jpq3 = jpq[3]
+folha3 = folha[3]
+folhaq3 = folhaq[3]
 
 globo4 = globo[4]
 globoq4 = globoq[4]
@@ -52,6 +60,8 @@ uolq4 = uolq[4]
 uol4 = uol[4]
 jp4 = jp[4]
 jpq4 = jpq[4]
+folha4 = folha[4]
+folhaq4 = folhaq[4]
 
 globo5 = globo[5]
 globoq5 = globoq[5]
@@ -59,6 +69,8 @@ uolq5 = uolq[5]
 uol5 = uol[5]
 jp5 = jp[5]
 jpq5 = jpq[5]
+folha5 = folha[5]
+folhaq5 = folhaq[5]
 
 globo6 = globo[6]
 globoq6 = globoq[6]
@@ -66,6 +78,8 @@ uolq6 = uolq[6]
 uol6 = uol[6]
 jp6 = jp[6]
 jpq6 = jpq[6]
+folha6 folha[6]
+folhaq6 = folhaq[6]
 
 globo7 = globo[7]
 globoq7 = globoq[7]
@@ -73,6 +87,8 @@ uolq7 = uolq[7]
 uol7 = uol[7]
 jp7 = jp[7]
 jpq7 = jpq[7]
+folha7 = folha[7]
+folhaq7 = folhaq[7]
 
 globo8 = globo[8]
 globoq8 = globoq[8]
@@ -80,6 +96,8 @@ uolq8 = uolq[8]
 uol8 = uol[8]
 jp8 = jp[8]
 jpq8 = jpq[8]
+folha8 = folha[8]
+folhaq8 = folhaq[8]
 
 globo9 = globo[9]
 globoq9 = globoq[9]
@@ -87,6 +105,8 @@ uolq9= uolq[9]
 uol9 = uol[9]
 jp9 = jp[9]
 jpq9 = jpq[9]
+folha9 = folha[9]
+folhaq9 = folhaq[9]
 
 globo10 = globo[10]
 globoq10 = globoq[10]
@@ -94,6 +114,8 @@ uolq10 = uolq[10]
 uol10 = uol[10]
 jp10 = jp[10]
 jpq10 = jpq[10]
+folha10 = folha[10]
+folhaq10 = folha1[10]
 
 contagem_globo = spreadsheet.worksheet('contagem_globo')
 semana_globo = contagem_globo.col_values(2)
@@ -214,6 +236,8 @@ def dados_jornais():
         p1=uol1, p2=uol2, p3=uol3, p4=uol4, p5=uol5, p6=uol6, p7=uol7, p8=uol8, p9=uol9, p10=uol10,
         jp_1=jpq1, jp_2=jpq2, jp_3=jpq3, jp_4=jpq4, jp_5=jpq5, jp_6=jpq6, jp_7=jpq7, jp_8=jpq8, jp_9=jpq9, jp_10=jpq10,
         jp1=jp1, jp2=jp2, jp3=jp3, jp4=jp4, jp5=jp5, jp6=jp6, jp7=jp7, jp8=jp8, jp9=jp9, jp10=jp10,
+        folha1 = f1, folha2=f2, folha3=f3, folha4=f4, folha5=f5, folha6=f6, folha7=f7, folha8=f8, folha9=f9, folha10=f10,
+        folhaq1 = fq1, folhaq2=fq2, folhaq3=fq3, folhaq4=fq4, folhaq5=fq5, folhaq6=fq6, folhaq7=fq7, folhaq8=fq8, folhaq9=fq9, folhaq10=fq10,
         semana_bolso=ub1, mes_bolso=ub2, ano_bolso=ub3,
         semana_lula=ul1, mes_lula=ul2, ano_lula=ul3,
         semana_moro=um1, mes_moro=um2, ano_moro=um3,
