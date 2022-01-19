@@ -33,7 +33,7 @@ uol1 = uol[1]
 uolq1 = uolq[1]
 jp1 = jp[1]
 jpq1 = jpq[1]
-f1 = folhaq[1]
+f1 = folha[1]
 fq1 = folhaq[1]
 
 globo2 = globo[2]
