@@ -117,105 +117,95 @@ jpq10 = jpq[10]
 f10 = folha[10]
 fq10 = folhaq[10]
 
-contagem_globo = spreadsheet.worksheet('contagem_globo')
-semana_globo = contagem_globo.col_values(2)
-mes_globo = contagem_globo.col_values(3)
-ano_globo = contagem_globo.col_values(4)
+contagem_candidatos = spreadsheet.worksheet('contagem_candidato')
+semana_candidato = contagem_candidatos.col_values(3)
+mes_candidato = contagem_candidatos.col_values(4)
+ano_candidato = contagem_candidatos.col_values(5)
 
-gb1 = semana_globo[1]
-gb2 = mes_globo[1]
-gb3 = ano_globo[1]
+gb1 = semana_candidato[1]
+gb2 = mes_candidato[1]
+gb3 = ano_candidato[1]
 
-gl1 = semana_globo[2]
-gl2 = mes_globo[2]
-gl3 = ano_globo[2]
+gl1 = semana_candidato[2]
+gl2 = mes_candidato[2]
+gl3 = ano_candidato[2]
 
-gm1 = semana_globo[3]
-gm2 = mes_globo[3]
-gm3 = ano_globo[3]
+gm1 = semana_candidato[3]
+gm2 = mes_candidato[3]
+gm3 = ano_candidato[3]
 
-gc1 = semana_globo[4]
-gc2 = mes_globo[4]
-gc3 = ano_globo[4]
+gc1 = semana_candidato[4]
+gc2 = mes_candidato[4]
+gc3 = ano_candidato[4]
 
-gd1 = semana_globo[5]
-gd2 = mes_globo[5]
-gd3 = ano_globo[5]
+gd1 = semana_candidato[5]
+gd2 = mes_candidato[5]
+gd3 = ano_candidato[5]
 
-contagem_uol = spreadsheet.worksheet('contagem_uol')
-semana_uol = contagem_uol.col_values(2)
-mes_uol = contagem_uol.col_values(3)
-ano_uol = contagem_uol.col_values(4)
+# Uol
+ub1 = semana_candidato[6]
+ub2 = mes_candidato[6]
+ub3 = ano_candidato[6]
 
-ub1 = semana_uol[1]
-ub2 = mes_uol[1]
-ub3 = ano_uol[1]
+ul1 = semana_candidato[7]
+ul2 = mes_candidato[7]
+ul3 = ano_candidato[7]
 
-ul1 = semana_uol[2]
-ul2 = mes_uol[2]
-ul3 = ano_uol[2]
+um1 = semana_candidato[8]
+um2 = mes_candidato[8]
+um3 = ano_candidato[8]
 
-um1 = semana_uol[3]
-um2 = mes_uol[3]
-um3 = ano_uol[3]
+uc1 = semana_candidato[9]
+uc2 = mes_candidato[9]
+uc3 = ano_candidato[9]
 
-uc1 = semana_uol[4]
-uc2 = mes_uol[4]
-uc3 = ano_uol[4]
+ud1 = semana_candidato[10]
+ud2 = mes_candidato[10]
+ud3 = ano_candidato[10]
 
-ud1 = semana_uol[5]
-ud2 = mes_uol[5]
-ud3 = ano_uol[5]
+# JP
 
-contagem_jp = spreadsheet.worksheet('contagem_jp')
-semana_jp = contagem_jp.col_values(2)
-mes_jp = contagem_jp.col_values(3)
-ano_jp = contagem_jp.col_values(4)
+jpb1 = semana_candidato[11]
+jpb2 = mes_candidato[11]
+jpb3 = ano_candidato[11]
 
-jpb1 = semana_jp[1]
-jpb2 = mes_jp[1]
-jpb3 = ano_jp[1]
+jpl1 = semana_candidato[12]
+jpl2 = mes_candidato[12]
+jpl3 = ano_candidato[12]
 
-jpl1 = semana_jp[2]
-jpl2 = mes_jp[2]
-jpl3 = ano_jp[2]
+jpm1 = semana_candidato[13]
+jpm2 = mes_candidato[13]
+jpm3 = ano_candidato[13]
 
-jpm1 = semana_jp[3]
-jpm2 = mes_jp[3]
-jpm3 = ano_jp[3]
+jpc1 = semana_candidato[14]
+jpc2 = mes_candidato[14]
+jpc3 = ano_candidato[14]
 
-jpc1 = semana_jp[4]
-jpc2 = mes_jp[4]
-jpc3 = ano_jp[4]
+jpd1 = semana_candidato[15]
+jpd2 = mes_candidato[15]
+jpd3 = ano_candidato[15]
 
-jpd1 = semana_jp[5]
-jpd2 = mes_jp[5]
-jpd3 = ano_jp[5]
+# Folha
 
-contagem_folha = spreadsheet.worksheet('contagem_folha')
-semana_folha = contagem_folha.col_values(2)
-mes_folha = contagem_folha.col_values(3)
-ano_folha = contagem_folha.col_values(4)
+folhab1 = semana_candidato[16]
+folhab2 = mes_candidato[16]
+folhab3 = ano_candidato[16]
 
-folhab1 = semana_folha[1]
-folhab2 = mes_folha[1]
-folhab3 = ano_folha[1]
+folhal1 = semana_candidato[17]
+folhal2 = mes_candidato[17]
+folhal3 = ano_candidato[17]
 
-folhal1 = semana_folha[2]
-folhal2 = mes_folha[2]
-folhal3 = ano_folha[2]
+folham1 = semana_candidato[18]
+folham2 = mes_candidato[18]
+folham3 = ano_candidato[18]
 
-folham1 = semana_folha[3]
-folham2 = mes_folha[3]
-folham3 = ano_folha[3]
+folhac1 = semana_candidato[19]
+folhac2 = mes_candidato[19]
+folhac3 = ano_candidato[19]
 
-folhac1 = semana_folha[4]
-folhac2 = mes_folha[4]
-folhac3 = ano_folha[4]
-
-folhad1 = semana_folha[5]
-folhad2 = mes_folha[5]
-folhad3 = ano_folha[5]
+folhad1 = semana_candidato[20]
+folhad2 = mes_candidato[20]
+folhad3 = ano_candidato[20]
 
 
 # Coleta hora
