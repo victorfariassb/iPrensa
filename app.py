@@ -143,69 +143,69 @@ gd2 = mes_candidato[5]
 gd3 = ano_candidato[5]
 
 # Uol
-ub1 = semana_candidato[11]
-ub2 = mes_candidato[11]
-ub3 = ano_candidato[11]
+ub1 = semana_candidato[9]
+ub2 = mes_candidato[9]
+ub3 = ano_candidato[9]
 
-ul1 = semana_candidato[12]
-ul2 = mes_candidato[12]
-ul3 = ano_candidato[12]
+ul1 = semana_candidato[10]
+ul2 = mes_candidato[10]
+ul3 = ano_candidato[10]
 
-um1 = semana_candidato[13]
-um2 = mes_candidato[13]
-um3 = ano_candidato[13]
+um1 = semana_candidato[11]
+um2 = mes_candidato[11]
+um3 = ano_candidato[11]
 
-uc1 = semana_candidato[14]
-uc2 = mes_candidato[14]
-uc3 = ano_candidato[14]
+uc1 = semana_candidato[12]
+uc2 = mes_candidato[12]
+uc3 = ano_candidato[12]
 
-ud1 = semana_candidato[15]
-ud2 = mes_candidato[15]
-ud3 = ano_candidato[15]
+ud1 = semana_candidato[13]
+ud2 = mes_candidato[13]
+ud3 = ano_candidato[13]
 
 # JP
 
-jpb1 = semana_candidato[19]
-jpb2 = mes_candidato[19]
-jpb3 = ano_candidato[19]
+jpb1 = semana_candidato[17]
+jpb2 = mes_candidato[17]
+jpb3 = ano_candidato[17]
 
-jpl1 = semana_candidato[20]
-jpl2 = mes_candidato[20]
-jpl3 = ano_candidato[20]
+jpl1 = semana_candidato[18]
+jpl2 = mes_candidato[18]
+jpl3 = ano_candidato[18]
 
-jpm1 = semana_candidato[21]
-jpm2 = mes_candidato[21]
-jpm3 = ano_candidato[21]
+jpm1 = semana_candidato[19]
+jpm2 = mes_candidato[19]
+jpm3 = ano_candidato[19]
 
-jpc1 = semana_candidato[22]
-jpc2 = mes_candidato[22]
-jpc3 = ano_candidato[2]
+jpc1 = semana_candidato[20]
+jpc2 = mes_candidato[20]
+jpc3 = ano_candidato[20]
 
-jpd1 = semana_candidato[23]
-jpd2 = mes_candidato[23]
-jpd3 = ano_candidato[23]
+jpd1 = semana_candidato[21]
+jpd2 = mes_candidato[21]
+jpd3 = ano_candidato[21]
 
 # Folha
 
-folhab1 = semana_candidato[27]
-folhab2 = mes_candidato[27]
-folhab3 = ano_candidato[27]
+folhab1 = semana_candidato[25]
+folhab2 = mes_candidato[25]
+folhab3 = ano_candidato[25]
 
-folhal1 = semana_candidato[28]
-folhal2 = mes_candidato[28]
-folhal3 = ano_candidato[28]
+folhal1 = semana_candidato[26]
+folhal2 = mes_candidato[26]
+folhal3 = ano_candidato[26]
 
-folham1 = semana_candidato[29]
-folham2 = mes_candidato[29]
-folham3 = ano_candidato[29]
+folham1 = semana_candidato[27]
+folham2 = mes_candidato[27]
+folham3 = ano_candidato[27]
 
-folhac1 = semana_candidato[30]
-folhac2 = mes_candidato[30]
-folhac3 = ano_candidato[30]
+folhac1 = semana_candidato[28]
+folhac2 = mes_candidato[28]
+folhac3 = ano_candidato[28]
 
-folhad1 = semana_candidato[31]
-folhad2 = mes_candidato[31]
-folhad3 = ano_candidato[31]
+folhad1 = semana_candidato[29]
+folhad2 = mes_candidato[29]
+folhad3 = ano_candidato[29]
 
 
 # Coleta hora
