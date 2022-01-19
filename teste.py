@@ -28,13 +28,13 @@ oglobo_sheet = spreadsheet.worksheet('oglobo')
 
 
 # Mais faladas
-contagem_candidatos = spreadsheet.worksheet('contagem_candidato')
-contagem_candidatos(globo_sheet, contagem_candidatos)
+contagem_candidato = spreadsheet.worksheet('contagem_candidato')
+contagem_candidatos(globo_sheet, contagem_candidato)
 
-contagem_candidatos(uol_sheet, contagem_candidatos)
+contagem_candidatos(uol_sheet, contagem_candidato)
 
-contagem_candidatos(jp_sheet, contagem_candidatos)
+contagem_candidatos(jp_sheet, contagem_candidato)
 
-contagem_candidatos(folha_sheet, contagem_candidatos)
+contagem_candidatos(folha_sheet, contagem_candidato)
 
-contagem_candidatos(oglobo_sheet, contagem_candidatos)
+contagem_candidatos(oglobo_sheet, contagem_candidato)
