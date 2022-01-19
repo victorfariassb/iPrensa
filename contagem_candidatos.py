@@ -7,7 +7,7 @@ import time
 def contagem_candidatos(base, contagem):
     linha = 2
     coluna = 2
-    
+    time.sleep(20)
     dataframe = pd.DataFrame(base.get_all_records())   
 
     presidenciaveis = ['Bolsonaro', 'Lula', 'Moro', 'Ciro', 'Doria', 'Pacheco', 'Tebet', 'Vieira']
@@ -47,7 +47,7 @@ def contagem_candidatos(base, contagem):
         termo_ano = df_ano[['link']][df_ano['titulo'].str.contains(f'{presidenciavel}')].drop_duplicates().reset_index(drop=True)
         termo_ano = len(termo_ano)
         
-        time.sleep(2)
+        time.sleep(3)
         contagem.update_cell(linha, coluna, termo_semana)
         contagem.update_cell(linha, coluna + 1, termo_mes)
         contagem.update_cell(linha, coluna + 2, termo_ano)
