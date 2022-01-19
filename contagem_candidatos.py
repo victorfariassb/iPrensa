@@ -17,9 +17,9 @@ def contagem_candidatos(base, contagem):
     elif 'c-main-headline__title' in chave:
         linha = 26
     elif "people-teasers__card--title" in chave:
-        linha = 33
+        linha = 34
     else:
-        linha = 41
+        linha = 42
     coluna = 3
 
     presidenciaveis = ['Bolsonaro', 'Lula', 'Moro', 'Ciro', 'Doria', 'Pacheco', 'Tebet', 'Vieira']
