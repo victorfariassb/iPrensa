@@ -28,17 +28,13 @@ oglobo_sheet = spreadsheet.worksheet('oglobo') # escolhe aba
 
 
 # Mais faladas
-contagem_globo = spreadsheet.worksheet('contagem_globo')
-contagem_candidatos(globo_sheet, contagem_globo)
+contagem_candidatos = spreadsheet.worksheet('contagem_candidato')
+contagem_candidatos(globo_sheet, contagem_candidatos)
 
-contagem_uol = spreadsheet.worksheet('contagem_uol')
-contagem_candidatos(uol_sheet, contagem_globo)
+contagem_candidatos(uol_sheet, contagem_candidatos)
 
-contagem_jp = spreadsheet.worksheet('contagem_jp')
-contagem_candidatos(jp_sheet, contagem_globo)
+contagem_candidatos(jp_sheet, contagem_candidatos)
 
-contagem_folha = spreadsheet.worksheet('contagem_folha')
-contagem_candidatos(folha_sheet, contagem_globo)
+contagem_candidatos(folha_sheet, contagem_candidatos)
 
-contagem_oglobo = spreadsheet.worksheet('contagem_oglobo')
-contagem_candidatos(oglobo_sheet, contagem_globo)
+contagem_candidatos(oglobo_sheet, contagem_candidatos)
