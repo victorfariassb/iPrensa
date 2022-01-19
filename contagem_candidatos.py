@@ -11,15 +11,15 @@ def contagem_candidatos(base, contagem):
     if 'destaque-topo' in chave:
         linha = 2
     elif "headlineBigPhoto__link" in chave:
-        linha = 9
+        linha = 10
     elif "manchete" in chave:
-        linha = 16
+        linha = 17
     elif 'c-main-headline__title' in chave:
-        linha = 23
+        linha = 24
     elif "people-teasers__card--title" in chave:
-        linha = 30
+        linha = 31
     else:
-        linha = 37
+        linha = 38
     coluna = 3
 
     presidenciaveis = ['Bolsonaro', 'Lula', 'Moro', 'Ciro', 'Doria', 'Pacheco', 'Tebet', 'Vieira']
