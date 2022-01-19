@@ -115,7 +115,7 @@ uol10 = uol[10]
 jp10 = jp[10]
 jpq10 = jpq[10]
 folha10 = folha[10]
-folhaq10 = folha1[10]
+folhaq10 = folha[10]
 
 contagem_globo = spreadsheet.worksheet('contagem_globo')
 semana_globo = contagem_globo.col_values(2)
