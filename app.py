@@ -43,7 +43,7 @@ uol2 = uol[2]
 jp2 = jp[2]
 jpq2 = jpq[2]
 f2 = folha[2]
-fq2 = folha[2]
+fq2 = folhaq[2]
 
 globo3 = globo[3]
 globoq3 = globoq[3]
