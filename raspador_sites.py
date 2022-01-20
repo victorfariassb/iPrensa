@@ -254,6 +254,7 @@ def coleta_oglobo():
 coleta_oglobo()
 
 # Contagem de candidatos
+time.sleep(20
 contagem_candidato = spreadsheet.worksheet('contagem_candidato')
 contagem_candidatos(globo_sheet, contagem_candidato)
 contagem_candidatos(uol_sheet, contagem_candidato)
@@ -263,15 +264,10 @@ contagem_candidatos(oglobo_sheet, contagem_candidato)
 
 
 # Mais faladas
-
+time.sleep(20
 mais_faladas = spreadsheet.worksheet('mais_faladas')
-
 conta_palavras(globo_sheet, mais_faladas)
-
 conta_palavras(uol_sheet, mais_faladas)
-
 conta_palavras(jp_sheet, mais_faladas)
-
 conta_palavras(folha_sheet, mais_faladas)
-
 conta_palavras(oglobo_sheet, mais_faladas)
