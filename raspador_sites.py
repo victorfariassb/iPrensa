@@ -264,7 +264,7 @@ contagem_candidatos(oglobo_sheet, contagem_candidato)
 
 
 # Mais faladas
-time.sleep(20
+time.sleep(20)
 mais_faladas = spreadsheet.worksheet('mais_faladas')
 conta_palavras(globo_sheet, mais_faladas)
 conta_palavras(uol_sheet, mais_faladas)
