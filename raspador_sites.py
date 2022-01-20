@@ -254,7 +254,7 @@ def coleta_oglobo():
 coleta_oglobo()
 
 # Contagem de candidatos
-time.sleep(20
+time.sleep(20)
 contagem_candidato = spreadsheet.worksheet('contagem_candidato')
 contagem_candidatos(globo_sheet, contagem_candidato)
 contagem_candidatos(uol_sheet, contagem_candidato)
