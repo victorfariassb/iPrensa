@@ -207,6 +207,28 @@ folhad1 = semana_candidato[29]
 folhad2 = mes_candidato[29]
 folhad3 = ano_candidato[29]
 
+# O Globo
+
+ogb1 = semana_candidato[34]
+ogb2 = mes_candidato[34]
+ogb3 = ano_candidato[34]
+
+ogl1 = semana_candidato[35]
+ogl2 = mes_candidato[35]
+ogl3 = ano_candidato[35]
+
+ogm1 = semana_candidato[36]
+ogm2 = mes_candidato[36]
+ogm3 = ano_candidato[36]
+
+ogc1 = semana_candidato[37]
+ogc2 = mes_candidato[37]
+ogc3 = ano_candidato[37]
+
+ogd1 = semana_candidato[38]
+ogd2 = mes_candidato[38]
+ogd3 = ano_candidato[38]
+
 
 # Coleta hora
 oglobo = spreadsheet.worksheet('oglobo')
@@ -247,4 +269,9 @@ def dados_jornais():
         semana_lula_folha=folhal1, mes_lula_folha=folhal2, ano_lula_folha=folhal3,
         semana_moro_folha=folham1, mes_moro_folha=folham2, ano_moro_folha=folham3,
         semana_ciro_folha=folhac1, mes_ciro_folha=folhac2, ano_ciro_folha=folhac3,
-        semana_doria_folha=folhad1, mes_doria_folha=folhad2, ano_doria_folha=folhad3)
+        semana_doria_folha=folhad1, mes_doria_folha=folhad2, ano_doria_folha=folhad3,
+        semana_bolso_og=ogb1, mes_bolso_og=ogb2, ano_bolso_og=ogb3,
+        semana_lula_og=ogl1, mes_lula_og=ogl2, ano_lula_og=ogl3,
+        semana_moro_og=ogm1, mes_moro_og=ogm2, ano_moro_og=ogm3,
+        semana_ciro_og=ogc1, mes_ciro_og=ogc2, ano_ciro_og=ogc3,
+        semana_doria_og=ogd1, mes_doria_og=ogd2, ano_doria_og=ogd3)
