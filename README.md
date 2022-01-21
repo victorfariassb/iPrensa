@@ -4,26 +4,11 @@ Olá, seja bem-vindo ao Radar da Imprensa. Nesta primeira versão, o programa ra
 DADOS
 https://docs.google.com/spreadsheets/d/1UY2MkXq41EBEU5AXxGDE2oVrd8rQgPcc28xWi7oHVOU/edit?usp=sharing
 
-No caso da Globo.com, os dados coletados são: 
-- matéria (posição da notícia dentro do site);
+Com algumas exceções, os dados coletados dos sites são: 
+- nº da matéria;
 - data;
-- editoria;
 - título;
-- posição (se é manchete, destaque, coluna etc);
-- link.
-
-No Uol, Folha e O Globo, os dados coletados são:
-- matéria (posição da notícia dentro do site);
-- data;
-- classe (se é manchete, destaque, coluna etc);
-- link;
-- título.
-
-Na Jovem Pan, os dados coletados são:
-- data;
-- retranca;
-- tipo;
-- título;
+- posição ou classe(se é manchete, destaque, coluna etc);
 - link.
 
 ### Análise dos dados
