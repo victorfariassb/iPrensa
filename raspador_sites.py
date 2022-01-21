@@ -16,8 +16,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
-from contagem_candidatos import contagem_candidatos
-from contagem_palavras import conta_palavras
 
 options = webdriver.ChromeOptions()
 options.add_argument('--disable-gpu')
@@ -258,22 +256,3 @@ def coleta_oglobo():
         oglobo_sheet.append_row([f'materia {num}',dia, titulo, classe, link])
         
 coleta_oglobo()
-
-# Contagem de candidatos
-time.sleep(20)
-contagem_candidato = spreadsheet.worksheet('contagem_candidato')
-contagem_candidatos(globo_sheet, contagem_candidato)
-contagem_candidatos(uol_sheet, contagem_candidato)
-contagem_candidatos(jp_sheet, contagem_candidato)
-contagem_candidatos(folha_sheet, contagem_candidato)
-contagem_candidatos(oglobo_sheet, contagem_candidato)
-
-
-# Mais faladas
-time.sleep(20)
-mais_faladas = spreadsheet.worksheet('mais_faladas')
-conta_palavras(globo_sheet, mais_faladas)
-conta_palavras(uol_sheet, mais_faladas)
-conta_palavras(jp_sheet, mais_faladas)
-conta_palavras(folha_sheet, mais_faladas)
-conta_palavras(oglobo_sheet, mais_faladas)
