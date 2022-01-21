@@ -150,13 +150,12 @@ def coleta_jp():
             tipo = 'manchete_inferior'
             link = pega_link(manchete_inferior)
             editoria = editoria.text
-            jp_sheet.append_row([dia, editoria, titulo, tipo, link])
+            jp_sheet.append_row([f'materia {num}', dia, editoria, titulo, tipo, link])
 
     for dado in soup.find_all('p', class_='title'):
         titulo = dado.text.strip()
         if titulo:
-            time.sleep(2)
-            num += 1    
+            time.sleep(2)    
             editoria = dado.parent.find('h6', class_='category')
             if editoria is not None:
                 editoria = editoria.text.strip()
@@ -165,7 +164,8 @@ def coleta_jp():
             tipo = 'noticias'
             link = pega_link(dado)
             if 'curso' not in str(link):
-                jp_sheet.append_row([dia, editoria, titulo, tipo, link])
+                num += 1
+                jp_sheet.append_row([f'materia {num}', dia, editoria, titulo, tipo, link])
         
    
 coleta_jp()
@@ -174,6 +174,8 @@ coleta_jp()
 folha_sheet = spreadsheet.worksheet('folha') # escolhe aba
 
 def coleta_folha():
+  num = 0
+
   time.sleep(5)
   now = datetime.now(pytz.timezone('Brazil/East'))
   dia = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -202,7 +204,8 @@ def coleta_folha():
             classe = re.sub("\']", '', classe)      
             if classe:
                 time.sleep(2)
-                folha_sheet.append_row([dia, titulo, classe, link])
+                num += 1
+                folha_sheet.append_row([f'materia {num}',dia, titulo, classe, link])
   
   top5 = soup.find('ol', class_='c-most-read__list')
   for item in top5.find_all('a'):
@@ -211,13 +214,15 @@ def coleta_folha():
     link = item.get('href')
     titulo = re.sub(r"\n+\s+", ': ', titulo)
     classe = 'mais lidas'
-    folha_sheet.append_row([dia, titulo, classe, link])
+    num += 1
+    folha_sheet.append_row([f'materia {num}', dia, titulo, classe, link])
 
 coleta_folha()
 
 oglobo_sheet = spreadsheet.worksheet('oglobo') # escolhe aba
 
 def coleta_oglobo():
+  num = 0
   now = datetime.now(pytz.timezone('Brazil/East'))
   dia = now.strftime("%d/%m/%Y %H:%M:%S")
     
@@ -249,7 +254,8 @@ def coleta_oglobo():
       if 'block-header--title' not in classe:
         time.sleep(2)
         link = item.get('href')
-        oglobo_sheet.append_row([dia, titulo, classe, link])
+        num += 1
+        oglobo_sheet.append_row([f'materia {num}',dia, titulo, classe, link])
         
 coleta_oglobo()
 
