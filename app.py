@@ -209,25 +209,25 @@ folhad3 = ano_candidato[29]
 
 # O Globo
 
-ogb1 = semana_candidato[34]
-ogb2 = mes_candidato[34]
-ogb3 = ano_candidato[34]
+ogb1 = semana_candidato[33]
+ogb2 = mes_candidato[33]
+ogb3 = ano_candidato[33]
 
-ogl1 = semana_candidato[35]
-ogl2 = mes_candidato[35]
-ogl3 = ano_candidato[35]
+ogl1 = semana_candidato[34]
+ogl2 = mes_candidato[34]
+ogl3 = ano_candidato[34]
 
-ogm1 = semana_candidato[36]
-ogm2 = mes_candidato[36]
-ogm3 = ano_candidato[36]
+ogm1 = semana_candidato[35]
+ogm2 = mes_candidato[35]
+ogm3 = ano_candidato[35]
 
-ogc1 = semana_candidato[37]
-ogc2 = mes_candidato[37]
-ogc3 = ano_candidato[37]
+ogc1 = semana_candidato[36]
+ogc2 = mes_candidato[36]
+ogc3 = ano_candidato[36]
 
-ogd1 = semana_candidato[38]
-ogd2 = mes_candidato[38]
-ogd3 = ano_candidato[38]
+ogd1 = semana_candidato[37]
+ogd2 = mes_candidato[37]
+ogd3 = ano_candidato[37]
 
 
 # Coleta hora
