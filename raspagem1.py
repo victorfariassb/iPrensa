@@ -19,13 +19,13 @@ uol_sheet = spreadsheet.worksheet('uol')
 jp_sheet = spreadsheet.worksheet('jovem_pan') 
 
 try:
-  coleta_globo()
+  coleta_globo(globo_sheet)
 finally:
   next
   
 try:
-  coleta_uol()
+  coleta_uol(uol_sheet)
 finally:
   next
 
-coleta_jp()
+coleta_jp(jp_sheet)
