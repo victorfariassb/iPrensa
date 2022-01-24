@@ -14,12 +14,12 @@ credentials = json.loads(conteudo)
 service_account = gspread.service_account_from_dict(credentials) 
 spreadsheet = service_account.open_by_key(spreadsheet_id) 
 
-oglobo_sheet = spreadsheet.worksheet('oglobo') 
 folha_sheet = spreadsheet.worksheet('folha') 
+oglobo_sheet = spreadsheet.worksheet('oglobo') 
 
 try:
-  coleta_folha()
+  coleta_folha(folha_sheet)
 finally:
   next
 
-coleta_oglobo()
+coleta_oglobo(oglobo_sheet)
