@@ -2,6 +2,7 @@ import base64
 import gspread
 import json
 import pandas as pd
+import os
 
 from raspador_sites import pega_editoria, pega_localizacao, pega_link, coleta_globo, coleta_uol, coleta_jp, coleta_folha, coleta_oglobo
 
