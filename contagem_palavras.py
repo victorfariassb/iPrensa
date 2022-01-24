@@ -28,7 +28,7 @@ def conta_palavras(base, contagem):
     nltk.download('punkt') 
     
     # Contagem de mesmo tema
-    dataframe['titulo'] = dataframe['titulo'].str.replace('bbb22', 'bbb')
+    dataframe['titulo'] = dataframe['titulo'].str.replace('BBB22', 'bbb')
     
     #String text pega todos os títulos do arquivo
     text = ''
