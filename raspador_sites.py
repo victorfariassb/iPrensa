@@ -24,18 +24,8 @@ options.add_argument('--disable-dev-shm-usage')
 options.binary_location = os.environ["GOOGLE_CHROME_PATH"]
 browser = webdriver.Chrome(options=options, executable_path=ChromeDriverManager().install())
 
-spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
-conteudo_codificado =  os.environ['GOOGLE_SHEETS_CREDENTIALS']
-conteudo = base64.b64decode(conteudo_codificado)
-credentials = json.loads(conteudo)
-
-service_account = gspread.service_account_from_dict(credentials) # autenticação
-spreadsheet = service_account.open_by_key(spreadsheet_id) #abrir arquivo
-
 
 # Raspagem de dados
-globo_sheet = spreadsheet.worksheet('globo') # escolhe aba
-
 # Função recursiva para coletar editoria de matérias
 def pega_editoria(link):
     action = link.attrs.get('data-tracking-action')
@@ -50,7 +40,7 @@ def pega_localizacao(link):
     else: return action
     
 
-def coleta_globo():
+def coleta_globo(planilha):
     num = 0
     
     now = datetime.now(pytz.timezone('Brazil/East'))
@@ -68,15 +58,10 @@ def coleta_globo():
         titulo = re.sub(r"\n+", '', titulo)
         posicao = pega_localizacao(dado)
         link = dado.get('href')
-        globo_sheet.append_row([num, dia, editoria, titulo, posicao, link])
-    
-    
-coleta_globo()
+        planilha.append_row([num, dia, editoria, titulo, posicao, link])
 
 
-uol_sheet = spreadsheet.worksheet('uol') # escolhe aba
-
-def coleta_uol():
+def coleta_uol(planilha):
     num = 0
     time.sleep(5)
     classes_drop = ['headerDesktop__logo__hyperlink', 'linkExternal', 'followVideo__link', 'cardVideo__content__titleBrand__link',
@@ -105,12 +90,10 @@ def coleta_uol():
                         tit = tit.strip()
                         tit = re.sub(r"\n+\s+", ': ', tit)
                         titulo = tit
-                        uol_sheet.append_row([num, dia, classe, link, titulo])
+                        planilha.append_row([num, dia, classe, link, titulo])
 
                         
-coleta_uol()
 
-jp_sheet = spreadsheet.worksheet('jovem_pan') 
 
 def pega_link(link):
     action = link.attrs.get('href')
@@ -119,7 +102,7 @@ def pega_link(link):
     else:
         return action
 
-def coleta_jp():
+def coleta_jp(planilha):
     num = 0
     time.sleep(5)
 
@@ -137,7 +120,7 @@ def coleta_jp():
             tipo = 'manchete'
             link = pega_link(manchete)
             editoria = editoria.text
-            jp_sheet.append_row([num, dia, editoria, titulo, tipo, link])
+            planilha.append_row([num, dia, editoria, titulo, tipo, link])
 
     for manchete_inferior in soup.find_all('h3', class_='title'):
         editoria = manchete_inferior.parent.parent.find('h6', class_='category')
@@ -148,7 +131,7 @@ def coleta_jp():
             tipo = 'manchete_inferior'
             link = pega_link(manchete_inferior)
             editoria = editoria.text
-            jp_sheet.append_row([num, dia, editoria, titulo, tipo, link])
+            planilha.append_row([num, dia, editoria, titulo, tipo, link])
 
     for dado in soup.find_all('p', class_='title'):
         titulo = dado.text.strip()
@@ -163,18 +146,13 @@ def coleta_jp():
             link = pega_link(dado)
             if 'curso' not in str(link):
                 num += 1
-                jp_sheet.append_row([num, dia, editoria, titulo, tipo, link])
+                planilha.append_row([num, dia, editoria, titulo, tipo, link])
         
-   
-coleta_jp()
+  
 
-
-folha_sheet = spreadsheet.worksheet('folha') # escolhe aba
-
-def coleta_folha():
+def coleta_folha(planilha):
   num = 0
 
-  time.sleep(5)
   now = datetime.now(pytz.timezone('Brazil/East'))
   dia = now.strftime("%d/%m/%Y %H:%M:%S")
 
@@ -203,7 +181,7 @@ def coleta_folha():
             if classe:
                 time.sleep(2)
                 num += 1
-                folha_sheet.append_row([num, dia, titulo, classe, link])
+                planilha.append_row([num, dia, titulo, classe, link])
   
   top5 = soup.find('ol', class_='c-most-read__list')
   for item in top5.find_all('a'):
@@ -213,13 +191,10 @@ def coleta_folha():
     titulo = re.sub(r"\n+\s+", ': ', titulo)
     classe = 'mais lidas'
     num += 1
-    folha_sheet.append_row([num, dia, titulo, classe, link])
+    planilha.append_row([num, dia, titulo, classe, link])
 
-coleta_folha()
 
-oglobo_sheet = spreadsheet.worksheet('oglobo') # escolhe aba
-
-def coleta_oglobo():
+def coleta_oglobo(planilha):
   num = 0
   now = datetime.now(pytz.timezone('Brazil/East'))
   dia = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -229,7 +204,7 @@ def coleta_oglobo():
 
   while True:
       browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-      time.sleep(40)
+      time.sleep(20)
       new_height = browser.execute_script("return document.body.scrollHeight")
       if new_height == last_height:
           break
@@ -253,6 +228,4 @@ def coleta_oglobo():
         time.sleep(2)
         link = item.get('href')
         num += 1
-        oglobo_sheet.append_row([num, dia, titulo, classe, link])
-        
-coleta_oglobo()
+        planilha.append_row([num, dia, titulo, classe, link])
