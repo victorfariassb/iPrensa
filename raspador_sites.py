@@ -148,7 +148,7 @@ def coleta_jp():
             tipo = 'manchete_inferior'
             link = pega_link(manchete_inferior)
             editoria = editoria.text
-            jp_sheet.append_row(num, dia, editoria, titulo, tipo, link])
+            jp_sheet.append_row([num, dia, editoria, titulo, tipo, link])
 
     for dado in soup.find_all('p', class_='title'):
         titulo = dado.text.strip()
@@ -253,6 +253,6 @@ def coleta_oglobo():
         time.sleep(2)
         link = item.get('href')
         num += 1
-        oglobo_sheet.append_row([num,dia, titulo, classe, link])
+        oglobo_sheet.append_row([num, dia, titulo, classe, link])
         
 coleta_oglobo()
