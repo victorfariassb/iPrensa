@@ -63,7 +63,6 @@ def coleta_globo(planilha):
 
 def coleta_uol(planilha):
     num = 0
-    time.sleep(5)
     classes_drop = ['headerDesktop__logo__hyperlink', 'linkExternal', 'followVideo__link', 'cardVideo__content__titleBrand__link',
                     'headerCard__link', 'headerSection__link', 'headlineAd__link']
     
@@ -104,7 +103,6 @@ def pega_link(link):
 
 def coleta_jp(planilha):
     num = 0
-    time.sleep(5)
 
     now = datetime.now(pytz.timezone('Brazil/East'))
     dia = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -185,7 +183,7 @@ def coleta_folha(planilha):
   
   top5 = soup.find('ol', class_='c-most-read__list')
   for item in top5.find_all('a'):
-    time.sleep(2)
+    time.sleep(1)
     titulo = item.text.strip()
     link = item.get('href')
     titulo = re.sub(r"\n+\s+", ': ', titulo)
@@ -225,7 +223,7 @@ def coleta_oglobo(planilha):
       classe = re.sub("\['", '', classe)
       classe = re.sub("\']", '', classe)
       if 'block-header--title' not in classe:
-        time.sleep(2)
+        time.sleep(1)
         link = item.get('href')
         num += 1
         planilha.append_row([num, dia, titulo, classe, link])
