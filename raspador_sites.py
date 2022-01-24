@@ -68,7 +68,7 @@ def coleta_globo():
         titulo = re.sub(r"\n+", '', titulo)
         posicao = pega_localizacao(dado)
         link = dado.get('href')
-        globo_sheet.append_row([f"materia {num}", dia, editoria, titulo, posicao, link])
+        globo_sheet.append_row([num, dia, editoria, titulo, posicao, link])
     
     
 coleta_globo()
@@ -105,7 +105,7 @@ def coleta_uol():
                         tit = tit.strip()
                         tit = re.sub(r"\n+\s+", ': ', tit)
                         titulo = tit
-                        uol_sheet.append_row([f'materia {num}', dia, classe, link, titulo])
+                        uol_sheet.append_row([num, dia, classe, link, titulo])
 
                         
 coleta_uol()
@@ -137,7 +137,7 @@ def coleta_jp():
             tipo = 'manchete'
             link = pega_link(manchete)
             editoria = editoria.text
-            jp_sheet.append_row([f'materia {num}', dia, editoria, titulo, tipo, link])
+            jp_sheet.append_row([num, dia, editoria, titulo, tipo, link])
 
     for manchete_inferior in soup.find_all('h3', class_='title'):
         editoria = manchete_inferior.parent.parent.find('h6', class_='category')
@@ -148,7 +148,7 @@ def coleta_jp():
             tipo = 'manchete_inferior'
             link = pega_link(manchete_inferior)
             editoria = editoria.text
-            jp_sheet.append_row([f'materia {num}', dia, editoria, titulo, tipo, link])
+            jp_sheet.append_row(num, dia, editoria, titulo, tipo, link])
 
     for dado in soup.find_all('p', class_='title'):
         titulo = dado.text.strip()
@@ -163,7 +163,7 @@ def coleta_jp():
             link = pega_link(dado)
             if 'curso' not in str(link):
                 num += 1
-                jp_sheet.append_row([f'materia {num}', dia, editoria, titulo, tipo, link])
+                jp_sheet.append_row([num, dia, editoria, titulo, tipo, link])
         
    
 coleta_jp()
@@ -203,7 +203,7 @@ def coleta_folha():
             if classe:
                 time.sleep(2)
                 num += 1
-                folha_sheet.append_row([f'materia {num}',dia, titulo, classe, link])
+                folha_sheet.append_row([num, dia, titulo, classe, link])
   
   top5 = soup.find('ol', class_='c-most-read__list')
   for item in top5.find_all('a'):
@@ -213,7 +213,7 @@ def coleta_folha():
     titulo = re.sub(r"\n+\s+", ': ', titulo)
     classe = 'mais lidas'
     num += 1
-    folha_sheet.append_row([f'materia {num}', dia, titulo, classe, link])
+    folha_sheet.append_row([num, dia, titulo, classe, link])
 
 coleta_folha()
 
@@ -253,6 +253,6 @@ def coleta_oglobo():
         time.sleep(2)
         link = item.get('href')
         num += 1
-        oglobo_sheet.append_row([f'materia {num}',dia, titulo, classe, link])
+        oglobo_sheet.append_row([num,dia, titulo, classe, link])
         
 coleta_oglobo()
