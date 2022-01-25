@@ -303,7 +303,7 @@ qu8 = contagem[8]
 qu9 = contagem[9]
 qu10 = contagem[10]
 
-@app.route("palavra_semana")
+@app.route("/palavra_semana")
 def palavra_semana():
     return render_template(
         "palavra_semana.html",
