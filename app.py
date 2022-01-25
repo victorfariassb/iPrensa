@@ -307,5 +307,6 @@ qu10 = contagem[10]
 def palavra_semana():
     return render_template(
         "palavra_semana.html",
+        hora=hora,
         pa1 = pa1, pa2 = pa2, pa3 = pa3, pa4 = pa4, pa5 = pa5, pa6 = pa6, pa7 = pa7, pa8 = pa8, pa9 = pa9, pa10 = pa10, 
         qu1 = qu1, qu2 = qu2, qu3 = qu3, qu4 = qu4, qu5 = qu5, qu6 = qu6, qu7 = qu7, qu8 = qu8, qu9 = qu9, qu10 = qu10) 
