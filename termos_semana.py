@@ -57,11 +57,11 @@ def termo_semana(contagem):
     labels = [x.text for x in doc.ents]
     dicionario = Counter(labels)
 
-    palavras = [palavra for palavra in dicionario.most_common(20)]
+    palavras = [palavra for palavra in dicionario.most_common(10)]
     for palavra in palavras:
         contagem.update_cell(linha, coluna, palavra[0])
         contagem.update_cell(linha, coluna + 1, palavra[1])
-        linha = 2
-        coluna += 1
+        linha += 2
+        coluna = 1
 
 termo_semana(palavra_semana)
