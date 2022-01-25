@@ -20,22 +20,18 @@ service_account = gspread.service_account_from_dict(credentials)
 spreadsheet = service_account.open_by_key(spreadsheet_id) 
 
 palavra_semana = spreadsheet.worksheet('palavra_semana') 
-globo_sheet = spreadsheet.worksheet('globo') 
-uol_sheet = spreadsheet.worksheet('uol') 
-jp_sheet = spreadsheet.worksheet('jovem_pan') 
-folha_sheet = spreadsheet.worksheet('folha') 
-oglobo_sheet = spreadsheet.worksheet('oglobo') 
 
 
 def termo_semana(contagem):
     linha = 2
-    coluna = 2
-    jornais = [globo_sheet, uol_sheet, jp_sheet, folha_sheet, oglobo_sheet]
+    coluna = 1
+    jornais = ['uol', 'globo', 'jovem_pan', 'folha', 'oglobo']
 
     tabelas = []
     for jornal in jornais:
         # baixar e converter os dados
-        df = pd.DataFrame(jornal.get_all_records())
+        df = spreadsheet.worksheet(jornal)
+        df = pd.DataFrame(df.get_all_records())
         tabelas.append(df)
     dados = pd.concat(tabelas).reset_index()
 
@@ -50,7 +46,7 @@ def termo_semana(contagem):
 
     # Filtro da relevância
     df_semana['materia'] = pd.to_numeric(df_semana['materia'])
-    df_semana = df_semana[df_semana['materia'] < 21]
+    df_semana = df_semana[df_semana['materia'] < 10]
     df_semana = df_semana['titulo'].drop_duplicates()
 
     # Contagem de termos
@@ -61,11 +57,11 @@ def termo_semana(contagem):
     labels = [x.text for x in doc.ents]
     dicionario = Counter(labels)
 
-    palavras = [palavra for palavra in dicionario.most_common(10)]
+    palavras = [palavra for palavra in dicionario.most_common(20)]
     for palavra in palavras:
         contagem.update_cell(linha, coluna, palavra[0])
         contagem.update_cell(linha, coluna + 1, palavra[1])
-        linha += 2
+        linha += 1
         coluna = 1
 
 termo_semana(palavra_semana)
