@@ -287,7 +287,7 @@ ogd2 = mes_candidato[37]
 ogd3 = ano_candidato[37]
 
 @app.route("/ranking_candidatos")
-def palavra_semana():
+def ranking_candidato():
     return render_template(
         "radar_eleicao.html",
         hora=hora,
