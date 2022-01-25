@@ -20,18 +20,22 @@ service_account = gspread.service_account_from_dict(credentials)
 spreadsheet = service_account.open_by_key(spreadsheet_id) 
 
 palavra_semana = spreadsheet.worksheet('palavra_semana') 
+globo_sheet = spreadsheet.worksheet('globo') 
+uol_sheet = spreadsheet.worksheet('uol') 
+jp_sheet = spreadsheet.worksheet('jovem_pan') 
+folha_sheet = spreadsheet.worksheet('folha') 
+oglobo_sheet = spreadsheet.worksheet('oglobo') 
 
 
 def termo_semana(contagem):
     linha = 2
     coluna = 2
-    jornais = ['uol', 'globo', 'jovem_pan', 'folha', 'oglobo']
+    jornais = [globo_sheet, uol_sheet, jp_sheet, folha_sheet, oglobo_sheet]
 
     tabelas = []
     for jornal in jornais:
         # baixar e converter os dados
-        df = spreadsheet.worksheet(jornal)
-        df = pd.DataFrame(df.get_all_records())
+        df = pd.DataFrame(jornal.get_all_records())
         tabelas.append(df)
     dados = pd.concat(tabelas).reset_index()
 
