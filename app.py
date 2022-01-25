@@ -117,6 +117,63 @@ jpq10 = jpq[10]
 f10 = folha[10]
 fq10 = folhaq[10]
 
+# Coleta hora
+oglobo = spreadsheet.worksheet('oglobo')
+oglobo = pd.DataFrame(oglobo.get_all_records())
+hora =oglobo['data'].iloc[-1]
+hora = str(hora)
+
+
+@app.route("/")
+def dados_jornais():
+    return render_template(
+        "home.html",
+        hora=hora,
+        g1=globoq1, g2=globoq2, g3=globoq3, g4=globoq4, g5=globoq5, g6=globoq6, g7=globoq7, g8=globoq8, g9=globoq9, g10=globoq10,
+        w1=globo1, w2=globo2, w3=globo3, w4=globo4, w5=globo5, w6=globo6, w7=globo7, w8=globo8, w9=globo9, w10=globo10,
+        u1=uolq1, u2=uolq2, u3=uolq3, u4=uolq4, u5=uolq5, u6=uolq6, u7=uolq7, u8=uolq8, u9=uolq9, u10=uolq10,
+        p1=uol1, p2=uol2, p3=uol3, p4=uol4, p5=uol5, p6=uol6, p7=uol7, p8=uol8, p9=uol9, p10=uol10,
+        jp_1=jpq1, jp_2=jpq2, jp_3=jpq3, jp_4=jpq4, jp_5=jpq5, jp_6=jpq6, jp_7=jpq7, jp_8=jpq8, jp_9=jpq9, jp_10=jpq10,
+        jp1=jp1, jp2=jp2, jp3=jp3, jp4=jp4, jp5=jp5, jp6=jp6, jp7=jp7, jp8=jp8, jp9=jp9, jp10=jp10,
+        f1 = f1, f2=f2, f3=f3, f4=f4, f5=f5, f6=f6, f7=f7, f8=f8, f9=f9, f10=f10,
+        fq1 = fq1, fq2=fq2, fq3=fq3, fq4=fq4, fq5=fq5, fq6=fq6, fq7=fq7, fq8=fq8, fq9=fq9, fq10=fq10)
+
+
+palavra_semana = spreadsheet.worksheet('palavra_semana')
+palavras = palavra_semana.col_values(1)
+contagem = palavra_semana.col_values(2)
+
+pa1 = palavras[1]
+pa2 = palavras[2]
+pa3 = palavras[3]
+pa4 = palavras[4]
+pa5 = palavras[5]
+pa6 = palavras[6]
+pa7 = palavras[7]
+pa8 = palavras[8]
+pa9 = palavras[9]
+pa10 = palavras[10]
+
+qu1 = contagem[1]
+qu2 = contagem[2]
+qu3 = contagem[3]
+qu4 = contagem[4]
+qu5 = contagem[5]
+qu6 = contagem[6]
+qu7 = contagem[7]
+qu8 = contagem[8]
+qu9 = contagem[9]
+qu10 = contagem[10]
+
+@app.route("/palavra_semana")
+def palavra_semana():
+    return render_template(
+        "palavra_semana.html",
+        hora=hora,
+        pa1 = pa1, pa2 = pa2, pa3 = pa3, pa4 = pa4, pa5 = pa5, pa6 = pa6, pa7 = pa7, pa8 = pa8, pa9 = pa9, pa10 = pa10, 
+        qu1 = qu1, qu2 = qu2, qu3 = qu3, qu4 = qu4, qu5 = qu5, qu6 = qu6, qu7 = qu7, qu8 = qu8, qu9 = qu9, qu10 = qu10) 
+
+
 contagem_candidatos = spreadsheet.worksheet('contagem_candidato')
 semana_candidato = contagem_candidatos.col_values(3)
 mes_candidato = contagem_candidatos.col_values(4)
@@ -229,27 +286,11 @@ ogd1 = semana_candidato[37]
 ogd2 = mes_candidato[37]
 ogd3 = ano_candidato[37]
 
-
-# Coleta hora
-oglobo = spreadsheet.worksheet('oglobo')
-oglobo = pd.DataFrame(oglobo.get_all_records())
-hora =oglobo['data'].iloc[-1]
-hora = str(hora)
-
-
-@app.route("/")
-def dados_jornais():
+@app.route("/ranking_candidatos")
+def palavra_semana():
     return render_template(
-        "home.html",
+        "radar_eleicao.html",
         hora=hora,
-        g1=globoq1, g2=globoq2, g3=globoq3, g4=globoq4, g5=globoq5, g6=globoq6, g7=globoq7, g8=globoq8, g9=globoq9, g10=globoq10,
-        w1=globo1, w2=globo2, w3=globo3, w4=globo4, w5=globo5, w6=globo6, w7=globo7, w8=globo8, w9=globo9, w10=globo10,
-        u1=uolq1, u2=uolq2, u3=uolq3, u4=uolq4, u5=uolq5, u6=uolq6, u7=uolq7, u8=uolq8, u9=uolq9, u10=uolq10,
-        p1=uol1, p2=uol2, p3=uol3, p4=uol4, p5=uol5, p6=uol6, p7=uol7, p8=uol8, p9=uol9, p10=uol10,
-        jp_1=jpq1, jp_2=jpq2, jp_3=jpq3, jp_4=jpq4, jp_5=jpq5, jp_6=jpq6, jp_7=jpq7, jp_8=jpq8, jp_9=jpq9, jp_10=jpq10,
-        jp1=jp1, jp2=jp2, jp3=jp3, jp4=jp4, jp5=jp5, jp6=jp6, jp7=jp7, jp8=jp8, jp9=jp9, jp10=jp10,
-        f1 = f1, f2=f2, f3=f3, f4=f4, f5=f5, f6=f6, f7=f7, f8=f8, f9=f9, f10=f10,
-        fq1 = fq1, fq2=fq2, fq3=fq3, fq4=fq4, fq5=fq5, fq6=fq6, fq7=fq7, fq8=fq8, fq9=fq9, fq10=fq10,
         semana_bolso=ub1, mes_bolso=ub2, ano_bolso=ub3,
         semana_lula=ul1, mes_lula=ul2, ano_lula=ul3,
         semana_moro=um1, mes_moro=um2, ano_moro=um3,
@@ -275,38 +316,4 @@ def dados_jornais():
         semana_moro_og=ogm1, mes_moro_og=ogm2, ano_moro_og=ogm3,
         semana_ciro_og=ogc1, mes_ciro_og=ogc2, ano_ciro_og=ogc3,
         semana_doria_og=ogd1, mes_doria_og=ogd2, ano_doria_og=ogd3)
-
-
-palavra_semana = spreadsheet.worksheet('palavra_semana')
-palavras = palavra_semana.col_values(1)
-contagem = palavra_semana.col_values(2)
-
-pa1 = palavras[1]
-pa2 = palavras[2]
-pa3 = palavras[3]
-pa4 = palavras[4]
-pa5 = palavras[5]
-pa6 = palavras[6]
-pa7 = palavras[7]
-pa8 = palavras[8]
-pa9 = palavras[9]
-pa10 = palavras[10]
-
-qu1 = contagem[1]
-qu2 = contagem[2]
-qu3 = contagem[3]
-qu4 = contagem[4]
-qu5 = contagem[5]
-qu6 = contagem[6]
-qu7 = contagem[7]
-qu8 = contagem[8]
-qu9 = contagem[9]
-qu10 = contagem[10]
-
-@app.route("/palavra_semana")
-def palavra_semana():
-    return render_template(
-        "palavra_semana.html",
-        hora=hora,
-        pa1 = pa1, pa2 = pa2, pa3 = pa3, pa4 = pa4, pa5 = pa5, pa6 = pa6, pa7 = pa7, pa8 = pa8, pa9 = pa9, pa10 = pa10, 
-        qu1 = qu1, qu2 = qu2, qu3 = qu3, qu4 = qu4, qu5 = qu5, qu6 = qu6, qu7 = qu7, qu8 = qu8, qu9 = qu9, qu10 = qu10) 
+        
