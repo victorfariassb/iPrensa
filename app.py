@@ -287,9 +287,9 @@ ogd2 = mes_candidato[37]
 ogd3 = ano_candidato[37]
 
 @app.route("/ranking_candidatos")
-def ranking_candidato():
+def ranking_candidatos():
     return render_template(
-        "radar_eleicao.html",
+        "ranking_candidatos.html",
         hora=hora,
         semana_bolso=ub1, mes_bolso=ub2, ano_bolso=ub3,
         semana_lula=ul1, mes_lula=ul2, ano_lula=ul3,
