@@ -275,3 +275,37 @@ def dados_jornais():
         semana_moro_og=ogm1, mes_moro_og=ogm2, ano_moro_og=ogm3,
         semana_ciro_og=ogc1, mes_ciro_og=ogc2, ano_ciro_og=ogc3,
         semana_doria_og=ogd1, mes_doria_og=ogd2, ano_doria_og=ogd3)
+
+
+palavra_semana = spreadsheet.worksheet('palavra_semana')
+palavras = palavra_semana.col_values(1)
+contagem = palavra_semana.col_values(2)
+
+pa1 = palavras[1]
+pa2 = palavras[2]
+pa3 = palavras[3]
+pa4 = palavras[4]
+pa5 = palavras[5]
+pa6 = palavras[6]
+pa7 = palavras[7]
+pa8 = palavras[8]
+pa9 = palavras[9]
+pa10 = palavras[10]
+
+qu1 = contagem[1]
+qu2 = contagem[2]
+qu3 = contagem[3]
+qu4 = contagem[4]
+qu5 = contagem[5]
+qu6 = contagem[6]
+qu7 = contagem[7]
+qu8 = contagem[8]
+qu9 = contagem[9]
+qu10 = contagem[10]
+
+@app.route("palavra_semana")
+def palavra_semana():
+    return render_template(
+        "palavra_semana.html",
+        pa1 = pa1, pa2 = pa2, pa3 = pa3, pa4 = pa4, pa5 = pa5, pa6 = pa6, pa7 = pa7, pa8 = pa8, pa9 = pa9, pa10 = pa10, 
+        qu1 = qu1, qu2 = qu2, qu3 = qu3, qu4 = qu4, qu5 = qu5, qu6 = qu6, qu7 = qu7, qu8 = qu8, qu9 = qu9, qu10 = qu10) 
