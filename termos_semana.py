@@ -54,7 +54,7 @@ def termo_semana(contagem):
 
     doc = nlp(text)
 
-    labels = [x.text for x in doc.ents]
+    labels = [x.text for x in doc.ents if x.text != 'R$']
     dicionario = Counter(labels)
 
     palavras = [palavra for palavra in dicionario.most_common(20)]
