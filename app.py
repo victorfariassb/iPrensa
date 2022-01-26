@@ -153,6 +153,16 @@ pa7 = palavras[7]
 pa8 = palavras[8]
 pa9 = palavras[9]
 pa10 = palavras[10]
+pa11 = palavras[11]
+pa12 = palavras[12]
+pa13 = palavras[13]
+pa14 = palavras[14]
+pa15 = palavras[15]
+pa16 = palavras[16]
+pa17 = palavras[17]
+pa18 = palavras[18]
+pa19 = palavras[19]
+pa20 = palavras[20]
 
 qu1 = contagem[1]
 qu2 = contagem[2]
@@ -164,14 +174,27 @@ qu7 = contagem[7]
 qu8 = contagem[8]
 qu9 = contagem[9]
 qu10 = contagem[10]
+qu11 = contagem[11]
+qu12 = contagem[12]
+qu13 = contagem[13]
+qu14 = contagem[14]
+qu15 = contagem[15]
+qu16 = contagem[16]
+qu17 = contagem[17]
+qu18 = contagem[18]
+qu19 = contagem[19]
+qu20 = contagem[20]
+
 
 @app.route("/palavra_semana")
 def palavra_semana():
     return render_template(
         "palavra_semana.html",
         hora=hora,
-        pa1 = pa1, pa2 = pa2, pa3 = pa3, pa4 = pa4, pa5 = pa5, pa6 = pa6, pa7 = pa7, pa8 = pa8, pa9 = pa9, pa10 = pa10, 
-        qu1 = qu1, qu2 = qu2, qu3 = qu3, qu4 = qu4, qu5 = qu5, qu6 = qu6, qu7 = qu7, qu8 = qu8, qu9 = qu9, qu10 = qu10) 
+        pa1 = pa1, pa2 = pa2, pa3 = pa3, pa4 = pa4, pa5 = pa5, pa6 = pa6, pa7 = pa7, pa8 = pa8, pa9 = pa9, pa10 = pa10,
+        pa11 = pa11, pa12 = pa12, pa13 = pa13, pa14 = pa14, pa15 = pa15, pa16 = pa16, pa17 = pa17, pa18 = pa18, pa19 = pa19, pa20 = pa20,
+        qu1 = qu1, qu2 = qu2, qu3 = qu3, qu4 = qu4, qu5 = qu5, qu6 = qu6, qu7 = qu7, qu8 = qu8, qu9 = qu9, qu10 = qu10,
+        qu11 = qu11, qu12 = qu12, qu13 = qu13, qu14 = qu14, qu15 = qu15, qu16 = qu16, qu17 = qu17, qu18 = qu18, qu19 = qu19, qu20 = qu20) 
 
 
 contagem_candidatos = spreadsheet.worksheet('contagem_candidato')
