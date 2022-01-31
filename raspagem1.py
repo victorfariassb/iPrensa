@@ -5,6 +5,7 @@ import pandas as pd
 import os
 
 from raspador_sites import pega_editoria, pega_localizacao, pega_link, coleta_globo, coleta_uol, coleta_jp, coleta_folha, coleta_oglobo
+from contagem_palavras import conta_palavras
 
 spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
 conteudo_codificado =  os.environ['GOOGLE_SHEETS_CREDENTIALS']
@@ -29,3 +30,11 @@ finally:
   next
 
 coleta_jp(jp_sheet)
+
+
+# Conta palavras 
+contagem = spreadsheet.worksheet('mais_faladas') 
+
+conta_palavras(globo_sheet, contagem)
+conta_palavras(uol_sheet, contagem)
+conta_palavras(jp_sheet, contagem)
