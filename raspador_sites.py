@@ -227,3 +227,58 @@ def coleta_oglobo(planilha):
         link = item.get('href')
         num += 1
         planilha.append_row([num, dia, titulo, classe, link])
+
+        
+def coleta_estadao(planilha):
+  num = 0
+    
+  now = datetime.now(pytz.timezone('Brazil/East'))
+  dia = now.strftime("%d/%m/%Y %H:%M:%S")
+
+  driver.get("https://www.estadao.com.br/")
+
+  last_height = driver.execute_script("return document.body.scrollHeight")
+
+  while True:
+    html = driver.find_elements_by_tag_name('html')
+    time.sleep(20)
+    new_height = driver.execute_script("return document.body.scrollHeight")
+    secao2 = driver.find_element(By.ID, 'soft-news')
+    secao2.location_once_scrolled_into_view
+    titulo = driver.find_elements(By.CLASS_NAME, 'title')
+    if len(titulo) > 60:
+        break
+    last_height = new_height
+
+  source = driver.find_element_by_tag_name('html')
+  html = source.get_attribute('innerHTML')
+  soup = bs(html, 'html.parser')
+  for texto in soup.find_all('h3', class_='title'):
+    for dados in texto.find_all('a'):
+      titulo = dados.get('title')
+      link = dados.get('href')
+      classe = 'principal'
+      if link == False:
+        dados.children.get('title')
+        time.sleep(2)
+        num +=1
+        planilha.append_row([num, dia, classe, titulo, link])
+  for texto in soup.find_all('h4', 'bullets-title'):
+    for dados in texto.find_all('a'):
+      titulo = dados.get('title')
+      link = dados.get('href')
+      classe = 'relacionadas'
+      time.sleep(2)
+      num +=1
+      planilha.append_row([num, dia, classe, titulo, link])
+  for texto in soup.find_all('ul', class_='swiper-list-blog'):
+    for dados in texto.find_all('a'):
+      for titulos in dados.find_all('h4', class_='swiper-description'):
+        titulo = titulos.text
+      link = dados.get('href')
+      coluna = dados.get('title')
+      titulo = str(coluna) + ': ' + titulo 
+      classe = 'coluna'
+      time.sleep(2)
+      num +=1
+      planilha.append_row([num, dia, classe, titulo, link])
