@@ -4,7 +4,7 @@ import json
 import pandas as pd
 import os
 
-from raspador_sites import coleta_folha, coleta_oglobo
+from raspador_sites import coleta_folha, coleta_oglobo, coleta_estadao
 
 spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
 conteudo_codificado =  os.environ['GOOGLE_SHEETS_CREDENTIALS']
@@ -27,8 +27,8 @@ try:
 finally:
   next
 
-  try:
-    coleta_estadao(estadao_sheet)
+try:
+  coleta_estadao(estadao_sheet)
 finally:
   next
 
