@@ -253,16 +253,23 @@ def coleta_estadao(planilha):
   source = driver.find_element_by_tag_name('html')
   html = source.get_attribute('innerHTML')
   soup = bs(html, 'html.parser')
+  for manchete in soup.find_all('article', class_='destaque-default -principal -font-lg'):
+      for div in manchete.find_all('div', class_='intro'):
+        for a in div.find_all('a'):
+          titulo = a.get('title')
+          link = a.get('href')
+          classe = 'manchete'
+          time.sleep(2)
+          num +=1
+          planilha.append_row([num, dia, titulo, classe, link])
   for texto in soup.find_all('h3', class_='title'):
     for dados in texto.find_all('a'):
       titulo = dados.get('title')
       link = dados.get('href')
       classe = 'principal'
-      if link == False:
-        dados.children.get('title')
-        time.sleep(2)
-        num +=1
-        planilha.append_row([num, dia, titulo, classe, link])
+      time.sleep(2)
+      num +=1
+      planilha.append_row([num, dia, titulo, classe, link])
   for texto in soup.find_all('h4', 'bullets-title'):
     for dados in texto.find_all('a'):
       titulo = dados.get('title')
