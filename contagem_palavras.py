@@ -22,7 +22,7 @@ def conta_palavras(base, contagem):
     elif "people-teasers__card--title" in chave:
         coluna = 9
     else:
-        coluna = 10
+        coluna = 11
     linha = 2
     
     nltk.download('punkt') 
