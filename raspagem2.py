@@ -23,3 +23,9 @@ finally:
   next
 
 coleta_oglobo(oglobo_sheet)
+
+# Conta palavras 
+contagem = spreadsheet.worksheet('mais_faladas') 
+
+conta_palavras(folha_sheet, contagem)
+conta_palavras(oglobo_sheet, contagem)
