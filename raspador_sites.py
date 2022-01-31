@@ -235,22 +235,22 @@ def coleta_estadao(planilha):
   now = datetime.now(pytz.timezone('Brazil/East'))
   dia = now.strftime("%d/%m/%Y %H:%M:%S")
 
-  driver.get("https://www.estadao.com.br/")
+  browser.get("https://www.estadao.com.br/")
 
-  last_height = driver.execute_script("return document.body.scrollHeight")
+  last_height = browser.execute_script("return document.body.scrollHeight")
 
   while True:
-    html = driver.find_elements_by_tag_name('html')
+    html = browser.find_elements_by_tag_name('html')
     time.sleep(20)
-    new_height = driver.execute_script("return document.body.scrollHeight")
-    secao2 = driver.find_element(By.ID, 'soft-news')
+    new_height = browser.execute_script("return document.body.scrollHeight")
+    secao2 = browser.find_element(By.ID, 'soft-news')
     secao2.location_once_scrolled_into_view
-    titulo = driver.find_elements(By.CLASS_NAME, 'title')
+    titulo = browser.find_elements(By.CLASS_NAME, 'title')
     if len(titulo) > 60:
         break
     last_height = new_height
 
-  source = driver.find_element_by_tag_name('html')
+  source = browser.find_element_by_tag_name('html')
   html = source.get_attribute('innerHTML')
   soup = bs(html, 'html.parser')
   for manchete in soup.find_all('article', class_='destaque-default -principal -font-lg'):
