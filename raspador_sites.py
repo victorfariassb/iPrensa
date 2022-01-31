@@ -262,7 +262,7 @@ def coleta_estadao(planilha):
         dados.children.get('title')
         time.sleep(2)
         num +=1
-        planilha.append_row([num, dia, classe, titulo, link])
+        planilha.append_row([num, dia, titulo, classe, link])
   for texto in soup.find_all('h4', 'bullets-title'):
     for dados in texto.find_all('a'):
       titulo = dados.get('title')
@@ -270,7 +270,7 @@ def coleta_estadao(planilha):
       classe = 'relacionadas'
       time.sleep(2)
       num +=1
-      planilha.append_row([num, dia, classe, titulo, link])
+      planilha.append_row([num, dia, titulo, classe, link])
   for texto in soup.find_all('ul', class_='swiper-list-blog'):
     for dados in texto.find_all('a'):
       for titulos in dados.find_all('h4', class_='swiper-description'):
@@ -281,4 +281,4 @@ def coleta_estadao(planilha):
       classe = 'coluna'
       time.sleep(2)
       num +=1
-      planilha.append_row([num, dia, classe, titulo, link])
+      planilha.append_row([num, dia, titulo, classe, link])
