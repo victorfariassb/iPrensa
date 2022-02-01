@@ -209,8 +209,8 @@ def coleta_oglobo(planilha):
       secao2 = driver.find_element(By.XPATH, '/html/body/div[2]/main/section[11]/div/div/div[1]/div[1]/div/article/div/h1/a')
       if secao2 == True:
         secao2.location_once_scrolled_into_view
-      except:
-        next
+    except:
+      next
     if new_height == last_height:
       source = driver.find_element_by_tag_name('html')
       html = source.get_attribute('innerHTML')
