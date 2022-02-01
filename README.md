@@ -1,5 +1,5 @@
 # Radar da Imprensa
-Olá, seja bem-vindo ao Radar da Imprensa. Nesta primeira versão, o programa raspa os dados dos dois principais portais de notícias do Brasil (Uol e Globo) e dos sites do Globo, da Folha e di Estadão, além da Jovem Pan, um jornal mais próximo do governo do presidente Jair Bolsonaro. Além de raspar os dados, o programa guarda as informações na planilha abaixo. A raspagem é feita a cada duas horas, das 8h às 22h.
+Olá, seja bem-vinde ao Radar da Imprensa. Nesta primeira versão, o programa raspa os dados dos dois principais portais de notícias do Brasil (Uol e Globo) e dos sites do Globo, da Folha e do Estadão, além da Jovem Pan, um jornal mais próximo do governo do presidente Jair Bolsonaro. Além de raspar os dados, o programa guarda as informações na planilha abaixo. A raspagem é feita a cada duas horas, das 8h às 22h.
 
 DADOS
 https://docs.google.com/spreadsheets/d/1UY2MkXq41EBEU5AXxGDE2oVrd8rQgPcc28xWi7oHVOU/edit?usp=sharing
