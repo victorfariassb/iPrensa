@@ -15,14 +15,16 @@ def conta_palavras(base, contagem):
         coluna = 1
     elif "headlineBigPhoto__link" in chave:
         coluna = 3
-    elif "manchete" in chave:
+    elif "manchete_jp" in chave:
         coluna = 5
     elif 'c-main-headline__title' in chave:
         coluna = 7
     elif "people-teasers__card--title" in chave:
         coluna = 9
-    else:
+    elif "manchete_estadao" in chave:
         coluna = 11
+    else:
+        coluna = 13
     linha = 2
     
     nltk.download('punkt') 
