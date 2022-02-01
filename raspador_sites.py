@@ -202,17 +202,17 @@ def coleta_oglobo(planilha):
   last_height = browser.execute_script("return document.body.scrollHeight")
 
   while True:
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     time.sleep(20)
-    new_height = driver.execute_script("return document.body.scrollHeight")
+    new_height = browser.execute_script("return document.body.scrollHeight")
     try:
-      secao2 = driver.find_element(By.XPATH, '/html/body/div[2]/main/section[11]/div/div/div[1]/div[1]/div/article/div/h1/a')
+      secao2 = browser.find_element(By.XPATH, '/html/body/div[2]/main/section[11]/div/div/div[1]/div[1]/div/article/div/h1/a')
       if secao2 == True:
         secao2.location_once_scrolled_into_view
     except:
       next
     if new_height == last_height:
-      source = driver.find_element_by_tag_name('html')
+      source = browser.find_element_by_tag_name('html')
       html = source.get_attribute('innerHTML')
       soup = bs(html, 'html.parser')
       for texto in soup.find_all('h1'):
