@@ -26,6 +26,10 @@ jp = contagem_palavras.col_values(5)
 jpq = contagem_palavras.col_values(6)
 folha = contagem_palavras.col_values(7)
 folhaq = contagem_palavras.col_values(8)
+og = contagem_palavras.col_values(9)
+og1 = contagem_palavras.col_values(10)
+es = contagem_palavras.col_values(11)
+esq = contagem_palavras.col_values(12)
 
 globo1 = globo[1]
 globoq1 = globoq[1]
@@ -35,6 +39,10 @@ jp1 = jp[1]
 jpq1 = jpq[1]
 f1 = folha[1]
 fq1 = folhaq[1]
+og1 = og[1]
+ogq1 = ogq[1]
+es1 = es[1]
+esq1 = esq[1]
 
 globo2 = globo[2]
 globoq2 = globoq[2]
@@ -44,6 +52,11 @@ jp2 = jp[2]
 jpq2 = jpq[2]
 f2 = folha[2]
 fq2 = folhaq[2]
+og2 = og[2]
+ogq2 = ogq[2]
+es2 = es[2]
+esq2 = esq[2]
+
 
 globo3 = globo[3]
 globoq3 = globoq[3]
@@ -53,6 +66,10 @@ jp3 = jp[3]
 jpq3 = jpq[3]
 f3 = folha[3]
 fq3 = folhaq[3]
+og3 = og[3]
+ogq3 = ogq[3]
+es3 = es[3]
+esq3 = esq[3]
 
 globo4 = globo[4]
 globoq4 = globoq[4]
@@ -62,6 +79,11 @@ jp4 = jp[4]
 jpq4 = jpq[4]
 f4 = folha[4]
 fq4 = folhaq[4]
+og4 = og[4]
+ogq4 = ogq[4]
+es4 = es[4]
+esq4 = esq[4]
+
 
 globo5 = globo[5]
 globoq5 = globoq[5]
@@ -71,6 +93,11 @@ jp5 = jp[5]
 jpq5 = jpq[5]
 f5 = folha[5]
 fq5 = folhaq[5]
+og5 = og[5]
+ogq5 = ogq[5]
+es5 = es[5]
+esq5 = esq[5]
+
 
 globo6 = globo[6]
 globoq6 = globoq[6]
@@ -80,6 +107,11 @@ jp6 = jp[6]
 jpq6 = jpq[6]
 f6 = folha[6]
 fq6 = folhaq[6]
+og6 = og[6]
+ogq6 = ogq[6]
+es6 = es[6]
+esq6 = esq[6]
+
 
 globo7 = globo[7]
 globoq7 = globoq[7]
@@ -89,6 +121,10 @@ jp7 = jp[7]
 jpq7 = jpq[7]
 f7 = folha[7]
 fq7 = folhaq[7]
+og7 = og[7]
+ogq7 = ogq[7]
+es7 = es[7]
+esq7 = esq[7]
 
 globo8 = globo[8]
 globoq8 = globoq[8]
@@ -98,6 +134,10 @@ jp8 = jp[8]
 jpq8 = jpq[8]
 f8 = folha[8]
 fq8 = folhaq[8]
+og8 = og[8]
+ogq8 = ogq[8]
+es8 = es[8]
+esq8 = esq[8]
 
 globo9 = globo[9]
 globoq9 = globoq[9]
@@ -107,6 +147,10 @@ jp9 = jp[9]
 jpq9 = jpq[9]
 f9 = folha[9]
 fq9 = folhaq[9]
+og9 = og[9]
+ogq9 = ogq[9]
+es9 = es[9]
+esq9 = esq[9]
 
 globo10 = globo[10]
 globoq10 = globoq[10]
@@ -116,6 +160,10 @@ jp10 = jp[10]
 jpq10 = jpq[10]
 f10 = folha[10]
 fq10 = folhaq[10]
+og10 = og[10]
+ogq10 = ogq[10]
+es10 = es[10]
+esq10 = esq[10]
 
 # Coleta hora
 oglobo = spreadsheet.worksheet('oglobo')
@@ -136,7 +184,11 @@ def dados_jornais():
         jp_1=jpq1, jp_2=jpq2, jp_3=jpq3, jp_4=jpq4, jp_5=jpq5, jp_6=jpq6, jp_7=jpq7, jp_8=jpq8, jp_9=jpq9, jp_10=jpq10,
         jp1=jp1, jp2=jp2, jp3=jp3, jp4=jp4, jp5=jp5, jp6=jp6, jp7=jp7, jp8=jp8, jp9=jp9, jp10=jp10,
         f1 = f1, f2=f2, f3=f3, f4=f4, f5=f5, f6=f6, f7=f7, f8=f8, f9=f9, f10=f10,
-        fq1 = fq1, fq2=fq2, fq3=fq3, fq4=fq4, fq5=fq5, fq6=fq6, fq7=fq7, fq8=fq8, fq9=fq9, fq10=fq10)
+        fq1 = fq1, fq2=fq2, fq3=fq3, fq4=fq4, fq5=fq5, fq6=fq6, fq7=fq7, fq8=fq8, fq9=fq9, fq10=fq10, 
+        og1 = og1, ogq1 = ogq1, es1 = es1, esq1 = esq1, og2 = og2, ogq2 = ogq2, es2 = es2, esq2 = esq2, og3 = og3, ogq3 = ogq3, es3 = es3, esq3 = esq3,
+        og4 = og4, ogq4 = ogq4, es4 = es4, esq4 = esq4, og5 = og5, ogq5 = ogq5, es5 = es5, esq5 = esq5, og6 = og6, ogq6 = ogq6, es6 = es6, esq6 = esq6,
+        og7 = og7, ogq7 = ogq7, es7 = es7, esq7 = esq7, og8 = og8, ogq8 = ogq8, es8 = es8, esq8 = esq8, og9 = og9, ogq9 = ogq9, es9 = es9, esq9 = esq9,
+        og10 = og10, ogq10 = ogq10, es10 = es10, esq10 = esq10)
 
 
 palavra_semana = spreadsheet.worksheet('palavra_semana')
