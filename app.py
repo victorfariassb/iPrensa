@@ -308,6 +308,29 @@ ogd1 = semana_candidato[37]
 ogd2 = mes_candidato[37]
 ogd3 = ano_candidato[37]
 
+# Estadão
+
+esb1 = semana_candidato[43]
+esb2 = mes_candidato[43]
+esb3 = ano_candidato[43]
+
+esl1 = semana_candidato[44]
+esl2 = mes_candidato[44]
+esl3 = ano_candidato[44]
+
+esm1 = semana_candidato[45]
+esm2 = mes_candidato[45]
+esm3 = ano_candidato[45]
+
+esc1 = semana_candidato[46]
+esc2 = mes_candidato[46]
+esc3 = ano_candidato[46]
+
+esd1 = semana_candidato[47]
+esd2 = mes_candidato[47]
+esd3 = ano_candidato[47]
+
+
 @app.route("/ranking_candidatos")
 def ranking_candidatos():
     return render_template(
@@ -337,5 +360,10 @@ def ranking_candidatos():
         semana_lula_og=ogl1, mes_lula_og=ogl2, ano_lula_og=ogl3,
         semana_moro_og=ogm1, mes_moro_og=ogm2, ano_moro_og=ogm3,
         semana_ciro_og=ogc1, mes_ciro_og=ogc2, ano_ciro_og=ogc3,
-        semana_doria_og=ogd1, mes_doria_og=ogd2, ano_doria_og=ogd3)
-        
+        semana_doria_og=ogd1, mes_doria_og=ogd2, ano_doria_og=ogd3,
+        semana_bolso_es=esb1, mes_bolso_es=esb2, ano_bolso_es=esb3,
+        semana_lula_es=esl1, mes_lula_es=esl2, ano_lula_es=esl3,
+        semana_moro_es=esm1, mes_moro_es=esm2, ano_moro_es=esm3,
+        semana_ciro_es=esc1, mes_ciro_es=esc2, ano_ciro_es=esc3,
+        semana_doria_es=esd1, mes_doria_es=esd2, ano_doria_es=esd3
+    )
