@@ -4,7 +4,7 @@ import json
 import pandas as pd
 import os
 
-from raspador_sites import pega_editoria, pega_localizacao, pega_link, coleta_globo, ccoleta_jp, coleta_folha, coleta_oglobo
+from raspador_sites import pega_editoria, pega_localizacao, pega_link, coleta_globo, coleta_jp
 from contagem_palavras import conta_palavras
 
 spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
