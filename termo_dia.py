@@ -37,20 +37,20 @@ def termo_semana(contagem):
 
     # Filtro da data
     hoje = datetime.datetime.now()
-    semana = hoje - datetime.timedelta(days=7, hours=3)
-    semana = np.datetime64(semana)
+    dia = hoje - datetime.timedelta(days=1, hours=3)
+    dia = np.datetime64(dia)
 
     dados['data'] = pd.to_datetime(dados['data'])
 
-    df_semana = dados[dados['data'] >= semana]
+    df_dia = dados[dados['data'] >= dia]
 
     # Filtro da relevância
-    df_semana['materia'] = pd.to_numeric(df_semana['materia'])
-    df_semana = df_semana[df_semana['materia'] < 10]
-    df_semana = df_semana['titulo'].drop_duplicates()
+    df_dia['materia'] = pd.to_numeric(df_dia['materia'])
+    df_dia = df_dia[df_dia['materia'] < 10]
+    df_dia = df_dia['titulo'].drop_duplicates()
 
     # Contagem de termos
-    text = ' '.join(df_semana)
+    text = ' '.join(df_dia)
 
     doc = nlp(text)
 
