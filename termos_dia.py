@@ -19,7 +19,7 @@ credentials = json.loads(conteudo)
 service_account = gspread.service_account_from_dict(credentials) 
 spreadsheet = service_account.open_by_key(spreadsheet_id) 
 
-palavras_dia = spreadsheet.worksheet('palavras_dias') 
+palavras_dia = spreadsheet.worksheet('palavras_dia') 
 
 
 def termos_dia(contagem):
