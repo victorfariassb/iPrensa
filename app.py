@@ -27,7 +27,7 @@ jpq = contagem_palavras.col_values(6)
 folha = contagem_palavras.col_values(7)
 folhaq = contagem_palavras.col_values(8)
 og = contagem_palavras.col_values(9)
-og1 = contagem_palavras.col_values(10)
+ogq = contagem_palavras.col_values(10)
 es = contagem_palavras.col_values(11)
 esq = contagem_palavras.col_values(12)
 
