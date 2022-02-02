@@ -191,9 +191,9 @@ def dados_jornais():
         og10 = og10, og_10 = ogq10, es10 = es10, esq10 = esq10)
 
 
-palavra_semana = spreadsheet.worksheet('palavra_semana')
-palavras = palavra_semana.col_values(1)
-contagem = palavra_semana.col_values(2)
+palavras_dia = spreadsheet.worksheet('palavras_dia')
+palavras = palavras_dia.col_values(1)
+contagem = palavras_dia.col_values(2)
 
 pa1 = palavras[1]
 pa2 = palavras[2]
