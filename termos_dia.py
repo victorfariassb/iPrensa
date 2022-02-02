@@ -63,3 +63,6 @@ def termo_semana(contagem):
         contagem.update_cell(linha, coluna + 1, palavra[1])
         linha += 1
         coluna = 1
+
+termo_semana(palavra_semana)
+        
