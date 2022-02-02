@@ -19,10 +19,10 @@ credentials = json.loads(conteudo)
 service_account = gspread.service_account_from_dict(credentials) 
 spreadsheet = service_account.open_by_key(spreadsheet_id) 
 
-palavra_semana = spreadsheet.worksheet('palavra_semana') 
+palavras_dia = spreadsheet.worksheet('palavras_dias') 
 
 
-def termo_semana(contagem):
+def termos_dia(contagem):
     linha = 2
     coluna = 1
     jornais = ['uol', 'globo', 'jovem_pan', 'folha', 'oglobo', 'estadao']
@@ -46,7 +46,7 @@ def termo_semana(contagem):
 
     # Filtro da relevância
     df_dia['materia'] = pd.to_numeric(df_dia['materia'])
-    df_dia = df_dia[df_dia['materia'] < 41]
+    df_dia = df_dia[df_dia['materia'] < 25]
     df_dia = df_dia['titulo'].drop_duplicates()
 
     # Contagem de termos
@@ -64,5 +64,5 @@ def termo_semana(contagem):
         linha += 1
         coluna = 1
 
-termo_semana(palavra_semana)
+termos_dia(palavras_dia)
         
