@@ -185,10 +185,10 @@ def dados_jornais():
         jp1=jp1, jp2=jp2, jp3=jp3, jp4=jp4, jp5=jp5, jp6=jp6, jp7=jp7, jp8=jp8, jp9=jp9, jp10=jp10,
         f1 = f1, f2=f2, f3=f3, f4=f4, f5=f5, f6=f6, f7=f7, f8=f8, f9=f9, f10=f10,
         fq1 = fq1, fq2=fq2, fq3=fq3, fq4=fq4, fq5=fq5, fq6=fq6, fq7=fq7, fq8=fq8, fq9=fq9, fq10=fq10, 
-        og1 = og1, ogq1 = ogq1, es1 = es1, esq1 = esq1, og2 = og2, ogq2 = ogq2, es2 = es2, esq2 = esq2, og3 = og3, ogq3 = ogq3, es3 = es3, esq3 = esq3,
-        og4 = og4, ogq4 = ogq4, es4 = es4, esq4 = esq4, og5 = og5, ogq5 = ogq5, es5 = es5, esq5 = esq5, og6 = og6, ogq6 = ogq6, es6 = es6, esq6 = esq6,
-        og7 = og7, ogq7 = ogq7, es7 = es7, esq7 = esq7, og8 = og8, ogq8 = ogq8, es8 = es8, esq8 = esq8, og9 = og9, ogq9 = ogq9, es9 = es9, esq9 = esq9,
-        og10 = og10, ogq10 = ogq10, es10 = es10, esq10 = esq10)
+        og1 = og1, og_1 = ogq1, es1 = es1, esq1 = esq1, og2 = og2, og_2 = ogq2, es2 = es2, esq2 = esq2, og3 = og3, og_3 = ogq3, es3 = es3, esq3 = esq3,
+        og4 = og4, og_4 = ogq4, es4 = es4, esq4 = esq4, og5 = og5, og_5 = ogq5, es5 = es5, esq5 = esq5, og6 = og6, og_6 = ogq6, es6 = es6, esq6 = esq6,
+        og7 = og7, og_7 = ogq7, es7 = es7, esq7 = esq7, og8 = og8, og_8 = ogq8, es8 = es8, esq8 = esq8, og9 = og9, og_9 = ogq9, es9 = es9, esq9 = esq9,
+        og10 = og10, og_10 = ogq10, es10 = es10, esq10 = esq10)
 
 
 palavra_semana = spreadsheet.worksheet('palavra_semana')
