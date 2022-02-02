@@ -46,7 +46,7 @@ def termos_dia(contagem):
 
     # Filtro da relevância
     df_dia['materia'] = pd.to_numeric(df_dia['materia'])
-    df_dia = df_dia[df_dia['materia'] < 25]
+    df_dia = df_dia[df_dia['materia'] < 31]
     df_dia = df_dia['titulo'].drop_duplicates()
 
     # Contagem de termos
