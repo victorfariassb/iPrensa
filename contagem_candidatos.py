@@ -31,7 +31,7 @@ def contagem_candidatos(base, contagem):
         semana = hoje - datetime.timedelta(days=7, hours=3)
         semana = np.datetime64(semana)
 
-        dataframe['data'] = pd.to_datetime(dataframe['data'])
+        dataframe['data'] = pd.to_datetime(dataframe['data'], format='%d/%m/%Y %H:%M:%S')
         dataframe['titulo'] = dataframe['titulo'].str.replace('Carlos Bolsonaro', 'Carlos B.')
         dataframe['titulo'] = dataframe['titulo'].str.replace('Flávio Bolsonaro', 'Flávio B.')
         dataframe['titulo'] = dataframe['titulo'].str.replace('Eduardo Bolsonaro', 'Eduardo B.')
