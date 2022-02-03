@@ -259,13 +259,14 @@ def coleta_estadao(planilha):
   soup = bs(html, 'html.parser')
   for manchete in soup.find_all('article', class_='destaque-default -principal -font-lg'):
       for div in manchete.find_all('div', class_='intro'):
-        for a in div.find_all('a'):
-          titulo = a.get('title')
-          link = a.get('href')
-          classe = 'manchete'
-          time.sleep(2)
-          num +=1
-          planilha.append_row([num, dia, titulo, classe, link])
+        for h4 in div.find_all('h4'):
+            for a in h4.find_all('a'):
+              titulo = a.get('title')
+              link = a.get('href')
+              classe = 'manchete'
+              time.sleep(2)
+              num +=1
+              planilha.append_row([num, dia, titulo, classe, link])
   for texto in soup.find_all('h3', class_='title'):
     for dados in texto.find_all('a'):
       titulo = dados.get('title')
