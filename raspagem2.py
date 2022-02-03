@@ -4,7 +4,6 @@ import json
 import pandas as pd
 import os
 
-from contagem_candidatos import contagem_candidatos
 from contagem_palavras import conta_palavras
 from raspador_sites import coleta_folha, coleta_oglobo, coleta_estadao
 
