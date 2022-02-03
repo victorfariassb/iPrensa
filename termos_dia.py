@@ -32,20 +32,21 @@ def termos_dia(contagem):
         # baixar e converter os dados
         df = spreadsheet.worksheet(jornal)
         df = pd.DataFrame(df.get_all_records())
+        df = df[['materia', 'data', 'titulo']]
         tabelas.append(df)
     dados = pd.concat(tabelas).reset_index()
+    dados.drop(columns={'index'}, inplace=True)
 
     # Filtro da data
     hoje = datetime.datetime.now()
     dia = hoje - datetime.timedelta(days=1, hours=3)
     dia = np.datetime64(dia)
 
-    dados['data'] = pd.to_datetime(dados['data'])
-
-    df_dia = dados[(dados['data'] >= dia)]
+    dados['data'] = pd.to_datetime(dados['data'], format='%d/%m/%Y %H:%M:%S')
+    selecao = dados['data'] >= dia
+    dados_dia = dados[selecao]
 
     # Filtro da relevância
-    df_dia = df_dia[['materia', 'titulo']]
     df_dia['materia'] = pd.to_numeric(df_dia['materia'])
     df_dia = df_dia[df_dia['materia'] < 36]
     df_dia = df_dia['titulo'].drop_duplicates()
