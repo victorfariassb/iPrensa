@@ -44,7 +44,7 @@ def termos_dia(contagem):
 
     dados['data'] = pd.to_datetime(dados['data'], format='%d/%m/%Y %H:%M:%S')
     selecao = dados['data'] >= dia
-    dados_dia = dados[selecao]
+    df_dia = dados[selecao]
 
     # Filtro da relevância
     df_dia['materia'] = pd.to_numeric(df_dia['materia'])
