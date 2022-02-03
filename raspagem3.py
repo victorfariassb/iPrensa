@@ -3,6 +3,7 @@ import gspread
 import json
 import pandas as pd
 import os
+import time
 
 from contagem_candidatos import contagem_candidatos
 from raspador_sites import coleta_uol
@@ -27,8 +28,20 @@ conta_palavras(uol_sheet, contagem)
 # Conta candidatos
 contagem_candidato = spreadsheet.worksheet('contagem_candidato')
 
-contagem_candidatos(uol_sheet, contagem_candidato)
+jp_sheet = spreadsheet.worksheet('jovem_pan')
+globo_sheet = spreadsheet.worksheet('globo')
+folha_sheet = spreadsheet.worksheet('folha') 
+oglobo_sheet = spreadsheet.worksheet('oglobo') 
+estadao_sheet = spreadsheet.worksheet('estadao')
 
+time.sleep(60)
+contagem_candidatos(globo_sheet, contagem_candidato)
+contagem_candidatos(jp_sheet, contagem_candidato)
+contagem_candidatos(folha_sheet, contagem_candidato)
+contagem_candidatos(oglobo_sheet, contagem_candidato)
+contagem_candidatos(estadao_sheet, contagem_candidato)
+contagem_candidatos(uol_sheet, contagem_candidato)
+time.sleep(60)
 # Raspa os dados
 try:
   coleta_uol(uol_sheet)
