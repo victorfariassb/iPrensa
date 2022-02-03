@@ -27,13 +27,6 @@ conta_palavras(folha_sheet, contagem)
 conta_palavras(oglobo_sheet, contagem)
 conta_palavras(estadao_sheet, contagem)
 
-# Conta candidatos
-contagem_candidato = spreadsheet.worksheet('contagem_candidato')
-
-contagem_candidatos(folha_sheet, contagem_candidato)
-contagem_candidatos(oglobo_sheet, contagem_candidato)
-contagem_candidatos(estadao_sheet, contagem_candidato)
-
 # Raspagem de dados
 
 try:
