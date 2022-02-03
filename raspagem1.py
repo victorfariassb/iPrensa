@@ -4,7 +4,6 @@ import json
 import pandas as pd
 import os
 
-from contagem_candidatos import contagem_candidatos
 from raspador_sites import pega_editoria, pega_localizacao, pega_link, coleta_globo, coleta_jp
 from contagem_palavras import conta_palavras
 
@@ -24,12 +23,6 @@ contagem = spreadsheet.worksheet('mais_faladas')
 
 conta_palavras(globo_sheet, contagem)
 conta_palavras(jp_sheet, contagem)
-
-# Conta candidatos
-contagem_candidato = spreadsheet.worksheet('contagem_candidato')
-
-contagem_candidatos(globo_sheet, contagem_candidato)
-contagem_candidatos(jp_sheet, contagem_candidato)
 
 # Raspa os dados
 try:
