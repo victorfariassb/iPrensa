@@ -11,20 +11,20 @@ def contagem_candidatos(base, contagem):
     if 'destaque-topo' in chave:
         linha = 2
     elif "headlineBigPhoto__link" in chave:
-        linha = 10
+        linha = 11
     elif "manchete_jp" in chave:
-        linha = 18
+        linha = 19
     elif 'c-main-headline__title' in chave:
-        linha = 26
+        linha = 27
     elif "people-teasers__card--title" in chave:
-        linha = 34
+        linha = 35
     elif 'manchete_estadao' in chave:
-        linha = 42
+        linha = 43
     else:
-        linha = 50
+        linha = 51
     coluna = 3
 
-    presidenciaveis = ['Bolsonaro', 'Lula', 'Moro', 'Ciro', 'Doria', 'Pacheco', 'Tebet', 'Vieira']
+    presidenciaveis = ['Bolsonaro', 'Lula', 'Moro', 'Ciro', 'Doria', 'Pacheco', 'Tebet', 'Vieira', 'Janones']
     for presidenciavel in presidenciaveis:
         
         hoje = datetime.datetime.now()
