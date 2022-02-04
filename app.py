@@ -274,113 +274,113 @@ gd2 = mes_candidato[5]
 gd3 = ano_candidato[5]
 
 # Uol
-ub1 = semana_candidato[9]
-ub2 = mes_candidato[9]
-ub3 = ano_candidato[9]
+ub1 = semana_candidato[10]
+ub2 = mes_candidato[10]
+ub3 = ano_candidato[10]
 
-ul1 = semana_candidato[10]
-ul2 = mes_candidato[10]
-ul3 = ano_candidato[10]
+ul1 = semana_candidato[11]
+ul2 = mes_candidato[11]
+ul3 = ano_candidato[11]
 
-um1 = semana_candidato[11]
-um2 = mes_candidato[11]
-um3 = ano_candidato[11]
+um1 = semana_candidato[12]
+um2 = mes_candidato[12]
+um3 = ano_candidato[12]
 
-uc1 = semana_candidato[12]
-uc2 = mes_candidato[12]
-uc3 = ano_candidato[12]
+uc1 = semana_candidato[13]
+uc2 = mes_candidato[13]
+uc3 = ano_candidato[13]
 
-ud1 = semana_candidato[13]
-ud2 = mes_candidato[13]
-ud3 = ano_candidato[13]
+ud1 = semana_candidato[14]
+ud2 = mes_candidato[14]
+ud3 = ano_candidato[14]
 
 # JP
 
-jpb1 = semana_candidato[17]
-jpb2 = mes_candidato[17]
-jpb3 = ano_candidato[17]
+jpb1 = semana_candidato[18]
+jpb2 = mes_candidato[18]
+jpb3 = ano_candidato[18]
 
-jpl1 = semana_candidato[18]
-jpl2 = mes_candidato[18]
-jpl3 = ano_candidato[18]
+jpl1 = semana_candidato[19]
+jpl2 = mes_candidato[19]
+jpl3 = ano_candidato[19]
 
-jpm1 = semana_candidato[19]
-jpm2 = mes_candidato[19]
-jpm3 = ano_candidato[19]
+jpm1 = semana_candidato[20]
+jpm2 = mes_candidato[20]
+jpm3 = ano_candidato[20]
 
-jpc1 = semana_candidato[20]
-jpc2 = mes_candidato[20]
-jpc3 = ano_candidato[20]
+jpc1 = semana_candidato[21]
+jpc2 = mes_candidato[21]
+jpc3 = ano_candidato[21]
 
-jpd1 = semana_candidato[21]
-jpd2 = mes_candidato[21]
-jpd3 = ano_candidato[21]
+jpd1 = semana_candidato[22]
+jpd2 = mes_candidato[22]
+jpd3 = ano_candidato[22]
 
 # Folha
 
-folhab1 = semana_candidato[25]
-folhab2 = mes_candidato[25]
-folhab3 = ano_candidato[25]
+folhab1 = semana_candidato[26]
+folhab2 = mes_candidato[26]
+folhab3 = ano_candidato[26]
 
-folhal1 = semana_candidato[26]
-folhal2 = mes_candidato[26]
-folhal3 = ano_candidato[26]
+folhal1 = semana_candidato[27]
+folhal2 = mes_candidato[27]
+folhal3 = ano_candidato[27]
 
-folham1 = semana_candidato[27]
-folham2 = mes_candidato[27]
-folham3 = ano_candidato[27]
+folham1 = semana_candidato[28]
+folham2 = mes_candidato[28]
+folham3 = ano_candidato[28]
 
-folhac1 = semana_candidato[28]
-folhac2 = mes_candidato[28]
-folhac3 = ano_candidato[28]
+folhac1 = semana_candidato[29]
+folhac2 = mes_candidato[29]
+folhac3 = ano_candidato[29]
 
-folhad1 = semana_candidato[29]
-folhad2 = mes_candidato[29]
-folhad3 = ano_candidato[29]
+folhad1 = semana_candidato[30]
+folhad2 = mes_candidato[30]
+folhad3 = ano_candidato[30]
 
 # O Globo
 
-ogb1 = semana_candidato[33]
-ogb2 = mes_candidato[33]
-ogb3 = ano_candidato[33]
+ogb1 = semana_candidato[34]
+ogb2 = mes_candidato[34]
+ogb3 = ano_candidato[34]
 
-ogl1 = semana_candidato[34]
-ogl2 = mes_candidato[34]
-ogl3 = ano_candidato[34]
+ogl1 = semana_candidato[35]
+ogl2 = mes_candidato[35]
+ogl3 = ano_candidato[35]
 
-ogm1 = semana_candidato[35]
-ogm2 = mes_candidato[35]
-ogm3 = ano_candidato[35]
+ogm1 = semana_candidato[36]
+ogm2 = mes_candidato[36]
+ogm3 = ano_candidato[36]
 
-ogc1 = semana_candidato[36]
-ogc2 = mes_candidato[36]
-ogc3 = ano_candidato[36]
+ogc1 = semana_candidato[37]
+ogc2 = mes_candidato[37]
+ogc3 = ano_candidato[37]
 
-ogd1 = semana_candidato[37]
-ogd2 = mes_candidato[37]
-ogd3 = ano_candidato[37]
+ogd1 = semana_candidato[38]
+ogd2 = mes_candidato[38]
+ogd3 = ano_candidato[38]
 
 # Estadão
 
-esb1 = semana_candidato[43]
-esb2 = mes_candidato[43]
-esb3 = ano_candidato[43]
+esb1 = semana_candidato[44]
+esb2 = mes_candidato[44]
+esb3 = ano_candidato[44]
 
-esl1 = semana_candidato[44]
-esl2 = mes_candidato[44]
-esl3 = ano_candidato[44]
+esl1 = semana_candidato[45]
+esl2 = mes_candidato[45]
+esl3 = ano_candidato[45]
 
-esm1 = semana_candidato[45]
-esm2 = mes_candidato[45]
-esm3 = ano_candidato[45]
+esm1 = semana_candidato[46]
+esm2 = mes_candidato[46]
+esm3 = ano_candidato[46]
 
-esc1 = semana_candidato[46]
-esc2 = mes_candidato[46]
-esc3 = ano_candidato[46]
+esc1 = semana_candidato[47]
+esc2 = mes_candidato[47]
+esc3 = ano_candidato[47]
 
-esd1 = semana_candidato[47]
-esd2 = mes_candidato[47]
-esd3 = ano_candidato[47]
+esd1 = semana_candidato[48]
+esd2 = mes_candidato[48]
+esd3 = ano_candidato[48]
 
 
 @app.route("/ranking_candidatos")
