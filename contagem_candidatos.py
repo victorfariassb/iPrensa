@@ -38,6 +38,9 @@ def contagem_candidatos(base, contagem):
         dataframe['titulo'] = dataframe['titulo'].str.replace('Vinícius Rodrigues Vieira', 'Vinícius Rodrigues V.')
         dataframe['titulo'] = dataframe['titulo'].str.replace('Paulo Vieira', 'Paulo V.')
         dataframe['titulo'] = dataframe['titulo'].str.replace('Susana Vieira', 'Susana V.')
+        dataframe['titulo'] = dataframe['titulo'].str.replace('Rodolfo Vieira', 'Rodolfo V.')
+        dataframe['titulo'] = dataframe['titulo'].str.replace('Heslaine Vieira', 'Heslaine V.')
+        dataframe['titulo'] = dataframe['titulo'].str.replace('Fani Pacheco', 'Fani P.')
 
         df_semana = dataframe[dataframe['data'] >= semana]
 
