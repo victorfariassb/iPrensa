@@ -11,9 +11,33 @@
     font-family: "Quicksand", sans-serif;
     font-size: 17px;
 }
+.menu{
+    list-style: none;
+    padding: 2px 10px;
+    display: inline-block;
+}
+.menu li{
+    position: relative;
+    padding: 3px;
+    float: left;
+    border-right: 1px solid #c0c0c0;
+}
+ul li:last-child {
+    border: 0px;
+}
+a:link{
+    text-decoration: none;
+    color: rgb(252, 194, 5);
+    font-weight: bold;
+}
+.menu li a:hover{
+    background: darkorange;
+    color:#fff;
+}
 .titulo{
-    color: darkorange;
-    font-size: 1.1em;
+    color: white;
+    background-color: darkorange;
+    font-size: 20px;
 }
 .descricao{
     font-size: 1em;
@@ -66,6 +90,12 @@
     <div class="titulo">
         <h1 >Radar da Imprensa</h1>
     </div>
+  <nav>
+      <ul class="menu">
+        <li><a href="/palavra_dia">Palavras do dia</a></li>
+        <li><a href="/ranking_candidatos">Ranking dos pré-candidatos à Presidência</a></li>
+      </ul>
+    </nav>
     <div class="descricao">
         <p>
           Seja bem-vindo! Este é um <a href='https://github.com/victorfariassb/radar_imprensa'>projeto</a> criado por <a href="https://twitter.com/__victorfarias">Victor Farias</a> para acompanhar os principais jornais do Brasil e analisar como alguns temas estão sendo noticiados. 
@@ -79,11 +109,6 @@
         <p><b>Última atualização:</b> {{ hora }}</p>
         <p><b>Início da coleta dos dados:</b><br> Globo — 01/01/2022<br> Uol — 01/01/2022<br>Jovem Pan — 12/01/2022<br>Folha — 17/01/2022<br> O Globo — 18/01/2022<br> Estadão — 31/01/2022</p>
         <br/>
-    </div>
-    <div class="paragrafo">
-        <a href="/palavra_dia">Palavras do dia</a> - <a href="/ranking_candidatos">Ranking dos pré-candidatos à Presidência</a>
-        <br>
-        <br>
     </div>
         <div class="secao">
         <h2>Termos mais mencionados nos sites</h2>
