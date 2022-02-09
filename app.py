@@ -419,7 +419,7 @@ def ranking_candidatos():
         semana_ciro_es=esc1, mes_ciro_es=esc2, ano_ciro_es=esc3,
         semana_doria_es=esd1, mes_doria_es=esd2, ano_doria_es=esd3
     )
-@app.route("sobre")
+@app.route("/sobre")
 def sobre():
     return render_template("sobre.html")
         
