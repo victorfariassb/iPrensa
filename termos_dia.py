@@ -55,8 +55,10 @@ def termos_dia(contagem):
     text = ' '.join(df_dia)
 
     doc = nlp(text)
+    
+    palavras_deletadas = ['R$', 'Seção']
 
-    labels = [x.text for x in doc.ents if x.text != 'R$']
+    labels = [x.text for x in doc.ents if x.text not in palavras_deletadas]
     dicionario = Counter(labels)
 
     palavras = [palavra for palavra in dicionario.most_common(20)]
