@@ -18,12 +18,6 @@ spreadsheet = service_account.open_by_key(spreadsheet_id)
 globo_sheet = spreadsheet.worksheet('globo') 
 jp_sheet = spreadsheet.worksheet('jovem_pan') 
 
-# Conta palavras 
-contagem = spreadsheet.worksheet('mais_faladas') 
-
-conta_palavras(globo_sheet, contagem)
-conta_palavras(jp_sheet, contagem)
-
 # Raspa os dados
 try:
   coleta_globo(globo_sheet)
@@ -32,5 +26,10 @@ finally:
   
 coleta_jp(jp_sheet)
 
+# Conta palavras 
+contagem = spreadsheet.worksheet('mais_faladas') 
+
+conta_palavras(globo_sheet, contagem)
+conta_palavras(jp_sheet, contagem)
 
 
