@@ -34,13 +34,15 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  display: flex;
+
 }
 .nav-menu{
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 15px;
-  margin-right: 10px;
+  margin-right: 40px;
 }
 .nav-menu li{
   list-style: none;
@@ -59,19 +61,7 @@ ul li a:link{
 .container{
   width: 1280px;
   margin: 0;
-}
-@media(max-width:1280px){
-  .container{
-    width: 100%;}
-}
-@media (max-width: 1200px) {
-  body { font-size: 1.1em; }
-}
-@media (max-width: 768px) {
-  body { font-size: 1em; }
-}
-@media (max-width: 468px) {
-  body { font-size: 0.9em; }
+  display: flex;
 }
 .logo{
   height: inherit;
@@ -102,7 +92,7 @@ a:link {
   font-size: 0.9em;
 }
 .secao{
-  margin: 90px 10% 0;
+  margin: 90px 10% 10px;
   font-size: 1em;
   text-align: justify;
 }
@@ -110,9 +100,9 @@ a:link {
   width: 85%;
   border-collapse: collapse;
   font-family: "Arial";
-  margin: auto auto 5px;
+  margin: auto auto;
   font-size: 1.2em;
-  min-width: 400px;
+  min-width: 200px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;    
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -125,7 +115,7 @@ a:link {
 }
 .content-table th,
 .content-table td{
-  padding: 15px 17px;
+  padding: 10px 14px;
 }
 .content-table tbody tr{
   border-bottom: 1px solid #ddd;    
@@ -136,6 +126,46 @@ a:link {
 .content-table tbody tr:last-of-type{
   border-bottom: 2px solid darkorange;
 }
+@media(max-width:1280px){
+  .container{
+  width: 100%;}
+}
+@media (max-width: 1200px) {
+  body { font-size: 1.1em; }
+}
+@media (max-width: 768px) {
+  body { font-size: 1em; }
+}
+@media (max-width: 468px) {
+  body { 
+    font-size: 0.9em;
+    margin: auto;
+  }
+  .navbar{
+    height: 90px;
+    display: block;
+  }
+  .nav-menu{
+    position: block;
+    height: 45px;
+    gap: 10px;
+    margin-left: 15px;   
+  }
+   .logo{
+     width: 100%;
+     height: 45px;
+   }
+   .secao{
+     text-align: left;
+   }
+   .content-table{
+     margin: auto;
+     width: auto;
+     font-size: 1em;
+   }
+   .content-table td{
+  padding: 5px 5px;
+  }
     </style>
 </head>
 <body>
@@ -155,7 +185,7 @@ a:link {
   </header>
   <div class="conteudo">
         <div class="secao">
-        <h2 = >Termos mais mencionados nos sites</h2>
+        <h2>Termos mais mencionados nos sites</h2>
         <br>  
         <p>A cada 2 horas, das 8h às 22h, o Radar da Imprensa entre nos sites de 6 jornais brasileiros (Globo, Uol, Jovem Pan, Folha, Estadão e O Globo) e coleta as matérias que estão na home. Esses dados estão disponíveis <a href="https://docs.google.com/spreadsheets/d/1UY2MkXq41EBEU5AXxGDE2oVrd8rQgPcc28xWi7oHVOU/edit?usp=sharing"><b>aqui</b></a>. Nesta seção, você vê as palavras mais mencionadas no ano por cada veículo.
             <br>
