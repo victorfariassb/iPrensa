@@ -58,6 +58,11 @@ ul li a:link{
   background: darkorange;
   color:#fff;
 }
+.container{
+  width: 1280px;
+  margin: 0;
+  display: flex;
+}
 .logo{
   height: inherit;
   background-color: darkorange;
@@ -75,13 +80,16 @@ a:link {
   text-decoration: none;
 }
 .conteudo{
-  margin: 0 20px;
+  margin: 0 4em;
 }
 .observacao{
   justify-items: center;
   font-size: 1em;
   text-align: justify;
   margin: 5px 10%;
+  background-color: bisque;
+  border-radius: 10%;
+  padding: 10px;
 }
 .dados-base{
   font-size: 0.9em;
@@ -131,6 +139,12 @@ a:link {
 @media (max-width: 768px) {
   body { font-size: 1em; }
 }
+.conteudo{
+    margin: 70px 2em auto;
+  }
+  .titulo{
+  font-size: 1.2em;
+  }
 @media (max-width: 468px) {
   body { 
     font-size: 0.9em;
@@ -150,6 +164,9 @@ a:link {
      width: 100%;
      height: 45px;
    }
+   .conteudo{
+    margin: 110px 1em auto;
+  }
    .secao{
      text-align: left;
    }
@@ -160,7 +177,7 @@ a:link {
    }
    .content-table td{
   padding: 5px 5px;
-  }
+  }}
     </style>
 </head>
 <body>
@@ -171,7 +188,7 @@ a:link {
       </div>
       <ul class="nav-menu">
         <li><a href="/palavra_dia">Termos do dia</a></li>
-        <li><a href="/ranking_candidatos">Ranking da Eleição</a></li>
+        <li><a href="/ranking_candidatos">Ranking da eleição</a></li>
         <li><a href="/sobre">Sobre</a></li>
       </ul>
     </nav>
@@ -198,6 +215,7 @@ a:link {
         <div class="observacao">
         <p><i><b>*</b>Em relação ao Globo, a coleta está acontecendo de maneira irregular, com algumas raspagens ocorrendo somente até a metade do site. Esse problema está sendo analisado.</i></p>
         </div>
+      </div>
         <table class="content-table">
             <thead>
             <tr>
@@ -464,6 +482,5 @@ a:link {
               <br/>
             </tbody>
           </table>
-        </div>
   </body>
   </html>
