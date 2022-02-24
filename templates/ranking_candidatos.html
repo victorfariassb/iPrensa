@@ -75,14 +75,11 @@ ul li a:link{
   font-size: 1.3em;
   padding: 15px 10px;
 }
-.secao{
-    font-size: 1em;
-    text-align: center;
-    margin: auto;
-    max-width: 800px;
-}
 main{
   margin: 50px 20px;
+}
+.conteudo{
+  margin: 0 4em;
 }
 a:link {
   color: darkorange;
@@ -100,6 +97,11 @@ a:link {
 .observacao{
   font-size: 1em;
   margin: 30px auto 30px;
+}
+  .secao{
+    margin: 100px auto 20px;
+    font-size: 1.2em;
+    text-align: center;
 }
 .content-table{
     width: 85%;
@@ -140,7 +142,9 @@ a:link {
 }
 @media (max-width: 768px) {
   body { font-size: 1em; }
-}
+}.titulo{
+  font-size: 1.2em;
+  }
 @media (max-width: 468px) {
   body { 
     font-size: 0.9em;
@@ -156,11 +160,15 @@ a:link {
   .nav-menu{
     position: block;
     height: 45px;
-    justify-content:space-around;  
+    gap: 10px;
+    margin-left: 15px;   
   }
    .logo{
      width: 100%;
      height: 45px;
+   }
+   .conteudo{
+    margin: 0 1em;
    }
    .secao{
      text-align: left;
@@ -181,10 +189,11 @@ a:link {
     <header>
         <div class="navbar">
     <div class="logo">
-            <p class="titulo"><a style=color:white; href="/">Radar da Imprensa</a></p>
+    <p class="titulo">Radar da Imprensa</p>
     </div>
     <nav>
       <ul class="nav-menu">
+          <li><a href="/">Página Inicial</a></li>
           <li><a href="/palavra_dia">Palavras do dia</a></li>
           <li><a href="/sobre">Sobre</a></li>
       </ul>
@@ -192,6 +201,7 @@ a:link {
     </div>
     </header>
     <main>
+      <div class="conteudo">
       <div class="secao">
         <h2>Ranking dos pré-candidatos</h2>
     </div>
@@ -203,6 +213,7 @@ a:link {
         <div class="observacao">
         <p><b>Última atualização: </b>{{ hora }}</p>
         </div>
+      </div>
           <table class="content-table">
             <caption>Número de menções aos pré-candidatos no <a href='https://www.uol.com.br/'>Uol</a></caption>
             <thead>
