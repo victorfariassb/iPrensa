@@ -28,10 +28,10 @@ browser = webdriver.Chrome(options=options, executable_path=ChromeDriverManager(
 
 # Raspagem de dados
 # Função recursiva para coletar editoria de matérias
-def pega_editoria(link):
+def pega_editoria_globo(link):
     action = link.attrs.get('data-tracking-action')
     if  not action and link.parent:
-        return pega_editoria(link.parent)
+        return pega_editoria_globo(link.parent)
     else: return action
     
 def pega_localizacao(link):
@@ -61,7 +61,7 @@ def coleta_globo(planilha):
     for dado in soup.find_all('a', class_="post__link"):
         time.sleep(2)
         num += 1
-        editoria = pega_editoria(dado)
+        editoria = pega_editoria_globo(dado)
         titulo = dado.get('title')
         titulo = re.sub(r"\n+", '', titulo)
         posicao = pega_localizacao(dado)
@@ -279,7 +279,7 @@ def coleta_estadao(planilha):
       num +=1
       planilha.append_row([num, dia, titulo, classe, link])
 
-def pega_editoria(editoria):
+def pega_editoria_cnn(editoria):
     action = editoria.find(class_='home__category')
     business = editoria.find(class_='home__business')
     home = editoria.find(class_='home__list')
@@ -288,7 +288,7 @@ def pega_editoria(editoria):
         return business.text
       elif home:
         return 'sem editoria'
-      return pega_editoria(editoria.parent)
+      return pega_editoria_cnn(editoria.parent)
     else: 
         return action.text
 
@@ -306,7 +306,7 @@ def coleta_cnn(planilha):
 
   soup = bs(html, 'html.parser')
   for materia in soup.find_all(class_='home__title'):
-    editoria = pega_editoria(materia)
+    editoria = pega_editoria_cnn(materia)
     if editoria != 'Branded content':
       time.sleep(2)
       num += 1
