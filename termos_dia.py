@@ -25,7 +25,7 @@ palavras_dia = spreadsheet.worksheet('palavras_dia')
 def termos_dia(contagem):
     linha = 2
     coluna = 1
-    jornais = ['uol', 'globo', 'jovem_pan', 'folha', 'oglobo', 'estadao']
+    jornais = ['uol', 'globo', 'jovem_pan', 'folha', 'oglobo', 'estadao', 'cnn']
 
     tabelas = []
     for jornal in jornais:
