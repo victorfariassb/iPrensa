@@ -20,8 +20,10 @@ def contagem_candidatos(base, contagem):
         linha = 38
     elif 'manchete_estadao' in chave:
         linha = 47
-    else:
+    elif 'sem editoria' in chave:
         linha = 56
+    else:
+        linha = 65
     coluna = 3
 
     presidenciaveis = ['Bolsonaro', 'Lula', 'Moro', 'Ciro', 'Doria', 'Pacheco', 'Tebet', 'Vieira', 'Janones']
