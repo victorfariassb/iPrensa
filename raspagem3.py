@@ -36,6 +36,7 @@ contagem = spreadsheet.worksheet('mais_faladas')
 
 conta_palavras(uol_sheet, contagem)
 conta_palavras(folha_sheet, contagem)
+conta_palavras(cnn_sheet, contagem)
 time.sleep(60)
 
 # Conta candidatos
@@ -54,3 +55,6 @@ contagem_candidatos(folha_sheet, contagem_candidato)
 contagem_candidatos(oglobo_sheet, contagem_candidato)
 contagem_candidatos(estadao_sheet, contagem_candidato)
 contagem_candidatos(uol_sheet, contagem_candidato)
+contagem_candidatos(cnn_sheet, contagem_candidato)
+
+
