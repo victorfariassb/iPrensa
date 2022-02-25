@@ -28,6 +28,8 @@ finally:
 
 try:
   coleta_cnn(cnn_sheet)
+finally:
+  next
 
 # Conta palavras 
 contagem = spreadsheet.worksheet('mais_faladas') 
