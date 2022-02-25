@@ -298,7 +298,7 @@ def coleta_cnn(planilha):
   now = datetime.now(pytz.timezone('Brazil/East'))
   dia = now.strftime("%d/%m/%Y %H:%M:%S")
 
-  driver.get("https://www.cnnbrasil.com.br/")
+  browser.get("https://www.cnnbrasil.com.br/")
 
 
   source = browser.find_element_by_tag_name('html')
