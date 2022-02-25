@@ -24,8 +24,10 @@ def conta_palavras(base, contagem):
         coluna = 9
     elif "manchete_estadao" in chave:
         coluna = 11
-    else:
+    elif "sem editoria" in chave:
         coluna = 13
+    else:
+        coluna = 15
     linha = 2
     
     nltk.download('punkt') 
