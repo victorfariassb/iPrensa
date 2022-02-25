@@ -39,6 +39,13 @@ def pega_localizacao(link):
     if  not action and link.parent:
         return pega_localizacao(link.parent)
     else: return action
+
+def pega_link(link):
+    action = link.attrs.get('href')
+    if not action and link.parent:
+        return pega_link(link.parent)
+    else:
+        return action
     
 
 def coleta_globo(planilha):
@@ -92,15 +99,7 @@ def coleta_uol(planilha):
                         titulo = tit
                         planilha.append_row([num, dia, classe, link, titulo])
 
-                        
-
-
-def pega_link(link):
-    action = link.attrs.get('href')
-    if not action and link.parent:
-        return pega_link(link.parent)
-    else:
-        return action
+                       
 
 def coleta_jp(planilha):
     num = 0
@@ -111,41 +110,26 @@ def coleta_jp(planilha):
     resposta = requests.get("https://jovempan.com.br/")
     html = resposta.text
     soup = bs(html, 'html.parser')
-    for manchete in soup.find_all('h2', class_='title'):
+    manchetao = soup.find(id='jp-featured-posts-35')
+    if manchetao:
+      for materia in manchetao.find_all('a'):
+        if materia.text:
+          time.sleep(2)
+          num +=1
+          titulo = materia.text
+          link = pega_link(materia)
+          editoria = 'manchetao'
+          planilha.append_row([num, dia, editoria, titulo, link])
+    for manchete in soup.find_all(class_='title'):
         editoria = manchete.parent.parent.find('h6', class_='category')
-        if editoria:
-            num += 1
-            titulo = manchete.text
-            tipo = 'manchete'
-            link = pega_link(manchete)
-            editoria = editoria.text
-            planilha.append_row([num, dia, editoria, titulo, tipo, link])
-
-    for manchete_inferior in soup.find_all('h3', class_='title'):
-        editoria = manchete_inferior.parent.parent.find('h6', class_='category')
         if editoria:
             time.sleep(2)
             num += 1
-            titulo = manchete_inferior.text
-            tipo = 'manchete_inferior'
-            link = pega_link(manchete_inferior)
+            titulo = manchete.text
+            link = pega_link(manchete)
             editoria = editoria.text
-            planilha.append_row([num, dia, editoria, titulo, tipo, link])
+            planilha.append_row([num, dia, editoria, titulo, link])
 
-    for dado in soup.find_all('p', class_='title'):
-        titulo = dado.text.strip()
-        if titulo:
-            time.sleep(2)    
-            editoria = dado.parent.find('h6', class_='category')
-            if editoria is not None:
-                editoria = editoria.text.strip()
-            else:
-                editoria = None
-            tipo = 'noticias'
-            link = pega_link(dado)
-            if 'curso' not in str(link):
-                num += 1
-                planilha.append_row([num, dia, editoria, titulo, tipo, link])
         
   
 
@@ -294,3 +278,41 @@ def coleta_estadao(planilha):
       time.sleep(2)
       num +=1
       planilha.append_row([num, dia, titulo, classe, link])
+
+def pega_editoria(editoria):
+    action = editoria.find(class_='home__category')
+    business = editoria.find(class_='home__business')
+    home = editoria.find(class_='home__list')
+    if not action and editoria.parent:
+      if business:
+        return business.text
+      elif home:
+        return 'sem editoria'
+      return pega_editoria(editoria.parent)
+    else: 
+        return action.text
+
+def coleta_cnn(planilha):
+  num = 0
+  
+  now = datetime.now(pytz.timezone('Brazil/East'))
+  dia = now.strftime("%d/%m/%Y %H:%M:%S")
+
+  driver.get("https://www.cnnbrasil.com.br/")
+
+
+  source = driver.find_element_by_tag_name('html')
+  html = source.get_attribute('innerHTML')
+
+  soup = bs(html, 'html.parser')
+  for materia in soup.find_all(class_='home__title'):
+    editoria = pega_editoria(materia)
+    if editoria != 'Branded content':
+      time.sleep(2)
+      num += 1
+      link = pega_link(materia)
+      titulo = materia.text
+      planilha.append_row([num, dia, titulo, editoria, link])
+  
+
+ 
