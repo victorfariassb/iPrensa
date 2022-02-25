@@ -6,7 +6,7 @@ import os
 import time
 
 from contagem_candidatos import contagem_candidatos
-from raspador_sites import coleta_uol, coleta_cnn
+from raspador_sites import coleta_uol, coleta_cnn, pega_editoria_cnn, pega_link
 from contagem_palavras import conta_palavras
 
 spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
