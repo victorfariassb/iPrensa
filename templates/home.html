@@ -58,11 +58,6 @@ ul li a:link{
   background: darkorange;
   color:#fff;
 }
-.container{
-  width: 1280px;
-  margin: 0;
-  display: flex;
-}
 .logo{
   height: inherit;
   background-color: darkorange;
@@ -128,10 +123,6 @@ a:link {
 }
 .content-table tbody tr:last-of-type{
   border-bottom: 2px solid darkorange;
-}
-@media(max-width:1280px){
-  .container{
-  width: 100%;}
 }
 @media (max-width: 1200px) {
   body { font-size: 1.1em; }
@@ -209,7 +200,7 @@ a:link {
         <br>
       <div class="dados-base">
         <p><b>Última atualização:</b> {{ hora }}</p>
-        <p><b>Início da coleta dos dados:</b><br> Globo* — 01/01/2022<br> Uol — 01/01/2022<br>Jovem Pan — 12/01/2022<br>Folha — 17/01/2022<br> O Globo — 18/01/2022<br> Estadão — 31/01/2022</p>
+        <p><b>Início da coleta dos dados:</b><br> Globo* — 01/01/2022<br> Uol — 01/01/2022<br>Jovem Pan — 12/01/2022<br>Folha — 17/01/2022<br> O Globo — 18/01/2022<br> Estadão — 31/01/2022<br> CNN - 25/02/2022</p>
         <br/>
     </div>
         <div class="observacao">
@@ -478,6 +469,69 @@ a:link {
                 <td>{{ og_10 }}</td>
                 <td>{{ es10 }}</td>
                 <td>{{ esq10 }}</td>
+              </tr>
+              <br/>
+              <table class="content-table">
+            <thead>
+              <tr>
+              <th scope="col" rowspan="2">Posição</th>
+              <th colspan="2">CNN</th>
+              </tr>
+              <tr>
+                <th scope="col">Palavra</th>
+                <th scope="col">Nº</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1º</th>
+                <td>{{ cnn1 }}</td>
+                <td>{{ cnn_1 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">2º</th>
+                <td>{{ cnn2 }}</td>
+                <td>{{ cnn_2 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">3º</th>
+                <td>{{ cnn3 }}</td>
+                <td>{{ cnn_3 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">4º</th>
+                <td>{{ cnn4 }}</td>
+                <td>{{ cnn_4 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">5º</th>
+                <td>{{ cnn5 }}</td>
+                <td>{{ cnn_5 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">6º</th>
+                <td>{{ cnn6 }}</td>
+                <td>{{ cnn_6 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">7º</th>
+                <td>{{ cnn7 }}</td>
+                <td>{{ cnn_7 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">8º</th>
+                <td>{{ cnn8 }}</td>
+                <td>{{ cnn_8 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">9º</th>
+                <td>{{ cnn9 }}</td>
+                <td>{{ cnn_9 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">10º</th>
+                <td>{{ cnn10 }}</td>
+                <td>{{ cnn_10 }}</td>
               </tr>
               <br/>
             </tbody>
