@@ -7,7 +7,7 @@
   <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
         body{
-            background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   text-align: center;
   font-family: "Quicksand", sans-serif;
   font-size: 17px;
@@ -35,6 +35,7 @@ header {
   justify-content: space-between;
   align-items: center;
   display: flex;
+
 }
 .nav-menu{
   display: flex;
@@ -56,11 +57,6 @@ ul li a:link{
 .nav-menu li a:hover{
   background: darkorange;
   color:#fff;
-}
-.container{
-  width: 1280px;
-  margin: 0;
-  display: flex;
 }
 .logo{
   height: inherit;
@@ -136,14 +132,17 @@ a:link {
 @media (max-width: 768px) {
   body { font-size: 1em; }
 }
+.conteudo{
+    margin: 70px 2em auto;
+  }
+  .titulo{
+  font-size: 1.2em;
+  }
 @media (max-width: 468px) {
-  body { 
+  bbody { 
     font-size: 0.9em;
     margin: auto;
   }
-  main {
-  margin: 110px 15px;
-}
   .navbar{
     height: 90px;
     display: block;
@@ -151,7 +150,8 @@ a:link {
   .nav-menu{
     position: block;
     height: 45px;
-  justify-content:space-around;  
+    gap: 10px;
+    margin-left: 15px;   
   }
    .logo{
      width: 100%;
