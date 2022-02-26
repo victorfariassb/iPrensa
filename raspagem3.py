@@ -20,6 +20,7 @@ spreadsheet = service_account.open_by_key(spreadsheet_id)
 uol_sheet = spreadsheet.worksheet('uol') 
 cnn_sheet = spreadsheet.worksheet('cnn') 
 
+
 # Raspa os dados
 try:
   coleta_uol(uol_sheet)
@@ -34,6 +35,8 @@ finally:
 # Conta palavras 
 contagem = spreadsheet.worksheet('mais_faladas') 
 
+folha_sheet = spreadsheet.worksheet('folha') 
+
 conta_palavras(uol_sheet, contagem)
 conta_palavras(folha_sheet, contagem)
 conta_palavras(cnn_sheet, contagem)
@@ -44,7 +47,6 @@ contagem_candidato = spreadsheet.worksheet('contagem_candidato')
 
 jp_sheet = spreadsheet.worksheet('jovem_pan')
 globo_sheet = spreadsheet.worksheet('globo')
-folha_sheet = spreadsheet.worksheet('folha') 
 oglobo_sheet = spreadsheet.worksheet('oglobo') 
 estadao_sheet = spreadsheet.worksheet('estadao')
 
