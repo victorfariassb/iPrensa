@@ -84,18 +84,15 @@
     }
 
     .conteudo {
-      margin: 0 4em;
+      width: 85%;
+      margin: 70px 2em auto;
+      display: inline-block;
     }
 
     .secao {
-      margin: 90px 0% 10px;
+      margin: 0 0 10px;
       font-size: 1em;
       text-align: left;
-    }
-
-    a:link {
-      color: darkorange;
-      text-decoration: none;
     }
 
     .descricao {
@@ -105,24 +102,30 @@
       max-width: 1100px;
     }
 
-    .paragrafo {
-      font-size: 0.9em;
+    a:link {
+      color: darkorange;
+      text-decoration: none;
     }
 
     .observacao {
       font-size: 1em;
-      margin: 30px auto 30px;
+      margin: 30px auto;
+    }
+
+    h4 {
+      margin: 50px 0 10px;
     }
 
     .content-table {
       width: 85%;
       border-collapse: collapse;
       font-family: "Arial";
-      margin: auto auto 40px;
+      margin: auto auto 5px;
       font-size: 1.2em;
       min-width: 400px;
       border-radius: 5px 5px 0 0;
       overflow: hidden;
+
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
 
@@ -195,7 +198,6 @@
       }
 
       .secao {
-        text-align: left;
         margin-top: 120px;
       }
 
@@ -212,13 +214,13 @@
     }
   </style>
 </head>
+
 <body>
   <header>
-    <div class="navbar">
+    <nav class="navbar">
       <div class="logo">
         <p class="titulo"><a style=color:white; href="/">Radar da Imprensa</a></p>
       </div>
-      <nav>
         <ul class="nav-menu">
           <li><a href="/palavra_dia">Palavras do dia</a></li>
           <li><a href="/sobre">Sobre</a></li>
@@ -242,8 +244,8 @@
         <p><b>Última atualização: </b>{{ hora }}</p>
       </div>
     </div>
+    <h4>Número de menções aos pré-candidatos no <a href='https://www.uol.com.br/'>Uol</a></h4>
     <table class="content-table">
-      <caption>Número de menções aos pré-candidatos no <a href='https://www.uol.com.br/'>Uol</a></caption>
       <thead>
         <tr>
           <th scope="col">Candidato</th>
@@ -285,8 +287,8 @@
         </tr>
       </tbody>
     </table>
+    <h4>Número de menções aos pré-candidatos na <a href='https://www.globo.com.br/'>Globo.com</a></h4>
     <table class="content-table">
-      <caption>Número de menções aos pré-candidatos na <a href='https://www.globo.com.br/'>Globo.com</a></caption>
       <thead>
         <tr>
           <th scope="col">Candidato</th>
@@ -328,8 +330,8 @@
         </tr>
       </tbody>
     </table>
+    <h4>Número de menções aos pré-candidatos na <a href='https://jovempan.com.br/'>Jovem Pan</a></h4>
     <table class="content-table">
-      <caption>Número de menções aos pré-candidatos na <a href='https://jovempan.com.br/'>Jovem Pan</a></caption>
       <thead>
         <tr>
           <th scope="col">Candidato</th>
@@ -371,8 +373,8 @@
         </tr>
       </tbody>
     </table>
+    <h4>Número de menções aos pré-candidatos na <a href='https://www.folha.uol.com.br/'>Folha</a></h4>
     <table class="content-table">
-      <caption>Número de menções aos pré-candidatos na <a href='https://www.folha.uol.com.br/'>Folha</a></caption>
       <thead>
         <tr>
           <th scope="col">Candidato</th>
@@ -414,8 +416,8 @@
         </tr>
       </tbody>
     </table>
+    <h4>Número de menções aos pré-candidatos em <a href='https://oglobo.globo.com/'>O Globo</a></h4>
     <table class="content-table">
-      <caption>Número de menções aos pré-candidatos em <a href='https://oglobo.globo.com/'>O Globo</a></caption>
       <thead>
         <tr>
           <th scope="col">Candidato</th>
@@ -457,8 +459,8 @@
         </tr>
       </tbody>
     </table>
+    <h4>Número de menções aos pré-candidatos no <a href='https://www.estadao.com.br/'>Estadão</a></h4>
     <table class="content-table">
-      <caption>Número de menções aos pré-candidatos no <a href='https://www.estadao.com.br/'>Estadão</a></caption>
       <thead>
         <tr>
           <th scope="col">Candidato</th>
