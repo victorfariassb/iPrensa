@@ -1,181 +1,223 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Radar da Imprensa</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-      body{
-  background-color: rgb(255, 255, 255);
-  text-align: center;
-  font-family: "Quicksand", sans-serif;
-  font-size: 17px;
-  color: black;
-  margin: 0;
-  padding: 0;
-}
-*{
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgb(0, 0, 0);
-}
-.navbar {
-  width: 100%;
-  height: 60px;
-  margin: auto;
-  min-width: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-}
-.nav-menu{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  margin-right: 40px;
-}
-.nav-menu li{
-  list-style: none;
-}
-ul li:last-child {
-  border: 0px;
-}
-ul li a:link{
-  text-decoration: none;
-  color: white;
-}
-.nav-menu li a:hover{
-  background: darkorange;
-  color:#fff;
-}
-.logo{
-  height: inherit;
-  background-color: darkorange;
-  text-align: center;
-  display: block;
-}
-.titulo{
-  font-weight: bold;
-  color: white;
-  font-size: 1.3em;
-  padding: 15px 10px;
-}
-a:link {
-  color: darkorange;
-  text-decoration: none;
-}
-.conteudo{
-  margin: 0 4em;
-}
-.observacao{
-  justify-items: center;
-  font-size: 1em;
-  text-align: justify;
-  margin: 5px 10%;
-  background-color: bisque;
-  border-radius: 10%;
-  padding: 10px;
-}
-.dados-base{
-  font-size: 0.9em;
-}
-.secao{
-  margin: 90px 10% 10px;
-  font-size: 1em;
-  text-align: justify;
-}
-.content-table{
-  width: 85%;
-  border-collapse: collapse;
-  font-family: "Arial";
-  margin: auto auto;
-  font-size: 1.2em;
-  min-width: 200px;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;    
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-.content-table thead tr{
-  background-color: darkorange;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-}
-.content-table th,
-.content-table td{
-  padding: 10px 14px;
-}
-.content-table tbody tr{
-  border-bottom: 1px solid #ddd;    
-}
-.content-table tbody tr:nth-of-type(even){
-  background-color: #f3f3f3;
-}
-.content-table tbody tr:last-of-type{
-  border-bottom: 2px solid darkorange;
-}
-@media (max-width: 1200px) {
-  body { font-size: 1.1em; }
-}
-@media (max-width: 768px) {
-  body { font-size: 1em; }
-}
-.conteudo{
-    margin: 70px 2em auto;
-  }
-  .titulo{
-  font-size: 1.2em;
-  }
-@media (max-width: 468px) {
-  body { 
-    font-size: 0.9em;
-    margin: auto;
-  }
-  .navbar{
-    height: 90px;
-    display: block;
-  }
-  .nav-menu{
-    position: block;
-    height: 45px;
-    gap: 10px;
-    margin-left: 15px;   
-  }
-   .logo{
-     width: 100%;
-     height: 45px;
-   }
-   .conteudo{
-    margin: 110px 1em auto;
-  }
-   .secao{
-     text-align: left;
-   }
-   .content-table{
-     margin: auto;
-     width: auto;
-     font-size: 1em;
-   }
-   .content-table td{
-  padding: 5px 5px;
-  }}
-    </style>
+    body {
+      background-color: rgb(255, 255, 255);
+      text-align: center;
+      font-family: "Quicksand", sans-serif;
+      font-size: 17px;
+      color: black;
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgb(0, 0, 0);
+    }
+
+    .navbar {
+      width: 100%;
+      height: 60px;
+      margin: auto;
+      min-width: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+
+    }
+
+    .nav-menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-right: 40px;
+    }
+
+    .nav-menu li {
+      list-style: none;
+    }
+
+    ul li:last-child {
+      border: 0px;
+    }
+
+    ul li a:link {
+      text-decoration: none;
+      color: white;
+    }
+
+    .nav-menu li a:hover {
+      background: darkorange;
+      color: #fff;
+    }
+
+    .logo {
+      height: inherit;
+      background-color: darkorange;
+      text-align: center;
+      display: block;
+    }
+
+    .titulo {
+      font-weight: bold;
+      color: white;
+      font-size: 1.3em;
+      padding: 15px 10px;
+    }
+
+    a:link {
+      color: darkorange;
+      text-decoration: none;
+    }
+
+    .conteudo {
+      margin: 0 4em;
+    }
+
+    .observacao {
+      justify-items: center;
+      font-size: 1em;
+      text-align: justify;
+      margin: 5px 10%;
+      background-color: bisque;
+      border-radius: 10%;
+      padding: 10px;
+    }
+
+    .dados-base {
+      font-size: 0.9em;
+    }
+
+    .secao {
+      margin: 90px 10% 10px;
+      font-size: 1em;
+      text-align: justify;
+    }
+
+    .content-table {
+      width: 85%;
+      border-collapse: collapse;
+      font-family: "Arial";
+      margin: auto auto;
+      font-size: 1.2em;
+      min-width: 200px;
+      border-radius: 5px 5px 0 0;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .content-table thead tr {
+      background-color: darkorange;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .content-table th,
+    .content-table td {
+      padding: 10px 14px;
+    }
+
+    .content-table tbody tr {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .content-table tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+
+    .content-table tbody tr:last-of-type {
+      border-bottom: 2px solid darkorange;
+    }
+
+    @media (max-width: 1200px) {
+      body {
+        font-size: 1.1em;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 1em;
+      }
+    }
+
+    .conteudo {
+      margin: 70px 2em auto;
+    }
+
+    .titulo {
+      font-size: 1.2em;
+    }
+
+    @media (max-width: 468px) {
+      body {
+        font-size: 0.9em;
+        margin: auto;
+      }
+
+      .navbar {
+        height: 90px;
+        display: block;
+      }
+
+      .nav-menu {
+        position: flex;
+        height: 45px;
+        align-items: center;
+        margin: 0 12%;
+        justify-content: space-between;
+      }
+
+      .logo {
+        width: 100%;
+        height: 45px;
+      }
+
+      .conteudo {
+        margin: 110px 1em auto;
+      }
+
+      .secao {
+        text-align: left;
+      }
+
+      .content-table {
+        margin: auto;
+        width: auto;
+        font-size: 1em;
+      }
+
+      .content-table td {
+        padding: 5px 5px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <nav class="navbar">
       <div class="logo">
-      <p class="titulo"><a style=color:white; href="/">Radar da Imprensa</a></p>
+        <p class="titulo"><a style=color:white; href="/">Radar da Imprensa</a></p>
       </div>
       <ul class="nav-menu">
         <li><a href="/palavra_dia">Termos do dia</a></li>
@@ -185,356 +227,364 @@ a:link {
     </nav>
   </header>
   <div class="conteudo">
-        <div class="secao">
-        <h2>Termos mais mencionados nos sites</h2>
-        <br>  
-        <p>A cada 2 horas, das 8h às 22h, o Radar da Imprensa entre nos sites de 6 jornais brasileiros (Globo, Uol, Jovem Pan, Folha, Estadão e O Globo) e coleta as matérias que estão na home. Esses dados estão disponíveis <a href="https://docs.google.com/spreadsheets/d/1UY2MkXq41EBEU5AXxGDE2oVrd8rQgPcc28xWi7oHVOU/edit?usp=sharing"><b>aqui</b></a>. Nesta seção, você vê as palavras mais mencionadas no ano por cada veículo.
-            <br>
-            <br>
-            <h3>Como funciona?</h3>
-            <br>
-            <p>Todos os títulos das matérias são separados em palavras, colocados em caixa baixa e, em seguida, contados. Se um mesmo título aparece na raspagem das 8h e das 10h, a matéria será considerada somente uma vez. Além disso, é feito um filtro para dar prioridade a substantivos.</p>
-          <br>
-          <p><b>Exemplo:</b> "Paulo Guedes come coxinha em São Paulo" = "paulo", "guedes", "coxinha", "são" e "paulo".
-        </div>
+    <div class="secao">
+      <h2>Termos mais mencionados nos sites</h2>
+      <br>
+      <p>A cada 2 horas, das 8h às 22h, o Radar da Imprensa entre nos sites de 6 jornais brasileiros (Globo, Uol, Jovem
+        Pan, Folha, Estadão e O Globo) e coleta as matérias que estão na home. Esses dados estão disponíveis <a
+          href="https://docs.google.com/spreadsheets/d/1UY2MkXq41EBEU5AXxGDE2oVrd8rQgPcc28xWi7oHVOU/edit?usp=sharing"><b>aqui</b></a>.
+        Nesta seção, você vê as palavras mais mencionadas no ano por cada veículo.
         <br>
-      <div class="dados-base">
-        <p><b>Última atualização:</b> {{ hora }}</p>
-        <p><b>Início da coleta dos dados:</b><br> Globo* — 01/01/2022<br> Uol — 01/01/2022<br>Jovem Pan — 12/01/2022<br>Folha — 17/01/2022<br> O Globo — 18/01/2022<br> Estadão — 31/01/2022<br> CNN - 25/02/2022</p>
-        <br/>
+        <br>
+      <h3>Como funciona?</h3>
+      <br>
+      <p>Todos os títulos das matérias são separados em palavras, colocados em caixa baixa e, em seguida, contados. Se
+        um mesmo título aparece na raspagem das 8h e das 10h, a matéria será considerada somente uma vez. Além disso, é
+        feito um filtro para dar prioridade a substantivos.</p>
+      <br>
+      <p><b>Exemplo:</b> "Paulo Guedes come coxinha em São Paulo" = "paulo", "guedes", "coxinha", "são" e "paulo".
     </div>
-        <div class="observacao">
-        <p><i><b>*</b>Em relação ao Globo, a coleta está acontecendo de maneira irregular, com algumas raspagens ocorrendo somente até a metade do site. Esse problema está sendo analisado.</i></p>
-        </div>
-      </div>
-        <table class="content-table">
-            <thead>
-            <tr>
-              <th scope="col" rowspan="2">Posição</th>
-              <th colspan="2">Globo</th>
-              <th colspan="2">Uol</th>
-              </tr>
-              <tr>
-                <th scope="col">Palavra</th>
-                <th scope="col">Nº</th>
-                <th scope="col">Palavra</th>
-                <th scope="col">Nº</th>
-              </tr> 
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1º</th>
-                <td>{{ w1 }}</td>
-                <td>{{ g1 }}</td>
-                <td>{{ p1 }}</td>
-                <td>{{ u1 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">2º</th>
-                <td>{{ w2 }}</td>
-                <td>{{ g2 }}</td>
-                <td>{{ p2 }}</td>
-                <td>{{ u2 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">3º</th>
-                <td>{{ w3 }}</td>
-                <td>{{ g3 }}</td>
-                <td>{{ p3 }}</td>
-                <td>{{ u3 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">4º</th>
-                <td>{{ w4 }}</td>
-                <td>{{ g4 }}</td>
-                <td>{{ p4 }}</td>
-                <td>{{ u4 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">5º</th>
-                <td>{{ w5 }}</td>
-                <td>{{ g5 }}</td>
-                <td>{{ p5 }}</td>
-                <td>{{ u5 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">6º</th>
-                <td>{{ w6 }}</td>
-                <td>{{ g6 }}</td>
-                <td>{{ p6 }}</td>
-                <td>{{ u6 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">7º</th>
-                <td>{{ w7 }}</td>
-                <td>{{ g7 }}</td>
-                <td>{{ p7 }}</td>
-                <td>{{ u7 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">8º</th>
-                <td>{{ w8 }}</td>
-                <td>{{ g8 }}</td>
-                <td>{{ p8 }}</td>
-                <td>{{ u8 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">9º</th>
-                <td>{{ w9 }}</td>
-                <td>{{ g9 }}</td>
-                <td>{{ p9 }}</td>
-                <td>{{ u9 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">10º</th>
-                <td>{{ w10 }}</td>
-                <td>{{ g10 }}</td>
-                <td>{{ p10 }}</td>
-                <td>{{ u10 }}</td>
-              </tr>
-              <br/>
-            </tbody>
-          </table>
-            <br/>
-        <table class="content-table">
-            <thead>
-<tr>
-              <th scope="col" rowspan="2">Posição</th>
-              <th colspan="2">Jovem Pan</th>
-              <th colspan="2">Folha</th>
-              </tr>
-              <tr>
-                <th scope="col">Palavra</th>
-                <th scope="col">Nº</th>
-                <th scope="col">Palavra</th>
-                <th scope="col">Nº</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1º</th>
-                <td>{{ jp1 }}</td>
-                <td>{{ jp_1 }}</td>
-                <td>{{ f1 }}</td>
-                <td>{{ fq1 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">2º</th>
-                <td>{{ jp2 }}</td>
-                <td>{{ jp_2 }}</td>
-                <td>{{ f2 }}</td>
-                <td>{{ fq2 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">3º</th>
-                <td>{{ jp3 }}</td>
-                <td>{{ jp_3 }}</td>
-                <td>{{ f3 }}</td>
-                <td>{{ fq3 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">4º</th>
-                <td>{{ jp4 }}</td>
-                <td>{{ jp_4 }}</td>
-                <td>{{ f4 }}</td>
-                <td>{{ fq4 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">5º</th>
-                <td>{{ jp5 }}</td>
-                <td>{{ jp_5 }}</td>
-                <td>{{ f5 }}</td>
-                <td>{{ fq5 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">6º</th>
-                <td>{{ jp6 }}</td>
-                <td>{{ jp_6 }}</td>
-                <td>{{ f6 }}</td>
-                <td>{{ fq6 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">7º</th>
-                <td>{{ jp7 }}</td>
-                <td>{{ jp_7 }}</td>
-                <td>{{ f7 }}</td>
-                <td>{{ fq7 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">8º</th>
-                <td>{{ jp8 }}</td>
-                <td>{{ jp_8 }}</td>
-                <td>{{ f8 }}</td>
-                <td>{{ fq8 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">9º</th>
-                <td>{{ jp9 }}</td>
-                <td>{{ jp_9 }}</td>
-                <td>{{ f9 }}</td>
-                <td>{{ fq9 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">10º</th>
-                <td>{{ jp10 }}</td>
-                <td>{{ jp_10 }}</td>
-                <td>{{ f10 }}</td>
-                <td>{{ fq10 }}</td>
-              </tr>
-              <br/>
-            </tbody>
-          </table>
-            <br/>
-        <table class="content-table">
-            <thead>
-              <tr>
-              <th scope="col" rowspan="2">Posição</th>
-              <th colspan="2">O Globo</th>
-              <th colspan="2">Estadão</th>
-              </tr>
-              <tr>
-                <th scope="col">Palavra</th>
-                <th scope="col">Nº</th>
-                <th scope="col">Palavra</th>
-                <th scope="col">Nº</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1º</th>
-                <td>{{ og1 }}</td>
-                <td>{{ og_1 }}</td>
-                <td>{{ es1 }}</td>
-                <td>{{ esq1 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">2º</th>
-                <td>{{ og2 }}</td>
-                <td>{{ og_2 }}</td>
-                <td>{{ es2 }}</td>
-                <td>{{ esq2 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">3º</th>
-                <td>{{ og3 }}</td>
-                <td>{{ og_3 }}</td>
-                <td>{{ es3 }}</td>
-                <td>{{ esq3 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">4º</th>
-                <td>{{ og4 }}</td>
-                <td>{{ og_4 }}</td>
-                <td>{{ es4 }}</td>
-                <td>{{ esq4 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">5º</th>
-                <td>{{ og5 }}</td>
-                <td>{{ og_5 }}</td>
-                <td>{{ es5 }}</td>
-                <td>{{ esq5 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">6º</th>
-                <td>{{ og6 }}</td>
-                <td>{{ og_6 }}</td>
-                <td>{{ es6 }}</td>
-                <td>{{ esq6 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">7º</th>
-                <td>{{ og7 }}</td>
-                <td>{{ og_7 }}</td>
-                <td>{{ es7 }}</td>
-                <td>{{ esq7 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">8º</th>
-                <td>{{ og8 }}</td>
-                <td>{{ og_8 }}</td>
-                <td>{{ es8 }}</td>
-                <td>{{ esq8 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">9º</th>
-                <td>{{ og9 }}</td>
-                <td>{{ og_9 }}</td>
-                <td>{{ es9 }}</td>
-                <td>{{ esq9 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">10º</th>
-                <td>{{ og10 }}</td>
-                <td>{{ og_10 }}</td>
-                <td>{{ es10 }}</td>
-                <td>{{ esq10 }}</td>
-              </tr>
-              <br/>
-              <table class="content-table">
-            <thead>
-              <tr>
-              <th scope="col" rowspan="2">Posição</th>
-              <th colspan="2">CNN</th>
-              </tr>
-              <tr>
-                <th scope="col">Palavra</th>
-                <th scope="col">Nº</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1º</th>
-                <td>{{ cnn1 }}</td>
-                <td>{{ cnn_1 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">2º</th>
-                <td>{{ cnn2 }}</td>
-                <td>{{ cnn_2 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">3º</th>
-                <td>{{ cnn3 }}</td>
-                <td>{{ cnn_3 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">4º</th>
-                <td>{{ cnn4 }}</td>
-                <td>{{ cnn_4 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">5º</th>
-                <td>{{ cnn5 }}</td>
-                <td>{{ cnn_5 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">6º</th>
-                <td>{{ cnn6 }}</td>
-                <td>{{ cnn_6 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">7º</th>
-                <td>{{ cnn7 }}</td>
-                <td>{{ cnn_7 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">8º</th>
-                <td>{{ cnn8 }}</td>
-                <td>{{ cnn_8 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">9º</th>
-                <td>{{ cnn9 }}</td>
-                <td>{{ cnn_9 }}</td>
-              </tr>
-              <tr>
-                <th scope="row">10º</th>
-                <td>{{ cnn10 }}</td>
-                <td>{{ cnn_10 }}</td>
-              </tr>
-              <br/>
-            </tbody>
-          </table>
-  </body>
-  </html>
+    <br>
+    <div class="dados-base">
+      <p><b>Última atualização:</b> {{ hora }}</p>
+      <p><b>Início da coleta dos dados:</b><br> Globo* — 01/01/2022<br> Uol — 01/01/2022<br>Jovem Pan —
+        12/01/2022<br>Folha — 17/01/2022<br> O Globo — 18/01/2022<br> Estadão — 31/01/2022<br> CNN - 25/02/2022</p>
+      <br />
+    </div>
+    <div class="observacao">
+      <p><i><b>*</b>Em relação ao Globo, a coleta está acontecendo de maneira irregular, com algumas raspagens ocorrendo
+          somente até a metade do site. Esse problema está sendo analisado.</i></p>
+    </div>
+  </div>
+  <table class="content-table">
+    <thead>
+      <tr>
+        <th scope="col" rowspan="2">Posição</th>
+        <th colspan="2">Globo</th>
+        <th colspan="2">Uol</th>
+      </tr>
+      <tr>
+        <th scope="col">Palavra</th>
+        <th scope="col">Nº</th>
+        <th scope="col">Palavra</th>
+        <th scope="col">Nº</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1º</th>
+        <td>{{ w1 }}</td>
+        <td>{{ g1 }}</td>
+        <td>{{ p1 }}</td>
+        <td>{{ u1 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">2º</th>
+        <td>{{ w2 }}</td>
+        <td>{{ g2 }}</td>
+        <td>{{ p2 }}</td>
+        <td>{{ u2 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">3º</th>
+        <td>{{ w3 }}</td>
+        <td>{{ g3 }}</td>
+        <td>{{ p3 }}</td>
+        <td>{{ u3 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">4º</th>
+        <td>{{ w4 }}</td>
+        <td>{{ g4 }}</td>
+        <td>{{ p4 }}</td>
+        <td>{{ u4 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">5º</th>
+        <td>{{ w5 }}</td>
+        <td>{{ g5 }}</td>
+        <td>{{ p5 }}</td>
+        <td>{{ u5 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">6º</th>
+        <td>{{ w6 }}</td>
+        <td>{{ g6 }}</td>
+        <td>{{ p6 }}</td>
+        <td>{{ u6 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">7º</th>
+        <td>{{ w7 }}</td>
+        <td>{{ g7 }}</td>
+        <td>{{ p7 }}</td>
+        <td>{{ u7 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">8º</th>
+        <td>{{ w8 }}</td>
+        <td>{{ g8 }}</td>
+        <td>{{ p8 }}</td>
+        <td>{{ u8 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">9º</th>
+        <td>{{ w9 }}</td>
+        <td>{{ g9 }}</td>
+        <td>{{ p9 }}</td>
+        <td>{{ u9 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">10º</th>
+        <td>{{ w10 }}</td>
+        <td>{{ g10 }}</td>
+        <td>{{ p10 }}</td>
+        <td>{{ u10 }}</td>
+      </tr>
+      <br />
+    </tbody>
+  </table>
+  <br />
+  <table class="content-table">
+    <thead>
+      <tr>
+        <th scope="col" rowspan="2">Posição</th>
+        <th colspan="2">Jovem Pan</th>
+        <th colspan="2">Folha</th>
+      </tr>
+      <tr>
+        <th scope="col">Palavra</th>
+        <th scope="col">Nº</th>
+        <th scope="col">Palavra</th>
+        <th scope="col">Nº</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1º</th>
+        <td>{{ jp1 }}</td>
+        <td>{{ jp_1 }}</td>
+        <td>{{ f1 }}</td>
+        <td>{{ fq1 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">2º</th>
+        <td>{{ jp2 }}</td>
+        <td>{{ jp_2 }}</td>
+        <td>{{ f2 }}</td>
+        <td>{{ fq2 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">3º</th>
+        <td>{{ jp3 }}</td>
+        <td>{{ jp_3 }}</td>
+        <td>{{ f3 }}</td>
+        <td>{{ fq3 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">4º</th>
+        <td>{{ jp4 }}</td>
+        <td>{{ jp_4 }}</td>
+        <td>{{ f4 }}</td>
+        <td>{{ fq4 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">5º</th>
+        <td>{{ jp5 }}</td>
+        <td>{{ jp_5 }}</td>
+        <td>{{ f5 }}</td>
+        <td>{{ fq5 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">6º</th>
+        <td>{{ jp6 }}</td>
+        <td>{{ jp_6 }}</td>
+        <td>{{ f6 }}</td>
+        <td>{{ fq6 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">7º</th>
+        <td>{{ jp7 }}</td>
+        <td>{{ jp_7 }}</td>
+        <td>{{ f7 }}</td>
+        <td>{{ fq7 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">8º</th>
+        <td>{{ jp8 }}</td>
+        <td>{{ jp_8 }}</td>
+        <td>{{ f8 }}</td>
+        <td>{{ fq8 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">9º</th>
+        <td>{{ jp9 }}</td>
+        <td>{{ jp_9 }}</td>
+        <td>{{ f9 }}</td>
+        <td>{{ fq9 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">10º</th>
+        <td>{{ jp10 }}</td>
+        <td>{{ jp_10 }}</td>
+        <td>{{ f10 }}</td>
+        <td>{{ fq10 }}</td>
+      </tr>
+      <br />
+    </tbody>
+  </table>
+  <br />
+  <table class="content-table">
+    <thead>
+      <tr>
+        <th scope="col" rowspan="2">Posição</th>
+        <th colspan="2">O Globo</th>
+        <th colspan="2">Estadão</th>
+      </tr>
+      <tr>
+        <th scope="col">Palavra</th>
+        <th scope="col">Nº</th>
+        <th scope="col">Palavra</th>
+        <th scope="col">Nº</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1º</th>
+        <td>{{ og1 }}</td>
+        <td>{{ og_1 }}</td>
+        <td>{{ es1 }}</td>
+        <td>{{ esq1 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">2º</th>
+        <td>{{ og2 }}</td>
+        <td>{{ og_2 }}</td>
+        <td>{{ es2 }}</td>
+        <td>{{ esq2 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">3º</th>
+        <td>{{ og3 }}</td>
+        <td>{{ og_3 }}</td>
+        <td>{{ es3 }}</td>
+        <td>{{ esq3 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">4º</th>
+        <td>{{ og4 }}</td>
+        <td>{{ og_4 }}</td>
+        <td>{{ es4 }}</td>
+        <td>{{ esq4 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">5º</th>
+        <td>{{ og5 }}</td>
+        <td>{{ og_5 }}</td>
+        <td>{{ es5 }}</td>
+        <td>{{ esq5 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">6º</th>
+        <td>{{ og6 }}</td>
+        <td>{{ og_6 }}</td>
+        <td>{{ es6 }}</td>
+        <td>{{ esq6 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">7º</th>
+        <td>{{ og7 }}</td>
+        <td>{{ og_7 }}</td>
+        <td>{{ es7 }}</td>
+        <td>{{ esq7 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">8º</th>
+        <td>{{ og8 }}</td>
+        <td>{{ og_8 }}</td>
+        <td>{{ es8 }}</td>
+        <td>{{ esq8 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">9º</th>
+        <td>{{ og9 }}</td>
+        <td>{{ og_9 }}</td>
+        <td>{{ es9 }}</td>
+        <td>{{ esq9 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">10º</th>
+        <td>{{ og10 }}</td>
+        <td>{{ og_10 }}</td>
+        <td>{{ es10 }}</td>
+        <td>{{ esq10 }}</td>
+      </tr>
+      <br />
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th scope="col" rowspan="2">Posição</th>
+            <th colspan="2">CNN</th>
+          </tr>
+          <tr>
+            <th scope="col">Palavra</th>
+            <th scope="col">Nº</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1º</th>
+            <td>{{ cnn1 }}</td>
+            <td>{{ cnn_1 }}</td>
+          </tr>
+          <tr>
+            <th scope="row">2º</th>
+            <td>{{ cnn2 }}</td>
+            <td>{{ cnn_2 }}</td>
+          </tr>
+          <tr>
+            <th scope="row">3º</th>
+            <td>{{ cnn3 }}</td>
+            <td>{{ cnn_3 }}</td>
+          </tr>
+          <tr>
+            <th scope="row">4º</th>
+            <td>{{ cnn4 }}</td>
+            <td>{{ cnn_4 }}</td>
+          </tr>
+          <tr>
+            <th scope="row">5º</th>
+            <td>{{ cnn5 }}</td>
+            <td>{{ cnn_5 }}</td>
+          </tr>
+          <tr>
+            <th scope="row">6º</th>
+            <td>{{ cnn6 }}</td>
+            <td>{{ cnn_6 }}</td>
+          </tr>
+          <tr>
+            <th scope="row">7º</th>
+            <td>{{ cnn7 }}</td>
+            <td>{{ cnn_7 }}</td>
+          </tr>
+          <tr>
+            <th scope="row">8º</th>
+            <td>{{ cnn8 }}</td>
+            <td>{{ cnn_8 }}</td>
+          </tr>
+          <tr>
+            <th scope="row">9º</th>
+            <td>{{ cnn9 }}</td>
+            <td>{{ cnn_9 }}</td>
+          </tr>
+          <tr>
+            <th scope="row">10º</th>
+            <td>{{ cnn10 }}</td>
+            <td>{{ cnn_10 }}</td>
+          </tr>
+          <br />
+        </tbody>
+      </table>
+</body>
+
+</html>
