@@ -30,6 +30,8 @@ og = contagem_palavras.col_values(9)
 ogq = contagem_palavras.col_values(10)
 es = contagem_palavras.col_values(11)
 esq = contagem_palavras.col_values(12)
+cnn = contagem_palavras.col_values(13)
+cnnq = contagem_palavras.col_values(14)
 
 globo1 = globo[1]
 globoq1 = globoq[1]
@@ -43,6 +45,8 @@ og1 = og[1]
 ogq1 = ogq[1]
 es1 = es[1]
 esq1 = esq[1]
+cnn1 = cnn[1]
+cnnq1 = cnnq[1]
 
 globo2 = globo[2]
 globoq2 = globoq[2]
@@ -56,6 +60,8 @@ og2 = og[2]
 ogq2 = ogq[2]
 es2 = es[2]
 esq2 = esq[2]
+cnn2 = cnn[2]
+cnnq2 = cnnq[2]
 
 
 globo3 = globo[3]
@@ -70,6 +76,8 @@ og3 = og[3]
 ogq3 = ogq[3]
 es3 = es[3]
 esq3 = esq[3]
+cnn3 = cnn[3]
+cnnq3 = cnnq[3]
 
 globo4 = globo[4]
 globoq4 = globoq[4]
@@ -83,6 +91,8 @@ og4 = og[4]
 ogq4 = ogq[4]
 es4 = es[4]
 esq4 = esq[4]
+cnn4 = cnn[4]
+cnnq4 = cnnq[4]
 
 
 globo5 = globo[5]
@@ -97,6 +107,8 @@ og5 = og[5]
 ogq5 = ogq[5]
 es5 = es[5]
 esq5 = esq[5]
+cnn5 = cnn[5]
+cnnq5 = cnnq[5]
 
 
 globo6 = globo[6]
@@ -111,6 +123,8 @@ og6 = og[6]
 ogq6 = ogq[6]
 es6 = es[6]
 esq6 = esq[6]
+cnn6 = cnn[6]
+cnnq6 = cnnq[6]
 
 
 globo7 = globo[7]
@@ -125,6 +139,8 @@ og7 = og[7]
 ogq7 = ogq[7]
 es7 = es[7]
 esq7 = esq[7]
+cnn7 = cnn[7]
+cnnq7 = cnnq[7]
 
 globo8 = globo[8]
 globoq8 = globoq[8]
@@ -138,6 +154,8 @@ og8 = og[8]
 ogq8 = ogq[8]
 es8 = es[8]
 esq8 = esq[8]
+cnn8 = cnn[8]
+cnnq8 = cnnq[8]
 
 globo9 = globo[9]
 globoq9 = globoq[9]
@@ -151,6 +169,8 @@ og9 = og[9]
 ogq9 = ogq[9]
 es9 = es[9]
 esq9 = esq[9]
+cnn9 = cnn[9]
+cnnq9 = cnnq[9]
 
 globo10 = globo[10]
 globoq10 = globoq[10]
@@ -164,6 +184,8 @@ og10 = og[10]
 ogq10 = ogq[10]
 es10 = es[10]
 esq10 = esq[10]
+cnn10 = cnn[9]
+cnnq10 = cnnq[9]
 
 # Coleta hora
 oglobo = spreadsheet.worksheet('oglobo')
@@ -188,7 +210,9 @@ def dados_jornais():
         og1 = og1, og_1 = ogq1, es1 = es1, esq1 = esq1, og2 = og2, og_2 = ogq2, es2 = es2, esq2 = esq2, og3 = og3, og_3 = ogq3, es3 = es3, esq3 = esq3,
         og4 = og4, og_4 = ogq4, es4 = es4, esq4 = esq4, og5 = og5, og_5 = ogq5, es5 = es5, esq5 = esq5, og6 = og6, og_6 = ogq6, es6 = es6, esq6 = esq6,
         og7 = og7, og_7 = ogq7, es7 = es7, esq7 = esq7, og8 = og8, og_8 = ogq8, es8 = es8, esq8 = esq8, og9 = og9, og_9 = ogq9, es9 = es9, esq9 = esq9,
-        og10 = og10, og_10 = ogq10, es10 = es10, esq10 = esq10)
+        og10 = og10, og_10 = ogq10, es10 = es10, esq10 = esq10,
+        cnn_1=cnnq1, cnn_2=cnnq2, cnn_3=cnnq3, cnn_4=cnnq4, cnn_5=cnnq5, cnn_6=cnnq6, cnn_7=cnnq7, cnn_8=cnnq8, cnn_9=cnnq9, cnn_10=cnnq10,
+        cnn1=cnn1, cnn2=cnn2, cnn3=cnn3, cnn4=cnn4, cnn5=cnn5, cnn6=cnn6, cnn7=cnn7, cnn8=cnn8, cnn9=cnn9, cnn10=cnn10)
 
 
 palavras_dia = spreadsheet.worksheet('palavras_dia')
@@ -382,6 +406,29 @@ esd1 = semana_candidato[50]
 esd2 = mes_candidato[50]
 esd3 = ano_candidato[50]
 
+# CNN
+cnnb1 = semana_candidato[57]
+cnnb2 = mes_candidato[57]
+cnnb3 = ano_candidato[57]
+
+cnnl1 = semana_candidato[58]
+cnnl2 = mes_candidato[58]
+cnnl3 = ano_candidato[58]
+
+cnnm1 = semana_candidato[59]
+cnnm2 = mes_candidato[59]
+cnnm3 = ano_candidato[59]
+
+cnnc1 = semana_candidato[60]
+cnnc2 = mes_candidato[60]
+cnnc3 = ano_candidato[60]
+
+cnnd1 = semana_candidato[61]
+cnnd2 = mes_candidato[61]
+cnnd3 = ano_candidato[61]
+
+
+
 
 @app.route("/ranking_candidatos")
 def ranking_candidatos():
@@ -417,7 +464,13 @@ def ranking_candidatos():
         semana_lula_es=esl1, mes_lula_es=esl2, ano_lula_es=esl3,
         semana_moro_es=esm1, mes_moro_es=esm2, ano_moro_es=esm3,
         semana_ciro_es=esc1, mes_ciro_es=esc2, ano_ciro_es=esc3,
-        semana_doria_es=esd1, mes_doria_es=esd2, ano_doria_es=esd3
+        semana_doria_es=esd1, mes_doria_es=esd2, ano_doria_es=esd3,
+        semana_bolso_cnn=cnnb1, mes_bolso_cnn=cnnb2, ano_bolso_cnn=cnnb3,
+        semana_lula_cnn=cnnl1, mes_lula_cnn=cnnl2, ano_lula_cnn=cnnl3,
+        semana_moro_cnn=cnnm1, mes_moro_cnn=cnnm2, ano_moro_cnn=cnnm3,
+        semana_ciro_cnn=cnnc1, mes_ciro_cnn=cnnc2, ano_ciro_cnn=cnnc3,
+        semana_doria_cnn=cnnd1, mes_doria_cnn=cnnd2, ano_doria_cnn=cnnd3
+        
     )
 @app.route("/sobre")
 def sobre():
