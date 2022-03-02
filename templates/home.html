@@ -89,8 +89,8 @@
     }
 
     .conteudo {
-      width: 85%;
-      margin: 70px 2em auto;
+      width: 60%;
+      margin: 70px 0% auto;
       display: inline-block;
     }
 
@@ -104,7 +104,7 @@
       justify-items: center;
       font-size: 1em;
       text-align: justify;
-      margin: 5px 10%;
+      margin: 5px 10% 30px;
       background-color: bisque;
       border-radius: 10%;
       padding: 10px;
@@ -115,7 +115,7 @@
     }
 
     .content-table {
-      width: 85%;
+      width: 60%;
       border-collapse: collapse;
       font-family: "Arial";
       margin: auto auto;
@@ -163,7 +163,17 @@
 
     .titulo {
       font-size: 1.2em;
-    }}
+    }
+
+    .conteudo {
+        margin: 0 auto;
+        width: 90%;
+      }
+
+      .secao {
+        margin: 80px 0 0;
+      }
+    }
 
     @media (max-width: 468px) {
       body {
@@ -190,13 +200,14 @@
       }
 
       .conteudo {
-        margin: 110px 1em auto;
+        margin: 0 auto;
+        width: 90%;
       }
 
       .secao {
-        text-align: left;
+        margin: 120px 0 0;
       }
-
+      
       .content-table {
         margin: auto;
         width: auto;
@@ -244,9 +255,10 @@
     <br>
     <div class="dados-base">
       <p><b>Última atualização:</b> {{ hora }}</p>
-      <p><b>Início da coleta dos dados:</b><br> Globo* — 01/01/2022<br> Uol — 01/01/2022<br>Jovem Pan —
-        12/01/2022<br>Folha — 17/01/2022<br> O Globo — 18/01/2022<br> Estadão — 31/01/2022<br> CNN - 25/02/2022</p>
-      <br />
+      <br>
+      <p><b>Início da coleta dos dados:</b><br> Globo — 01/01/2022<br> Uol — 01/01/2022<br>Jovem Pan —
+        12/01/2022<br>Folha — 17/01/2022<br> O Globo* — 18/01/2022<br> Estadão — 31/01/2022<br> CNN - 25/02/2022</p>
+      <br>
     </div>
     <div class="observacao">
       <p><i><b>*</b>Em relação ao Globo, a coleta está acontecendo de maneira irregular, com algumas raspagens ocorrendo
