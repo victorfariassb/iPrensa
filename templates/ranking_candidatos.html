@@ -84,8 +84,8 @@
     }
 
     .conteudo {
-      width: 85%;
-      margin: 70px 2em auto;
+      width: 60%;
+      margin: 70px 0% auto;
       display: inline-block;
     }
 
@@ -107,17 +107,16 @@
       text-decoration: none;
     }
 
-    .observacao {
-      font-size: 1em;
-      margin: 30px auto;
+    .dados-base {
+      font-size: 0.9em;
     }
 
-    h4 {
+     h4 {
       margin: 50px 0 10px;
     }
 
     .content-table {
-      width: 85%;
+      width: 60%;
       border-collapse: collapse;
       font-family: "Arial";
       margin: auto auto 5px;
@@ -163,10 +162,19 @@
       body {
         font-size: 1em;
       }
-    }
 
     .titulo {
       font-size: 1.2em;
+    }
+
+    .conteudo {
+        margin: 0 auto;
+        width: 90%;
+      }
+
+      .secao {
+        margin: 80px 0 0;
+      }
     }
 
     @media (max-width: 468px) {
@@ -193,12 +201,8 @@
         height: 45px;
       }
 
-      .conteudo {
-        margin: 0 1em;
-      }
-
       .secao {
-        margin-top: 120px;
+        margin: 120px 0 0;
       }
 
       .content-table {
@@ -240,8 +244,11 @@
           A análise leva em conta somente notícias novas. Ou seja, se o mesmo texto sobre o Bolsonaro permanecer na
           página por 5 dias, será considerado como 1 ponto.</p>
       </div>
-      <div class="observacao">
-        <p><b>Última atualização: </b>{{ hora }}</p>
+      <div class="dados-base">
+        <p><b>Última atualização:</b> {{ hora }}</p>
+        <br>
+        <p><b>Início da coleta dos dados:</b><br> Globo — 01/01/2022<br> Uol — 01/01/2022<br>Jovem Pan —
+          12/01/2022<br>Folha — 17/01/2022<br> O Globo — 18/01/2022<br> Estadão — 31/01/2022<br> CNN - 25/02/2022</p>
       </div>
     </div>
     <h4>Número de menções aos pré-candidatos no <a href='https://www.uol.com.br/'>Uol</a></h4>
