@@ -122,7 +122,7 @@ def coleta_jp(planilha):
           planilha.append_row([num, dia, editoria, titulo, link])
     for manchete in soup.find_all(class_='title'):
         editoria = manchete.parent.parent.find('h6', class_='category')
-        titulo = manchete.text
+        titulo = manchete.text.strip()
         if editoria:
             if titulo:
                 time.sleep(2)
