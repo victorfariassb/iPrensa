@@ -25,11 +25,3 @@ finally:
   next
   
 coleta_jp(jp_sheet)
-
-# Conta palavras 
-contagem = spreadsheet.worksheet('mais_faladas') 
-
-conta_palavras(globo_sheet, contagem)
-conta_palavras(jp_sheet, contagem)
-
-
