@@ -131,7 +131,7 @@ def coleta_jp(planilha):
                 time.sleep(2)
                 num += 1            
                 link = pega_link(manchete)
-                editoria = editoria.text
+                editoria = editoria.text.strip()
                 planilha.append_row([num, dia, editoria, titulo, link])
 
         
