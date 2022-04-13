@@ -10,9 +10,9 @@ def contagem_candidatos(base, contagem):
     
     if 'destaque-topo' in chave:
         linha = 2
-    elif "headlineBigPhoto__link" in chave:
+    elif "headlineMain__link" in chave:
         linha = 11
-    elif "manchete_jp" in chave:
+    elif "Pânico no metrô" in chave:
         linha = 20
     elif 'c-main-headline__title' in chave:
         linha = 29
