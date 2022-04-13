@@ -55,7 +55,7 @@ def coleta_globo(planilha):
     dia = now.strftime("%d/%m/%Y %H:%M:%S")
     
     browser.get("https://www.globo.com/")
-    source = browser.find_element_by_tag_name('html')
+    source = browser.find_element(By.TAG_NAME, 'html')
     html = source.get_attribute('innerHTML')
     soup = bs(html, 'html.parser')
     for dado in soup.find_all('a', class_="post__link"):
@@ -63,10 +63,13 @@ def coleta_globo(planilha):
         num += 1
         editoria = pega_editoria_globo(dado)
         titulo = dado.get('title')
-        titulo = re.sub(r"\n+", '', titulo)
-        posicao = pega_localizacao(dado)
-        link = dado.get('href')
-        planilha.append_row([num, dia, editoria, titulo, posicao, link])
+        if titulo:
+            titulo = re.sub(r"\n+", '', titulo)
+            posicao = pega_localizacao(dado)
+            link = dado.get('href')
+            planilha.append_row([num, dia, editoria, titulo, posicao, link])
+        else:
+            next
 
 
 def coleta_uol(planilha):
