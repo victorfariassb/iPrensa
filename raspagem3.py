@@ -31,32 +31,3 @@ try:
   coleta_cnn(cnn_sheet)
 finally:
   next
-
-# Conta palavras 
-contagem = spreadsheet.worksheet('mais_faladas') 
-
-folha_sheet = spreadsheet.worksheet('folha') 
-
-conta_palavras(uol_sheet, contagem)
-conta_palavras(folha_sheet, contagem)
-conta_palavras(cnn_sheet, contagem)
-time.sleep(60)
-
-# Conta candidatos
-contagem_candidato = spreadsheet.worksheet('contagem_candidato')
-
-jp_sheet = spreadsheet.worksheet('jovem_pan')
-globo_sheet = spreadsheet.worksheet('globo')
-oglobo_sheet = spreadsheet.worksheet('oglobo') 
-estadao_sheet = spreadsheet.worksheet('estadao')
-
-time.sleep(60)
-contagem_candidatos(globo_sheet, contagem_candidato)
-contagem_candidatos(jp_sheet, contagem_candidato)
-contagem_candidatos(folha_sheet, contagem_candidato)
-contagem_candidatos(oglobo_sheet, contagem_candidato)
-contagem_candidatos(estadao_sheet, contagem_candidato)
-contagem_candidatos(uol_sheet, contagem_candidato)
-contagem_candidatos(cnn_sheet, contagem_candidato)
-
-
