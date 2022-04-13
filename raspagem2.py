@@ -35,9 +35,3 @@ try:
   coleta_estadao(estadao_sheet)
 finally:
   next
-
-# Conta palavras 
-contagem = spreadsheet.worksheet('mais_faladas') 
-
-conta_palavras(oglobo_sheet, contagem)
-conta_palavras(estadao_sheet, contagem)
