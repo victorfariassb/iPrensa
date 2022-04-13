@@ -14,7 +14,7 @@ def conta_palavras(base, contagem):
     
     if 'destaque-topo' in chave:
         coluna = 1
-    elif "headlineBigPhoto__link" in chave:
+    elif "headlineMain__link" in chave:
         coluna = 3
     elif "Pânico no metrô" in chave:
         coluna = 5
