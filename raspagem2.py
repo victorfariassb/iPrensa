@@ -25,13 +25,13 @@ try:
   coleta_folha(folha_sheet)
 finally:
   next
-  
-try:
-  coleta_oglobo(oglobo_sheet)
-finally:
-  next
 
 try:
   coleta_estadao(estadao_sheet)
+finally:
+  next
+
+  try:
+  coleta_oglobo(oglobo_sheet)
 finally:
   next
