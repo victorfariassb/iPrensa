@@ -6,7 +6,7 @@ import os
 import time
 
 from contagem_palavras import conta_palavras
-from contagem_candidatos import contagem_candidato
+from contagem_candidatos import contagem_candidatos
 
 spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
 conteudo_codificado =  os.environ['GOOGLE_SHEETS_CREDENTIALS']
