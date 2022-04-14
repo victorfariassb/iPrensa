@@ -3,6 +3,7 @@ import gspread
 import json
 import pandas as pd
 import os
+import time
 
 from contagem_palavras import conta_palavras
 
