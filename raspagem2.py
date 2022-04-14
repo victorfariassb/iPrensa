@@ -31,7 +31,7 @@ try:
 finally:
   next
 
-  try:
+try:
   coleta_oglobo(oglobo_sheet)
 finally:
   next
