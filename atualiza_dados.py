@@ -23,8 +23,6 @@ estadao_sheet = spreadsheet.worksheet('estadao')
 uol_sheet = spreadsheet.worksheet('uol') 
 cnn_sheet = spreadsheet.worksheet('cnn') 
 
-time.sleep(70)
-
 # Conta palavras 
 contagem = spreadsheet.worksheet('mais_faladas') 
 
