@@ -22,7 +22,7 @@ def conta_palavras(base, contagem):
         coluna = 7
     elif "people-teasers__card--title" in chave:
         coluna = 9
-    elif "manchete_estadao" in chave:
+    elif "principal" in chave:
         coluna = 11
     elif "sem editoria" in chave:
         coluna = 13
