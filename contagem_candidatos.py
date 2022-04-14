@@ -18,7 +18,7 @@ def contagem_candidatos(base, contagem):
         linha = 29
     elif "people-teasers__card--title" in chave:
         linha = 38
-    elif 'manchete_estadao' in chave:
+    elif 'principal' in chave:
         linha = 47
     elif 'sem editoria' in chave:
         linha = 56
