@@ -192,21 +192,21 @@ def coleta_oglobo(planilha):
     html = source.get_attribute('innerHTML')
     soup = bs(html, 'html.parser')
     for texto in soup.find_all('h1'):
-    item = texto.find("a", href=True)
-    if item == None:
-      next
-    else:
-      titulo = item.text.strip()
-      classe = item.parent.get('class')
-      classe = str(classe)
-      classe = re.sub("\['", '', classe)
-      classe = re.sub("\']", '', classe)
-      if 'block-header--title' not in classe:
-        time.sleep(2)
-        link = item.get('href')
-        num += 1
-        planilha.append_row([num, dia, titulo, classe, link])
-      
+        item = texto.find("a", href=True)
+        if item == None:
+          next
+        else:
+          titulo = item.text.strip()
+          classe = item.parent.get('class')
+          classe = str(classe)
+          classe = re.sub("\['", '', classe)
+          classe = re.sub("\']", '', classe)
+          if 'block-header--title' not in classe:
+            time.sleep(2)
+            link = item.get('href')
+            num += 1
+            planilha.append_row([num, dia, titulo, classe, link])
+
         
 def coleta_estadao(planilha):
   num = 0
