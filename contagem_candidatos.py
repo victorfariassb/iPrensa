@@ -24,7 +24,7 @@ def contagem_candidatos(base, contagem):
         linha = 56
     else:
         linha = 65
-    coluna = 3
+    coluna = 6
 
     presidenciaveis = ['Bolsonaro', 'Lula', 'Moro', 'Ciro', 'Doria', 'Pacheco', 'Tebet', 'Vieira', 'Janones']
     for presidenciavel in presidenciaveis:
