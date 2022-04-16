@@ -154,7 +154,7 @@ def coleta_folha(planilha):
           break
       last_height = new_height
 
-  source = browser.find_element_by_tag_name('html')
+  source = browser.find_element(By.TAG_NAME, 'html')
   html = source.get_attribute('innerHTML')
   soup = bs(html, 'html.parser')
   for texto in soup.find_all('h2'):
@@ -188,7 +188,7 @@ def coleta_oglobo(planilha):
 
     browser.get("https://oglobo.globo.com/")
     browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    source = browser.find_element_by_tag_name('html')
+    source = browser.find_element(By.TAG_NAME, 'html')
     html = source.get_attribute('innerHTML')
     soup = bs(html, 'html.parser')
     for texto in soup.find_all('h1'):
@@ -219,7 +219,7 @@ def coleta_estadao(planilha):
   last_height = browser.execute_script("return document.body.scrollHeight")
 
   while True:
-    html = browser.find_elements_by_tag_name('html')
+    html = browser.find_element(By.TAG_NAME, 'html')
     time.sleep(20)
     new_height = browser.execute_script("return document.body.scrollHeight")
     secao2 = browser.find_element(By.ID, 'soft-news')
@@ -292,7 +292,7 @@ def coleta_cnn(planilha):
   browser.get("https://www.cnnbrasil.com.br/")
 
 
-  source = browser.find_element_by_tag_name('html')
+  source = browser.find_element(By.TAG_NAME, 'html')
   html = source.get_attribute('innerHTML')
 
   soup = bs(html, 'html.parser')
