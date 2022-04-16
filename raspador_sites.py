@@ -216,20 +216,7 @@ def coleta_estadao(planilha):
 
   browser.get("https://www.estadao.com.br/")
 
-  last_height = browser.execute_script("return document.body.scrollHeight")
-
-  while True:
-    html = browser.find_element(By.TAG_NAME, 'html')
-    time.sleep(20)
-    new_height = browser.execute_script("return document.body.scrollHeight")
-    secao2 = browser.find_element(By.ID, 'soft-news')
-    secao2.location_once_scrolled_into_view
-    titulo = browser.find_elements(By.CLASS_NAME, 'title')
-    if len(titulo) > 60:
-        break
-    last_height = new_height
-
-  source = browser.find_element_by_tag_name('html')
+  source = browser.find_element(By.TAG_NAME, 'html')
   html = source.get_attribute('innerHTML')
   soup = bs(html, 'html.parser')
   for manchete in soup.find_all('article', class_='destaque-default -principal -font-lg'):
