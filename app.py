@@ -187,10 +187,10 @@ esq10 = esq[10]
 cnn10 = cnn[9]
 cnnq10 = cnnq[9]
 
-# Coleta hora
-oglobo = spreadsheet.worksheet('oglobo')
-oglobo = pd.DataFrame(oglobo.get_all_records())
-hora =oglobo['data'].iloc[-1]
+# Coleta 
+cnn = spreadsheet.worksheet('cnn')
+cnn = pd.DataFrame(cnn.get_all_records())
+hora = cnn['data'].iloc[-1]
 hora = str(hora)
 
 
