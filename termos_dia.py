@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import spacy.attrs
 import os
+import time
 from collections import Counter
 
 
@@ -26,6 +27,8 @@ def termos_dia(contagem):
     linha = 2
     coluna = 1
     jornais = ['uol', 'globo', 'jovem_pan', 'folha', 'oglobo', 'estadao', 'cnn']
+    agora = time.now()
+    contagem.update_cell(linha, coluna + 3, agora)
 
     tabelas = []
     for jornal in jornais:
@@ -67,6 +70,4 @@ def termos_dia(contagem):
         contagem.update_cell(linha, coluna + 1, palavra[1])
         linha += 1
         coluna = 1
-
-termos_dia(palavras_dia)
         
