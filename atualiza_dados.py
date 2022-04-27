@@ -7,6 +7,7 @@ import time
 
 from contagem_palavras import conta_palavras
 from contagem_candidatos import contagem_candidatos
+from termos_dia import termos_dia
 
 spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
 conteudo_codificado =  os.environ['GOOGLE_SHEETS_CREDENTIALS']
@@ -47,3 +48,8 @@ contagem_candidatos(oglobo_sheet, contagem_candidato)
 contagem_candidatos(estadao_sheet, contagem_candidato)
 contagem_candidatos(uol_sheet, contagem_candidato)
 contagem_candidatos(cnn_sheet, contagem_candidato)
+
+# Termos do dia
+palavras_dia = spreadsheet.worksheet('palavras_dia') 
+termos_dia(palavras_dia)
+
