@@ -36,7 +36,7 @@ conta_palavras(uol_sheet, contagem)
 conta_palavras(folha_sheet, contagem)
 conta_palavras(cnn_sheet, contagem)
 
-time.sleep(70)
+time.sleep(20)
 
 # Conta candidatos
 contagem_candidato = spreadsheet.worksheet('contagem_candidato')
