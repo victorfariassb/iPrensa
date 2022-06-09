@@ -14,18 +14,16 @@ def conta_palavras(base, contagem):
     
     if 'destaque-topo' in chave:
         coluna = 1
-    elif "headlineMain__link" in chave:
+    elif "Política" in chave:
         coluna = 3
-    elif "Pânico no metrô" in chave:
+    elif "c-main-headline__title" in chave:
         coluna = 5
-    elif 'c-main-headline__title' in chave:
+    elif 'principal' in chave:
         coluna = 7
-    elif "people-teasers__card--title" in chave:
+    elif "headlineMain__link" in chave:
         coluna = 9
-    elif "principal" in chave:
-        coluna = 11
     elif "sem editoria" in chave:
-        coluna = 13
+        coluna = 11
     else:
         coluna = 15
     linha = 2
