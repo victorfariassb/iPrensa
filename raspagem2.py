@@ -16,7 +16,6 @@ service_account = gspread.service_account_from_dict(credentials)
 spreadsheet = service_account.open_by_key(spreadsheet_id) 
 
 folha_sheet = spreadsheet.worksheet('folha') 
-oglobo_sheet = spreadsheet.worksheet('oglobo') 
 estadao_sheet = spreadsheet.worksheet('estadao')
 
 # Raspagem de dados
@@ -28,10 +27,5 @@ finally:
 
 try:
   coleta_estadao(estadao_sheet)
-finally:
-  next
-
-try:
-  coleta_oglobo(oglobo_sheet)
 finally:
   next
