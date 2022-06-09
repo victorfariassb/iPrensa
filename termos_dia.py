@@ -26,7 +26,7 @@ palavras_dia = spreadsheet.worksheet('palavras_dia')
 def termos_dia(contagem):
     linha = 2
     coluna = 1
-    jornais = ['uol', 'globo', 'jovem_pan', 'folha', 'oglobo', 'estadao', 'cnn']
+    jornais = ['uol', 'globo', 'jovem_pan', 'folha', 'estadao', 'cnn']
     agora = time.now()
     contagem.update_cell(linha, coluna + 3, agora)
 
