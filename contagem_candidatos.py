@@ -10,23 +10,21 @@ def contagem_candidatos(base, contagem):
     
     if 'destaque-topo' in chave:
         linha = 2
-    elif "headlineMain__link" in chave:
-        linha = 11
-    elif "Pânico no metrô" in chave:
-        linha = 20
+    elif "Política" in chave:
+        linha = 8
     elif 'c-main-headline__title' in chave:
-        linha = 29
-    elif "people-teasers__card--title" in chave:
-        linha = 38
-    elif 'principal' in chave:
-        linha = 47
+        linha = 14
+    elif "principal" in chave:
+        linha = 20
+    elif 'headlineMain__link' in chave:
+        linha = 226
     elif 'sem editoria' in chave:
-        linha = 56
+        linha = 32
     else:
-        linha = 65
+        linha = 38
     coluna = 6
 
-    presidenciaveis = ['Bolsonaro', 'Lula', 'Moro', 'Ciro', 'Doria', 'Pacheco', 'Tebet', 'Vieira', 'Janones']
+    presidenciaveis = ['Bolsonaro', 'Lula', 'Ciro', 'Tebet', 'Janones', 'Bivar']
     for presidenciavel in presidenciaveis:
         
         hoje = datetime.datetime.now()
@@ -37,12 +35,8 @@ def contagem_candidatos(base, contagem):
         dataframe['titulo'] = dataframe['titulo'].str.replace('Carlos Bolsonaro', 'Carlos B.')
         dataframe['titulo'] = dataframe['titulo'].str.replace('Flávio Bolsonaro', 'Flávio B.')
         dataframe['titulo'] = dataframe['titulo'].str.replace('Eduardo Bolsonaro', 'Eduardo B.')
-        dataframe['titulo'] = dataframe['titulo'].str.replace('Vinícius Rodrigues Vieira', 'Vinícius Rodrigues V.')
-        dataframe['titulo'] = dataframe['titulo'].str.replace('Paulo Vieira', 'Paulo V.')
-        dataframe['titulo'] = dataframe['titulo'].str.replace('Susana Vieira', 'Susana V.')
-        dataframe['titulo'] = dataframe['titulo'].str.replace('Rodolfo Vieira', 'Rodolfo V.')
-        dataframe['titulo'] = dataframe['titulo'].str.replace('Heslaine Vieira', 'Heslaine V.')
-        dataframe['titulo'] = dataframe['titulo'].str.replace('Fani Pacheco', 'Fani P.')
+        dataframe['titulo'] = dataframe['titulo'].str.replace('Ciro Nogueira', 'Ciro N.')
+
 
         df_semana = dataframe[dataframe['data'] >= semana]
 
