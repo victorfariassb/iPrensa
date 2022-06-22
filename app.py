@@ -26,12 +26,10 @@ jp = contagem_palavras.col_values(5)
 jpq = contagem_palavras.col_values(6)
 folha = contagem_palavras.col_values(7)
 folhaq = contagem_palavras.col_values(8)
-og = contagem_palavras.col_values(9)
-ogq = contagem_palavras.col_values(10)
-es = contagem_palavras.col_values(11)
-esq = contagem_palavras.col_values(12)
-cnn = contagem_palavras.col_values(13)
-cnnq = contagem_palavras.col_values(14)
+es = contagem_palavras.col_values(9)
+esq = contagem_palavras.col_values(10)
+cnn = contagem_palavras.col_values(11)
+cnnq = contagem_palavras.col_values(12)
 
 globo1 = globo[1]
 globoq1 = globoq[1]
@@ -41,8 +39,6 @@ jp1 = jp[1]
 jpq1 = jpq[1]
 f1 = folha[1]
 fq1 = folhaq[1]
-og1 = og[1]
-ogq1 = ogq[1]
 es1 = es[1]
 esq1 = esq[1]
 cnn1 = cnn[1]
@@ -56,8 +52,6 @@ jp2 = jp[2]
 jpq2 = jpq[2]
 f2 = folha[2]
 fq2 = folhaq[2]
-og2 = og[2]
-ogq2 = ogq[2]
 es2 = es[2]
 esq2 = esq[2]
 cnn2 = cnn[2]
@@ -72,8 +66,6 @@ jp3 = jp[3]
 jpq3 = jpq[3]
 f3 = folha[3]
 fq3 = folhaq[3]
-og3 = og[3]
-ogq3 = ogq[3]
 es3 = es[3]
 esq3 = esq[3]
 cnn3 = cnn[3]
@@ -87,8 +79,6 @@ jp4 = jp[4]
 jpq4 = jpq[4]
 f4 = folha[4]
 fq4 = folhaq[4]
-og4 = og[4]
-ogq4 = ogq[4]
 es4 = es[4]
 esq4 = esq[4]
 cnn4 = cnn[4]
@@ -103,8 +93,6 @@ jp5 = jp[5]
 jpq5 = jpq[5]
 f5 = folha[5]
 fq5 = folhaq[5]
-og5 = og[5]
-ogq5 = ogq[5]
 es5 = es[5]
 esq5 = esq[5]
 cnn5 = cnn[5]
@@ -119,8 +107,6 @@ jp6 = jp[6]
 jpq6 = jpq[6]
 f6 = folha[6]
 fq6 = folhaq[6]
-og6 = og[6]
-ogq6 = ogq[6]
 es6 = es[6]
 esq6 = esq[6]
 cnn6 = cnn[6]
@@ -135,8 +121,6 @@ jp7 = jp[7]
 jpq7 = jpq[7]
 f7 = folha[7]
 fq7 = folhaq[7]
-og7 = og[7]
-ogq7 = ogq[7]
 es7 = es[7]
 esq7 = esq[7]
 cnn7 = cnn[7]
@@ -150,8 +134,6 @@ jp8 = jp[8]
 jpq8 = jpq[8]
 f8 = folha[8]
 fq8 = folhaq[8]
-og8 = og[8]
-ogq8 = ogq[8]
 es8 = es[8]
 esq8 = esq[8]
 cnn8 = cnn[8]
@@ -165,8 +147,6 @@ jp9 = jp[9]
 jpq9 = jpq[9]
 f9 = folha[9]
 fq9 = folhaq[9]
-og9 = og[9]
-ogq9 = ogq[9]
 es9 = es[9]
 esq9 = esq[9]
 cnn9 = cnn[9]
@@ -180,8 +160,6 @@ jp10 = jp[10]
 jpq10 = jpq[10]
 f10 = folha[10]
 fq10 = folhaq[10]
-og10 = og[10]
-ogq10 = ogq[10]
 es10 = es[10]
 esq10 = esq[10]
 cnn10 = cnn[9]
@@ -207,10 +185,10 @@ def dados_jornais():
         jp1=jp1, jp2=jp2, jp3=jp3, jp4=jp4, jp5=jp5, jp6=jp6, jp7=jp7, jp8=jp8, jp9=jp9, jp10=jp10,
         f1 = f1, f2=f2, f3=f3, f4=f4, f5=f5, f6=f6, f7=f7, f8=f8, f9=f9, f10=f10,
         fq1 = fq1, fq2=fq2, fq3=fq3, fq4=fq4, fq5=fq5, fq6=fq6, fq7=fq7, fq8=fq8, fq9=fq9, fq10=fq10, 
-        og1 = og1, og_1 = ogq1, es1 = es1, esq1 = esq1, og2 = og2, og_2 = ogq2, es2 = es2, esq2 = esq2, og3 = og3, og_3 = ogq3, es3 = es3, esq3 = esq3,
-        og4 = og4, og_4 = ogq4, es4 = es4, esq4 = esq4, og5 = og5, og_5 = ogq5, es5 = es5, esq5 = esq5, og6 = og6, og_6 = ogq6, es6 = es6, esq6 = esq6,
-        og7 = og7, og_7 = ogq7, es7 = es7, esq7 = esq7, og8 = og8, og_8 = ogq8, es8 = es8, esq8 = esq8, og9 = og9, og_9 = ogq9, es9 = es9, esq9 = esq9,
-        og10 = og10, og_10 = ogq10, es10 = es10, esq10 = esq10,
+        es1 = es1, esq1 = esq1, es2 = es2, esq2 = esq2, es3 = es3, esq3 = esq3,
+        es4 = es4, esq4 = esq4, es5 = es5, esq5 = esq5, es6 = es6, esq6 = esq6,
+        es7 = es7, esq7 = esq7, es8 = es8, esq8 = esq8, es9 = es9, esq9 = esq9,
+         es10 = es10, esq10 = esq10,
         cnn_1=cnnq1, cnn_2=cnnq2, cnn_3=cnnq3, cnn_4=cnnq4, cnn_5=cnnq5, cnn_6=cnnq6, cnn_7=cnnq7, cnn_8=cnnq8, cnn_9=cnnq9, cnn_10=cnnq10,
         cnn1=cnn1, cnn2=cnn2, cnn3=cnn3, cnn4=cnn4, cnn5=cnn5, cnn6=cnn6, cnn7=cnn7, cnn8=cnn8, cnn9=cnn9, cnn10=cnn10)
 
@@ -298,134 +276,112 @@ gd2 = mes_candidato[5]
 gd3 = ano_candidato[5]
 
 # Uol
-ub1 = semana_candidato[10]
-ub2 = mes_candidato[10]
-ub3 = ano_candidato[10]
+ub1 = semana_candidato[8]
+ub2 = mes_candidato[8]
+ub3 = ano_candidato[8]
 
-ul1 = semana_candidato[11]
-ul2 = mes_candidato[11]
-ul3 = ano_candidato[11]
+ul1 = semana_candidato[9]
+ul2 = mes_candidato[9]
+ul3 = ano_candidato[9]
 
-um1 = semana_candidato[12]
-um2 = mes_candidato[12]
-um3 = ano_candidato[12]
+um1 = semana_candidato[10]
+um2 = mes_candidato[10]
+um3 = ano_candidato[10]
 
-uc1 = semana_candidato[13]
-uc2 = mes_candidato[13]
-uc3 = ano_candidato[13]
+uc1 = semana_candidato[11]
+uc2 = mes_candidato[11]
+uc3 = ano_candidato[11]
 
-ud1 = semana_candidato[14]
-ud2 = mes_candidato[14]
-ud3 = ano_candidato[14]
+ud1 = semana_candidato[12]
+ud2 = mes_candidato[12]
+ud3 = ano_candidato[12]
 
 # JP
 
-jpb1 = semana_candidato[19]
-jpb2 = mes_candidato[19]
-jpb3 = ano_candidato[19]
+jpb1 = semana_candidato[14]
+jpb2 = mes_candidato[14]
+jpb3 = ano_candidato[14]
 
-jpl1 = semana_candidato[20]
-jpl2 = mes_candidato[20]
-jpl3 = ano_candidato[20]
+jpl1 = semana_candidato[15]
+jpl2 = mes_candidato[15]
+jpl3 = ano_candidato[15]
 
-jpm1 = semana_candidato[21]
-jpm2 = mes_candidato[21]
-jpm3 = ano_candidato[21]
+jpm1 = semana_candidato[16]
+jpm2 = mes_candidato[16]
+jpm3 = ano_candidato[16]
 
-jpc1 = semana_candidato[22]
-jpc2 = mes_candidato[22]
-jpc3 = ano_candidato[22]
+jpc1 = semana_candidato[17]
+jpc2 = mes_candidato[17]
+jpc3 = ano_candidato[17]
 
-jpd1 = semana_candidato[23]
-jpd2 = mes_candidato[23]
-jpd3 = ano_candidato[23]
+jpd1 = semana_candidato[18]
+jpd2 = mes_candidato[18]
+jpd3 = ano_candidato[18]
 
 # Folha
 
-folhab1 = semana_candidato[28]
-folhab2 = mes_candidato[28]
-folhab3 = ano_candidato[28]
+folhab1 = semana_candidato[20]
+folhab2 = mes_candidato[20]
+folhab3 = ano_candidato[20]
 
-folhal1 = semana_candidato[29]
-folhal2 = mes_candidato[29]
-folhal3 = ano_candidato[29]
+folhal1 = semana_candidato[21]
+folhal2 = mes_candidato[21]
+folhal3 = ano_candidato[21]
 
-folham1 = semana_candidato[30]
-folham2 = mes_candidato[30]
-folham3 = ano_candidato[30]
+folham1 = semana_candidato[22]
+folham2 = mes_candidato[22]
+folham3 = ano_candidato[22]
 
-folhac1 = semana_candidato[31]
-folhac2 = mes_candidato[31]
-folhac3 = ano_candidato[31]
+folhac1 = semana_candidato[23]
+folhac2 = mes_candidato[23]
+folhac3 = ano_candidato[23]
 
-folhad1 = semana_candidato[32]
-folhad2 = mes_candidato[32]
-folhad3 = ano_candidato[32]
-
-# O Globo
-
-ogb1 = semana_candidato[37]
-ogb2 = mes_candidato[37]
-ogb3 = ano_candidato[37]
-
-ogl1 = semana_candidato[38]
-ogl2 = mes_candidato[38]
-ogl3 = ano_candidato[38]
-
-ogm1 = semana_candidato[39]
-ogm2 = mes_candidato[39]
-ogm3 = ano_candidato[39]
-
-ogc1 = semana_candidato[40]
-ogc2 = mes_candidato[40]
-ogc3 = ano_candidato[40]
-
-ogd1 = semana_candidato[41]
-ogd2 = mes_candidato[41]
-ogd3 = ano_candidato[41]
+folhad1 = semana_candidato[24]
+folhad2 = mes_candidato[24]
+folhad3 = ano_candidato[24]
 
 # Estadão
 
-esb1 = semana_candidato[46]
-esb2 = mes_candidato[46]
-esb3 = ano_candidato[46]
+esb1 = semana_candidato[26]
+esb2 = mes_candidato[26]
+esb3 = ano_candidato[26]
 
-esl1 = semana_candidato[47]
-esl2 = mes_candidato[47]
-esl3 = ano_candidato[47]
+esl1 = semana_candidato[27]
+esl2 = mes_candidato[27]
+esl3 = ano_candidato[27]
 
-esm1 = semana_candidato[48]
-esm2 = mes_candidato[48]
-esm3 = ano_candidato[48]
+esm1 = semana_candidato[28]
+esm2 = mes_candidato[28]
+esm3 = ano_candidato[28]
 
-esc1 = semana_candidato[49]
-esc2 = mes_candidato[49]
-esc3 = ano_candidato[49]
+esc1 = semana_candidato[29]
+esc2 = mes_candidato[29]
+esc3 = ano_candidato[29]
 
-esd1 = semana_candidato[50]
-esd2 = mes_candidato[50]
-esd3 = ano_candidato[50]
+esd1 = semana_candidato[30]
+esd2 = mes_candidato[30]
+esd3 = ano_candidato[30]
 
 # CNN
-cnnb1 = semana_candidato[57]
-cnnb2 = mes_candidato[57]
-cnnb3 = ano_candidato[57]
+cnnb1 = semana_candidato[32]
+cnnb2 = mes_candidato[32]
+cnnb3 = ano_candidato[32]
 
-cnnl1 = semana_candidato[58]
-cnnl2 = mes_candidato[58]
-cnnl3 = ano_candidato[58]
+cnnl1 = semana_candidato[33]
+cnnl2 = mes_candidato[33]
+cnnl3 = ano_candidato[33]
 
-cnnm1 = semana_candidato[59]
-cnnm2 = mes_candidato[59]
-cnnm3 = ano_candidato[59]
+cnnm1 = semana_candidato[34]
+cnnm2 = mes_candidato[34]
+cnnm3 = ano_candidato[34]
 
-cnnc1 = semana_candidato[60]
-cnnc2 = mes_candidato[60]
-cnnc3 = ano_candidato[60]
+cnnc1 = semana_candidato[35]
+cnnc2 = mes_candidato[35]
+cnnc3 = ano_candidato[35]
 
-cnnd1 = semana_candidato[61]
-cnnd2 = mes_candidato[61]
-cnnd3 = ano_candidato[61]
+cnnd1 = semana_candidato[36]
+cnnd2 = mes_candidato[36]
+cnnd3 = ano_candidato[36]
 
 
 
@@ -455,11 +411,6 @@ def ranking_candidatos():
         semana_moro_folha=folham1, mes_moro_folha=folham2, ano_moro_folha=folham3,
         semana_ciro_folha=folhac1, mes_ciro_folha=folhac2, ano_ciro_folha=folhac3,
         semana_doria_folha=folhad1, mes_doria_folha=folhad2, ano_doria_folha=folhad3,
-        semana_bolso_og=ogb1, mes_bolso_og=ogb2, ano_bolso_og=ogb3,
-        semana_lula_og=ogl1, mes_lula_og=ogl2, ano_lula_og=ogl3,
-        semana_moro_og=ogm1, mes_moro_og=ogm2, ano_moro_og=ogm3,
-        semana_ciro_og=ogc1, mes_ciro_og=ogc2, ano_ciro_og=ogc3,
-        semana_doria_og=ogd1, mes_doria_og=ogd2, ano_doria_og=ogd3,
         semana_bolso_es=esb1, mes_bolso_es=esb2, ano_bolso_es=esb3,
         semana_lula_es=esl1, mes_lula_es=esl2, ano_lula_es=esl3,
         semana_moro_es=esm1, mes_moro_es=esm2, ano_moro_es=esm3,
