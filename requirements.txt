@@ -1,3 +1,4 @@
+python-3.10.5
 bs4==0.0.1
 datetime
 Flask==2.0.2
