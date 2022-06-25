@@ -44,6 +44,7 @@ html = resposta.text
 soup = bs(html, 'html.parser')
 for texto in soup.find_all('a'):
     next
+    print(texto)
     if 'class="hyperlink ' in str(texto): # gambiarra
         if 'class="hyperlink showcase' not in str(texto): # gambiarra
             if 'class="hyperlink blackBar' not in str(texto): # gambiarra
@@ -54,6 +55,7 @@ for texto in soup.find_all('a'):
                     next
                 else:
                     num += 1
+                    print(num)
                     link = texto.get('href')
                     tit = texto.text
                     tit = tit.strip()
