@@ -19,7 +19,7 @@ def termos_dia(contagem):
     coluna = 1
     jornais = ['uol', 'globo', 'jovem_pan', 'folha', 'estadao', 'cnn']
     now = datetime.now(pytz.timezone('Brazil/East'))
-    contagem.update_cell(linha, coluna + 3, agora)
+    contagem.update_cell(linha, coluna + 3, now)
 
     tabelas = []
     for jornal in jornais:
