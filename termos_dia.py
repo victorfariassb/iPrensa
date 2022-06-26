@@ -1,25 +1,21 @@
-import base64
 import datetime
-from datetime import datetime
+from datetime import datetime, timedelta
 import gspread
 import json
 import numpy as np
 import pandas as pd
 import pytz
 import spacy.attrs
-import os
-import time
 from collections import Counter
 
 
 nlp = spacy.load('pt_core_news_sm')
+nlp.Defaults.stop_words.add('R$')
 
 def termos_dia(contagem):
     linha = 2
     coluna = 1
     jornais = ['uol', 'globo', 'jovem_pan', 'folha', 'estadao', 'cnn']
-    now = datetime.now(pytz.timezone('Brazil/East'))
-    contagem.update_cell(linha, coluna + 3, now)
 
     tabelas = []
     for jornal in jornais:
@@ -32,8 +28,8 @@ def termos_dia(contagem):
     dados.drop(columns={'index'}, inplace=True)
 
     # Filtro da data
-    hoje = datetime.datetime.now()
-    dia = hoje - datetime.timedelta(days=1, hours=3)
+    hoje = datetime.now()
+    dia = hoje - timedelta(days=1, hours=3)
     dia = np.datetime64(dia)
 
     dados['data'] = pd.to_datetime(dados['data'], format='%d/%m/%Y %H:%M:%S')
@@ -41,7 +37,7 @@ def termos_dia(contagem):
     df_dia = dados[selecao]
 
     # Filtro da relevância
-    df_dia['materia'] = pd.to_numeric(df_dia['materia'])
+    df_dia.loc[:, 'materia'] = pd.to_numeric(df_dia['materia'])
     df_dia = df_dia[df_dia['materia'] < 30]
     df_dia = df_dia['titulo'].drop_duplicates()
 
@@ -49,7 +45,7 @@ def termos_dia(contagem):
     text = ' '.join(df_dia)
 
     doc = nlp(text)
-    
+
     palavras_deletadas = ['R$', 'Seção']
 
     labels = [x.text for x in doc.ents if x.text not in palavras_deletadas]
@@ -61,4 +57,3 @@ def termos_dia(contagem):
         contagem.update_cell(linha, coluna + 1, palavra[1])
         linha += 1
         coluna = 1
-        
