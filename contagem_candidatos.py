@@ -6,19 +6,19 @@ import time
 
 def contagem_candidatos(base, contagem):
     dataframe = pd.DataFrame(base.get_all_records())
-    chave = dataframe['classe'][0]
+    chave = dataframe.columns[3]
     
-    if 'globo' in chave:
+    if chave == 'classe_globo':
         linha = 2
-    elif "uol" in chave:
+    elif chave == "classe_uol":
         linha = 8
-    elif 'jovem_pan' in chave:
+    elif chave == "classe_jp":
         linha = 14
-    elif "folha" in chave:
+    elif chave == 'classe_folha':
         linha = 20
-    elif 'estadao' in chave:
+    elif chave == "classe_estadao":
         linha = 226
-    elif 'cnn' in chave:
+    elif chave == "classe_cnn":
         linha = 32
     else:
         linha = 38
