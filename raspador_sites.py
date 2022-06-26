@@ -67,7 +67,7 @@ def coleta_globo(planilha):
             titulo = re.sub(r"\n+", '', titulo)
             posicao = pega_localizacao(dado)
             link = dado.get('href')
-            planilha.append_row([num, dia, editoria, titulo, posicao, link])
+            planilha.append_row([num, dia, titulo, posicao, link, editoria])
         else:
             next
 
@@ -100,7 +100,7 @@ def coleta_uol(planilha):
                         tit = tit.strip()
                         tit = re.sub(r"\n+\s+", ': ', tit)
                         titulo = tit
-                        planilha.append_row([num, dia, classe, link, titulo])
+                        planilha.append_row([num, dia, titulo, classe, link])
 
                        
 
