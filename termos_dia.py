@@ -9,6 +9,14 @@ import spacy.attrs
 from collections import Counter
 
 
+spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
+conteudo_codificado =  os.environ['GOOGLE_SHEETS_CREDENTIALS']
+conteudo = base64.b64decode(conteudo_codificado)
+credentials = json.loads(conteudo)
+
+service_account = gspread.service_account_from_dict(credentials) 
+spreadsheet = service_account.open_by_key(spreadsheet_id) 
+
 nlp = spacy.load('pt_core_news_sm')
 nlp.Defaults.stop_words.add('R$')
 
