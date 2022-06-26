@@ -16,7 +16,7 @@ def conta_palavras(base, contagem):
         coluna = 1
     elif chave == "classe_uol":
         coluna = 3
-    elif chave == "classe_jp:
+    elif chave == "classe_jp":
         coluna = 5
     elif chave == 'classe_folha':
         coluna = 7
