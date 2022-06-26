@@ -1,3 +1,4 @@
+import base64
 import datetime
 from datetime import datetime, timedelta
 import gspread
