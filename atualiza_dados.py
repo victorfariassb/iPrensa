@@ -30,6 +30,9 @@ contagem = spreadsheet.worksheet('mais_faladas')
 conta_palavras(globo_sheet, contagem)
 conta_palavras(jp_sheet, contagem)
 conta_palavras(estadao_sheet, contagem)
+
+time.sleep(20)
+
 conta_palavras(uol_sheet, contagem)
 conta_palavras(folha_sheet, contagem)
 conta_palavras(cnn_sheet, contagem)
