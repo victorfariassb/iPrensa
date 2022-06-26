@@ -8,17 +8,17 @@ def contagem_candidatos(base, contagem):
     dataframe = pd.DataFrame(base.get_all_records())
     chave = dataframe['classe'][0]
     
-    if 'destaque-topo' in chave:
+    if 'globo' in chave:
         linha = 2
-    elif "Política" in chave:
+    elif "uol" in chave:
         linha = 8
-    elif 'c-main-headline__title' in chave:
+    elif 'jovem_pan' in chave:
         linha = 14
-    elif "principal" in chave:
+    elif "folha" in chave:
         linha = 20
-    elif 'headlineMain__link' in chave:
+    elif 'estadao' in chave:
         linha = 226
-    elif 'sem editoria' in chave:
+    elif 'cnn' in chave:
         linha = 32
     else:
         linha = 38
