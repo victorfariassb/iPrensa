@@ -16,7 +16,7 @@ def termos_dia(contagem):
     linha = 2
     coluna = 1
     jornais = ['uol', 'globo', 'jovem_pan', 'folha', 'estadao', 'cnn']
-    agora = time.now()
+    agora = datetime.now()
     contagem.update_cell(linha, coluna + 3, agora)
 
     tabelas = []
