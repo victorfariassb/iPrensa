@@ -7,6 +7,8 @@ from nltk.tokenize import sent_tokenize
 from nltk.tokenize import RegexpTokenizer
 from nltk import FreqDist
 
+nltk.download('punkt') 
+
 def conta_palavras(base, contagem):
     dataframe = pd.DataFrame(base.get_all_records()) 
     dataframe = dataframe.drop_duplicates(subset='link', keep='first')
@@ -29,7 +31,7 @@ def conta_palavras(base, contagem):
         coluna = 15
     linha = 2
     
-    nltk.download('punkt') 
+
     
     # Contagem de mesmo tema
     dataframe['titulo'] = dataframe['titulo'].str.replace('BBB22', 'bbb')
