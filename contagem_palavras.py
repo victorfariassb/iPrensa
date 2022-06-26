@@ -12,17 +12,17 @@ def conta_palavras(base, contagem):
     dataframe = dataframe.drop_duplicates(subset='link', keep='first')
     chave = dataframe['classe'][0]
     
-    if 'destaque-topo' in chave:
+    if 'globo' in chave:
         coluna = 1
-    elif "Política" in chave:
+    elif "uol" in chave:
         coluna = 3
-    elif "c-main-headline__title" in chave:
+    elif "jovem_na" in chave:
         coluna = 5
-    elif 'principal' in chave:
+    elif 'folha' in chave:
         coluna = 7
-    elif "headlineMain__link" in chave:
+    elif "estadao" in chave:
         coluna = 9
-    elif "sem editoria" in chave:
+    elif "cnn" in chave:
         coluna = 11
     else:
         coluna = 15
