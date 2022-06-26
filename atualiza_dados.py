@@ -46,6 +46,8 @@ contagem_candidatos(estadao_sheet, contagem_candidato)
 contagem_candidatos(uol_sheet, contagem_candidato)
 contagem_candidatos(cnn_sheet, contagem_candidato)
 
+time.sleep(20)
+
 # Termos do dia
 palavras_dia = spreadsheet.worksheet('palavras_dia') 
 termos_dia(palavras_dia)
