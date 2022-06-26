@@ -10,19 +10,19 @@ from nltk import FreqDist
 def conta_palavras(base, contagem):
     dataframe = pd.DataFrame(base.get_all_records()) 
     dataframe = dataframe.drop_duplicates(subset='link', keep='first')
-    chave = dataframe['classe'][0]
+    chave = dataframe.columns[3]
     
-    if 'globo' in chave:
+    if chave == 'classe_globo':
         coluna = 1
-    elif "uol" in chave:
+    elif chave == "classe_uol":
         coluna = 3
-    elif "jovem_na" in chave:
+    elif chave == "classe_jovem_na":
         coluna = 5
-    elif 'folha' in chave:
+    elif chave == 'classe_folha':
         coluna = 7
-    elif "estadao" in chave:
+    elif chave == "classe_estadao":
         coluna = 9
-    elif "cnn" in chave:
+    elif chave == "classe_cnn":
         coluna = 11
     else:
         coluna = 15
