@@ -13,17 +13,24 @@ def conta_palavras(base, contagem):
     chave = dataframe.columns[3]
     
     if chave == 'classe_globo':
+        print('globo')
         coluna = 1
     elif chave == "classe_uol":
+        print('uol')
         coluna = 3
     elif chave == "classe_jp":
         coluna = 5
+        print('jp')
     elif chave == 'classe_folha':
         coluna = 7
+        print('folha')
     elif chave == "classe_estadao":
         coluna = 9
+        print('estadao')
     elif chave == "classe_cnn":
         coluna = 11
+        print('cnn')
+
     else:
         coluna = 15
     linha = 2
