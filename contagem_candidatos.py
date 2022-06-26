@@ -7,7 +7,6 @@ import time
 def contagem_candidatos(base, contagem):
     dataframe = pd.DataFrame(base.get_all_records())
     chave = dataframe.columns[3]
-    print(chave)
     
     if chave == 'classe_globo':
         linha = 2
