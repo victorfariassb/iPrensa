@@ -4,6 +4,7 @@ import gspread
 import json
 import numpy as np
 import pandas as pd
+import pytz
 import spacy.attrs
 import os
 import time
@@ -16,7 +17,7 @@ def termos_dia(contagem):
     linha = 2
     coluna = 1
     jornais = ['uol', 'globo', 'jovem_pan', 'folha', 'estadao', 'cnn']
-    agora = datetime.now()
+    now = datetime.now(pytz.timezone('Brazil/East'))
     contagem.update_cell(linha, coluna + 3, agora)
 
     tabelas = []
