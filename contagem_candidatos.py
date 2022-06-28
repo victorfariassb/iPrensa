@@ -22,7 +22,7 @@ def contagem_candidatos(base, contagem):
         linha = 32
     else:
         linha = 38
-    coluna = 2
+    coluna = 3
 
     presidenciaveis = ['Bolsonaro', 'Lula', 'Ciro', 'Tebet', 'Janones', 'Bivar']
     for presidenciavel in presidenciaveis:
