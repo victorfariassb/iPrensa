@@ -254,106 +254,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1º</th>
-          <td>{{ pa1 }}</td>
-          <td>{{ qu1 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">2º</th>
-          <td>{{ pa2 }}</td>
-          <td>{{ qu2 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">3º</th>
-          <td>{{ pa3 }}</td>
-          <td>{{ qu3 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">4º</th>
-          <td>{{ pa4 }}</td>
-          <td>{{ qu4 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">5º</th>
-          <td>{{ pa5 }}</td>
-          <td>{{ qu5 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">6º</th>
-          <td>{{ pa6 }}</td>
-          <td>{{ qu6 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">7º</th>
-          <td>{{ pa7 }}</td>
-          <td>{{ qu7 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">8º</th>
-          <td>{{ pa8 }}</td>
-          <td>{{ qu8 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">9º</th>
-          <td>{{ pa9 }}</td>
-          <td>{{ qu9 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">10º</th>
-          <td>{{ pa10 }}</td>
-          <td>{{ qu10 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">11º</th>
-          <td>{{ pa11 }}</td>
-          <td>{{ qu11 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">12º</th>
-          <td>{{ pa12 }}</td>
-          <td>{{ qu12 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">13º</th>
-          <td>{{ pa13 }}</td>
-          <td>{{ qu13 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">14º</th>
-          <td>{{ pa14 }}</td>
-          <td>{{ qu14 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">15º</th>
-          <td>{{ pa15 }}</td>
-          <td>{{ qu15 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">16º</th>
-          <td>{{ pa16 }}</td>
-          <td>{{ qu16 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">17º</th>
-          <td>{{ pa17 }}</td>
-          <td>{{ qu17 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">18º</th>
-          <td>{{ pa18 }}</td>
-          <td>{{ qu18 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">19º</th>
-          <td>{{ pa19 }}</td>
-          <td>{{ qu19 }}</td>
-        </tr>
-        <tr>
-          <th scope="row">20º</th>
-          <td>{{ pa20 }}</td>
-          <td>{{ qu20 }}</td>
-        </tr>
+        {% for index, row in palavras_dia.iterrows() %}
+      {% if index != 0 %}
+      <tr>
+        <td>{{ index }}º</td>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
       </tbody>
     </table>
 </body>

@@ -272,6 +272,7 @@
     </thead>
     <tbody>
       {% for index, row in globo_uol.iterrows() %}
+      {% if index != 0 %}
       <tr>
         <td>{{ index }}º</td>
         {% for cell in row %}
@@ -299,6 +300,7 @@
     </thead>
     <tbody>
       {% for index, row in folha_jp.iterrows() %}
+      {% if index != 0 %}
       <tr>
         <td>{{ index }}º</td>
         {% for cell in row %}
@@ -322,56 +324,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1º</th>
-            <td>{{ cnn1 }}</td>
-            <td>{{ cnn_1 }}</td>
-          </tr>
-          <tr>
-            <th scope="row">2º</th>
-            <td>{{ cnn2 }}</td>
-            <td>{{ cnn_2 }}</td>
-          </tr>
-          <tr>
-            <th scope="row">3º</th>
-            <td>{{ cnn3 }}</td>
-            <td>{{ cnn_3 }}</td>
-          </tr>
-          <tr>
-            <th scope="row">4º</th>
-            <td>{{ cnn4 }}</td>
-            <td>{{ cnn_4 }}</td>
-          </tr>
-          <tr>
-            <th scope="row">5º</th>
-            <td>{{ cnn5 }}</td>
-            <td>{{ cnn_5 }}</td>
-          </tr>
-          <tr>
-            <th scope="row">6º</th>
-            <td>{{ cnn6 }}</td>
-            <td>{{ cnn_6 }}</td>
-          </tr>
-          <tr>
-            <th scope="row">7º</th>
-            <td>{{ cnn7 }}</td>
-            <td>{{ cnn_7 }}</td>
-          </tr>
-          <tr>
-            <th scope="row">8º</th>
-            <td>{{ cnn8 }}</td>
-            <td>{{ cnn_8 }}</td>
-          </tr>
-          <tr>
-            <th scope="row">9º</th>
-            <td>{{ cnn9 }}</td>
-            <td>{{ cnn_9 }}</td>
-          </tr>
-          <tr>
-            <th scope="row">10º</th>
-            <td>{{ cnn10 }}</td>
-            <td>{{ cnn_10 }}</td>
-          </tr>
+          {% for index, row in estadao_cnn.iterrows() %}
+      {% if index != 0 %}
+      <tr>
+        <td>{{ index }}º</td>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
           <br />
         </tbody>
       </table>

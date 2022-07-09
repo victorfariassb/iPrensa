@@ -37,139 +37,7 @@ esq = contagem_palavras.col_values(10)
 cnn = contagem_palavras.col_values(11)
 cnnq = contagem_palavras.col_values(12)
 
-globo1 = globo[1]
-globoq1 = globoq[1]
-uol1 = uol[1]
-uolq1 = uolq[1]
-jp1 = jp[1]
-jpq1 = jpq[1]
-f1 = folha[1]
-fq1 = folhaq[1]
-es1 = es[1]
-esq1 = esq[1]
-cnn1 = cnn[1]
-cnnq1 = cnnq[1]
-
-globo2 = globo[2]
-globoq2 = globoq[2]
-uolq2 = uolq[2]
-uol2 = uol[2]
-jp2 = jp[2]
-jpq2 = jpq[2]
-f2 = folha[2]
-fq2 = folhaq[2]
-es2 = es[2]
-esq2 = esq[2]
-cnn2 = cnn[2]
-cnnq2 = cnnq[2]
-
-
-globo3 = globo[3]
-globoq3 = globoq[3]
-uolq3 = uolq[3]
-uol3 = uol[3]
-jp3 = jp[3]
-jpq3 = jpq[3]
-f3 = folha[3]
-fq3 = folhaq[3]
-es3 = es[3]
-esq3 = esq[3]
-cnn3 = cnn[3]
-cnnq3 = cnnq[3]
-
-globo4 = globo[4]
-globoq4 = globoq[4]
-uolq4 = uolq[4]
-uol4 = uol[4]
-jp4 = jp[4]
-jpq4 = jpq[4]
-f4 = folha[4]
-fq4 = folhaq[4]
-es4 = es[4]
-esq4 = esq[4]
-cnn4 = cnn[4]
-cnnq4 = cnnq[4]
-
-
-globo5 = globo[5]
-globoq5 = globoq[5]
-uolq5 = uolq[5]
-uol5 = uol[5]
-jp5 = jp[5]
-jpq5 = jpq[5]
-f5 = folha[5]
-fq5 = folhaq[5]
-es5 = es[5]
-esq5 = esq[5]
-cnn5 = cnn[5]
-cnnq5 = cnnq[5]
-
-
-globo6 = globo[6]
-globoq6 = globoq[6]
-uolq6 = uolq[6]
-uol6 = uol[6]
-jp6 = jp[6]
-jpq6 = jpq[6]
-f6 = folha[6]
-fq6 = folhaq[6]
-es6 = es[6]
-esq6 = esq[6]
-cnn6 = cnn[6]
-cnnq6 = cnnq[6]
-
-
-globo7 = globo[7]
-globoq7 = globoq[7]
-uolq7 = uolq[7]
-uol7 = uol[7]
-jp7 = jp[7]
-jpq7 = jpq[7]
-f7 = folha[7]
-fq7 = folhaq[7]
-es7 = es[7]
-esq7 = esq[7]
-cnn7 = cnn[7]
-cnnq7 = cnnq[7]
-
-globo8 = globo[8]
-globoq8 = globoq[8]
-uolq8 = uolq[8]
-uol8 = uol[8]
-jp8 = jp[8]
-jpq8 = jpq[8]
-f8 = folha[8]
-fq8 = folhaq[8]
-es8 = es[8]
-esq8 = esq[8]
-cnn8 = cnn[8]
-cnnq8 = cnnq[8]
-
-globo9 = globo[9]
-globoq9 = globoq[9]
-uolq9= uolq[9]
-uol9 = uol[9]
-jp9 = jp[9]
-jpq9 = jpq[9]
-f9 = folha[9]
-fq9 = folhaq[9]
-es9 = es[9]
-esq9 = esq[9]
-cnn9 = cnn[9]
-cnnq9 = cnnq[9]
-
-globo10 = globo[10]
-globoq10 = globoq[10]
-uolq10 = uolq[10]
-uol10 = uol[10]
-jp10 = jp[10]
-jpq10 = jpq[10]
-f10 = folha[10]
-fq10 = folhaq[10]
-es10 = es[10]
-esq10 = esq[10]
-cnn10 = cnn[9]
-cnnq10 = cnnq[9]
+estadao_cnn = pd.DataFrame(list(zip(es, esq, cnn, cnnq)))
 
 # Coleta 
 cnn = spreadsheet.worksheet('cnn')
@@ -182,77 +50,21 @@ hora = str(hora)
 def dados_jornais():
     return render_template(
         "home.html",
-        hora=hora, globo_uol=globo_uol, folha_jp=folha_jp,
-        g1=globoq1, g2=globoq2, g3=globoq3, g4=globoq4, g5=globoq5, g6=globoq6, g7=globoq7, g8=globoq8, g9=globoq9, g10=globoq10,
-        w1=globo1, w2=globo2, w3=globo3, w4=globo4, w5=globo5, w6=globo6, w7=globo7, w8=globo8, w9=globo9, w10=globo10,
-        u1=uolq1, u2=uolq2, u3=uolq3, u4=uolq4, u5=uolq5, u6=uolq6, u7=uolq7, u8=uolq8, u9=uolq9, u10=uolq10,
-        p1=uol1, p2=uol2, p3=uol3, p4=uol4, p5=uol5, p6=uol6, p7=uol7, p8=uol8, p9=uol9, p10=uol10,
-        jp_1=jpq1, jp_2=jpq2, jp_3=jpq3, jp_4=jpq4, jp_5=jpq5, jp_6=jpq6, jp_7=jpq7, jp_8=jpq8, jp_9=jpq9, jp_10=jpq10,
-        jp1=jp1, jp2=jp2, jp3=jp3, jp4=jp4, jp5=jp5, jp6=jp6, jp7=jp7, jp8=jp8, jp9=jp9, jp10=jp10,
-        f1 = f1, f2=f2, f3=f3, f4=f4, f5=f5, f6=f6, f7=f7, f8=f8, f9=f9, f10=f10,
-        fq1 = fq1, fq2=fq2, fq3=fq3, fq4=fq4, fq5=fq5, fq6=fq6, fq7=fq7, fq8=fq8, fq9=fq9, fq10=fq10, es1 = es1, esq1 = esq1,  es2 = es2, esq2 = esq2, es3 = es3, esq3 = esq3,
-         es4 = es4, esq4 = esq4, es5 = es5, esq5 = esq5, es6 = es6, esq6 = esq6,
-         es7 = es7, esq7 = esq7, es8 = es8, esq8 = esq8, es9 = es9, esq9 = esq9,
-         es10 = es10, esq10 = esq10,
-        cnn_1=cnnq1, cnn_2=cnnq2, cnn_3=cnnq3, cnn_4=cnnq4, cnn_5=cnnq5, cnn_6=cnnq6, cnn_7=cnnq7, cnn_8=cnnq8, cnn_9=cnnq9, cnn_10=cnnq10,
-        cnn1=cnn1, cnn2=cnn2, cnn3=cnn3, cnn4=cnn4, cnn5=cnn5, cnn6=cnn6, cnn7=cnn7, cnn8=cnn8, cnn9=cnn9, cnn10=cnn10)
+        hora=hora, globo_uol=globo_uol, folha_jp=folha_jp, estadao_cnn=estadao_cnn)
 
 
 palavras_dia = spreadsheet.worksheet('palavras_dia')
 palavras = palavras_dia.col_values(1)
 contagem = palavras_dia.col_values(2)
 
-pa1 = palavras[1]
-pa2 = palavras[2]
-pa3 = palavras[3]
-pa4 = palavras[4]
-pa5 = palavras[5]
-pa6 = palavras[6]
-pa7 = palavras[7]
-pa8 = palavras[8]
-pa9 = palavras[9]
-pa10 = palavras[10]
-pa11 = palavras[11]
-pa12 = palavras[12]
-pa13 = palavras[13]
-pa14 = palavras[14]
-pa15 = palavras[15]
-pa16 = palavras[16]
-pa17 = palavras[17]
-pa18 = palavras[18]
-pa19 = palavras[19]
-pa20 = palavras[20]
+palavras_dia = pd.DataFrame(list(zip(palavras, contagem)))
 
-qu1 = contagem[1]
-qu2 = contagem[2]
-qu3 = contagem[3]
-qu4 = contagem[4]
-qu5 = contagem[5]
-qu6 = contagem[6]
-qu7 = contagem[7]
-qu8 = contagem[8]
-qu9 = contagem[9]
-qu10 = contagem[10]
-qu11 = contagem[11]
-qu12 = contagem[12]
-qu13 = contagem[13]
-qu14 = contagem[14]
-qu15 = contagem[15]
-qu16 = contagem[16]
-qu17 = contagem[17]
-qu18 = contagem[18]
-qu19 = contagem[19]
-qu20 = contagem[20]
 
 
 @app.route("/palavra_dia")
 def palavra_dia():
     return render_template(
-        "palavra_dia.html",
-        pa1 = pa1, pa2 = pa2, pa3 = pa3, pa4 = pa4, pa5 = pa5, pa6 = pa6, pa7 = pa7, pa8 = pa8, pa9 = pa9, pa10 = pa10,
-        pa11 = pa11, pa12 = pa12, pa13 = pa13, pa14 = pa14, pa15 = pa15, pa16 = pa16, pa17 = pa17, pa18 = pa18, pa19 = pa19, pa20 = pa20,
-        qu1 = qu1, qu2 = qu2, qu3 = qu3, qu4 = qu4, qu5 = qu5, qu6 = qu6, qu7 = qu7, qu8 = qu8, qu9 = qu9, qu10 = qu10,
-        qu11 = qu11, qu12 = qu12, qu13 = qu13, qu14 = qu14, qu15 = qu15, qu16 = qu16, qu17 = qu17, qu18 = qu18, qu19 = qu19, qu20 = qu20) 
+        "palavra_dia.html", palavras_dia=palavras_dia) 
 
 
 contagem_candidatos = spreadsheet.worksheet('contagem_candidato')
