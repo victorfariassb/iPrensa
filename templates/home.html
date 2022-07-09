@@ -271,77 +271,14 @@
       </tr>
     </thead>
     <tbody>
+      {% for row in globo_uol}
       <tr>
-        <th scope="row">1º</th>
-        <td>{{ w1 }}</td>
-        <td>{{ g1 }}</td>
-        <td>{{ p1 }}</td>
-        <td>{{ u1 }}</td>
+        {% for cell in row}
+        <td>{{ cell }}</td>
+        {% endfor %}
       </tr>
-      <tr>
-        <th scope="row">2º</th>
-        <td>{{ w2 }}</td>
-        <td>{{ g2 }}</td>
-        <td>{{ p2 }}</td>
-        <td>{{ u2 }}</td>
-      </tr>
-      <tr>
-        <th scope="row">3º</th>
-        <td>{{ w3 }}</td>
-        <td>{{ g3 }}</td>
-        <td>{{ p3 }}</td>
-        <td>{{ u3 }}</td>
-      </tr>
-      <tr>
-        <th scope="row">4º</th>
-        <td>{{ w4 }}</td>
-        <td>{{ g4 }}</td>
-        <td>{{ p4 }}</td>
-        <td>{{ u4 }}</td>
-      </tr>
-      <tr>
-        <th scope="row">5º</th>
-        <td>{{ w5 }}</td>
-        <td>{{ g5 }}</td>
-        <td>{{ p5 }}</td>
-        <td>{{ u5 }}</td>
-      </tr>
-      <tr>
-        <th scope="row">6º</th>
-        <td>{{ w6 }}</td>
-        <td>{{ g6 }}</td>
-        <td>{{ p6 }}</td>
-        <td>{{ u6 }}</td>
-      </tr>
-      <tr>
-        <th scope="row">7º</th>
-        <td>{{ w7 }}</td>
-        <td>{{ g7 }}</td>
-        <td>{{ p7 }}</td>
-        <td>{{ u7 }}</td>
-      </tr>
-      <tr>
-        <th scope="row">8º</th>
-        <td>{{ w8 }}</td>
-        <td>{{ g8 }}</td>
-        <td>{{ p8 }}</td>
-        <td>{{ u8 }}</td>
-      </tr>
-      <tr>
-        <th scope="row">9º</th>
-        <td>{{ w9 }}</td>
-        <td>{{ g9 }}</td>
-        <td>{{ p9 }}</td>
-        <td>{{ u9 }}</td>
-      </tr>
-      <tr>
-        <th scope="row">10º</th>
-        <td>{{ w10 }}</td>
-        <td>{{ g10 }}</td>
-        <td>{{ p10 }}</td>
-        <td>{{ u10 }}</td>
-      </tr>
-      <br />
+      {% endfor %}
+      <br/>
     </tbody>
   </table>
   <br />
