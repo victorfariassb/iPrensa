@@ -17,7 +17,7 @@ def contagem_candidatos(base, contagem):
     elif chave == 'classe_folha':
         linha = 20
     elif chave == "classe_estadao":
-        linha = 226
+        linha = 26
     elif chave == "classe_cnn":
         linha = 32
     else:
