@@ -24,7 +24,7 @@ uol = contagem_palavras.col_values(3)
 uolq = contagem_palavras.col_values(4)
 # vamos criar uma lista com os dados das 4 primeiras listas para adicionar no flask
 globo_uol = [globo, globoq, uol, uolq]
-globo_uol = [item[0] for item in globo_uol]
+globo_uol = pd.DataFrame(list(globo_uol))
 
 jp = contagem_palavras.col_values(5)
 jpq = contagem_palavras.col_values(6)
@@ -32,7 +32,7 @@ folha = contagem_palavras.col_values(7)
 folhaq = contagem_palavras.col_values(8)
 
 folha_jp = [jp, jpq, folha, folhaq]
-folha_jp = [item[0] for item in folha_jp]
+folha_jp = pd.DataFrame(list(folha_jp))
 
 es = contagem_palavras.col_values(9)
 esq = contagem_palavras.col_values(10)
