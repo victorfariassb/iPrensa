@@ -271,7 +271,7 @@
       </tr>
     </thead>
     <tbody>
-      {% for index, row in globo_uol %}
+      {% for index, row in globo_uol.iterrows() %}
       <tr>
         <td>{{ index }}º</td>
         {% for cell in row %}
@@ -298,7 +298,7 @@
       </tr>
     </thead>
     <tbody>
-      {% for index, row in folha_jp %}
+      {% for index, row in folha_jp.iterrows() %}
       <tr>
         <td>{{ index }}º</td>
         {% for cell in row %}
