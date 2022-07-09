@@ -34,12 +34,10 @@ folhaq = contagem_palavras.col_values(8)
 folha_jp = [jp, jpq, folha, folhaq]
 folha_jp = [item[0] for item in folha_jp]
 
-og = contagem_palavras.col_values(9)
-ogq = contagem_palavras.col_values(10)
-es = contagem_palavras.col_values(11)
-esq = contagem_palavras.col_values(12)
-cnn = contagem_palavras.col_values(13)
-cnnq = contagem_palavras.col_values(14)
+es = contagem_palavras.col_values(9)
+esq = contagem_palavras.col_values(10)
+cnn = contagem_palavras.col_values(11)
+cnnq = contagem_palavras.col_values(12)
 
 globo1 = globo[1]
 globoq1 = globoq[1]
