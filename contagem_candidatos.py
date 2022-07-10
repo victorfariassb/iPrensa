@@ -1,4 +1,3 @@
-import gspread
 import pandas as pd
 import datetime
 import numpy as np
@@ -63,6 +62,6 @@ def contagem_candidatos(base, contagem):
         time.sleep(3)
         contagem.update_cell(linha, coluna, termo_semana)
         contagem.update_cell(linha, coluna + 1, termo_mes)
-        contagem.update_cell(linha, coluna + 2, termo_ano)
+        contagem.update_cell(linha, coluna + 3, termo_ano)
         linha += 1
 
