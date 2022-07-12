@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+body {
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 17px;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  margin: auto;
+  min-width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-right: 40px;
+}
+
+.nav-menu li {
+  list-style: none;
+}
+
+ul li:last-child {
+  border: 0px;
+}
+
+ul li a:link {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-menu li a:hover {
+  background: darkorange;
+  color: #fff;
+}
+
+.logo {
+  height: inherit;
+  background-color: darkorange;
+  text-align: center;
+  display: block;
+}
+
+.titulo {
+  font-weight: bold;
+  color: white;
+  font-size: 1.3em;
+  padding: 15px 10px;
+}
+
+a:link {
+  color: darkorange;
+  text-decoration: none;
+}
+
+.conteudo {
+  width: 60%;
+  margin: 70px 0% auto;
+  display: inline-block;
+}
+
+.secao {
+  margin: 0 0 10px;
+  font-size: 1em;
+  text-align: left;
+}
+
+.descricao {
+  font-size: 1em;
+  text-align: justify;
+  margin: 20px auto;
+  max-width: 1100px;
+}
+
+@media (max-width: 1200px) {
+  body {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1em;
+  }
+
+.titulo {
+  font-size: 1.2em;
+}
+
+.conteudo {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .secao {
+    margin: 80px 0 0;
+  }
+}
+
+@media (max-width: 468px) {
+  body {
+    font-size: 0.9em;
+    margin: auto;
+  }
+
+  .navbar {
+    height: 90px;
+    display: block;
+  }
+
+  .nav-menu {
+    position: flex;
+    height: 45px;
+    align-items: center;
+    margin: 0 12%;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 100%;
+    height: 45px;
+  }
+
+  .conteudo {
+    margin: 0 1em;
+  }
+
+  .secao {
+    text-align: left;
+    margin-top: 120px;
+  }
+}
