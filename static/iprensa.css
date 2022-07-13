@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;1,300;1,600&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "KoHo";
+}
+
+html, body{
+    margin: 0;
+}
+
+.home {
+    background-color: #A39677;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+
+
+}
+
+header {
+    background-color: #F0E4C7;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    width: 30vw;
+    text-align: center;
+    margin: auto auto;
+    box-shadow: 1px 1px 3px black
+}
+
+header h1 {
+    padding: 0.9vw;
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: "Libre Bodoni";
+    margin-bottom: 1vh;
+}
+
+header img:first-of-type{
+    width: 25vw;
+    margin: 0 auto;
+}
+
+header p {
+    margin: 5vh 3vw auto;
+    padding: 1vw;
+    font-size: 1.5rem
+}
+
+.botao_baixo{
+    position: relative;
+    bottom: -4.5vh;
+    margin: auto auto 0;
+    width: 6vw;
+}
