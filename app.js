@@ -40,6 +40,22 @@ rect4 = svg.append('rect')
     .attr('x', 275)
     .attr('y', 400)
 
+rect5 = svg.append('rect')
+    .attr('class', 'quadrado3')
+    .attr('fill', '#C7D4F0')
+    .attr('width', '20vh')
+    .attr('height', '20vh')
+    .attr('x', 275)
+    .attr('y', 150)
+    
+rect6 = svg.append('rect')
+    .attr('class', 'quadrado3')
+    .attr('fill', '#C7D4F0')
+    .attr('width', '20vh')
+    .attr('height', '20vh')
+    .attr('x', 275)
+    .attr('y', 400)
+
 rect = svg.append('rect')
     .attr('id', 'rect')
     .attr('width', '30vw')
@@ -48,6 +64,7 @@ rect = svg.append('rect')
     .attr('y', 120)
     .style('fill', '#677AA3')
     .attr('stroke', 'black')
+
 text = svg.append('text').text('Dados inteligentes')
     .attr('id', 'texto1')
     .attr('x', 250)
@@ -92,6 +109,12 @@ function triggerTransitionPiping() {
         .delay(4000)
         .duration(2000)
         .attr('x', 700)
+    
+    d3.selectAll('.quadrado3')
+        .transition()
+        .delay(4000)
+        .duration(2000)
+        .attr('x', 1300)
 
 }
 
