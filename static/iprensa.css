@@ -6,63 +6,218 @@
 }
 
 html, body{
-    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D9CAB0;
 }
 
 .home {
-    background-color: #A39677;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-
-
+    width: 100vw;
+    height: 80%;
+    margin: auto 12vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr 1fr 1fr 0.2fr;
+    grid-template-rows: 1fr 1fr 1fr 0.5fr 1fr 0.5fr;
+    gap: 3vh;
 }
 
-header {
-    background-color: #F0E4C7;
+.home > div{
+    padding: 0.7vw;
     display: flex;
     flex-direction: column;
-    height: 60vh;
-    width: 30vw;
+}
+
+.home > div > p{
+    font-size: 2.5rem;
+    font-weight: 200;
     text-align: center;
-    margin: auto auto;
-    box-shadow: 1px 1px 3px black
 }
 
-header h1 {
-    padding: 0.9vw;
-    font-size: 3rem;
-    font-weight: 500;
-    font-family: "Libre Bodoni";
-    margin-bottom: 1vh;
+.home > div li{
+    font-size: 1.3rem;
 }
 
-header img:first-of-type{
-    width: 25vw;
-    margin: 0 auto;
+.titulo-menor{
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 1vh;
+    font-size: 1.2rem;
 }
 
-header p {
-    margin: 5vh 3vw auto;
-    padding: 1vw;
-    font-size: 1.5rem
+.titulo{
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 1vh;
+    font-size: 1.7rem;
 }
 
-.botao_baixo{
+.titulo-rodape{
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.logo{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    border: 2px solid #000326;
+    background-color: #F29F80;
     position: relative;
-    bottom: -4.5vh;
-    margin: auto auto 0;
-    width: 6vw;
 }
 
-.botao_baixo:hover{
-    opacity: 0.8;
+.logo h2{
+    font-family: "Libre Bodoni";
+    font-size: 2.3rem;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    text-align: center;
 }
 
-.intro {
-    width: 100%;
-    height: 100vh;
-    background-color: #FFFAED;
-    margin: 0;
+.logo img{
+    margin-top: 0;
+    width: 80%;
+    margin: 0 10%;
 }
 
+.logo .descricao{
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: justify;
+    padding: 0 10%;
+}
+
+.botoes{
+    display: flex;
+    position: absolute;
+    bottom: 5%;
+    justify-content: space-around;
+    width: 95%;
+}
+
+.botoes button{
+    background-color: #000326;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.palavra_dia{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    border: 2px solid #000326;
+    background-color: #D93B18
+}
+
+.numero_materias{
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    border: 2px solid #000326;
+    background-color: #D93B18
+}
+
+.numero_materias .titulo-menor{
+    text-align: center
+}
+
+.numero_materias p{
+    margin-bottom: 2vh;
+}
+
+.esporte{
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    border: 2px solid #000326;
+    background-color: #000326;
+    color: white;
+}
+
+
+.candidatos{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 6;
+    border: 2px solid #000326;
+    background-color: #D93B18;
+}
+
+.escopo {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    border: 2px solid #000326;
+    background-color: #F25E3D;
+}
+
+.atualizado {
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    border: 2px solid #000326;
+    background-color: #F25E3D;
+}
+
+@media (max-width: 768px) {
+    .home{
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 10vh;
+    gap: 2vh;
+    height: 95%;
+    margin-bottom: 2vh;
+    }
+    .logo, .palavra_dia, .numero_materias, .esporte, .escopo, .candidatos, .atualizado{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .logo{
+        grid-row-start: 1;
+        grid-row-end: 12;
+    }
+
+    .palavra_dia{
+        grid-row-start: 12;
+        grid-row-end: 14;
+    }
+
+    .numero_materias{
+        grid-row-start: 14;
+        grid-row-end: 16;
+    }
+
+    .esporte{
+        grid-row-start: 16;
+        grid-row-end: 20;
+    }
+
+    .candidatos {
+        grid-row-start: 20;
+        grid-row-end: 23;
+    }
+
+    .escopo{
+        grid-row-start: 23;
+        grid-row-end: 24;
+    }
+
+    .atualizado{
+        grid-row-start: 24;
+        grid-row-end: 25;
+    }
+
+    .logo .descricao{
+        font-size: 1.2rem;
+    }
+
+}

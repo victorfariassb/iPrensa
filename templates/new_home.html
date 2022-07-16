@@ -1,25 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;1,300;1,600&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;1,300;1,600&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../static/iprensa.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <title>iMprensa</title>
 </head>
+
 <body>
-    <section class="home">
-    <header>
-        <h1>iMprensa</h1>
-        <img src = "../elementos_graficos/detalhe.svg" alt="Detalhe logo"/>
-        <p>Uma plataformar para entender melhor a impresa na web</p>
-            <img class="botao_baixo" src = "../elementos_graficos/botao_baixo.svg" alt="botao de baixo"/>
-    </header>
-</section>
-<section class="intro">
-    <button>O que é isso?</button>
-</section>
+    <div class="home">
+        <div class="logo">
+            <h2>iPrensa</h2>
+            <img src="../elementos_graficos\detalhe.svg" alt="detalhe loog">
+            <div class="descricao">
+            <p>Uma plataformar para entender melhor a impresa na web.</p>
+            <p>Dúvidas, críticas e sugestões: <a href="victorfariassb@gmail.com">victorfariassb@gmail.com</a>
+            </p>
+            <p>Este projeto foi construido no Master em Jornalismo de Dados do Insper.</p>
+        </div>
+            <div class="botoes">
+            <button>SOBRE</button>
+            <button>BASE DE DADOS</button>
+        </div>
+        </div>
+        <div class="palavra_dia">
+            <div class="titulo-menor">Palavra do dia ✍️</div>
+            <p>UCRÂNIA</p>
+        </div>
+        <div class="numero_materias">
+            <p>254.452</p>
+            <div class="titulo-menor">Matérias raspadas</div>
+        </div>
+        <div class="esporte">
+            <div class="titulo">Ranking dos times ⚽</div>
+            <ol>
+                <li>São Paulo</li>
+                <li>Palmeiras</li>
+                <li>Santos</li>
+                <li>Flamengos</li>
+                <li>Fluminense</li>
+            </ol>
+        </div>
+        <div class="candidatos">
+            <div class="titulo">Candidatos na imprensa 🗳️</div>
+            <ol>
+                <li>Bolsonaro: 340</li>
+                <li>Lula: 230</li>
+                <li>Ciro: 120</li>
+            </ol>
+        </div>
+        <div class="escopo">
+            <div class="titulo-rodape"><b>SITES RASPADOS:</b> Globo, Uol, Folha, Estadão, Jovem Pan, CNN</div>
+        </div>
+        <div class="atualizado">
+            <div class="titulo-rodape"><b>ATUALIZADO EM:</b> 16/07/2022</div>
+        </div>
+    </div>
 </body>
 <script src='../app.js'></script>
 

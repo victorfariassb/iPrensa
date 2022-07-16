@@ -61,11 +61,20 @@ ul li a:link {
     color: #fff;
 }
 
+.nav-menu li a:visited{
+    color: #fff;
+}
+
 .logo {
     height: inherit;
     background-color: darkorange;
     text-align: center;
     display: block;
+}
+
+.logo a{
+    text-decoration: none;
+    color: #fff;
 }
 
 .titulo {
@@ -75,14 +84,18 @@ ul li a:link {
     padding: 15px 10px;
 }
 
-a:link {
+.conteudo a:link {
     color: darkorange;
     text-decoration: none;
 }
 
+.conteudo a:visited{
+    color: darkorange
+}
+
 .conteudo {
     width: 60%;
-    margin: 70px 0% auto;
+    margin: 2vh 0% auto;
     display: inline-block;
 }
 
