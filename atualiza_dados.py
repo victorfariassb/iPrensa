@@ -72,4 +72,4 @@ for jornal in jornais:
     df = df[['link']]
     quantidade += len(df)
 
-contagem.update_cell(1, 14, quantidade)
+contagem.update_cell(1, 13, quantidade)

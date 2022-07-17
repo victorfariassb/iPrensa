@@ -28,20 +28,20 @@
         </div>
         <div class="palavra_dia">
             <div class="titulo-menor">Palavra do dia ✍️</div>
-            <p>UCRÂNIA</p>
+            <p>{{ palavra_dia }}</p>
         </div>
         <div class="numero_materias">
-            <p>254.452</p>
+            <p>{{ total_materias }}</p>
             <div class="titulo-menor">Matérias raspadas</div>
         </div>
         <div class="esporte">
             <div class="titulo">Ranking dos times ⚽</div>
             <ol>
-                <li>São Paulo</li>
-                <li>Palmeiras</li>
-                <li>Santos</li>
-                <li>Flamengos</li>
-                <li>Fluminense</li>
+                {% for index, row in times_dados.iterrows() %}
+                {% if index != 0 %}
+                <li>{{ row[0] }}  — {{ row[1] }}</li>
+                {% endif %}
+                {% endfor %}
             </ol>
         </div>
         <div class="candidatos">
@@ -56,7 +56,7 @@
             <div class="titulo-rodape"><b>SITES RASPADOS:</b> Globo, Uol, Folha, Estadão, Jovem Pan, CNN</div>
         </div>
         <div class="atualizado">
-            <div class="titulo-rodape"><b>ATUALIZADO EM:</b> 16/07/2022</div>
+            <div class="titulo-rodape"><b>ATUALIZADO EM:</b> {{ hora }}</div>
         </div>
     </div>
 </body>

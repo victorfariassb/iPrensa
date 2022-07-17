@@ -59,8 +59,6 @@ contagem = palavras_dia.col_values(2)
 
 palavras_dia = pd.DataFrame(list(zip(palavras, contagem)))
 
-
-
 @app.route("/palavra_dia")
 def palavra_dia():
     return render_template(
@@ -71,4 +69,16 @@ def palavra_dia():
 @app.route("/sobre")
 def sobre():
     return render_template("sobre.html")
-        
+
+
+total_materias = contagem_palavras.col_values(12)[1]
+times = spreadsheet.worksheet('ranking_times')
+times_nome = times.col_values(1)
+times_qtd = times.col_values(2)
+
+times_dados = pd.DataFrame(list(zip(palavras, contagem))).sort_values('Quantidade_histórico', ascending=False)
+
+@app.route("/new_home")
+def new_home():
+    return render_template(
+        "new_home.html", palavra_dia=palavras_dia[0], total_materias=total_materias, times_dados=times_dados, hora=hora)
