@@ -88,7 +88,7 @@ ranking_candidatos = spreadsheet.worksheet('contagem_candidato')
 candidatos = ranking_candidatos.col_values(2)
 quantidade_candidatos = ranking_candidatos.col_values(5)
 ranking_candidatos = pd.DataFrame(list(zip(candidatos, quantidade_candidatos)), columns=['candidato', 'quantidade'])
-ranking_candidatos = ranking_candidatos.quantidade.astype(int)
+ranking_candidatos.quantidade = ranking_candidatos.quantidade.astype(int)
 ranking_candidatos = ranking_candidatos.groupby(['candidato'])['quantidade'].sum().reset_index().sort_values('quantidade', ascending=False)
 
 @app.route("/new_home")
