@@ -71,7 +71,7 @@ def sobre():
     return render_template("sobre.html")
 
 
-total_materias = contagem_palavras.col_values(12)[1]
+total_materias = contagem_palavras.col_values(14)[1]
 ranking = spreadsheet.worksheet('ranking_times')
 times_nome = ranking.col_values(1)[1:]
 times_qtd = ranking.col_values(2)[1:]
@@ -83,4 +83,4 @@ times_dados = times_dados.sort_values('quantidade', ascending=False)
 @app.route("/new_home")
 def new_home():
     return render_template(
-        "new_home.html", palavra_dia=palavras_dia[0], total_materias=total_materias, times_dados=times_dados, hora=hora)
+        "new_home.html", palavra_dia=palavras_dia, total_materias=total_materias, times_dados=times_dados, hora=hora)
