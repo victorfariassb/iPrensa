@@ -75,14 +75,14 @@ total_materias = contagem_palavras.col_values(14)[1]
 total_materias = "{:,}".format(int(total_materias)).replace(',','.')
 
 ranking = spreadsheet.worksheet('ranking_times')
-times_nome = ranking.col_values(1)[1:12]
-times_qtd = ranking.col_values(2)[1:12]
+times_nome = ranking.col_values(1)[1:]
+times_qtd = ranking.col_values(4)[1:]
 
 palavra_do_dia = palavras[1]
 
 times_dados = pd.DataFrame(list(zip(times_nome, times_qtd)), columns=['time', 'quantidade'])
 times_dados.quantidade = times_dados.quantidade.astype(int)
-times_dados = times_dados.sort_values('quantidade', ascending=False)
+times_dados = times_dados.sort_values('quantidade', ascending=False).head(10)
 
 @app.route("/new_home")
 def new_home():

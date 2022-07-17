@@ -205,11 +205,11 @@ html, body{
 
     .esporte{
         grid-row-start: 16;
-        grid-row-end: 22;
+        grid-row-end: 21;
     }
 
     .candidatos {
-        grid-row-start: 22;
+        grid-row-start: 21;
         grid-row-end: 24;
     }
 
