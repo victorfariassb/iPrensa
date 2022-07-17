@@ -47,9 +47,11 @@
         <div class="candidatos">
             <div class="titulo">Candidatos na imprensa 🗳️</div>
             <ol>
-                <li>Bolsonaro: 340</li>
-                <li>Lula: 230</li>
-                <li>Ciro: 120</li>
+                {% for index, row in ranking_candidatos.iterrows() %}
+                {% if index != 0 %}
+                <li>{{ row[0] }}  — {{ row[1] }}</li>
+                {% endif %}
+                {% endfor %}
             </ol>
         </div>
         <div class="escopo">

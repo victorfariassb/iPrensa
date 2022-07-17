@@ -82,9 +82,16 @@ palavra_do_dia = palavras[1]
 
 times_dados = pd.DataFrame(list(zip(times_nome, times_qtd)), columns=['time', 'quantidade'])
 times_dados.quantidade = times_dados.quantidade.astype(int)
-times_dados = times_dados.sort_values('quantidade', ascending=False).head(10)
+times_dados = times_dados.sort_values('quantidade', ascending=False).head(11)
+
+ranking_candidatos = spreadsheet.worksheet('contagem_candidato')
+candidatos = ranking_candidatos.col_values(2)
+quantidade_candidatos = ranking_candidatos.col_values(5)
+ranking_candidatos = pd.DataFrame(list(zip(candidatos, quantidade_candidatos)), columns=['candidato', 'quantidade'])
+ranking_candidatos = ranking_candidatos.quantidade.astype(int)
+ranking_candidatos = ranking_candidatos.groupby(['candidato'])['quantidade'].sum().reset_index().sort_values('quantidade', ascending=False)
 
 @app.route("/new_home")
 def new_home():
     return render_template(
-        "new_home.html", palavra_dia=palavra_do_dia, total_materias=total_materias, times_dados=times_dados, hora=hora)
+        "new_home.html", palavra_dia=palavra_do_dia, total_materias=total_materias, times_dados=times_dados, hora=hora, ranking_candidatos=ranking_candidatos)
