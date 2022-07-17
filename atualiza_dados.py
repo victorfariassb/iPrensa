@@ -8,6 +8,7 @@ import time
 from contagem_palavras import conta_palavras
 from contagem_candidatos import contagem_candidatos
 from termos_dia import termos_dia
+from ranking_times import ranking_times
 
 spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
 conteudo_codificado =  os.environ['GOOGLE_SHEETS_CREDENTIALS']
@@ -54,4 +55,8 @@ time.sleep(20)
 # Termos do dia
 palavras_dia = spreadsheet.worksheet('palavras_dia') 
 termos_dia(palavras_dia)
+
+# Ranking dos times
+ranking = spreadsheet.worksheet('ranking_times')
+ranking_times(globo_sheet, uol_sheet, ranking)
 
