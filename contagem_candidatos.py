@@ -38,34 +38,27 @@ def contagem_candidatos(base, contagem):
 
 
         df_semana = dataframe[dataframe['data'] >= semana]
-        
-        if df_semana[['link']][df_semana['titulo'].str.contains(f'{presidenciavel}')]:
-            termo_semana = df_semana[['link']][df_semana['titulo'].str.contains(f'{presidenciavel}')].drop_duplicates().reset_index(drop=True)
-            termo_semana = len(termo_semana)
-        else:
-            termo_semana = 0
+
+        termo_semana = df_semana[['link']][df_semana['titulo'].str.contains(f'{presidenciavel}')].drop_duplicates().reset_index(drop=True)
+        termo_semana = len(termo_semana)
 
         # Mes
-        if df_mes[['link']][df_mes['titulo'].str.contains(f'{presidenciavel}')]:
-            mes = hoje - datetime.timedelta(days=30, hours=3)
-            mes = np.datetime64(mes)
+        mes = hoje - datetime.timedelta(days=30, hours=3)
+        mes = np.datetime64(mes)
 
-            df_mes = dataframe[dataframe['data'] >= mes]
+        df_mes = dataframe[dataframe['data'] >= mes]
 
-            termo_mes = df_mes[['link']][df_mes['titulo'].str.contains(f'{presidenciavel}')].drop_duplicates().reset_index(drop=True)
-            termo_mes = len(termo_mes)
-        else: termo_mes = 0
+        termo_mes = df_mes[['link']][df_mes['titulo'].str.contains(f'{presidenciavel}')].drop_duplicates().reset_index(drop=True)
+        termo_mes = len(termo_mes)
 
         # Ano
         ano = datetime.datetime(2022, 1, 1, 0, 0, 0)
 
         df_ano = dataframe[dataframe['data'] >= ano]
-        if df_ano[['link']][df_ano['titulo'].str.contains(f'{presidenciavel}')]:
-            termo_ano = df_ano[['link']][df_ano['titulo'].str.contains(f'{presidenciavel}')].drop_duplicates().reset_index(drop=True)
-            termo_ano = len(termo_ano)
-        else:
-            termo_ano = 0
-            
+
+        termo_ano = df_ano[['link']][df_ano['titulo'].str.contains(f'{presidenciavel}')].drop_duplicates().reset_index(drop=True)
+        termo_ano = len(termo_ano)
+        
         time.sleep(3)
         contagem.update_cell(linha, coluna, termo_semana)
         contagem.update_cell(linha, coluna + 1, termo_mes)
