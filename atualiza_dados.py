@@ -11,7 +11,7 @@ from termos_dia import termos_dia
 from ranking_times import ranking_times
 
 spreadsheet_id = os.environ['GOOGLE_SHEET_ID']
-conteudo_codificado =  os.environ['GOOGLE_SHEETS_CREDENTIALS']
+conteudo_codificado = os.environ['GOOGLE_SHEETS_CREDENTIALS']
 conteudo = base64.b64decode(conteudo_codificado)
 credentials = json.loads(conteudo)
 
@@ -60,3 +60,16 @@ termos_dia(palavras_dia)
 ranking = spreadsheet.worksheet('ranking_times')
 ranking_times(globo_sheet, uol_sheet, ranking)
 
+time.sleep(20)
+
+# Matérias raspadas
+jornais = [uol_sheet, jp_sheet, globo_sheet, folha_sheet, estadao_sheet, cnn_sheet]
+quantidade = 0
+
+for jornal in jornais:
+    df = pd.DataFrame(jornal.get_all_records())
+    df = df.drop_duplicates(subset='link')
+    df = df[['link']]
+    quantidade += len(df)
+
+contagem.update_cell(1, 14, quantidade)
