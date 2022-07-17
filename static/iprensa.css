@@ -210,17 +210,17 @@ html, body{
 
     .candidatos {
         grid-row-start: 21;
-        grid-row-end: 24;
-    }
-
-    .escopo{
-        grid-row-start: 24;
         grid-row-end: 25;
     }
 
-    .atualizado{
+    .escopo{
         grid-row-start: 25;
         grid-row-end: 26;
+    }
+
+    .atualizado{
+        grid-row-start: 26;
+        grid-row-end: 27;
     }
 
     .logo .descricao{
