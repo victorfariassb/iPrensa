@@ -205,22 +205,22 @@ html, body{
 
     .esporte{
         grid-row-start: 16;
-        grid-row-end: 20;
+        grid-row-end: 22;
     }
 
     .candidatos {
-        grid-row-start: 20;
-        grid-row-end: 23;
-    }
-
-    .escopo{
-        grid-row-start: 23;
+        grid-row-start: 22;
         grid-row-end: 24;
     }
 
-    .atualizado{
+    .escopo{
         grid-row-start: 24;
         grid-row-end: 25;
+    }
+
+    .atualizado{
+        grid-row-start: 25;
+        grid-row-end: 26;
     }
 
     .logo .descricao{
