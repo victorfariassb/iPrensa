@@ -72,9 +72,11 @@ def sobre():
 
 
 total_materias = contagem_palavras.col_values(14)[1]
+total_materias = "{:,}".format(total_materias).replace(',','.')
+
 ranking = spreadsheet.worksheet('ranking_times')
-times_nome = ranking.col_values(1)[1:]
-times_qtd = ranking.col_values(2)[1:]
+times_nome = ranking.col_values(1)[1:11]
+times_qtd = ranking.col_values(2)[1:11]
 
 palavra_do_dia = palavras[1]
 
