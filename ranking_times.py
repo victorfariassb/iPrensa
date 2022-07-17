@@ -14,7 +14,7 @@ def ranking_times(tabela1, tabela2, ranking):
     tabela2 = pd.DataFrame(tabela2.get_all_records())
     df = pd.concat([tabela1, tabela2], ignore_index=True)
     df = df[['materia', 'data', 'titulo', 'link']]
-    df = df.drop_duplicates(subset='link', keep='first').reset_index(drop=True)
+    df = df.drop_duplicates(subset='link', keep='first').reset_index()
 
     # fazemos a contagem de vezes que cada time apareceu no titulo de uma matéria
     for time in times:
