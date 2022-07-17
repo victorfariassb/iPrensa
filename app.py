@@ -72,11 +72,13 @@ def sobre():
 
 
 total_materias = contagem_palavras.col_values(12)[1]
-times = spreadsheet.worksheet('ranking_times')
-times_nome = times.col_values(1)
-times_qtd = times.col_values(2)
+ranking = spreadsheet.worksheet('ranking_times')
+times_nome = ranking.col_values(1)[1:]
+times_qtd = ranking.col_values(2)[1:]
 
-times_dados = pd.DataFrame(list(zip(palavras, contagem))).sort_values('Quantidade_histórico', ascending=False)
+times_dados = pd.DataFrame(list(zip(times_nome, times_qtd)), columns=['time', 'quantidade'])
+times_dados.quantidade = times_dados.quantidade.astype(int)
+times_dados = times_dados.sort_values('quantidade', ascending=False)
 
 @app.route("/new_home")
 def new_home():
