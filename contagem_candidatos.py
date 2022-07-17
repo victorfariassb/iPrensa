@@ -36,6 +36,7 @@ def contagem_candidatos(base, contagem):
         dataframe['titulo'] = dataframe['titulo'].str.replace('Eduardo Bolsonaro', 'Eduardo B.')
         dataframe['titulo'] = dataframe['titulo'].str.replace('Ciro Nogueira', 'Ciro N.')
 
+        dataframe = dataframe.dropna()
 
         df_semana = dataframe[dataframe['data'] >= semana]
 
