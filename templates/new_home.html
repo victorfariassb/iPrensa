@@ -28,7 +28,7 @@
         </div>
         <div class="palavra_dia">
             <div class="titulo-menor">Palavra do dia ✍️</div>
-            <p>{{ palavra_dia[1] }}</p>
+            <p>{{ palavra_dia }}</p>
         </div>
         <div class="numero_materias">
             <p>{{ total_materias }}</p>
@@ -38,7 +38,7 @@
             <div class="titulo">Ranking dos times ⚽</div>
             <ol>
                 {% for index, row in times_dados.iterrows() %}
-                {% if index != 0 and if index < 12 %}
+                {% if index != 0 %}
                 <li>{{ row[0] }}  — {{ row[1] }}</li>
                 {% endif %}
                 {% endfor %}
