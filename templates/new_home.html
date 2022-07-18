@@ -15,15 +15,21 @@
 <body>
     <div class="home">
         <div class="logo">
+            <div class="intro">
             <h2>iPrensa</h2>
             <img src="../static/detalhe.svg" alt="detalhe loog">
             <div class="descricao">
-            <p>Uma plataformar para entender melhor a impresa na web.</p>
-            <p>Este projeto foi construido no Master em Jornalismo de Dados do Insper.</p>
-        </div>
+                <p>Uma plataformar para entender melhor a impresa na web.</p>
+                <p>Este projeto foi construido no Master em Jornalismo de Dados do Insper.</p>
+            </div>
             <div class="botoes">
-            <button class="sobre">SOBRE</button>
-            <button class="dados">BASE DE DADOS</button>
+                <button class="bttn-sobre">SOBRE</button>
+                <button class="bttn-voltar">VOLTAR</button>
+                <button class="bttn-dados">BASE DE DADOS</button>
+            </div>
+        </div>
+        <div class="sobre">
+            <p>lorem ipsum dolor</p>
         </div>
         </div>
         <div class="palavra_dia">
@@ -39,7 +45,7 @@
             <ol>
                 {% for index, row in times_dados.iterrows() %}
                 {% if index != 0 %}
-                <li>{{ row[0] }}  — {{ row[1] }}</li>
+                <li>{{ row[0] }} — {{ row[1] }}</li>
                 {% endif %}
                 {% endfor %}
             </ol>
@@ -49,7 +55,7 @@
             <ol>
                 {% for index, row in ranking_candidatos.iterrows() %}
                 {% if index != 0 %}
-                <li>{{ row[0] }}  — {{ row[1] }}</li>
+                <li>{{ row[0] }} — {{ row[1] }}</li>
                 {% endif %}
                 {% endfor %}
             </ol>

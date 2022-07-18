@@ -67,7 +67,6 @@ html, body{
     grid-row-end: 6;
     border: 2px solid #000326;
     background-color: #F29F80;
-    position: relative;
 }
 
 .logo h2{
@@ -97,18 +96,29 @@ html, body{
     margin-top: 0
 }
 
+.intro{
+    height: 90%
+}
+
 .botoes{
     display: flex;
-    position: absolute;
-    bottom: 5%;
     justify-content: space-around;
-    width: 95%;
 }
 
 .botoes button{
     background-color: #000326;
     color: white;
     font-size: 1.3rem;
+}
+
+.bttn-voltar{
+    display: none;
+}
+
+.sobre{
+    display: none;
+    width: 90%;
+    height: 100%;
 }
 
 .palavra_dia{
