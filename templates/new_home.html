@@ -17,22 +17,18 @@
         <div class="logo">
             <div class="intro">
                 <div class="marca">
-                <h2>iPrensa</h2>
-                <img src="../static/detalhe.svg" alt="detalhe loog">
-                <div class="descricao">
-                    <p>Uma plataformar para entender melhor a impresa na web.</p>
-                </div>
-                </div>
-                <div class="botoes">
-                    <button class="bttn-sobre">SOBRE</button>
-                    <button class="bttn-voltar">VOLTAR</button>
+                    <h2>iPrensa</h2>
+                    <img src="../static/detalhe.svg" alt="detalhe loog">
+                    <div class="descricao">
+                        <p>Uma plataformar para entender melhor a impresa na web.</p>
+                    </div>
                 </div>
             </div>
             <div class="sobre">
                 <p>Este projeto foi construido no <i>Master em Jornalismo de Dados do Insper</i>.
                     A ideia é que ele sirva como uma plataforma de análise da imprensa, bem como
                     um repositório de dados para pesquisas acadêmicas.</p>
-                    <p>Os dados são raspados da home dos 6 jornais diariamente, de hora em hora.</p>
+                <p>Os dados são raspados da home dos 6 jornais diariamente, de hora em hora.</p>
                 <p>Caso você tenha interesse em fazer pesquisa com os dados, solicite por e-mail
                     para <a href="mailto:victorfariassb@gmail">victorfariassb@gmail.com</a>. Você também
                     pode me encontrar no <a href="https://twitter.com/__victorfarias">Twitter</a>.
@@ -42,17 +38,20 @@
         </div>
         <div class="palavra_dia">
             <div class="titulo-menor">Palavra do dia ✍️</div>
-            <p>Termo mais mencionado nas principais matérias dos 6 jornais raspados. O dado é referente ao dia anterior.</p>
+            <p>Termo mais mencionado nas principais matérias dos 6 jornais raspados. O dado é referente ao dia anterior.
+            </p>
             <p>{{ palavra_dia }}</p>
         </div>
         <div class="numero_materias">
-            <p>O número de matérias raspadas pelo iPrensa até hoje. Os dados começaram a ser raspados em janeiro de 2022.</p>
+            <p>O número de matérias raspadas pelo iPrensa até hoje. Os dados começaram a ser raspados em janeiro de
+                2022.</p>
             <p>{{ total_materias }}</p>
             <div class="titulo-menor">Matérias raspadas</div>
         </div>
         <div class="esporte">
             <div class="titulo">Ranking dos times ⚽</div>
-            <p>A classificação leva em consideração os times mais mencionados em títulos da seção de esportes do Uol e da Globo.com.</p>
+            <p>A classificação leva em consideração os times mais mencionados em títulos da seção de esportes do Uol e
+                da Globo.com.</p>
             <ol>
                 {% for index, row in times_dados.iterrows() %}
                 {% if index != 0 %}
@@ -63,7 +62,8 @@
         </div>
         <div class="candidatos">
             <div class="titulo">Candidatos na imprensa 🗳️</div>
-            <p>A classificação leva em conta menções aos nomes dos candidatos em todos os sites raspados. Manchetes com o mesmo link raspadas duas vezes são consideradas como 1 único ponto.</p>
+            <p>Conta menções aos nomes dos candidatos em todos os sites raspados. Manchetes com o mesmo link
+                raspadas 2 vezes são consideradas como 1 único ponto.</p>
             <ol>
                 {% for index, row in ranking_candidatos.iterrows() %}
                 {% if index != 0 %}
@@ -82,4 +82,5 @@
 </body>
 <script src="{{url_for('static', filename='app.js')}}"></script>
 <script src='../static/app.js'></script>
+
 </html>

@@ -1,16 +1,14 @@
-let bttn_sobre = document.querySelector('.bttn-sobre');
-let bttn_voltar = document.querySelector('.bttn-voltar');
 let main = document.querySelectorAll('.home > div:not(.logo)');
 let home = document.querySelector('.home');
 let intro = document.querySelector('.intro');
-let logo = document.querySelector('.logo');
-let sobre = document.querySelector('.sobre');
 
 
 let esporte = document.querySelector('.esporte');
 let explicacao_esporte = document.querySelector('.esporte p:first-of-type')
 let titulo_esportes = document.querySelector('.esporte .titulo')
 
+let logo = document.querySelector('.logo');
+let sobre = document.querySelector('.sobre');
 let palavra_dia = document.querySelector('.palavra_dia')
 let explicacao_palavra_dia= document.querySelector('.palavra_dia p:first-of-type')
 let candidatos = document.querySelector('.candidatos')
@@ -18,27 +16,21 @@ let explicacao_candidatos = document.querySelector('.candidatos p:first-of-type'
 let numero_materias = document.querySelector('.numero_materias')
 let explicacao_numero_materias = document.querySelector('.numero_materias p:first-of-type')
 
-// página se transforma de modo a apagar dados das outras editorias e mostrar apenas o sobre
-bttn_sobre.onclick = function () {
-    for (let item of main) {
-        item.style.display = 'none';
-    }
-    home.style.display = 'flex';
-    home.style.padding = '0'
-    intro.style.height = '100%';
-
-    bttn_sobre.style.display = 'none';
-    bttn_voltar.style.display = 'inline-block';
-    sobre.style.display = 'block';
-    logo.style.flexDirection = 'row';
-}
-
-// aqui criamos o mecanismo para voltar à página inicial
-bttn_voltar.onclick = function () {
-    window.location.reload();
-}
-
 // funções para mudar o texto e o fundo quando mouseover nas boxes
+
+logo.onmouseover = function() {
+    intro.style.display = 'none'
+    logo.style.backgroundColor = '#000326';
+    sobre.style.display = 'inline-block';
+}
+
+logo.onmouseout = function() {
+    intro.style.display = 'flex'
+    logo.style.backgroundColor = '#F29F80';
+    sobre.style.display = 'none';
+}
+
+
 esporte.onmouseover = function() {
     let lista_esportes = document.querySelectorAll('.esporte li')
     let ol = document.querySelector('.esporte ol')

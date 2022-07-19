@@ -24,8 +24,6 @@ html, body{
     gap: 3vh;
 }
 
-
-
 .home > div{
     padding: 0.7vw;
     display: flex;
@@ -105,28 +103,11 @@ html, body{
     justify-content: space-between;
 }
 
-.botoes{
-    display: flex;
-    justify-content: space-around;
-}
-
-.botoes button{
-    background-color: #000326;
-    color: white;
-    font-size: 1.3rem;
-}
-
-.bttn-voltar{
-    display: none;
-}
-
 .sobre{
     display: none;
-    width: 80%;
-    padding: 2vh 2vw;
-    border-left: 2px solid white;
+    padding: 2vh;
     font-weight: 300;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     
 }
 
@@ -152,10 +133,6 @@ html, body{
     text-align: center
 }
 
-.numero_materias p{
-    margin-bottom: 2vh;
-}
-
 .esporte{
     grid-column-start: 5;
     grid-column-end: 7;
@@ -179,6 +156,7 @@ html, body{
     font-size: 1.1rem;
     text-align: left;
     padding: 0 2vh;
+    margin: auto 0;
 }
 
 .numero_materias p:first-of-type{
@@ -186,6 +164,7 @@ html, body{
     font-size: 1.1rem;
     text-align: left;
     padding: 0 2vh;
+    margin: auto 0;
 }
 
 .candidatos p:first-of-type{
