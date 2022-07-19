@@ -16,32 +16,43 @@
     <div class="home">
         <div class="logo">
             <div class="intro">
-            <h2>iPrensa</h2>
-            <img src="../static/detalhe.svg" alt="detalhe loog">
-            <div class="descricao">
-                <p>Uma plataformar para entender melhor a impresa na web.</p>
-                <p>Este projeto foi construido no Master em Jornalismo de Dados do Insper.</p>
+                <div class="marca">
+                <h2>iPrensa</h2>
+                <img src="../static/detalhe.svg" alt="detalhe loog">
+                <div class="descricao">
+                    <p>Uma plataformar para entender melhor a impresa na web.</p>
+                </div>
+                </div>
+                <div class="botoes">
+                    <button class="bttn-sobre">SOBRE</button>
+                    <button class="bttn-voltar">VOLTAR</button>
+                    <button class="bttn-dados">BASE DE DADOS</button>
+                </div>
             </div>
-            <div class="botoes">
-                <button class="bttn-sobre">SOBRE</button>
-                <button class="bttn-voltar">VOLTAR</button>
-                <button class="bttn-dados">BASE DE DADOS</button>
+            <div class="sobre">
+                <p>Este projeto foi construido no <i>Master em Jornalismo de Dados do Insper</i>.
+                    A ideia é que ele sirva como uma plataforma de análise da imprensa, bem como
+                    um repositório de dados para pesquisas acadêmicas.</p>
+                <p>Caso você tenha interesse em fazer pesquisa com os dados, solicite por e-mail
+                    para <a href="mailto:victorfariassb@gmail">victorfariassb@gmail.com</a>. Você também
+                    pode me encontrar no <a href="https://twitter.com/__victorfarias">Twitter</a>.
+                </p>
+                </p>
             </div>
-        </div>
-        <div class="sobre">
-            <p>lorem ipsum dolor</p>
-        </div>
         </div>
         <div class="palavra_dia">
             <div class="titulo-menor">Palavra do dia ✍️</div>
+            <p>A palavra do dia é o termo mais mencionado nas principais matérias de todos os jornais raspados. O dado é referente ao dia anterior.</p>
             <p>{{ palavra_dia }}</p>
         </div>
         <div class="numero_materias">
+            <p>O número de matérias raspadas pelo iPrensa até hoje. Os dados começaram a ser raspados em janeiro de 2022.</p>
             <p>{{ total_materias }}</p>
             <div class="titulo-menor">Matérias raspadas</div>
         </div>
         <div class="esporte">
             <div class="titulo">Ranking dos times ⚽</div>
+            <p>A classificação leva em consideração os times mais mencionados em títulos da seção de esportes do Uol e da Globo.com.</p>
             <ol>
                 {% for index, row in times_dados.iterrows() %}
                 {% if index != 0 %}
@@ -52,6 +63,7 @@
         </div>
         <div class="candidatos">
             <div class="titulo">Candidatos na imprensa 🗳️</div>
+            <p>A classificação leva em conta menções aos nomes dos candidatos em todos os sites raspados. Manchetes com o mesmo link raspadas duas vezes são consideradas como 1 único ponto.</p>
             <ol>
                 {% for index, row in ranking_candidatos.iterrows() %}
                 {% if index != 0 %}
