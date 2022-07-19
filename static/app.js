@@ -9,6 +9,8 @@ let sobre = document.querySelector('.sobre');
 
 let esporte = document.querySelector('.esporte');
 let explicacao_esporte = document.querySelector('.esporte p:first-of-type')
+let titulo_esportes = document.querySelector('.esporte .titulo')
+
 let palavra_dia = document.querySelector('.palavra_dia')
 let explicacao_palavra_dia= document.querySelector('.palavra_dia p:first-of-type')
 let candidatos = document.querySelector('.candidatos')
@@ -38,17 +40,23 @@ bttn_voltar.onclick = function () {
 }
 
 esporte.onmouseover = function() {
-    let filhos = document.querySelectorAll('.esporte *')
-    for (let filho of filhos) {
-        filho.style.display = 'none'}
+    let lista_esportes = document.querySelectorAll('.esporte li')
+    let ol = document.querySelector('.esporte ol')
+    for (let item of lista_esportes) {
+        item.style.display = 'none';
+    }
+    ol.style.display = 'none';
     esporte.style.backgroundColor = '#D93B18';
     explicacao_esporte.style.display = 'inline-block';
 }
 
 esporte.onmouseout = function() {
-    let filhos = document.querySelectorAll('.esporte *')
-    for (let filho of filhos) {
-        filho.style.display = 'inline-block'}
+    let lista_esportes = document.querySelectorAll('.esporte li')
+    let ol = document.querySelector('.esporte ol')
+    for (let item of lista_esportes) {
+        item.style.display = 'list-item';
+    }
+    ol.style.display = 'block'
     esporte.style.backgroundColor = '#000326';
     explicacao_esporte.style.display = 'none';
 }
@@ -71,17 +79,23 @@ palavra_dia.onmouseout = function() {
 }
 
 candidatos.onmouseover = function() {
-    let filhos = document.querySelectorAll('.candidatos *')
-    for (let filho of filhos) {
-        filho.style.display = 'none'}
+    let lista_candidatos = document.querySelectorAll('.candidatos li')
+    let ol = document.querySelector('.candidatos ol')
+    for (let item of lista_candidatos) {
+        item.style.display = 'none';
+    }
+    ol.style.display = 'none'
     candidatos.style.backgroundColor = '#000326';
     explicacao_candidatos.style.display = 'inline-block';
 }
 
 candidatos.onmouseout = function() {
-    let filhos = document.querySelectorAll('.candidatos *')
-    for (let filho of filhos) {
-        filho.style.display = 'inline-block'}
+    let lista_candidatos = document.querySelectorAll('.candidatos li')
+    let ol = document.querySelector('.candidatos ol')
+    for (let item of lista_candidatos) {
+        item.style.display = 'list-item';
+    }
+    ol.style.display = 'block'
     candidatos.style.backgroundColor = '#D93B18';
     explicacao_candidatos.style.display = 'none';
 }
