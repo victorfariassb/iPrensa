@@ -32,8 +32,6 @@
                 <p>Caso você tenha interesse em fazer pesquisa com os dados, solicite por e-mail
                     para <a href="mailto:victorfariassb@gmail">victorfariassb@gmail.com</a>. Você também
                     pode me encontrar no <a href="https://twitter.com/__victorfarias">Twitter</a>.
-                    Também é possível ver o repositório do projeto no<a
-                        href="https://github.com/victorfariassb/radar_imprensa">GitHub</a>.
                 </p>
                 </p>
             </div>
@@ -61,34 +59,6 @@
                 {% endif %}
                 {% endfor %}
             </ol>
-            <canvas id="bar-chart" width="3" height="1"></canvas>
-
-            {% block javascript %}
-            <script>
-                // load the objects like you would with a normal jinja template i.e. {{ object }}, but add | tojson
-                // pass it into the parse function
-                labels = JSON.parse({{ labels | tojson }})
-                data = JSON.parse({{ data | tojson }})
-                new Chart(document.getElementById("bar-chart"), {
-                    "type": "bar",
-                    "data":
-                    //using the labels here.
-                    {
-                        "labels": labels,
-                        "datasets": [{
-                            "label": "Sentiment Over Time",
-                            //using data here
-                            "data": data,
-                            "fill": false,
-                            "borderColor": "rgb(75, 192, 192)",
-                            "lineTension": 0.1
-                        }]
-                    },
-                    "options": {}
-                });
-            </script>
-
-            {% endblock %}
         </div>
         <div class="candidatos">
             <div class="titulo">Candidatos na imprensa 🗳️</div>
