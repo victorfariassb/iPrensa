@@ -26,13 +26,13 @@
                 <div class="botoes">
                     <button class="bttn-sobre">SOBRE</button>
                     <button class="bttn-voltar">VOLTAR</button>
-                    <button class="bttn-dados">BASE DE DADOS</button>
                 </div>
             </div>
             <div class="sobre">
                 <p>Este projeto foi construido no <i>Master em Jornalismo de Dados do Insper</i>.
                     A ideia é que ele sirva como uma plataforma de análise da imprensa, bem como
                     um repositório de dados para pesquisas acadêmicas.</p>
+                    <p>Os dados são raspados da home dos 6 jornais diariamente, de hora em hora.</p>
                 <p>Caso você tenha interesse em fazer pesquisa com os dados, solicite por e-mail
                     para <a href="mailto:victorfariassb@gmail">victorfariassb@gmail.com</a>. Você também
                     pode me encontrar no <a href="https://twitter.com/__victorfarias">Twitter</a>.
@@ -42,7 +42,7 @@
         </div>
         <div class="palavra_dia">
             <div class="titulo-menor">Palavra do dia ✍️</div>
-            <p>A palavra do dia é o termo mais mencionado nas principais matérias de todos os jornais raspados. O dado é referente ao dia anterior.</p>
+            <p>Termo mais mencionado nas principais matérias dos 6 jornais raspados. O dado é referente ao dia anterior.</p>
             <p>{{ palavra_dia }}</p>
         </div>
         <div class="numero_materias">
@@ -81,5 +81,5 @@
     </div>
 </body>
 <script src="{{url_for('static', filename='app.js')}}"></script>
-
+<script src='../static/app.js'></script>
 </html>

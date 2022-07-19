@@ -23,11 +23,10 @@ bttn_sobre.onclick = function () {
     for (let item of main) {
         item.style.display = 'none';
     }
-    home.style.display = 'inline-block';
+    home.style.display = 'flex';
     home.style.padding = '0'
     intro.style.height = '100%';
 
-    intro.style.borderRight = '2px solid #000326'
     bttn_sobre.style.display = 'none';
     bttn_voltar.style.display = 'inline-block';
     sobre.style.display = 'block';
@@ -39,6 +38,7 @@ bttn_voltar.onclick = function () {
     window.location.reload();
 }
 
+// funções para mudar o texto e o fundo quando mouseover nas boxes
 esporte.onmouseover = function() {
     let lista_esportes = document.querySelectorAll('.esporte li')
     let ol = document.querySelector('.esporte ol')
@@ -46,7 +46,6 @@ esporte.onmouseover = function() {
         item.style.display = 'none';
     }
     ol.style.display = 'none';
-    esporte.style.backgroundColor = '#D93B18';
     explicacao_esporte.style.display = 'inline-block';
 }
 
@@ -57,7 +56,6 @@ esporte.onmouseout = function() {
         item.style.display = 'list-item';
     }
     ol.style.display = 'block'
-    esporte.style.backgroundColor = '#000326';
     explicacao_esporte.style.display = 'none';
 }
 
