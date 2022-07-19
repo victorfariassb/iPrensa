@@ -84,6 +84,9 @@ times_dados = pd.DataFrame(list(zip(times_nome, times_qtd)), columns=['time', 'q
 times_dados.quantidade = times_dados.quantidade.astype(int)
 times_dados = times_dados.sort_values('quantidade', ascending=False).head(11)
 
+data = json.dumps( [times_dados.quantidade] )
+labels=json.dumps( [times.dados.time] )
+
 ranking_candidatos = spreadsheet.worksheet('contagem_candidato')
 candidatos = ranking_candidatos.col_values(2)[1:]
 quantidade_candidatos = ranking_candidatos.col_values(5)[1:]
@@ -94,4 +97,4 @@ ranking_candidatos = ranking_candidatos.groupby(['candidato'])['quantidade'].sum
 @app.route("/new_home")
 def new_home():
     return render_template(
-        "new_home.html", palavra_dia=palavra_do_dia, total_materias=total_materias, times_dados=times_dados, hora=hora, ranking_candidatos=ranking_candidatos)
+        "new_home.html", palavra_dia=palavra_do_dia, total_materias=total_materias, times_dados=times_dados, data=data, labels=labels, hora=hora, ranking_candidatos=ranking_candidatos)
