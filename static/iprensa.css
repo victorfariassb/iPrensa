@@ -133,6 +133,12 @@ html, body{
     text-align: center
 }
 
+.numero_materias p:nth-of-type(2){
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+
 .esporte{
     grid-column-start: 5;
     grid-column-end: 7;
