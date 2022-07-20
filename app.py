@@ -4,7 +4,7 @@ import os
 import json
 import pandas as pd
 
-from flask import Flask, render_template
+from flask import Flask, render_template, json
 
 app = Flask(__name__)
 
@@ -87,6 +87,8 @@ times_dados = times_dados.sort_values('quantidade', ascending=False).head(11)
 ranking_candidatos = spreadsheet.worksheet('contagem_candidato')
 candidatos = ranking_candidatos.col_values(2)[1:]
 quantidade_candidatos = ranking_candidatos.col_values(5)[1:]
+
+print(type(candidatos))
 
 data = json.dumps(candidatos)
 labels=json.dumps(quantidade_candidatos)
