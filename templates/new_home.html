@@ -77,10 +77,14 @@
                             "datasets":[{"label":"Menção aos candidatos",
                                   //using data here
                             "data":	data, 
+                            "backgroundColor": 'rgb(0, 3, 38)',
                             "fill":true,
                             "borderColor":"rgb(0, 3, 38)",
                             "lineTension":0.1}]},
-                        "options":{}});
+                        "options":{
+                            "responsive": true, 
+                            "maintainAspectRatio": false
+                        }});
                     </script>
                 
                 {% endblock %}
