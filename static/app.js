@@ -70,22 +70,22 @@ palavra_dia.onmouseout = function() {
 
 candidatos.onmouseover = function() {
     let lista_candidatos = document.querySelectorAll('.candidatos li')
-    let ol = document.querySelector('.candidatos ol')
+    let chart = document.querySelector('#bar-chart')
     for (let item of lista_candidatos) {
         item.style.display = 'none';
     }
-    ol.style.display = 'none'
+    chart.style.display = 'none'
     candidatos.style.backgroundColor = '#000326';
     explicacao_candidatos.style.display = 'inline-block';
 }
 
 candidatos.onmouseout = function() {
     let lista_candidatos = document.querySelectorAll('.candidatos li')
-    let ol = document.querySelector('.candidatos ol')
+    let chart = document.querySelector('#bar-chart')
     for (let item of lista_candidatos) {
         item.style.display = 'list-item';
     }
-    ol.style.display = 'block'
+    chart.style.display = 'block'
     candidatos.style.backgroundColor = '#D93B18';
     explicacao_candidatos.style.display = 'none';
 }

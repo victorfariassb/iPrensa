@@ -59,41 +59,31 @@
                 {% endif %}
                 {% endfor %}
             </ol>
-            <canvas id="line-chart" width="3" height="1"></canvas>
-
-{% block javascript %}
-	<script>
-  // load the objects like you would with a normal jinja template i.e. {{ object }}, but add | tojson
-  // pass it into the parse function
-	labels = JSON.parse({{ labels | tojson }})
-	data = JSON.parse({{ data | tojson }})
-	new Chart(document.getElementById("line-chart"),{
-		"type":"line",
-		"data":
-			//using the labels here.
-			{"labels":labels, 
-			"datasets":[{"label":"Sentiment Over Time",
-      			//using data here
-			"data":	data, 
-			"fill":false,
-			"borderColor":"rgb(75, 192, 192)",
-			"lineTension":0.1}]},
-		"options":{}});
-    </script>
-
-{% endblock %}
         </div>
         <div class="candidatos">
             <div class="titulo">Candidatos na imprensa 🗳️</div>
             <p>Conta menções aos nomes dos candidatos em todos os sites raspados. Manchetes com o mesmo link
                 raspadas 2 vezes são consideradas como 1 único ponto.</p>
-            <ol>
-                {% for index, row in ranking_candidatos.iterrows() %}
-                {% if index != 0 %}
-                <li>{{ row[0] }} — {{ row[1] }}</li>
-                {% endif %}
-                {% endfor %}
-            </ol>
+                <canvas id="bar-chart" width="80%" height="70%"></canvas>
+                {% block javascript %}
+                    <script>
+                    labels = JSON.parse({{ labels | tojson }})
+                    data = JSON.parse({{ data | tojson }})
+                    new Chart(document.getElementById("bar-chart"),{
+                        "type":"bar",
+                        "data":
+                            //using the labels here.
+                            {"labels":labels, 
+                            "datasets":[{"label":"Menção aos candidatos",
+                                  //using data here
+                            "data":	data, 
+                            "fill":true,
+                            "borderColor":"rgb(255,255,255)",
+                            "lineTension":0.1}]},
+                        "options":{}});
+                    </script>
+                
+                {% endblock %}
         </div>
         <div class="escopo">
             <div class="titulo-rodape"><b>SITES RASPADOS:</b> Globo, Uol, Folha, Estadão, Jovem Pan, CNN</div>

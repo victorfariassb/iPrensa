@@ -90,8 +90,8 @@ quantidade_candidatos = ranking_candidatos.col_values(5)[1:]
 
 print(type(candidatos))
 
-data = json.dumps(candidatos)
-labels=json.dumps(quantidade_candidatos)
+data = json.dumps(quantidade_candidatos)
+labels=json.dumps(candidatos)
 
 
 ranking_candidatos = pd.DataFrame(list(zip(candidatos, quantidade_candidatos)), columns=['candidato', 'quantidade'])
