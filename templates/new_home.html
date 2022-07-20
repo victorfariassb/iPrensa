@@ -59,6 +59,29 @@
                 {% endif %}
                 {% endfor %}
             </ol>
+            <canvas id="line-chart" width="3" height="1"></canvas>
+
+{% block javascript %}
+	<script>
+  // load the objects like you would with a normal jinja template i.e. {{ object }}, but add | tojson
+  // pass it into the parse function
+	labels = JSON.parse({{ labels | tojson }})
+	data = JSON.parse({{ data | tojson }})
+	new Chart(document.getElementById("line-chart"),{
+		"type":"line",
+		"data":
+			//using the labels here.
+			{"labels":labels, 
+			"datasets":[{"label":"Sentiment Over Time",
+      			//using data here
+			"data":	data, 
+			"fill":false,
+			"borderColor":"rgb(75, 192, 192)",
+			"lineTension":0.1}]},
+		"options":{}});
+    </script>
+
+{% endblock %}
         </div>
         <div class="candidatos">
             <div class="titulo">Candidatos na imprensa 🗳️</div>
