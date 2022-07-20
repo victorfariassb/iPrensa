@@ -64,6 +64,7 @@
             <div class="titulo">Candidatos na imprensa 🗳️</div>
             <p>Conta menções aos nomes dos candidatos em todos os sites raspados. Manchetes com o mesmo link
                 raspadas 2 vezes são consideradas como 1 único ponto.</p>
+                <div class="chart-container" style="position: relative; height:95%; width:90%">
                 <canvas id="bar-chart"></canvas>
                 {% block javascript %}
                     <script>
@@ -83,11 +84,11 @@
                             "lineTension":0.1}]},
                         "options":{
                             "responsive": true, 
-                            "maintainAspectRatio": false
                         }});
                     </script>
                 
                 {% endblock %}
+            </div>
         </div>
         <div class="escopo">
             <div class="titulo-rodape"><b>SITES RASPADOS:</b> Globo, Uol, Folha, Estadão, Jovem Pan, CNN</div>
