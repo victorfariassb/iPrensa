@@ -190,7 +190,8 @@ html, body{
 }
 
 #bar-chart{
-    margin-bottom: 1vh;
+    width: 100%;
+    height: 90%;
 }
 
 .escopo {
