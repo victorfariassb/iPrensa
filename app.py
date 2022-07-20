@@ -94,8 +94,8 @@ ranking_candidatos = pd.DataFrame(list(zip(candidatos, quantidade_candidatos)), 
 ranking_candidatos.quantidade = ranking_candidatos.quantidade.astype(int)
 ranking_candidatos = ranking_candidatos.groupby(['candidato'])['quantidade'].sum().reset_index().sort_values('quantidade', ascending=False)
 
-data = json.dumps(ranking_candidatos.quantidade.tolist())
-labels = json.dumps(ranking_candidatos.candidato.tolist())
+data = json.dumps(ranking_candidatos.quantidade[:3].tolist())
+labels = json.dumps(ranking_candidatos.candidato[:3].tolist())
 
 @app.route("/new_home")
 def new_home():
