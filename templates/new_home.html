@@ -8,7 +8,6 @@
         href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;1,300;1,600&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../static/iprensa.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>iMprensa</title>
 </head>
 
@@ -32,6 +31,7 @@
                 <p>Caso você tenha interesse em fazer pesquisa com os dados, solicite por e-mail
                     para <a href="mailto:victorfariassb@gmail">victorfariassb@gmail.com</a>. Você também
                     pode me encontrar no <a href="https://twitter.com/__victorfarias">Twitter</a>.
+                    Também é possível ver o repositório do projeto no<a href="https://github.com/victorfariassb/radar_imprensa">GitHub</a>.
                 </p>
                 </p>
             </div>
@@ -64,31 +64,13 @@
             <div class="titulo">Candidatos na imprensa 🗳️</div>
             <p>Conta menções aos nomes dos candidatos em todos os sites raspados. Manchetes com o mesmo link
                 raspadas 2 vezes são consideradas como 1 único ponto.</p>
-                <div class="chart-container" style="position: relative; height:100%; width:100%">
-                <canvas id="bar-chart"></canvas>
-                {% block javascript %}
-                    <script>
-                    labels = JSON.parse({{ labels | tojson }})
-                    data = JSON.parse({{ data | tojson }})
-                    new Chart(document.getElementById("bar-chart"),{
-                        "type":"bar",
-                        "data":
-                            //using the labels here.
-                            {"labels":labels, 
-                            "datasets":[{"label":"Menção aos candidatos",
-                                  //using data here
-                            "data":	data, 
-                            "backgroundColor": 'rgb(0, 3, 38)',
-                            "fill":true,
-                            "borderColor":"rgb(0, 3, 38)",
-                            "lineTension":0.1}]},
-                        "options":{
-                            "responsive": true, 
-                        }});
-                    </script>
-                
-                {% endblock %}
-            </div>
+            <ol>
+                {% for index, row in ranking_candidatos.iterrows() %}
+                {% if index != 0 %}
+                <li>{{ row[0] }} — {{ row[1] }}</li>
+                {% endif %}
+                {% endfor %}
+            </ol>
         </div>
         <div class="escopo">
             <div class="titulo-rodape"><b>SITES RASPADOS:</b> Globo, Uol, Folha, Estadão, Jovem Pan, CNN</div>
