@@ -14,6 +14,25 @@ html, body{
     background-color: #D9CAB0;
 }
 
+.explicacao{
+    position: absolute;
+    top: 1vh;
+    left: 12vw;
+}
+
+.ml6 {
+    font-weight: 500;
+    overflow: hidden;
+
+  }
+  
+  .ml16 .letter {
+    display: inline-block;
+    line-height: 1em;
+    font-size: 1.2rem;
+
+  }
+
 .home {
     width: 100vw;
     height: 80%;
@@ -209,11 +228,11 @@ html, body{
 
 @media (max-width: 768px) {
     .home{
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-auto-rows: 10vh;
     gap: 2vh;
-    height: 95%;
-    margin-bottom: 2vh;
+    height: 80%;
+    margin: auto 5vw;
     }
     .logo, .palavra_dia, .numero_materias, .esporte, .escopo, .candidatos, .atualizado{
         grid-column-start: 1;
@@ -257,6 +276,11 @@ html, body{
 
     .logo .descricao{
         font-size: 1.2rem;
+    }
+    .explicacao {
+        top: 1vh;
+        left: 5vw;
+        width: 90%;
     }
 
 }

@@ -8,16 +8,19 @@
         href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;1,300;1,600&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../static/iprensa.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <title>iMprensa</title>
 </head>
-
 <body>
+    <div class="explicacao">
+    <h1 class="ml16">Passe o mouse nas caixas</h1>
+</div>
     <div class="home">
         <div class="logo">
             <div class="intro">
                 <div class="marca">
                     <h2>iPrensa</h2>
-                    <img src="../static/detalhe.svg" alt="detalhe loog">
+                    <img src="../static/detalhe.svg" alt="detalhe logo">
                     <div class="descricao">
                         <p>Uma plataformar para entender melhor a impresa na web.</p>
                     </div>
@@ -31,7 +34,7 @@
                 <p>Caso você tenha interesse em fazer pesquisa com os dados, solicite por e-mail
                     para <a href="mailto:victorfariassb@gmail">victorfariassb@gmail.com</a>. Você também
                     pode me encontrar no <a href="https://twitter.com/__victorfarias">Twitter</a>.
-                    Também é possível ver o repositório do projeto no<a href="https://github.com/victorfariassb/radar_imprensa">GitHub</a>.
+                    Também é possível ver o repositório do projeto no <a href="https://github.com/victorfariassb/radar_imprensa">GitHub</a>.
                 </p>
                 </p>
             </div>
@@ -43,7 +46,7 @@
             <p>{{ palavra_dia }}</p>
         </div>
         <div class="numero_materias">
-            <p>O número de matérias raspadas pelo iPrensa até hoje. Os dados começaram a ser raspados em janeiro de
+            <p>O número de matérias analisadas pelo iPrensa até hoje. Os dados começaram a ser coletados em janeiro de
                 2022.</p>
             <p>{{ total_materias }}</p>
             <div class="titulo-menor">Matérias raspadas</div>
@@ -67,7 +70,7 @@
             <ol>
                 {% for index, row in ranking_candidatos.iterrows() %}
                 {% if index != 0 %}
-                <li>{{ row[0] }} — {{ row[1] }}</li>
+                <li>{{ row[0] }} — {{ row[2] }} ⬆️{{ row[1] }} em 7 dias</li>
                 {% endif %}
                 {% endfor %}
             </ol>

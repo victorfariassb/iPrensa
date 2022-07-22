@@ -4,7 +4,7 @@ import os
 import json
 import pandas as pd
 
-from flask import Flask, render_template, json
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -86,18 +86,15 @@ times_dados = times_dados.sort_values('quantidade', ascending=False).head(11)
 
 ranking_candidatos = spreadsheet.worksheet('contagem_candidato')
 candidatos = ranking_candidatos.col_values(2)[1:]
-quantidade_candidatos = ranking_candidatos.col_values(5)[1:]
+quantidade_ultima_semana = ranking_candidatos.col_values(3)[1:]
+quantidade_total_candidatos = ranking_candidatos.col_values(5)[1:]
 
-print(type(candidatos))
-
-ranking_candidatos = pd.DataFrame(list(zip(candidatos, quantidade_candidatos)), columns=['candidato', 'quantidade'])
-ranking_candidatos.quantidade = ranking_candidatos.quantidade.astype(int)
-ranking_candidatos = ranking_candidatos.groupby(['candidato'])['quantidade'].sum().reset_index().sort_values('quantidade', ascending=False)
-
-data = json.dumps(ranking_candidatos.quantidade[:3].tolist())
-labels = json.dumps(ranking_candidatos.candidato[:3].tolist())
+ranking_candidatos = pd.DataFrame(list(zip(candidatos, quantidade_ultima_semana, quantidade_total_candidatos)), columns=['candidato', '7dias', 'quantidade'])
+ranking_candidatos.quantidade_total_candidatos = ranking_candidatos.quantidade_total_candidatos.astype(int)
+ranking_candidatos.quantidade_ultima_semana = ranking_candidatos.quantidade_ultima_semana.astype(int)
+ranking_candidatos = ranking_candidatos.groupby(['candidato'])['7dias', 'quantidade'].sum().reset_index().sort_values('quantidade', ascending=False)
 
 @app.route("/new_home")
 def new_home():
     return render_template(
-        "new_home.html", palavra_dia=palavra_do_dia, total_materias=total_materias, times_dados=times_dados, hora=hora, ranking_candidatos=ranking_candidatos, data=data, labels=labels)
+        "new_home.html", palavra_dia=palavra_do_dia, total_materias=total_materias, times_dados=times_dados, hora=hora, ranking_candidatos=ranking_candidatos)
