@@ -97,4 +97,4 @@ ranking_candidatos = ranking_candidatos.groupby(['candidato'])['quantidade_ultim
 @app.route("/new_home")
 def new_home():
     return render_template(
-        "new_home.html", palavra_dia=palavra_do_dia, total_materias=total_materias, times_dados=times_dados, hora=hora, ranking_candidatos=ranking_candidatos, palavras=palavras)
+        "new_home.html", palavra_dia=palavra_do_dia, total_materias=total_materias, times_dados=times_dados, hora=hora, ranking_candidatos=ranking_candidatos, palavras=json.dumps(palavras[1:]))
