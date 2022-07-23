@@ -62,7 +62,6 @@ html, body{
 
 .titulo-menor{
     font-weight: 600;
-    text-transform: uppercase;
     margin: 1vh;
     font-size: 1.2rem;
 }
@@ -197,7 +196,7 @@ button{
     display: none;
     font-size: 1.1rem;
     text-align: left;
-    padding: 0 2vh;
+    padding: 0 1vh;
     margin: auto 0;
 }
 
@@ -233,6 +232,19 @@ button{
     grid-row-end: 7;
     border: 2px solid #000326;
     background-color: #F25E3D;
+}
+
+.wordcloud {
+    display: none;
+    border: 2px solid #000326;
+    background-color: #F25E3D;
+    padding: 2vh;
+    color: white;
+}
+
+.wordcloud h2{
+    text-transform: uppercase;
+
 }
 
 @media (max-width: 768px) {

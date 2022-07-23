@@ -9,6 +9,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../static/iprensa.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
     <title>iMprensa</title>
 </head>
 <body>
@@ -38,7 +40,7 @@
                 </p>
             </div>
             <div class="botao">
-                <button type="button">Outras análises</button>
+                <button class="button">Outras análises</button>
             </div>
         </div>
         <div class="palavra_dia">
@@ -48,7 +50,7 @@
             <p>{{ palavra_dia }}</p>
         </div>
         <div class="numero_materias">
-            <p>O número de matérias analisadas pelo iPrensa até hoje. Os dados começaram a ser coletados em janeiro de
+            <p>O número de matérias analisadas até hoje. Os dados começaram a ser coletados em janeiro de
                 2022.</p>
             <p>{{ total_materias }}</p>
             <div class="titulo-menor">Matérias raspadas</div>
@@ -83,6 +85,55 @@
         <div class="atualizado">
             <div class="titulo-rodape"><b>ATUALIZADO EM:</b> {{ hora }}</div>
         </div>
+    </div>
+    <div class="wordcloud">
+        <h2>Ontem em uma ☁️ de palavras</h2>
+        <div id="my_dataviz"></div>
+        <script>
+
+            // List of words
+            var myWords = ["Hello", "Everybody", "How", "Are", "You", "Today", "It", "Is", "A", "Lovely", "Day", "I", "Love", "Coding", "In", "My", "Van", "Mate"]
+            
+            // set the dimensions and margins of the graph
+            var margin = {top: 10, right: 10, bottom: 10, left: 10},
+                width = 450 - margin.left - margin.right,
+                height = 450 - margin.top - margin.bottom;
+            
+            // append the svg object to the body of the page
+            var svg = d3.select("#my_dataviz").append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+              .append("g")
+                .attr("transform",
+                      "translate(" + margin.left + "," + margin.top + ")");
+            
+            // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
+            var layout = d3.layout.cloud()
+              .size([width, height])
+              .words(myWords.map(function(d) { return {text: d}; }))
+              .padding(10)
+              .fontSize(60)
+              .on("end", draw);
+            layout.start();
+            
+            // This function takes the output of 'layout' above and draw the words
+            // Better not to touch it. To change parameters, play with the 'layout' variable above
+            function draw(words) {
+              svg
+                .append("g")
+                  .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+                  .selectAll("text")
+                    .data(words)
+                  .enter().append("text")
+                    .style("font-size", function(d) { return d.size + "px"; })
+                    .style("fill", "white")
+                    .attr("text-anchor", "middle")
+                    .attr("transform", function(d) {
+                      return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                    })
+                    .text(function(d) { return d.text; });
+            }
+            </script>
     </div>
 </body>
 <script src="{{url_for('static', filename='app.js')}}"></script>

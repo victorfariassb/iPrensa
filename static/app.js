@@ -1,7 +1,6 @@
 let main = document.querySelectorAll('.home > div:not(.logo)');
 let home = document.querySelector('.home');
 let intro = document.querySelector('.intro');
-let botao = document.querySelector('.botao');
 
 
 let esporte = document.querySelector('.esporte');
@@ -23,12 +22,14 @@ logo.onmouseover = function() {
     intro.style.display = 'none';
     logo.style.backgroundColor = '#000326';
     sobre.style.display = 'inline-block';
+    sobre.style.marginBottom = '9.5vh';
 }
 
 logo.onmouseout = function() {
     intro.style.display = 'flex';
     logo.style.backgroundColor = '#F29F80';
     sobre.style.display = 'none';
+    sobre.style.marginBottom = '3vh'
 }
 
 
@@ -108,7 +109,7 @@ numero_materias.onmouseout = function() {
 }
 
 
-// Wrap every letter in a span
+// Fazer o texto de explicacao surgir e desaparecer
 var textWrapper = document.querySelector('.ml16');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
@@ -118,5 +119,21 @@ anime.timeline({loop: false})
     translateY: [-100,0],
     easing: "easeOutExpo",
     duration: 1400,
-    delay: (el, i) => 30 * i
-  })
+    delay: (el, i) => 50 * i
+  }).add({
+    targets: '.ml16',
+    opacity: 0,
+    duration: 2000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+
+
+
+let botao = document.querySelector('.button');
+botao.onclick = function() {
+    home.style.display = 'none';
+    let wordcloud = document.querySelector('.wordcloud')
+    wordcloud.style.display = 'flex'
+    wordcloud.style.flexDirection = 'column'
+}
