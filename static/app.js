@@ -1,6 +1,7 @@
 let main = document.querySelectorAll('.home > div:not(.logo)');
 let home = document.querySelector('.home');
 let intro = document.querySelector('.intro');
+let botao = document.querySelector('.botao');
 
 
 let esporte = document.querySelector('.esporte');
@@ -19,13 +20,13 @@ let explicacao_numero_materias = document.querySelector('.numero_materias p:firs
 // funções para mudar o texto e o fundo quando mouseover nas boxes
 
 logo.onmouseover = function() {
-    intro.style.display = 'none'
+    intro.style.display = 'none';
     logo.style.backgroundColor = '#000326';
     sobre.style.display = 'inline-block';
 }
 
 logo.onmouseout = function() {
-    intro.style.display = 'flex'
+    intro.style.display = 'flex';
     logo.style.backgroundColor = '#F29F80';
     sobre.style.display = 'none';
 }

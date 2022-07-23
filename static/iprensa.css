@@ -127,7 +127,16 @@ html, body{
     padding: 2vh;
     font-weight: 300;
     font-size: 1.1rem;
-    
+    margin-bottom: 3vh;
+}
+
+.botao{
+    text-align: center;
+}
+
+button{
+    border-radius: 3px;
+    font-size: 1.1rem;
 }
 
 .palavra_dia{
@@ -277,8 +286,13 @@ html, body{
     .logo .descricao{
         font-size: 1.2rem;
     }
+
+    .sobre{
+        margin-bottom: 1.1vh;
+    }
+
     .explicacao {
-        top: 1vh;
+        top: 0.8vh;
         left: 5vw;
         width: 90%;
     }

@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="explicacao">
-    <h1 class="ml16">Passe o mouse nas caixas</h1>
+    <h1 class="ml16">Passe o mouse sobre as caixas</h1>
 </div>
     <div class="home">
         <div class="logo">
@@ -36,7 +36,9 @@
                     pode me encontrar no <a href="https://twitter.com/__victorfarias">Twitter</a>.
                     Também é possível ver o repositório do projeto no <a href="https://github.com/victorfariassb/radar_imprensa">GitHub</a>.
                 </p>
-                </p>
+            </div>
+            <div class="botao">
+                <button type="button">Outras análises</button>
             </div>
         </div>
         <div class="palavra_dia">
@@ -65,12 +67,12 @@
         </div>
         <div class="candidatos">
             <div class="titulo">Candidatos na imprensa 🗳️</div>
-            <p>Conta menções aos nomes dos candidatos em todos os sites raspados. Manchetes com o mesmo link
-                raspadas 2 vezes são consideradas como 1 único ponto.</p>
+            <p>Conta menções aos candidatos nos sites raspados. Notícias com o mesmo link
+                raspadas 2 vezes são consideradas como um único ponto. A ⬆️ é referente aos últimos 7 dias.</p>
             <ol>
                 {% for index, row in ranking_candidatos.iterrows() %}
                 {% if index != 0 %}
-                <li>{{ row[0] }} — {{ row[2] }} ⬆️{{ row[1] }} em 7 dias</li>
+                <li>{{ row[0] }} — {{ row[2] }} ⬆️{{ row[1] }}</li>
                 {% endif %}
                 {% endfor %}
             </ol>
