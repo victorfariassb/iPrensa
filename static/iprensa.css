@@ -246,6 +246,10 @@ button{
     text-transform: uppercase;
 }
 
+#my_dataviz{
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .home{
     grid-template-columns: 1fr;
@@ -306,6 +310,10 @@ button{
         top: 0.8vh;
         left: 5vw;
         width: 90%;
+    }
+
+    .wordcloud{
+        width: 80%;
     }
 
 }
