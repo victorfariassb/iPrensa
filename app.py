@@ -90,8 +90,8 @@ quantidade_ultima_semana = ranking_candidatos.col_values(3)[1:]
 quantidade_total_candidatos = ranking_candidatos.col_values(5)[1:]
 
 ranking_candidatos = pd.DataFrame(list(zip(candidatos, quantidade_ultima_semana, quantidade_total_candidatos)), columns=['candidato', '7dias', 'quantidade'])
-ranking_candidatos.quantidade_total_candidatos = ranking_candidatos.quantidade_total_candidatos.astype(int)
-ranking_candidatos.quantidade_ultima_semana = ranking_candidatos.quantidade_ultima_semana.astype(int)
+ranking_candidatos.quantidade = ranking_candidatos.quantidade.astype(int)
+ranking_candidatos.7dias = ranking_candidatos.7dias.astype(int)
 ranking_candidatos = ranking_candidatos.groupby(['candidato'])['7dias', 'quantidade'].sum().reset_index().sort_values('quantidade', ascending=False)
 
 @app.route("/new_home")
