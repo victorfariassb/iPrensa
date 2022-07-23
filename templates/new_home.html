@@ -92,7 +92,9 @@
         <script>
 
             // List of words
-            var myWords = [{{palavras_cloud}}]
+            {% for palavra in palavras_cloud %}
+            var myWords = [{{palavra}}]
+            {% endfor %}
             
             // set the dimensions and margins of the graph
             var margin = {top: 10, right: 10, bottom: 10, left: 10},
