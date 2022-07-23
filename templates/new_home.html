@@ -111,7 +111,7 @@
               .size([width, height])
               .words(myWords.map(function(d) { return {text: d}; }))
               .padding(10)
-              .fontSize(60)
+              .fontSize(30)
               .on("end", draw);
             layout.start();
             
@@ -124,7 +124,7 @@
                   .selectAll("text")
                     .data(words)
                   .enter().append("text")
-                    .style("font-size", function(d) { return d.size + "px"; })
+                    .style("font-size", 20)
                     .style("fill", "white")
                     .attr("text-anchor", "middle")
                     .attr("transform", function(d) {
