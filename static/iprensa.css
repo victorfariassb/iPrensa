@@ -248,13 +248,34 @@ button{
     justify-content: space-between;
 }
 
+.logo2{
+    width: 20%;
+    height: 30%;
+    background-color: #F29F80;
+    border: 2px solid #000326;
+}
+
+.logo2 .marca{
+    text-align: center;
+}
+
+.logo2 h2{
+    font-family: "Libre Bodoni";
+    color: white;
+    font-weight: 1000;
+}
+
+.logo2 img{
+    width: 80%;
+}
+
 .wordcloud, .bbb {
     border: 2px solid #000326;
-    background-color: #F29F80;
+    background-color: #F25E3D;
     margin: 0;
     padding: 2vh;
     color: white;
-    width: 40%;
+    width: 38%;
     height: 100%
 }
 
@@ -268,18 +289,21 @@ button{
 
 .voltar{
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    width: 50%;
+    margin: 1vh auto;
+    justify-content: center;
 }
 
-.voltar button{
-    width: 100%;
-    height: 10%;
-}
 
 @media (max-width: 768px) {
+    body{
+        align-items: center;
+    }
+    
     .home{
     grid-template-columns: 1fr;
-    grid-auto-rows: 10vh;
+    grid-template-rows: repeat(27, 50px);
     gap: 2vh;
     height: 80%;
     margin: auto 5vw;
@@ -349,9 +373,9 @@ button{
 
     .home2{
         flex-direction: column;
-        height: 100%;
-        width: 95%;
-        margin: auto;
+        height: 95%;
+        width: 90%;
+        margin: auto 5vw;
     }
     .wordcloud, .bbb{
         margin: 2vh auto;
@@ -365,6 +389,11 @@ button{
     .voltar button{
         width: 40%;
         height: 100%;
+    }
+
+    .logo2{
+        width: 100%;
+        height: 40%;
     }
 
 }

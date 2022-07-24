@@ -90,6 +90,17 @@
         </div>
     </div>
     <div class="home2">
+        <div class="logo2">
+            <div class="intro2">
+                <div class="marca">
+                    <h2>iPrensa</h2>
+                    <img src="../static/detalhe.svg" alt="detalhe logo">
+                </div>
+            </div>
+            <div class="voltar">
+                <button onClick="history.go(0);">Início</button>
+            </div>
+        </div>
         <div class="wordcloud">
             <div class="titulo">Ontem em uma ☁️ de palavras</div>
             <div id="my_dataviz">
@@ -238,9 +249,7 @@
                 </script>
             </div>
         </div>
-        <div class="voltar">
-            <button onClick="history.go(0);">Início</button>
-        </div>
+
     </div>
 </body>
 <script src="{{url_for('static', filename='app.js')}}"></script>
