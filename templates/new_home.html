@@ -158,7 +158,7 @@
                 <script>
 
                     // set the dimensions and margins of the graph
-                    var margin = { top: 20, right: 30, bottom: 30, left: 30 },
+                    var margin = { top: 20, right: 30, bottom: 40, left: 30 },
                         width = 350 - margin.left - margin.right,
                         height = 400 - margin.top - margin.bottom;
 
@@ -197,6 +197,12 @@
                     svg.append("g")
                         .attr("transform", "translate(0," + height + ")")
                         .call(d3.axisBottom(x));
+                        svg.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", width - 70)
+    .attr("y", height + 35)
+    .text("Dias de programa");
 
                     // Add Y axis
                     var y = d3.scaleLinear()

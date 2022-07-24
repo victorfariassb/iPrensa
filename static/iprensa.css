@@ -243,7 +243,7 @@ button{
 .home2{
     display: none;
     width: 100vw;
-    height: 80%;
+    height: 90%;
     margin: auto 12vw;
     justify-content: space-between;
 }
@@ -263,6 +263,7 @@ button{
     font-family: "Libre Bodoni";
     color: white;
     font-weight: 1000;
+    font-size: 1.2rem;
 }
 
 .logo2 img{
@@ -303,7 +304,7 @@ button{
     
     .home{
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(27, 50px);
+    grid-template-rows: repeat(22, 70px);
     gap: 2vh;
     height: 80%;
     margin: auto 5vw;
@@ -315,42 +316,42 @@ button{
 
     .logo{
         grid-row-start: 1;
-        grid-row-end: 11;
+        grid-row-end: 6;
     }
 
     .botao{
-        grid-row-start: 11;
-        grid-row-end: 12;
+        grid-row-start: 6;
+        grid-row-end: 7;
     }
 
     .palavra_dia{
-        grid-row-start: 12;
-        grid-row-end: 14;
+        grid-row-start: 7;
+        grid-row-end: 9;
     }
 
     .numero_materias{
-        grid-row-start: 14;
-        grid-row-end: 16;
+        grid-row-start: 9;
+        grid-row-end: 11;
     }
 
     .esporte{
-        grid-row-start: 16;
-        grid-row-end: 21;
+        grid-row-start: 11;
+        grid-row-end: 16;
     }
 
     .candidatos {
-        grid-row-start: 21;
-        grid-row-end: 25;
+        grid-row-start: 16;
+        grid-row-end: 20;
     }
 
     .escopo{
-        grid-row-start: 25;
-        grid-row-end: 26;
+        grid-row-start: 20;
+        grid-row-end: 21;
     }
 
     .atualizado{
-        grid-row-start: 26;
-        grid-row-end: 27;
+        grid-row-start: 21;
+        grid-row-end: 22;
     }
 
     .logo .descricao{
