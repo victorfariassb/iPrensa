@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <title>iMprensa</title>
 </head>
 
@@ -140,6 +141,7 @@
         </div>
         <div class="bbb">
             <div class="titulo">Ranking do BBB 👀</div>
+            <select id="selectButton"></select>
             <div id="my_dataviz2">
                 <script>
 
@@ -149,7 +151,7 @@
                         height = 450 - margin.top - margin.bottom;
                     
                     // append the svg object to the body of the page
-                    var svg = d3.select("#my_dataviz")
+                    var svg = d3.select("#my_dataviz2")
                       .append("svg")
                         .attr("width", width + margin.left + margin.right)
                         .attr("height", height + margin.top + margin.bottom)
@@ -158,11 +160,11 @@
                               "translate(" + margin.left + "," + margin.top + ")");
                     
                     //Read the data
-                    d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv",
+                    d3.csv("https://raw.githubusercontent.com/victorfariassb/radar_imprensa/main/base_dados/ranking_bbb.csv",
                     
                       // When reading the csv, I must format variables:
                       function(d){
-                        return { date : d3.timeParse("%Y-%m-%d")(d.date), value : d.value }
+                        return { date : d3.timeParse("%Y-%m-%d")(d.data), value : d.acumulado }
                       },
                     
                       // Now I can use this dataset:
