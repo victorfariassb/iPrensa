@@ -119,7 +119,7 @@
                         .attr("height", height + margin.top + margin.bottom)
                         .append("g")
                         .attr("transform",
-                            "translate(" + margin.left + "," + margin.top + ")");
+                            "translate(" + margin.left - 20 + "," + margin.top + ")");
 
                     // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
                     var layout = d3.layout.cloud()
