@@ -135,5 +135,4 @@ let home2 = document.querySelector('.home2')
 botao.onclick = function() {
     home.style.display = 'none';
     home2.style.display = 'flex'
-    home2.style.flexDirection = 'row'
 }

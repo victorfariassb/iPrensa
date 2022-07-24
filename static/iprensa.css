@@ -242,18 +242,20 @@ button{
 
 .home2{
     display: none;
-    width: 100%;
+    width: 100vw;
     height: 80%;
-    margin: auto
+    margin: auto 12vw;
+    justify-content: space-between;
 }
 
 .wordcloud, .bbb {
     border: 2px solid #000326;
-    background-color: #F25E3D;
+    background-color: #F29F80;
+    margin: 0;
     padding: 2vh;
     color: white;
-    margin: auto;
-    justify-content: start;
+    width: 40%;
+    height: 100%
 }
 
 .wordcloud h2{
@@ -262,6 +264,16 @@ button{
 
 #my_dataviz{
     text-align: center;
+}
+
+.voltar{
+    display: flex;
+    align-items: flex-end;
+}
+
+.voltar button{
+    width: 100%;
+    height: 10%;
 }
 
 @media (max-width: 768px) {
@@ -333,6 +345,26 @@ button{
 
     .wordcloud{
         width: 95%;
+    }
+
+    .home2{
+        flex-direction: column;
+        height: 100%;
+        width: 95%;
+        margin: auto;
+    }
+    .wordcloud, .bbb{
+        margin: 2vh auto;
+        width: 100%;
+    }
+
+    .voltar{
+        align-items: center;
+    }
+
+    .voltar button{
+        width: 40%;
+        height: 100%;
     }
 
 }

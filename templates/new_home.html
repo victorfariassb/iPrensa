@@ -141,14 +141,15 @@
         </div>
         <div class="bbb">
             <div class="titulo">Ranking do BBB 👀</div>
+            <p>Contagem de vezes que o participante apareceu em matérias da globo.com</p>
             <select id="selectButton"></select>
             <div id="my_dataviz2">
                 <script>
 
                     // set the dimensions and margins of the graph
-                    var margin = { top: 10, right: 30, bottom: 30, left: 60 },
+                    var margin = { top: 20, right: 30, bottom: 30, left: 30 },
                         width = 350 - margin.left - margin.right,
-                        height = 450 - margin.top - margin.bottom;
+                        height = 400 - margin.top - margin.bottom;
 
                     // append the svg object to the body of the page
                     var svg = d3.select("#my_dataviz2")
@@ -199,7 +200,7 @@
                         .append("path")
                         .datum(data)
                         .attr("d", d3.line()
-                            .x(function (d) { return x(d3.timeParse(d.Dia))})
+                            .x(function (d) { return x(d.Dia)})
                             .y(function (d) { return y(d.Arthur) })
                         )
                         .attr("stroke", function (d) { return myColor("Arthur") })
@@ -218,8 +219,8 @@
                             .transition()
                             .duration(1000)
                             .attr("d", d3.line()
-                                .x(function (d) { return x((d.Dia)) })
-                                .y(function (d) { return y(d.selectedGroup) })
+                                .x(function (d) { return x(+d.time) })
+                                .y(function (d) { return y(+d.value) })
                             )
                             .attr("stroke", function (d) { return myColor(selectedGroup) })
                     }
@@ -237,7 +238,7 @@
                 </script>
             </div>
         </div>
-        <div>
+        <div class="voltar">
             <button onClick="history.go(0);">Início</button>
         </div>
     </div>
