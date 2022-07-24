@@ -160,14 +160,9 @@
                             "translate(" + margin.left + "," + margin.top + ")");
 
                     //Read the data
-                    d3.csv("https://raw.githubusercontent.com/victorfariassb/radar_imprensa/main/base_dados/ranking_bbb.csv", 
-
-                    function(d){
-                        return { date : d3.timeParse("%Y-%m-%d")(d.data)}
-                    },
+                    d3.csv("https://raw.githubusercontent.com/victorfariassb/radar_imprensa/main/base_dados/ranking_bbb.csv",
 
                     function (data) {
-                    
                     var allGroup = ['Arthur', 'Brunna', 'Bárbara', 'DG', 'Eliezer', 'Eslovênia', 'Gustavo', 'Jade', 'Jessi', 'Larissa', 'Laís', 'Linn', 'Lucas', 'Luciano', 'Maria', 'Naiara', 'Nát', 'PA', 'Rodrigo', 'Scooby', 'Tiago', 'Viny']
 
                     d3.select("#selectButton")
@@ -185,7 +180,7 @@
 
                     // Add X axis --> it is a date format
                     var x = d3.scaleLinear()
-                        .domain([0, 10])
+                        .domain([0, 100])
                         .range([0, width]);
                     svg.append("g")
                         .attr("transform", "translate(0," + height + ")")
@@ -193,7 +188,7 @@
 
                     // Add Y axis
                     var y = d3.scaleLinear()
-                        .domain([0, 20])
+                        .domain([0, 700])
                         .range([height, 0]);
                     svg.append("g")
                         .call(d3.axisLeft(y));
@@ -204,8 +199,8 @@
                         .append("path")
                         .datum(data)
                         .attr("d", d3.line()
-                            .x(function (d) { return x(+d.data) })
-                            .y(function (d) { return y(+d.Arthur) })
+                            .x(function (d) { return x(d3.timeParse(d.Dia))})
+                            .y(function (d) { return y(d.Arthur) })
                         )
                         .attr("stroke", function (d) { return myColor("Arthur") })
                         .style("stroke-width", 4)
@@ -215,7 +210,7 @@
                     function update(selectedGroup) {
 
                         // Create new data with the selection?
-                        var dataFilter = data.map(function (d) { return { time: d.data, value: d[selectedGroup] } })
+                        var dataFilter = data.map(function (d) { return { time: d.Dia, value: d[selectedGroup] } })
 
                         // Give these new data to update line
                         line
@@ -223,8 +218,8 @@
                             .transition()
                             .duration(1000)
                             .attr("d", d3.line()
-                                .x(function (d) { return x(+d.time) })
-                                .y(function (d) { return y(+d.value) })
+                                .x(function (d) { return x((d.Dia)) })
+                                .y(function (d) { return y(d.value) })
                             )
                             .attr("stroke", function (d) { return myColor(selectedGroup) })
                     }
