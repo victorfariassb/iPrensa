@@ -131,9 +131,9 @@ anime.timeline({loop: false})
 
 
 let botao = document.querySelector('.button');
+let home2 = document.querySelector('.home2')
 botao.onclick = function() {
     home.style.display = 'none';
-    let wordcloud = document.querySelector('.wordcloud')
-    wordcloud.style.display = 'flex'
-    wordcloud.style.flexDirection = 'column'
+    home2.style.display = 'flex'
+    home2.style.flexDirection = 'row'
 }

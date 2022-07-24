@@ -13,10 +13,11 @@
     <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
     <title>iMprensa</title>
 </head>
+
 <body>
     <div class="explicacao">
-    <h1 class="ml16">Passe o mouse sobre as caixas</h1>
-</div>
+        <h1 class="ml16">Passe o mouse sobre as caixas</h1>
+    </div>
     <div class="home">
         <div class="logo">
             <div class="intro">
@@ -36,12 +37,13 @@
                 <p>Caso você tenha interesse em fazer pesquisa com os dados, solicite por e-mail
                     para <a href="mailto:victorfariassb@gmail">victorfariassb@gmail.com</a>. Você também
                     pode me encontrar no <a href="https://twitter.com/__victorfarias">Twitter</a>.
-                    Também é possível ver o repositório do projeto no <a href="https://github.com/victorfariassb/radar_imprensa">GitHub</a>.
+                    Também é possível ver o repositório do projeto no <a
+                        href="https://github.com/victorfariassb/radar_imprensa">GitHub</a>.
                 </p>
             </div>
-            <div class="botao">
-                <button class="button">Outras análises</button>
-            </div>
+        </div>
+        <div class="botao">
+            <button class="button">Outras análises</button>
         </div>
         <div class="palavra_dia">
             <div class="titulo-menor">Palavra do dia ✍️</div>
@@ -86,55 +88,63 @@
             <div class="titulo-rodape"><b>ATUALIZADO EM:</b> {{ hora }}</div>
         </div>
     </div>
-    <div class="wordcloud">
-        <h2>Ontem em uma ☁️ de palavras</h2>
-        <div id="my_dataviz"></div>
-        <script>
-            // List of words
-            var myWords = {{palavras|safe}}
-            
-            // set the dimensions and margins of the graph
-            var margin = {top: 10, right: 10, bottom: 10, left: 10},
-                width = 350 - margin.left - margin.right,
-                height = 450 - margin.top - margin.bottom;
-            
-            // append the svg object to the body of the page
-            var svg = d3.select("#my_dataviz").append("svg")
-                .attr("width", width + margin.left + margin.right)
-                .attr("height", height + margin.top + margin.bottom)
-              .append("g")
-                .attr("transform",
-                      "translate(" + margin.left + "," + margin.top + ")");
-            
-            // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
-            var layout = d3.layout.cloud()
-              .size([width, height])
-              .words(myWords.map(function(d) { return {text: d}; }))
-              .padding(10)
-              .fontSize(30)
-              .on("end", draw);
-            layout.start();
-            
-            // This function takes the output of 'layout' above and draw the words
-            // Better not to touch it. To change parameters, play with the 'layout' variable above
-            function draw(words) {
-              svg
-                .append("g")
-                  .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
-                  .selectAll("text")
-                    .data(words)
-                  .enter().append("text")
-                    .style("font-size", 30)
-                    .style("fill", "white")
-                    .attr("text-anchor", "middle")
-                    .attr("transform", function(d) {
-                      return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-                    })
-                    .text(function(d) { return d.text; });
-            }
-            </script>
+    <div class="home2">
+        <div class="wordcloud">
+            <h2>Ontem em uma ☁️ de palavras</h2>
+            <div id="my_dataviz">
+                <script>
+                    // List of words
+                    var myWords = {{ palavras| safe}}
+
+                    // set the dimensions and margins of the graph
+                    var margin = { top: 10, right: 10, bottom: 10, left: 10 },
+                        width = 350 - margin.left - margin.right,
+                        height = 450 - margin.top - margin.bottom;
+
+                    // append the svg object to the body of the page
+                    var svg = d3.select("#my_dataviz").append("svg")
+                        .attr("width", width + margin.left + margin.right)
+                        .attr("height", height + margin.top + margin.bottom)
+                        .append("g")
+                        .attr("transform",
+                            "translate(" + margin.left + "," + margin.top + ")");
+
+                    // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
+                    var layout = d3.layout.cloud()
+                        .size([width, height])
+                        .words(myWords.map(function (d) { return { text: d }; }))
+                        .padding(10)
+                        .fontSize(30)
+                        .on("end", draw);
+                    layout.start();
+
+                    // This function takes the output of 'layout' above and draw the words
+                    // Better not to touch it. To change parameters, play with the 'layout' variable above
+                    function draw(words) {
+                        svg
+                            .append("g")
+                            .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+                            .selectAll("text")
+                            .data(words)
+                            .enter().append("text")
+                            .style("font-size", 30)
+                            .style("fill", "white")
+                            .attr("text-anchor", "middle")
+                            .attr("transform", function (d) {
+                                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                            })
+                            .text(function (d) { return d.text; });
+                    }
+                </script>
+            </div>
+            <button onClick="history.go(0);">Início</button>
+        </div>
+        <div class="bbb">
+            <h2>Ranking do BBB</h2>
+        </div>
     </div>
 </body>
 <script src="{{url_for('static', filename='app.js')}}"></script>
 <script src='../static/app.js'></script>
+
 </html>
