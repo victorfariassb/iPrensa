@@ -316,42 +316,42 @@ button{
 
     .logo{
         grid-row-start: 1;
-        grid-row-end: 6;
+        grid-row-end: 5;
     }
 
     .botao{
-        grid-row-start: 6;
-        grid-row-end: 7;
+        grid-row-start: 5;
+        grid-row-end: 6;
     }
 
     .palavra_dia{
-        grid-row-start: 7;
-        grid-row-end: 9;
+        grid-row-start: 6;
+        grid-row-end: 8;
     }
 
     .numero_materias{
-        grid-row-start: 9;
-        grid-row-end: 11;
+        grid-row-start: 8;
+        grid-row-end: 10;
     }
 
     .esporte{
-        grid-row-start: 11;
-        grid-row-end: 16;
+        grid-row-start: 10;
+        grid-row-end: 15;
     }
 
     .candidatos {
-        grid-row-start: 16;
-        grid-row-end: 20;
+        grid-row-start: 15;
+        grid-row-end: 19;
     }
 
     .escopo{
-        grid-row-start: 20;
-        grid-row-end: 21;
+        grid-row-start: 19;
+        grid-row-end: 20;
     }
 
     .atualizado{
-        grid-row-start: 21;
-        grid-row-end: 22;
+        grid-row-start: 20;
+        grid-row-end: 21;
     }
 
     .logo .descricao{
