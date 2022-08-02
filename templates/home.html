@@ -1,144 +1,265 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Radar da Imprensa</title>
-  <link rel="stylesheet" href="..\static\style_home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;1,300;1,600&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../static/iprensa.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <title>iMprensa</title>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <p class="titulo"><a href="/">Radar da Imprensa</a></p>
-      </div>
-      <ul class="nav-menu">
-        <li><a href="/palavra_dia">Termos do dia</a></li>
-        <li><a href="/ranking_candidatos">Ranking da eleição</a></li>
-        <li><a href="/sobre">Sobre</a></li>
-      </ul>
-    </nav>
-  </header>
-  <div class="conteudo">
-    <div class="secao">
-      <h2>Termos mais mencionados nos sites</h2>
-      <br>
-      <p>A cada hora, o Radar da Imprensa entre nos sites de 6 jornais brasileiros (Globo, Uol, Jovem Pan, Folha, Estadão e CNN) e coleta as matérias que estão na home. 
-      <br>
-      <br>
-      Nesta seção, você vê as palavras mais mencionadas a partir de <b>12 de maio de 2022</b>.
-      </p>
-        <br>
-      <h3>Como funciona?</h3>
-      <br>
-      <p>Todos os títulos das matérias são separados em palavras, colocados em caixa baixa e, em seguida, contados. Se
-        um mesmo título aparece na raspagem das 8h e das 10h, a matéria será considerada somente uma vez. Além disso, é
-        feito um filtro para dar prioridade a substantivos.</p>
-      <br>
-      <p><b>Exemplo:</b> "Paulo Guedes come coxinha em São Paulo" = "paulo", "guedes", "coxinha", "são" e "paulo".
+    <div class="explicacao">
+        <h1 class="ml16">Passe o mouse sobre as caixas</h1>
     </div>
-    <br>
-    <div class="dados-base">
-      <p><b>Última atualização:</b> {{ hora }}</p>
-      <br>
-      <p><b>Início da coleta dos dados:</b><br> Globo — 01/01/2022<br> Uol — 01/01/2022<br>Jovem Pan —
-        12/01/2022<br>Folha — 17/01/2022<br> O Globo* — 18/01/2022<br> Estadão — 31/01/2022<br> CNN - 25/02/2022</p>
-      <br>
-      <p>
-      A coleta desses dados até 01/04/2022 está disponível <a href=https://docs.google.com/spreadsheets/d/1ckK8uhu1699pS7W_mD7zCrElSZKW7UL658_ne0EXdec/edit?usp=sharing><b>aqui</b>.</a> 
-      Já os dados atuais estão <a href="https://docs.google.com/spreadsheets/d/1UY2MkXq41EBEU5AXxGDE2oVrd8rQgPcc28xWi7oHVOU/edit?usp=sharing"><b>aqui</b></a>.
-    </p>
-    <br>
+    <div class="home">
+        <div class="logo">
+            <div class="intro">
+                <div class="marca">
+                    <h2>iPrensa</h2>
+                    <img src="../static/detalhe.svg" alt="detalhe logo">
+                    <div class="descricao">
+                        <p>Uma plataformar para entender melhor a impresa na web.</p>
+                        <p>Os dados que alimentam a página são raspados da home de 6 jornais brasileiros diariamente, de hora em hora.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sobre">
+                <p>Este projeto foi construido no <i>Master em Jornalismo de Dados do Insper</i>.
+                    Ele serve como uma plataforma de análise da imprensa e como
+                    um repositório de dados para pesquisas acadêmicas.</p>
+                
+                <p>Caso você tenha interesse em fazer pesquisa com os dados, solicite por e-mail
+                    para <a href="mailto:victorfariassb@gmail">victorfariassb@gmail.com</a>. Você também
+                    pode me encontrar no <a href="https://twitter.com/__victorfarias">Twitter</a>.
+                    Também é possível ver o repositório do projeto no <a
+                        href="https://github.com/victorfariassb/radar_imprensa">GitHub</a>.
+                </p>
+            </div>
+        </div>
+        <div class="botao">
+            <button class="button">Outras análises</button>
+        </div>
+        <div class="palavra_dia">
+            <div class="titulo-menor">Palavra do dia ✍️</div>
+            <p>Termo mais mencionado nas principais matérias dos 6 jornais raspados. O dado é referente ao dia anterior.
+            </p>
+            <p>{{ palavra_dia }}</p>
+        </div>
+        <div class="numero_materias">
+            <p>O número de matérias analisadas até hoje. Os dados começaram a ser coletados em janeiro de
+                2022.</p>
+            <p>{{ total_materias }}</p>
+            <div class="titulo-menor">Matérias raspadas</div>
+        </div>
+        <div class="esporte">
+            <div class="titulo">Ranking dos times ⚽</div>
+            <p>A classificação leva em consideração os times mais mencionados em títulos da seção de esportes do Uol e
+                da Globo.com.</p>
+            <ol>
+                {% for index, row in times_dados.iterrows() %}
+                {% if index != 0 %}
+                <li>{{ row[0] }} — {{ row[1] }}</li>
+                {% endif %}
+                {% endfor %}
+            </ol>
+        </div>
+        <div class="candidatos">
+            <div class="titulo">Candidatos na imprensa 🗳️</div>
+            <p>Conta menções aos candidatos nos sites raspados. Notícias com o mesmo link
+                raspadas 2 vezes são consideradas como um único ponto. A ⬆️ é referente aos últimos 7 dias.</p>
+            <ol>
+                {% for index, row in ranking_candidatos.iterrows() %}
+                {% if index != 0 %}
+                <li>{{ row[0] }} — {{ row[2] }} ⬆️{{ row[1] }}</li>
+                {% endif %}
+                {% endfor %}
+            </ol>
+        </div>
+        <div class="escopo">
+            <div class="titulo-rodape"><b>SITES RASPADOS:</b> Globo, Uol, Folha, Estadão, Jovem Pan, CNN</div>
+        </div>
+        <div class="atualizado">
+            <div class="titulo-rodape"><b>ATUALIZADO EM:</b> {{ hora }}</div>
+        </div>
     </div>
-  </div>
-  <table class="content-table">
-    <thead>
-      <tr>
-        <th scope="col" rowspan="2">Posição</th>
-        <th colspan="2">Globo</th>
-        <th colspan="2">Uol</th>
-      </tr>
-      <tr>
-        <th scope="col">Palavra</th>
-        <th scope="col">Nº</th>
-        <th scope="col">Palavra</th>
-        <th scope="col">Nº</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for index, row in globo_uol.iterrows() %}
-      {% if index != 0 %}
-      <tr>
-        <td>{{ index }}º</td>
-        {% for cell in row %}
-        <td>{{ cell }}</td>
-        {% endfor %}
-      </tr>
-      {% endif %}
-      {% endfor %}
-      <br/>
-    </tbody>
-  </table>
-  <br />
-  <table class="content-table">
-    <thead>
-      <tr>
-        <th scope="col" rowspan="2">Posição</th>
-        <th colspan="2">Jovem Pan</th>
-        <th colspan="2">Folha</th>
-      </tr>
-      <tr>
-        <th scope="col">Palavra</th>
-        <th scope="col">Nº</th>
-        <th scope="col">Palavra</th>
-        <th scope="col">Nº</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for index, row in folha_jp.iterrows() %}
-      {% if index != 0 %}
-      <tr>
-        <td>{{ index }}º</td>
-        {% for cell in row %}
-        <td>{{ cell }}</td>
-        {% endfor %}
-      </tr>
-      {% endif %}
-      {% endfor %}
-      <br/>
-    </tbody>
-  </table>
-  <br />
-      <table class="content-table">
-        <thead>
-          <tr>
-            <th scope="col" rowspan="2">Posição</th>
-            <th colspan="2">Estadão</th>
-            <th colspan="2">CNN</th>
-          </tr>
-          <tr>
-            <th scope="col">Palavra</th>
-            <th scope="col">Nº</th>
-            <th scope="col">Palavra</th>
-            <th scope="col">Nº</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for index, row in estadao_cnn.iterrows() %}
-      {% if index != 0 %}
-      <tr>
-        <td>{{ index }}º</td>
-        {% for cell in row %}
-        <td>{{ cell }}</td>
-        {% endfor %}
-      </tr>
-      {% endif %}
-      {% endfor %}
-          <br />
-        </tbody>
-      </table>
+    <div class="home2">
+        <div class="logo2">
+            <div class="intro2">
+                <div class="marca">
+                    <h2>iPrensa</h2>
+                    <img src="../static/detalhe.svg" alt="detalhe logo">
+                </div>
+            </div>
+            <div class="voltar">
+                <button onClick="history.go(0);">Início</button>
+            </div>
+        </div>
+        <div class="wordcloud">
+            <div class="titulo">Ontem em uma ☁️ de palavras</div>
+            <div id="my_dataviz">
+                <script>
+                    // List of words
+                    var myWords = {{ palavras| safe}}
+
+                    // set the dimensions and margins of the graph
+                    var margin = { top: 10, right: 10, bottom: 10, left: 10 },
+                        width = 350 - margin.left - margin.right,
+                        height = 450 - margin.top - margin.bottom;
+
+                    // append the svg object to the body of the page
+                    var svg = d3.select("#my_dataviz").append("svg")
+                        .attr("width", width + margin.left + margin.right)
+                        .attr("height", height + margin.top + margin.bottom)
+                        .append("g")
+                        .attr("transform",
+                            "translate(" + margin.left - 20 + "," + margin.top + ")");
+
+                    // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
+                    var layout = d3.layout.cloud()
+                        .size([width, height])
+                        .words(myWords.map(function (d) { return { text: d }; }))
+                        .padding(10)
+                        .fontSize(30)
+                        .on("end", draw);
+                    layout.start();
+
+                    // This function takes the output of 'layout' above and draw the words
+                    // Better not to touch it. To change parameters, play with the 'layout' variable above
+                    function draw(words) {
+                        svg
+                            .append("g")
+                            .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+                            .selectAll("text")
+                            .data(words)
+                            .enter().append("text")
+                            .style("font-size", 30)
+                            .style("fill", "white")
+                            .attr("text-anchor", "middle")
+                            .attr("transform", function (d) {
+                                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                            })
+                            .text(function (d) { return d.text; });
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="bbb">
+            <div class="titulo">Ranking do BBB 👀</div>
+            <p>Contagem de vezes que o participante apareceu em matérias da globo.com</p>
+            <select id="selectButton"></select>
+            <div id="my_dataviz2">
+                <script>
+
+                    // set the dimensions and margins of the graph
+                    var margin = { top: 20, right: 30, bottom: 40, left: 30 },
+                        width = 350 - margin.left - margin.right,
+                        height = 400 - margin.top - margin.bottom;
+
+                    // append the svg object to the body of the page
+                    var svg = d3.select("#my_dataviz2")
+                        .append("svg")
+                        .attr("width", width + margin.left + margin.right)
+                        .attr("height", height + margin.top + margin.bottom)
+                        .append("g")
+                        .attr("transform",
+                            "translate(" + margin.left + "," + margin.top + ")");
+
+                    //Read the data
+                    d3.csv("https://raw.githubusercontent.com/victorfariassb/radar_imprensa/main/base_dados/ranking_bbb.csv",
+
+                    function (data) {
+                    var allGroup = ['Arthur', 'Brunna', 'Bárbara', 'DG', 'Eliezer', 'Eslovênia', 'Gustavo', 'Jade', 'Jessi', 'Larissa', 'Laís', 'Linn', 'Lucas', 'Luciano', 'Maria', 'Naiara', 'Nát', 'PA', 'Rodrigo', 'Scooby', 'Tiago', 'Viny']
+
+                    d3.select("#selectButton")
+                        .selectAll('myOptions')
+                        .data(allGroup)
+                        .enter()
+                        .append('option')
+                        .text(function (d) { return d; }) // text showed in the menu
+                        .attr("value", function (d) { return d; }) // corresponding value returned by the button
+
+                    // A color scale: one color for each group
+                    var myColor = d3.scaleOrdinal()
+                        .domain(allGroup)
+                        .range(d3.schemeSet2);
+
+                    // Add X axis --> it is a date format
+                    var x = d3.scaleLinear()
+                        .domain([0, 100])
+                        .range([0, width]);
+                    svg.append("g")
+                        .attr("transform", "translate(0," + height + ")")
+                        .call(d3.axisBottom(x));
+                        svg.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", width - 70)
+    .attr("y", height + 35)
+    .text("Dias de programa");
+
+                    // Add Y axis
+                    var y = d3.scaleLinear()
+                        .domain([0, 700])
+                        .range([height, 0]);
+                    svg.append("g")
+                        .call(d3.axisLeft(y));
+
+                    // Initialize line with group a
+                    var line = svg
+                        .append('g')
+                        .append("path")
+                        .datum(data)
+                        .attr("d", d3.line()
+                            .x(function (d) { return x(d.Dia)})
+                            .y(function (d) { return y(d.Arthur) })
+                        )
+                        .attr("stroke", function (d) { return myColor("Arthur") })
+                        .style("stroke-width", 4)
+                        .style("fill", "none")
+
+                    // A function that update the chart
+                    function update(selectedGroup) {
+
+                        // Create new data with the selection?
+                        var dataFilter = data.map(function (d) { return { time: d.Dia, value: d[selectedGroup] } })
+
+                        // Give these new data to update line
+                        line
+                            .datum(dataFilter)
+                            .transition()
+                            .duration(1000)
+                            .attr("d", d3.line()
+                                .x(function (d) { return x(+d.time) })
+                                .y(function (d) { return y(+d.value) })
+                            )
+                            .attr("stroke", function (d) { return myColor(selectedGroup) })
+                    }
+
+                    // When the button is changed, run the updateChart function
+                    d3.select("#selectButton").on("change", function (d) {
+                        // recover the option that has been chosen
+                        var selectedOption = d3.select(this).property("value")
+                        // run the updateChart function with this selected option
+                        update(selectedOption)
+                    })
+
+})
+
+                </script>
+            </div>
+        </div>
+
+    </div>
 </body>
+<script src="{{url_for('static', filename='app.js')}}"></script>
+<script src='../static/app.js'></script>
 
 </html>
