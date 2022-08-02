@@ -297,7 +297,7 @@ button{
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
     body{
         align-items: center;
     }
