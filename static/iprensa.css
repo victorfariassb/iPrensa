@@ -298,17 +298,29 @@ button{
 
 
 @media (max-width: 768px) {
-    body{
+    html, body{
         align-items: center;
+        height: auto;
+        margin: 4.2vh auto 2vh;
     }
     
     .home{
     display: flex;
     flex-direction: column;
+    margin: auto 5vw;
+    height: auto;
     }
 
-    .logo .descricao{
+    .home > .escopo, .atualizado{
+        padding: 1.5vw
+    }
+
+    .home > .logo, .descricao{
         font-size: 1.2rem;
+    }
+
+    .home > .palavra_dia, .numero_materias{
+        min-height: 17vh;
     }
 
     .sobre{

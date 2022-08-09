@@ -22,7 +22,6 @@ logo.onmouseover = function() {
     intro.style.display = 'none';
     logo.style.backgroundColor = '#000326';
     sobre.style.display = 'inline-block';
-    sobre.style.marginBottom = '9.5vh';
 }
 
 logo.onmouseout = function() {
