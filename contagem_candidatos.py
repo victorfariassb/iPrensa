@@ -10,20 +10,20 @@ def contagem_candidatos(base, contagem):
     if chave == 'classe_globo':
         linha = 2
     elif chave == "classe_uol":
-        linha = 8
+        linha = 6
     elif chave == "classe_jp":
-        linha = 14
+        linha = 10
     elif chave == 'classe_folha':
-        linha = 20
+        linha = 14
     elif chave == "classe_estadao":
-        linha = 26
+        linha = 18
     elif chave == "classe_cnn":
-        linha = 32
+        linha = 22
     else:
-        linha = 38
+        linha = 26
     coluna = 3
 
-    presidenciaveis = ['Bolsonaro', 'Lula', 'Ciro', 'Tebet', 'Janones', 'Bivar']
+    presidenciaveis = ['Bolsonaro', 'Lula', 'Ciro', 'Tebet']
     for presidenciavel in presidenciaveis:
         
         hoje = datetime.datetime.now()
