@@ -51,7 +51,6 @@ ranking_candidatos = pd.DataFrame(list(zip(candidatos, quantidade_ultima_semana,
 ranking_candidatos = ranking_candidatos.sort_values('quantidade_total_candidatos', ascending=False)
 
 
-
 @app.route("/")
 def new_home():
     return render_template(
