@@ -77,9 +77,7 @@
                 raspadas 2 vezes são consideradas como um único ponto. A ⬆️ é referente aos últimos 7 dias.</p>
             <ol>
                 {% for index, row in ranking_candidatos.iterrows() %}
-                {% if index != 0 %}
                 <li>{{ row[0] }} — {{ row[2] }} ⬆️{{ row[1] }}</li>
-                {% endif %}
                 {% endfor %}
             </ol>
         </div>
