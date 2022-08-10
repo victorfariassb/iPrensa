@@ -43,12 +43,14 @@ times_dados.quantidade = times_dados.quantidade.astype(int)
 times_dados = times_dados.sort_values('quantidade', ascending=False).head(11)
 
 ranking_candidatos = spreadsheet.worksheet('contagem_candidato')
-candidatos = ranking_candidatos.col_values(2)[25:]
-quantidade_ultima_semana = ranking_candidatos.col_values(3)[25:]
-quantidade_total_candidatos = ranking_candidatos.col_values(5)[25:]
+candidatos = ranking_candidatos.col_values(2)[26:]
+quantidade_ultima_semana = ranking_candidatos.col_values(3)[26:]
+quantidade_total_candidatos = ranking_candidatos.col_values(5)[26:]
 
-ranking_candidatos = pd.DataFrame(list(zip(candidatos, quantidade_ultima_semana, quantidade_total_candidatos)), columns=['candidato', 'quantidade_ultima_semana', 'quantidade_total_candidatos'], dtype={'quantidade_total_candidatos': 'int64'})
+ranking_candidatos = pd.DataFrame(list(zip(candidatos, quantidade_ultima_semana, quantidade_total_candidatos)), columns=['candidato', 'quantidade_ultima_semana', 'quantidade_total_candidatos'])
+ranking_candidatos.quantidade_total_candidatos = ranking_candidatos.quantidade_total_candidatos.astype(int)
 ranking_candidatos = ranking_candidatos.sort_values('quantidade_total_candidatos', ascending=False)
+
 
 
 @app.route("/")
