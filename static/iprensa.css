@@ -295,13 +295,84 @@ button{
     margin: 1vh auto;
     justify-content: center;
 }
-
-
 @media (max-width: 768px) {
     html, body{
         align-items: center;
         height: auto;
-        margin: 4.2vh auto 2vh;
+        margin: 5vh auto 2vh;
+    }
+
+    .home{
+        display: flex;
+        flex-direction: column;
+        margin: auto 12vw;
+        height: auto;
+        }
+
+    .home > .escopo, .atualizado{
+            padding: 1.5vw
+        }
+    
+    .home > .logo, .descricao{
+            font-size: 1.2rem;
+        }
+
+    .home > .logo {
+        min-height: 50vh;
+    }
+
+    .home > .palavra_dia, .numero_materias{
+            min-height: 25vh;
+        }
+
+
+        .sobre{
+            margin-bottom: 1.1vh;
+        }
+    
+        .explicacao {
+            top: 0.8vh;
+            left: 5vw;
+            width: 90%;
+        }
+    
+        .wordcloud{
+            width: 95%;
+        }
+    
+        .home2{
+            flex-direction: column;
+            height: 95%;
+            width: 90%;
+            margin: auto 5vw;
+        }
+        .wordcloud, .bbb{
+            margin: 2vh auto;
+            width: 100%;
+        }
+    
+        .voltar{
+            align-items: center;
+        }
+    
+        .voltar button{
+            width: 40%;
+            height: 100%;
+        }
+    
+        .logo2{
+            width: 100%;
+            height: 40%;
+        }
+}
+
+
+
+@media (max-width: 500px) {
+    html, body{
+        align-items: center;
+        height: auto;
+        margin: 4.5vh auto 2vh;
     }
     
     .home{
@@ -311,55 +382,12 @@ button{
     height: auto;
     }
 
-    .home > .escopo, .atualizado{
-        padding: 1.5vw
-    }
 
-    .home > .logo, .descricao{
-        font-size: 1.2rem;
-    }
 
     .home > .palavra_dia, .numero_materias{
         min-height: 20vh;
     }
 
-    .sobre{
-        margin-bottom: 1.1vh;
-    }
 
-    .explicacao {
-        top: 0.8vh;
-        left: 5vw;
-        width: 90%;
-    }
-
-    .wordcloud{
-        width: 95%;
-    }
-
-    .home2{
-        flex-direction: column;
-        height: 95%;
-        width: 90%;
-        margin: auto 5vw;
-    }
-    .wordcloud, .bbb{
-        margin: 2vh auto;
-        width: 100%;
-    }
-
-    .voltar{
-        align-items: center;
-    }
-
-    .voltar button{
-        width: 40%;
-        height: 100%;
-    }
-
-    .logo2{
-        width: 100%;
-        height: 40%;
-    }
 
 }
