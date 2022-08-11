@@ -5,7 +5,8 @@
     font-family: "KoHo";
 }
 
-html, body{
+html,
+body {
     width: 100%;
     height: 100%;
     display: flex;
@@ -14,7 +15,7 @@ html, body{
     background-color: #D9CAB0;
 }
 
-.explicacao{
+.explicacao {
     position: absolute;
     top: 1vh;
     left: 12vw;
@@ -24,14 +25,14 @@ html, body{
     font-weight: 500;
     overflow: hidden;
 
-  }
-  
-  .ml16 .letter {
+}
+
+.ml16 .letter {
     display: inline-block;
     line-height: 1em;
     font-size: 1.2rem;
 
-  }
+}
 
 .home {
     width: 100vw;
@@ -43,42 +44,42 @@ html, body{
     gap: 3vh;
 }
 
-.home > div{
+.home>div {
     padding: 0.7vw;
     display: flex;
     flex-direction: column;
     color: white;
 }
 
-.home > div > p{
+.home>div>p {
     font-size: 2.5rem;
     font-weight: 200;
     text-align: center;
 }
 
-.home > div li{
+.home>div li {
     font-size: 1.3rem;
 }
 
-.titulo-menor{
+.titulo-menor {
     font-weight: 600;
     margin: 1vh;
     font-size: 1.2rem;
 }
 
-.titulo{
+.titulo {
     font-weight: 600;
     text-transform: uppercase;
     margin: 1vh;
     font-size: 1.7rem;
 }
 
-.titulo-rodape{
+.titulo-rodape {
     font-weight: 400;
     font-size: 1.1rem;
 }
 
-.logo{
+.logo {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -87,7 +88,7 @@ html, body{
     background-color: #F29F80;
 }
 
-.logo h2{
+.logo h2 {
     font-family: "Libre Bodoni";
     font-size: 2.8rem;
     margin-top: 5%;
@@ -97,31 +98,31 @@ html, body{
     font-weight: 1000;
 }
 
-.logo img{
+.logo img {
     margin: 0;
     width: 80%;
     margin: 0 10%;
 }
 
-.logo .descricao{
+.logo .descricao {
     font-size: 1.4rem;
     font-weight: 500;
     text-align: justify;
     padding: 0 10%;
 }
 
-.logo p:first-of-type{
+.logo p:first-of-type {
     margin-top: 0
 }
 
-.intro{
+.intro {
     height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.sobre{
+.sobre {
     display: none;
     padding: 2vh;
     font-weight: 300;
@@ -129,7 +130,7 @@ html, body{
     margin-bottom: 3vh;
 }
 
-.botao{
+.botao {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 5;
@@ -138,13 +139,13 @@ html, body{
     margin: auto;
 }
 
-button{
+button {
     border-radius: 3px;
     font-size: 1.1rem;
     width: 100%;
 }
 
-.palavra_dia{
+.palavra_dia {
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 1;
@@ -153,7 +154,7 @@ button{
     background-color: #D93B18
 }
 
-.numero_materias{
+.numero_materias {
     grid-column-start: 4;
     grid-column-end: 5;
     grid-row-start: 1;
@@ -162,17 +163,17 @@ button{
     background-color: #D93B18
 }
 
-.numero_materias .titulo-menor{
+.numero_materias .titulo-menor {
     text-align: center
 }
 
-.numero_materias p:nth-of-type(2){
+.numero_materias p:nth-of-type(2) {
     text-align: center;
     margin-bottom: 2vh;
 }
 
 
-.esporte{
+.esporte {
     grid-column-start: 5;
     grid-column-end: 7;
     grid-row-start: 1;
@@ -182,7 +183,7 @@ button{
     color: white;
 }
 
-.esporte p:first-of-type{
+.esporte p:first-of-type {
     display: none;
     font-size: 1.5rem;
     text-align: left;
@@ -190,7 +191,7 @@ button{
 }
 
 
-.palavra_dia p:first-of-type{
+.palavra_dia p:first-of-type {
     display: none;
     font-size: 1.1rem;
     text-align: left;
@@ -198,7 +199,7 @@ button{
     margin: auto 0;
 }
 
-.numero_materias p:first-of-type{
+.numero_materias p:first-of-type {
     display: none;
     font-size: 1.1rem;
     text-align: left;
@@ -206,14 +207,14 @@ button{
     margin: auto 0;
 }
 
-.candidatos p:first-of-type{
+.candidatos p:first-of-type {
     display: none;
     font-size: 1.3rem;
     text-align: left;
     padding: 1vh 2vh;
 }
 
-.candidatos{
+.candidatos {
     grid-column-start: 3;
     grid-column-end: 5;
     grid-row-start: 3;
@@ -240,7 +241,7 @@ button{
     background-color: #F25E3D;
 }
 
-.home2{
+.home2 {
     display: none;
     width: 100vw;
     height: 90%;
@@ -248,29 +249,30 @@ button{
     justify-content: space-between;
 }
 
-.logo2{
+.logo2 {
     width: 20%;
     height: 30%;
     background-color: #F29F80;
     border: 2px solid #000326;
 }
 
-.logo2 .marca{
+.logo2 .marca {
     text-align: center;
 }
 
-.logo2 h2{
+.logo2 h2 {
     font-family: "Libre Bodoni";
     color: white;
     font-weight: 1000;
     font-size: 2.2rem;
 }
 
-.logo2 img{
+.logo2 img {
     width: 80%;
 }
 
-.wordcloud, .bbb {
+.wordcloud,
+.bbb {
     border: 2px solid #000326;
     background-color: #F25E3D;
     margin: 0;
@@ -280,114 +282,129 @@ button{
     height: 90%
 }
 
-.wordcloud h2{
+.wordcloud h2 {
     text-transform: uppercase;
 }
 
-#my_dataviz{
+#my_dataviz {
     text-align: center;
 }
 
-.voltar{
+.voltar {
     display: flex;
     align-items: center;
     width: 50%;
     margin: 1vh auto;
     justify-content: center;
 }
+
 @media (max-width: 768px) {
-    html, body{
+
+    html,
+    body {
         align-items: center;
         height: auto;
         margin: 5vh auto 2vh;
+        font-size: 0.9rem;
     }
 
-    .home{
+    .home {
         display: flex;
         flex-direction: column;
         margin: auto 12vw;
         height: auto;
-        }
+    }
 
-    .home > .escopo, .atualizado{
-            padding: 1.5vw
-        }
-    
-    .home > .logo, .descricao{
-            font-size: 1.2rem;
-        }
+    .home>.escopo,
+    .atualizado {
+        padding: 1.5vw
+    }
 
-    .home > .logo {
+    .home>.logo,
+    .descricao {
+        font-size: 1.2rem;
+    }
+
+    .home>.logo {
         min-height: 50vh;
     }
 
-    .home > .palavra_dia, .numero_materias{
-            min-height: 25vh;
-        }
+    .home>.palavra_dia,
+    .numero_materias {
+        min-height: 25vh;
+    }
 
 
-        .sobre{
-            margin-bottom: 1.1vh;
-        }
-    
-        .explicacao {
-            top: 0.8vh;
-            left: 5vw;
-            width: 90%;
-        }
-    
-        .wordcloud{
-            width: 95%;
-        }
-    
-        .home2{
-            flex-direction: column;
-            height: 95%;
-            width: 90%;
-            margin: auto 5vw;
-        }
-        .wordcloud, .bbb{
-            margin: 2vh auto;
-            width: 100%;
-        }
-    
-        .voltar{
-            align-items: center;
-        }
-    
-        .voltar button{
-            width: 40%;
-            height: 100%;
-        }
-    
-        .logo2{
-            width: 100%;
-            height: 40%;
-        }
+    .sobre {
+        margin-bottom: 1.1vh;
+    }
+
+    .explicacao {
+        top: 0.8vh;
+        left: 5vw;
+        width: 90%;
+    }
+
+    .wordcloud {
+        width: 95%;
+    }
+
+    .home2 {
+        flex-direction: column;
+        height: 95%;
+        width: 90%;
+        margin: auto 5vw;
+    }
+
+    .wordcloud,
+    .bbb {
+        margin: 2vh auto;
+        width: 100%;
+    }
+
+    .voltar {
+        align-items: center;
+    }
+
+    .voltar button {
+        width: 40%;
+        height: 100%;
+    }
+
+    .logo2 {
+        width: 100%;
+        height: 40%;
+    }
 }
 
 
 
 @media (max-width: 500px) {
-    html, body{
+
+    html,
+    body {
         align-items: center;
         height: auto;
         margin: 4.5vh auto 2vh;
     }
-    
-    .home{
-    display: flex;
-    flex-direction: column;
-    margin: auto 5vw;
-    height: auto;
+
+    .home {
+        display: flex;
+        flex-direction: column;
+        margin: auto 5vw;
+        height: auto;
     }
 
 
 
-    .home > .palavra_dia, .numero_materias{
+    .home>.palavra_dia,
+    .numero_materias {
         min-height: 20vh;
     }
 
-
+    .home>.esporte,
+    .candidatos {
+        min-height: 30vh
+    }
 
 }
