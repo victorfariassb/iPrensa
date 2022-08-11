@@ -334,6 +334,10 @@ button {
         min-height: 25vh;
     }
 
+    .home> .esporte{
+        min-height: 50vh
+    }
+
 
     .sobre {
         margin-bottom: 1.1vh;
@@ -400,11 +404,6 @@ button {
     .home>.palavra_dia,
     .numero_materias {
         min-height: 20vh;
-    }
-
-    .home>.esporte,
-    .candidatos {
-        min-height: 30vh
     }
 
 }
