@@ -12,6 +12,15 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VE7QCELRTR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VE7QCELRTR');
+    </script>
     <title>iMprensa</title>
 </head>
 
@@ -27,7 +36,8 @@
                     <img src="../static/detalhe.svg" alt="detalhe logo">
                     <div class="descricao">
                         <p>Uma plataformar para entender melhor a impresa na web.</p>
-                        <p>Os dados que alimentam a página são raspados da home de 6 jornais brasileiros diariamente, de hora em hora.</p>
+                        <p>Os dados que alimentam a página são raspados da home de 6 jornais brasileiros diariamente, de
+                            hora em hora.</p>
                     </div>
                 </div>
             </div>
@@ -35,7 +45,7 @@
                 <p>Este projeto foi construido no <i>Master em Jornalismo de Dados do Insper</i>.
                     Ele serve como uma plataforma de análise da imprensa e como
                     um repositório de dados para pesquisas acadêmicas.</p>
-                
+
                 <p>Caso você tenha interesse em fazer pesquisa com os dados, solicite por e-mail
                     para <a href="mailto:victorfariassb@gmail">victorfariassb@gmail.com</a>. Você também
                     pode me encontrar no <a href="https://twitter.com/__victorfarias">Twitter</a>.
@@ -173,83 +183,83 @@
                     //Read the data
                     d3.csv("https://raw.githubusercontent.com/victorfariassb/radar_imprensa/main/base_dados/ranking_bbb.csv",
 
-                    function (data) {
-                    var allGroup = ['Arthur', 'Brunna', 'Bárbara', 'DG', 'Eliezer', 'Eslovênia', 'Gustavo', 'Jade', 'Jessi', 'Larissa', 'Laís', 'Linn', 'Lucas', 'Luciano', 'Maria', 'Naiara', 'Nát', 'PA', 'Rodrigo', 'Scooby', 'Tiago', 'Viny']
+                        function (data) {
+                            var allGroup = ['Arthur', 'Brunna', 'Bárbara', 'DG', 'Eliezer', 'Eslovênia', 'Gustavo', 'Jade', 'Jessi', 'Larissa', 'Laís', 'Linn', 'Lucas', 'Luciano', 'Maria', 'Naiara', 'Nát', 'PA', 'Rodrigo', 'Scooby', 'Tiago', 'Viny']
 
-                    d3.select("#selectButton")
-                        .selectAll('myOptions')
-                        .data(allGroup)
-                        .enter()
-                        .append('option')
-                        .text(function (d) { return d; }) // text showed in the menu
-                        .attr("value", function (d) { return d; }) // corresponding value returned by the button
+                            d3.select("#selectButton")
+                                .selectAll('myOptions')
+                                .data(allGroup)
+                                .enter()
+                                .append('option')
+                                .text(function (d) { return d; }) // text showed in the menu
+                                .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
-                    // A color scale: one color for each group
-                    var myColor = d3.scaleOrdinal()
-                        .domain(allGroup)
-                        .range(d3.schemeSet2);
+                            // A color scale: one color for each group
+                            var myColor = d3.scaleOrdinal()
+                                .domain(allGroup)
+                                .range(d3.schemeSet2);
 
-                    // Add X axis --> it is a date format
-                    var x = d3.scaleLinear()
-                        .domain([0, 100])
-                        .range([0, width]);
-                    svg.append("g")
-                        .attr("transform", "translate(0," + height + ")")
-                        .call(d3.axisBottom(x));
-                        svg.append("text")
-    .attr("class", "x label")
-    .attr("text-anchor", "end")
-    .attr("x", width - 70)
-    .attr("y", height + 35)
-    .text("Dias de programa");
+                            // Add X axis --> it is a date format
+                            var x = d3.scaleLinear()
+                                .domain([0, 100])
+                                .range([0, width]);
+                            svg.append("g")
+                                .attr("transform", "translate(0," + height + ")")
+                                .call(d3.axisBottom(x));
+                            svg.append("text")
+                                .attr("class", "x label")
+                                .attr("text-anchor", "end")
+                                .attr("x", width - 70)
+                                .attr("y", height + 35)
+                                .text("Dias de programa");
 
-                    // Add Y axis
-                    var y = d3.scaleLinear()
-                        .domain([0, 700])
-                        .range([height, 0]);
-                    svg.append("g")
-                        .call(d3.axisLeft(y));
+                            // Add Y axis
+                            var y = d3.scaleLinear()
+                                .domain([0, 700])
+                                .range([height, 0]);
+                            svg.append("g")
+                                .call(d3.axisLeft(y));
 
-                    // Initialize line with group a
-                    var line = svg
-                        .append('g')
-                        .append("path")
-                        .datum(data)
-                        .attr("d", d3.line()
-                            .x(function (d) { return x(d.Dia)})
-                            .y(function (d) { return y(d.Arthur) })
-                        )
-                        .attr("stroke", function (d) { return myColor("Arthur") })
-                        .style("stroke-width", 4)
-                        .style("fill", "none")
+                            // Initialize line with group a
+                            var line = svg
+                                .append('g')
+                                .append("path")
+                                .datum(data)
+                                .attr("d", d3.line()
+                                    .x(function (d) { return x(d.Dia) })
+                                    .y(function (d) { return y(d.Arthur) })
+                                )
+                                .attr("stroke", function (d) { return myColor("Arthur") })
+                                .style("stroke-width", 4)
+                                .style("fill", "none")
 
-                    // A function that update the chart
-                    function update(selectedGroup) {
+                            // A function that update the chart
+                            function update(selectedGroup) {
 
-                        // Create new data with the selection?
-                        var dataFilter = data.map(function (d) { return { time: d.Dia, value: d[selectedGroup] } })
+                                // Create new data with the selection?
+                                var dataFilter = data.map(function (d) { return { time: d.Dia, value: d[selectedGroup] } })
 
-                        // Give these new data to update line
-                        line
-                            .datum(dataFilter)
-                            .transition()
-                            .duration(1000)
-                            .attr("d", d3.line()
-                                .x(function (d) { return x(+d.time) })
-                                .y(function (d) { return y(+d.value) })
-                            )
-                            .attr("stroke", function (d) { return myColor(selectedGroup) })
-                    }
+                                // Give these new data to update line
+                                line
+                                    .datum(dataFilter)
+                                    .transition()
+                                    .duration(1000)
+                                    .attr("d", d3.line()
+                                        .x(function (d) { return x(+d.time) })
+                                        .y(function (d) { return y(+d.value) })
+                                    )
+                                    .attr("stroke", function (d) { return myColor(selectedGroup) })
+                            }
 
-                    // When the button is changed, run the updateChart function
-                    d3.select("#selectButton").on("change", function (d) {
-                        // recover the option that has been chosen
-                        var selectedOption = d3.select(this).property("value")
-                        // run the updateChart function with this selected option
-                        update(selectedOption)
-                    })
+                            // When the button is changed, run the updateChart function
+                            d3.select("#selectButton").on("change", function (d) {
+                                // recover the option that has been chosen
+                                var selectedOption = d3.select(this).property("value")
+                                // run the updateChart function with this selected option
+                                update(selectedOption)
+                            })
 
-})
+                        })
 
                 </script>
             </div>
