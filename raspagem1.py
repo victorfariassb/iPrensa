@@ -21,7 +21,39 @@ jp_sheet = spreadsheet.worksheet('jovem_pan')
 # Raspa os dados
 try:
   coleta_globo(globo_sheet)
-finally:
-  next
-  
-coleta_jp(jp_sheet)
+except:
+  pass
+try:
+  coleta_jp(jp_sheet)
+except:
+  pass
+
+folha_sheet = spreadsheet.worksheet('folha') 
+estadao_sheet = spreadsheet.worksheet('estadao')
+
+# Raspagem de dados
+
+try:
+  coleta_folha(folha_sheet)
+except:
+  pass
+
+try:
+  coleta_estadao(estadao_sheet)
+except:
+  pass
+
+uol_sheet = spreadsheet.worksheet('uol') 
+cnn_sheet = spreadsheet.worksheet('cnn') 
+
+
+# Raspa os dados
+try:
+  coleta_uol(uol_sheet)
+except:
+  pass
+
+try:
+  coleta_cnn(cnn_sheet)
+except:
+  pass
