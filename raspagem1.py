@@ -1,3 +1,5 @@
+pip install selenium
+
 import base64
 import gspread
 import json
