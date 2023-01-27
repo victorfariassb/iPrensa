@@ -214,48 +214,22 @@ def coleta_estadao(planilha):
   now = datetime.now(pytz.timezone('Brazil/East'))
   dia = now.strftime("%d/%m/%Y %H:%M:%S")
 
-  browser.get("https://www.estadao.com.br/")
+  driver.get("https://www.estadao.com.br/")
 
-  source = browser.find_element(By.TAG_NAME, 'html')
+  source = driver.find_element(By.TAG_NAME, 'html')
   html = source.get_attribute('innerHTML')
   soup = bs(html, 'html.parser')
-  for manchete in soup.find_all('article', class_='destaque-default -principal -font-lg'):
-      for div in manchete.find_all('div', class_='intro'):
-        for h4 in div.find_all('h4'):
-            for a in h4.find_all('a'):
-              titulo = a.get('title')
-              link = a.get('href')
-              classe = 'manchete'
-              time.sleep(2)
-              num +=1
-              planilha.append_row([num, dia, titulo, classe, link])
-  for texto in soup.find_all('h3', class_='title'):
-    for dados in texto.find_all('a'):
-      titulo = dados.get('title')
-      link = dados.get('href')
-      classe = 'principal'
-      time.sleep(2)
-      num +=1
-      planilha.append_row([num, dia, titulo, classe, link])
-  for texto in soup.find_all('h4', 'bullets-title'):
-    for dados in texto.find_all('a'):
-      titulo = dados.get('title')
-      link = dados.get('href')
-      classe = 'relacionadas'
-      time.sleep(2)
-      num +=1
-      planilha.append_row([num, dia, titulo, classe, link])
-  for texto in soup.find_all('ul', class_='swiper-list-blog'):
-    for dados in texto.find_all('a'):
-      for titulos in dados.find_all('h4', class_='swiper-description'):
-        titulo = titulos.text
-      link = dados.get('href')
-      coluna = dados.get('title')
-      titulo = str(coluna) + ': ' + titulo 
-      classe = 'coluna'
-      time.sleep(2)
-      num +=1
-      planilha.append_row([num, dia, titulo, classe, link])
+  for manchete in soup.find_all('h2', class_='headline'):
+    titulo = manchete.text
+    link = manchete.parent.get('href')
+    classe = link.split('/')[3]
+    planilha.append_row([num, dia, titulo, classe, link])
+for bullet in soup.find_all('div', class_='bullets'):
+    data = bullet.find('a')
+    titulo = data.text
+    link = data.get('href')
+    classe = link.split('/')[3]
+    planilha.append_row([num, dia, titulo, classe, link])
 
 def pega_editoria_cnn(editoria):
     action = editoria.find(class_='home__category')
